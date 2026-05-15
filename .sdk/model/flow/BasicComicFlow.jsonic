@@ -1,0 +1,44 @@
+# BasicComicFlow
+
+main: kit: flow: BasicComicFlow:
+{
+  entity: "comic",
+  kind: "basic",
+  name: "BasicComicFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "comic_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      input: {
+        ref: "comic_ref01",
+        srcdatavar: "comic_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "comic01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-comic_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicComicFlow"
+}

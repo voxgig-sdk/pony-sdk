@@ -1,0 +1,37 @@
+{
+  "existing": {
+    "comic": {
+      "COMIC00": {
+        "data": [],
+        "error": "s29",
+        "status": "s2a",
+        "warning": "s2b",
+        "series": "SERIES01"
+      },
+      "COMIC01": {
+        "data": [],
+        "error": "s51",
+        "status": "s52",
+        "warning": "s53",
+        "series": "SERIES01"
+      },
+      "COMIC02": {
+        "data": [],
+        "error": "s79",
+        "status": "s7a",
+        "warning": "s7b",
+        "series": "SERIES01"
+      }
+    }
+  },
+  "new": {
+    "comic": {
+      "comic_ref01": {
+        "data": [],
+        "error": "sa1",
+        "status": "sa2",
+        "warning": "sa3"
+      }
+    }
+  }
+}

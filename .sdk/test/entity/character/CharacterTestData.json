@@ -1,0 +1,43 @@
+{
+  "existing": {
+    "character": {
+      "CHARACTER00": {
+        "data": [],
+        "error": "s29",
+        "status": "s2a",
+        "warning": "s2b",
+        "kind": "KIND01",
+        "occupation": "OCCUPATION01",
+        "residence": "RESIDENCE01"
+      },
+      "CHARACTER01": {
+        "data": [],
+        "error": "s51",
+        "status": "s52",
+        "warning": "s53",
+        "kind": "KIND01",
+        "occupation": "OCCUPATION01",
+        "residence": "RESIDENCE01"
+      },
+      "CHARACTER02": {
+        "data": [],
+        "error": "s79",
+        "status": "s7a",
+        "warning": "s7b",
+        "kind": "KIND01",
+        "occupation": "OCCUPATION01",
+        "residence": "RESIDENCE01"
+      }
+    }
+  },
+  "new": {
+    "character": {
+      "character_ref01": {
+        "data": [],
+        "error": "sa1",
+        "status": "sa2",
+        "warning": "sa3"
+      }
+    }
+  }
+}

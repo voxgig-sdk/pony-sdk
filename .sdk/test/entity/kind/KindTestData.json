@@ -1,0 +1,34 @@
+{
+  "existing": {
+    "kind": {
+      "KIND00": {
+        "data": [],
+        "error": "s29",
+        "status": "s2a",
+        "warning": "s2b"
+      },
+      "KIND01": {
+        "data": [],
+        "error": "s51",
+        "status": "s52",
+        "warning": "s53"
+      },
+      "KIND02": {
+        "data": [],
+        "error": "s79",
+        "status": "s7a",
+        "warning": "s7b"
+      }
+    }
+  },
+  "new": {
+    "kind": {
+      "kind_ref01": {
+        "data": [],
+        "error": "sa1",
+        "status": "sa2",
+        "warning": "sa3"
+      }
+    }
+  }
+}

@@ -1,0 +1,1243 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Pony API",
+    "description": "The Pony API provides access to detailed information about characters, episodes, songs, and comics from the animated series My Little Pony: Friendship is Magic. This RESTful API allows users to search for data by various attributes, making it an essential tool for fans and developers alike.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://ponyapi.net/"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://ponyapi.net/v1",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/character/all": {
+      "get": {
+        "summary": "Get all characters",
+        "description": "Return list of all characters with optional limit and offset parameters",
+        "operationId": "getAllCharacters",
+        "tags": [
+          "Character"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/limitParam"
+          },
+          {
+            "$ref": "#/components/parameters/offsetParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CharacterResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/character/{character}": {
+      "get": {
+        "summary": "Get character by ID or name",
+        "description": "Search character by CharacterID (integer) or Name (string). A string query is also searched in the Alias column.",
+        "operationId": "getCharacter",
+        "tags": [
+          "Character"
+        ],
+        "parameters": [
+          {
+            "name": "character",
+            "in": "path",
+            "required": true,
+            "description": "Character ID (integer) or name (string)",
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          {
+            "$ref": "#/components/parameters/limitParam"
+          },
+          {
+            "$ref": "#/components/parameters/offsetParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CharacterResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/character/by-kind/{kind}": {
+      "get": {
+        "summary": "Get characters by kind",
+        "description": "Search character by kind based on KindID (integer) or Name (string)",
+        "operationId": "getCharactersByKind",
+        "tags": [
+          "Character"
+        ],
+        "parameters": [
+          {
+            "name": "kind",
+            "in": "path",
+            "required": true,
+            "description": "Kind ID (integer) or name (string)",
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "examples": {
+              "string": {
+                "value": "dragon",
+                "summary": "Search by kind name"
+              },
+              "integer": {
+                "value": 1,
+                "summary": "Search by kind ID"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/parameters/limitParam"
+          },
+          {
+            "$ref": "#/components/parameters/offsetParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CharacterResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/character/by-occupation/{occupation}": {
+      "get": {
+        "summary": "Get characters by occupation",
+        "description": "Search character by occupation",
+        "operationId": "getCharactersByOccupation",
+        "tags": [
+          "Character"
+        ],
+        "parameters": [
+          {
+            "name": "occupation",
+            "in": "path",
+            "required": true,
+            "description": "Occupation string to search for",
+            "schema": {
+              "type": "string"
+            },
+            "example": "crusader"
+          },
+          {
+            "$ref": "#/components/parameters/limitParam"
+          },
+          {
+            "$ref": "#/components/parameters/offsetParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CharacterResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/character/by-residence/{residence}": {
+      "get": {
+        "summary": "Get characters by residence",
+        "description": "Search character by residence",
+        "operationId": "getCharactersByResidence",
+        "tags": [
+          "Character"
+        ],
+        "parameters": [
+          {
+            "name": "residence",
+            "in": "path",
+            "required": true,
+            "description": "Residence string to search for",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/limitParam"
+          },
+          {
+            "$ref": "#/components/parameters/offsetParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/CharacterResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/episode/all": {
+      "get": {
+        "summary": "Get all episodes",
+        "description": "Return list of all episodes with optional limit and offset parameters",
+        "operationId": "getAllEpisodes",
+        "tags": [
+          "Episode"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/limitParam"
+          },
+          {
+            "$ref": "#/components/parameters/offsetParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/EpisodeResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/episode/{episode}": {
+      "get": {
+        "summary": "Get episode by ID or name",
+        "description": "Search episode by EpisodeID (integer) or Name (string)",
+        "operationId": "getEpisode",
+        "tags": [
+          "Episode"
+        ],
+        "parameters": [
+          {
+            "name": "episode",
+            "in": "path",
+            "required": true,
+            "description": "Episode ID (integer) or name (string)",
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          {
+            "$ref": "#/components/parameters/limitParam"
+          },
+          {
+            "$ref": "#/components/parameters/offsetParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/EpisodeResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/episode/by-season/{season}": {
+      "get": {
+        "summary": "Get episodes by season",
+        "description": "Search episodes by season number",
+        "operationId": "getEpisodesBySeason",
+        "tags": [
+          "Episode"
+        ],
+        "parameters": [
+          {
+            "name": "season",
+            "in": "path",
+            "required": true,
+            "description": "Season number",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/limitParam"
+          },
+          {
+            "$ref": "#/components/parameters/offsetParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/EpisodeResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/song/all": {
+      "get": {
+        "summary": "Get all songs",
+        "description": "Return list of all songs with optional limit and offset parameters",
+        "operationId": "getAllSongs",
+        "tags": [
+          "Song"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/limitParam"
+          },
+          {
+            "$ref": "#/components/parameters/offsetParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SongResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/song/{song}": {
+      "get": {
+        "summary": "Get song by ID or name",
+        "description": "Search song by SongID (integer) or Name (string)",
+        "operationId": "getSong",
+        "tags": [
+          "Song"
+        ],
+        "parameters": [
+          {
+            "name": "song",
+            "in": "path",
+            "required": true,
+            "description": "Song ID (integer) or name (string)",
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          {
+            "$ref": "#/components/parameters/limitParam"
+          },
+          {
+            "$ref": "#/components/parameters/offsetParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SongResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/song/by-episode/{episode}": {
+      "get": {
+        "summary": "Get songs by episode",
+        "description": "Search songs by episode",
+        "operationId": "getSongsByEpisode",
+        "tags": [
+          "Song"
+        ],
+        "parameters": [
+          {
+            "name": "episode",
+            "in": "path",
+            "required": true,
+            "description": "Episode identifier",
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          {
+            "$ref": "#/components/parameters/limitParam"
+          },
+          {
+            "$ref": "#/components/parameters/offsetParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/SongResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/comics/all": {
+      "get": {
+        "summary": "Get all comics stories",
+        "description": "Return list of all comics stories with optional limit and offset parameters",
+        "operationId": "getAllComics",
+        "tags": [
+          "Comics"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/limitParam"
+          },
+          {
+            "$ref": "#/components/parameters/offsetParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ComicsResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/comics/{comics}": {
+      "get": {
+        "summary": "Get comics story by ID or name",
+        "description": "Search comics story by ComicsID (integer) or Name (string)",
+        "operationId": "getComics",
+        "tags": [
+          "Comics"
+        ],
+        "parameters": [
+          {
+            "name": "comics",
+            "in": "path",
+            "required": true,
+            "description": "Comics ID (integer) or name (string)",
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          {
+            "$ref": "#/components/parameters/limitParam"
+          },
+          {
+            "$ref": "#/components/parameters/offsetParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ComicsResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/comics/by-series/{series}": {
+      "get": {
+        "summary": "Get comics by series",
+        "description": "Search comics stories by series name",
+        "operationId": "getComicsBySeries",
+        "tags": [
+          "Comics"
+        ],
+        "parameters": [
+          {
+            "name": "series",
+            "in": "path",
+            "required": true,
+            "description": "Series name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/limitParam"
+          },
+          {
+            "$ref": "#/components/parameters/offsetParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ComicsResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/kind/all": {
+      "get": {
+        "summary": "Get all kinds",
+        "description": "Return list of all kinds (minor feature for developmental usage)",
+        "operationId": "getAllKinds",
+        "tags": [
+          "Kind"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/limitParam"
+          },
+          {
+            "$ref": "#/components/parameters/offsetParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/KindResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/kind/{kind}": {
+      "get": {
+        "summary": "Get kind by ID or name",
+        "description": "Get kind name, comment and wiki url by ID or name",
+        "operationId": "getKind",
+        "tags": [
+          "Kind"
+        ],
+        "parameters": [
+          {
+            "name": "kind",
+            "in": "path",
+            "required": true,
+            "description": "Kind ID (integer) or name (string)",
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/KindResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    },
+    "/image/all": {
+      "get": {
+        "summary": "Get all images",
+        "description": "Return list of all images (minor feature for developmental usage)",
+        "operationId": "getAllImages",
+        "tags": [
+          "Image"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/limitParam"
+          },
+          {
+            "$ref": "#/components/parameters/offsetParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/ImageResponse"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "500": {
+            "$ref": "#/components/responses/InternalServerError"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "limitParam": {
+        "name": "limit",
+        "in": "query",
+        "description": "Limit of the response data array",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "default": 50
+        }
+      },
+      "offsetParam": {
+        "name": "offset",
+        "in": "query",
+        "description": "Offset of the response data array (SQL-like behavior)",
+        "required": false,
+        "schema": {
+          "type": "integer",
+          "default": 0
+        }
+      }
+    },
+    "schemas": {
+      "Character": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Unique character identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "The name of this character"
+          },
+          "alias": {
+            "type": "string",
+            "description": "Possible alias of this character"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to the MLP fandom wiki about this character"
+          },
+          "sex": {
+            "type": "string",
+            "description": "Sex of this character"
+          },
+          "residence": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "description": "Residence of this character"
+          },
+          "occupation": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "description": "Occupation of this character"
+          },
+          "kind": {
+            "type": "array",
+            "description": "All possible kinds of this character",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {}
+                }
+              ]
+            }
+          },
+          "image": {
+            "type": "array",
+            "description": "All images of possible kinds and transformations of this character",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "type": "array",
+                  "items": {}
+                }
+              ]
+            }
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "url"
+        ]
+      },
+      "Episode": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Unique episode identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the episode"
+          },
+          "season": {
+            "type": "integer",
+            "description": "Season number"
+          },
+          "episode": {
+            "type": "integer",
+            "description": "Episode number within the season"
+          },
+          "overall": {
+            "type": "integer",
+            "description": "Overall episode number"
+          },
+          "airdate": {
+            "type": "string",
+            "format": "date",
+            "description": "Air date of the episode"
+          },
+          "thumbnail": {
+            "type": "string",
+            "format": "uri",
+            "description": "Thumbnail image URL"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Wiki URL"
+          }
+        }
+      },
+      "Song": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Unique song identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the song"
+          },
+          "length": {
+            "type": "string",
+            "description": "Length of the song"
+          },
+          "video_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Video URL"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Wiki URL"
+          }
+        }
+      },
+      "Comics": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Unique comics story identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the comics story"
+          },
+          "series": {
+            "type": "string",
+            "description": "Series name"
+          },
+          "cover_image": {
+            "type": "string",
+            "format": "uri",
+            "description": "Cover image URL"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Wiki URL"
+          },
+          "issues": {
+            "type": "array",
+            "description": "Issues contained in this story",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "Kind": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Unique kind identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the kind"
+          },
+          "comment": {
+            "type": "string",
+            "description": "Comment about the kind"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Wiki URL"
+          }
+        }
+      },
+      "Image": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Unique image identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Image name"
+          },
+          "description": {
+            "type": "string",
+            "description": "Image description"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Image URL"
+          }
+        }
+      },
+      "ApiResponse": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "HTTP status code"
+          },
+          "data": {
+            "type": "array",
+            "description": "Array of found objects. Empty array if no objects found.",
+            "items": {
+              "type": "object"
+            }
+          },
+          "warning": {
+            "type": "string",
+            "description": "Warning messages separated by newline"
+          },
+          "error": {
+            "type": "string",
+            "description": "First error message"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "HTTP status code"
+          },
+          "error": {
+            "type": "string",
+            "description": "Error message"
+          }
+        }
+      }
+    },
+    "responses": {
+      "CharacterResponse": {
+        "description": "Successful response with character data",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Character"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "EpisodeResponse": {
+        "description": "Successful response with episode data",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Episode"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "SongResponse": {
+        "description": "Successful response with song data",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Song"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "ComicsResponse": {
+        "description": "Successful response with comics data",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Comics"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "KindResponse": {
+        "description": "Successful response with kind data",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Kind"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "ImageResponse": {
+        "description": "Successful response with image data",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/ApiResponse"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Image"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "BadRequest": {
+        "description": "Bad Request - Some arguments are not valid",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "status": 400,
+              "error": "Some arguments are not valid"
+            }
+          }
+        }
+      },
+      "MethodNotAllowed": {
+        "description": "Method Not Allowed - Invalid method",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "status": 405,
+              "error": "Method not allowed"
+            }
+          }
+        }
+      },
+      "InternalServerError": {
+        "description": "Internal Server Error - Server-side error in database query",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "status": 500,
+              "error": "Internal server error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Character",
+      "description": "Character information endpoints - Get name, images, kind, occupation, residence and more"
+    },
+    {
+      "name": "Episode",
+      "description": "Episode information endpoints - Get name, thumbnail image, airdate, authors and more"
+    },
+    {
+      "name": "Song",
+      "description": "Song information endpoints - Get name, length, authors, key signatures, video url, wiki url and more"
+    },
+    {
+      "name": "Comics",
+      "description": "Comics story information endpoints - Get name, authors, cover image url, wiki url, issues and more"
+    },
+    {
+      "name": "Kind",
+      "description": "Kind information endpoints - Minor feature for developmental usage"
+    },
+    {
+      "name": "Image",
+      "description": "Image information endpoints - Minor feature for developmental usage"
+    }
+  ]
+}

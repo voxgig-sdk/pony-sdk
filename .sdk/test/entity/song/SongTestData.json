@@ -1,0 +1,37 @@
+{
+  "existing": {
+    "song": {
+      "SONG00": {
+        "data": [],
+        "error": "s29",
+        "status": "s2a",
+        "warning": "s2b",
+        "episode": "EPISODE01"
+      },
+      "SONG01": {
+        "data": [],
+        "error": "s51",
+        "status": "s52",
+        "warning": "s53",
+        "episode": "EPISODE01"
+      },
+      "SONG02": {
+        "data": [],
+        "error": "s79",
+        "status": "s7a",
+        "warning": "s7b",
+        "episode": "EPISODE01"
+      }
+    }
+  },
+  "new": {
+    "song": {
+      "song_ref01": {
+        "data": [],
+        "error": "sa1",
+        "status": "sa2",
+        "warning": "sa3"
+      }
+    }
+  }
+}

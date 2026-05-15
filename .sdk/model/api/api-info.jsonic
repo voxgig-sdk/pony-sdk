@@ -1,0 +1,23 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://ponyapi.net/"
+      }
+      description: "The Pony API provides access to detailed information about characters, episodes, songs, and comics from the animated series My Little Pony: Friendship is Magic. This RESTful API allows users to search for data by various attributes, making it an essential tool for fans and developers alike."
+      servers: [
+        {
+          description: "Production server"
+          url: "http://ponyapi.net/v1"
+        }
+      ]
+      title: "Pony API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

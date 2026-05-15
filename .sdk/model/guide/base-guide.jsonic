@@ -1,0 +1,88 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 6
+  metrics: count: path: 17
+  metrics: count: method: 17
+
+  entity: character: {
+    path: "/character/all": {
+      action: "all": {}
+      op: list: method: *GET
+    }
+    path: "/character/by-kind/{kind}": {
+      op: load: method: *GET
+    }
+    path: "/character/by-occupation/{occupation}": {
+      op: load: method: *GET
+    }
+    path: "/character/by-residence/{residence}": {
+      op: load: method: *GET
+    }
+    path: "/character/{character}": {
+      rename: param: "character": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: comic: {
+    path: "/comics/all": {
+      action: "all": {}
+      op: list: method: *GET
+    }
+    path: "/comics/by-series/{series}": {
+      op: load: method: *GET
+    }
+    path: "/comics/{comics}": {
+      rename: param: "comics": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: episode: {
+    path: "/episode/all": {
+      action: "all": {}
+      op: list: method: *GET
+    }
+    path: "/episode/by-season/{season}": {
+      op: load: method: *GET
+    }
+    path: "/episode/{episode}": {
+      rename: param: "episode": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: image: {
+    path: "/image/all": {
+      action: "all": {}
+      op: list: method: *GET
+    }
+  }
+
+  entity: kind: {
+    path: "/kind/all": {
+      action: "all": {}
+      op: list: method: *GET
+    }
+    path: "/kind/{kind}": {
+      rename: param: "kind": *"id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: song: {
+    path: "/song/all": {
+      action: "all": {}
+      op: list: method: *GET
+    }
+    path: "/song/by-episode/{episode}": {
+      op: load: method: *GET
+    }
+    path: "/song/{song}": {
+      rename: param: "song": *"id"
+      op: load: method: *GET
+    }
+  }
+
+}

@@ -1,0 +1,37 @@
+{
+  "existing": {
+    "episode": {
+      "EPISODE00": {
+        "data": [],
+        "error": "s29",
+        "status": "s2a",
+        "warning": "s2b",
+        "season": "SEASON01"
+      },
+      "EPISODE01": {
+        "data": [],
+        "error": "s51",
+        "status": "s52",
+        "warning": "s53",
+        "season": "SEASON01"
+      },
+      "EPISODE02": {
+        "data": [],
+        "error": "s79",
+        "status": "s7a",
+        "warning": "s7b",
+        "season": "SEASON01"
+      }
+    }
+  },
+  "new": {
+    "episode": {
+      "episode_ref01": {
+        "data": [],
+        "error": "sa1",
+        "status": "sa2",
+        "warning": "sa3"
+      }
+    }
+  }
+}
