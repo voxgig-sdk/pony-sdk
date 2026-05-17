@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/pony-sdk"
-	"github.com/voxgig-sdk/pony-sdk/core"
+	sdk "github.com/voxgig-sdk/pony-sdk/go"
+	"github.com/voxgig-sdk/pony-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/pony-sdk/go/utility/struct"
 )
 
 func TestKindEntity(t *testing.T) {

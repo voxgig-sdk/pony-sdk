@@ -5,19 +5,22 @@
         "data": [],
         "error": "s29",
         "status": "s2a",
-        "warning": "s2b"
+        "warning": "s2b",
+        "id": "KIND00"
       },
       "KIND01": {
         "data": [],
         "error": "s51",
         "status": "s52",
-        "warning": "s53"
+        "warning": "s53",
+        "id": "KIND01"
       },
       "KIND02": {
         "data": [],
         "error": "s79",
         "status": "s7a",
-        "warning": "s7b"
+        "warning": "s7b",
+        "id": "KIND02"
       }
     }
   },

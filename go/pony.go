@@ -1,10 +1,10 @@
 package voxgigponysdk
 
 import (
-	"github.com/voxgig-sdk/pony-sdk/core"
-	"github.com/voxgig-sdk/pony-sdk/entity"
-	"github.com/voxgig-sdk/pony-sdk/feature"
-	_ "github.com/voxgig-sdk/pony-sdk/utility"
+	"github.com/voxgig-sdk/pony-sdk/go/core"
+	"github.com/voxgig-sdk/pony-sdk/go/entity"
+	"github.com/voxgig-sdk/pony-sdk/go/feature"
+	_ "github.com/voxgig-sdk/pony-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

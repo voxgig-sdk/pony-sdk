@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/pony-sdk/core"
+	"github.com/voxgig-sdk/pony-sdk/go/core"
 )
 
 type BaseFeature struct {

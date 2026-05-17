@@ -6,21 +6,24 @@
         "error": "s29",
         "status": "s2a",
         "warning": "s2b",
-        "episode": "EPISODE01"
+        "episode": "EPISODE01",
+        "id": "SONG00"
       },
       "SONG01": {
         "data": [],
         "error": "s51",
         "status": "s52",
         "warning": "s53",
-        "episode": "EPISODE01"
+        "episode": "EPISODE01",
+        "id": "SONG01"
       },
       "SONG02": {
         "data": [],
         "error": "s79",
         "status": "s7a",
         "warning": "s7b",
-        "episode": "EPISODE01"
+        "episode": "EPISODE01",
+        "id": "SONG02"
       }
     }
   },

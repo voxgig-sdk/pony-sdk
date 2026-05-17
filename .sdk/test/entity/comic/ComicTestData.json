@@ -6,21 +6,24 @@
         "error": "s29",
         "status": "s2a",
         "warning": "s2b",
-        "series": "SERIES01"
+        "series": "SERIES01",
+        "id": "COMIC00"
       },
       "COMIC01": {
         "data": [],
         "error": "s51",
         "status": "s52",
         "warning": "s53",
-        "series": "SERIES01"
+        "series": "SERIES01",
+        "id": "COMIC01"
       },
       "COMIC02": {
         "data": [],
         "error": "s79",
         "status": "s7a",
         "warning": "s7b",
-        "series": "SERIES01"
+        "series": "SERIES01",
+        "id": "COMIC02"
       }
     }
   },

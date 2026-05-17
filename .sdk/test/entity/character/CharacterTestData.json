@@ -8,7 +8,8 @@
         "warning": "s2b",
         "kind": "KIND01",
         "occupation": "OCCUPATION01",
-        "residence": "RESIDENCE01"
+        "residence": "RESIDENCE01",
+        "id": "CHARACTER00"
       },
       "CHARACTER01": {
         "data": [],
@@ -17,7 +18,8 @@
         "warning": "s53",
         "kind": "KIND01",
         "occupation": "OCCUPATION01",
-        "residence": "RESIDENCE01"
+        "residence": "RESIDENCE01",
+        "id": "CHARACTER01"
       },
       "CHARACTER02": {
         "data": [],
@@ -26,7 +28,8 @@
         "warning": "s7b",
         "kind": "KIND01",
         "occupation": "OCCUPATION01",
-        "residence": "RESIDENCE01"
+        "residence": "RESIDENCE01",
+        "id": "CHARACTER02"
       }
     }
   },

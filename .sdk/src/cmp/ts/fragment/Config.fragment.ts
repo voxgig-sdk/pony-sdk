@@ -29,7 +29,7 @@ class Config {
 
 
   options = {
-    base: 'http://ponyapi.net/v1',
+    base: '$$main.kit.info.servers.0.url$$',
 
     'AUTHBLOCK'headers: 'HEADERS',
 

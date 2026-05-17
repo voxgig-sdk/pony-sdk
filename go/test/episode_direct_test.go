@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/pony-sdk"
-	"github.com/voxgig-sdk/pony-sdk/core"
+	sdk "github.com/voxgig-sdk/pony-sdk/go"
+	"github.com/voxgig-sdk/pony-sdk/go/core"
 )
 
 func TestEpisodeDirect(t *testing.T) {
