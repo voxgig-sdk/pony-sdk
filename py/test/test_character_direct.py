@@ -109,14 +109,12 @@ def _character_direct_setup(mockres):
     env = runner.env_override({
         "PONY_TEST_CHARACTER_ENTID": {},
         "PONY_TEST_LIVE": "FALSE",
-        "PONY_APIKEY": "NONE",
     })
 
     live = env.get("PONY_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("PONY_APIKEY"),
         }
         client = PonySDK(merged_opts)
         return {

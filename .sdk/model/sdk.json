@@ -16,7 +16,22 @@
           }
         ],
         "title": "Pony API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "tagline": "Browse My Little Pony: Friendship is Magic characters, episodes, songs, and comics via a simple REST API",
+        "homepage": "https://ponyapi.net/",
+        "docs_url": "https://ponyapi.net/",
+        "license_short": "Database: CC BY-SA 3.0 (derived from the MLP fandom wiki). Source code: MIT.",
+        "license_md": "- Database content is licensed under CC BY-SA 3.0, derived from the My Little Pony fandom wiki.\n- API source code is licensed under the MIT License.\n- Data was manually curated; the catalogue notes the last content update was 30 April 2020.\n- Attribution to the upstream wiki contributors is required when redistributing the dataset.",
+        "about_md": "Pony API is a small REST service that exposes structured data about *My Little Pony: Friendship is Magic* — characters, episodes, songs, comics and related media — served from `http://ponyapi.net/v1/`. The dataset was hand-corrected from the MLP fandom wiki by the maintainer (contact: cloudcolt@protonmail.com).\n\nWhat you get from the API:\n\n- Character records searchable by id, name, kind, occupation or residence (`v1/character/...`).\n- Episode records searchable by id, season, overall number or author (`v1/episode/...`).\n- Song records, optionally filtered by episode or author (`v1/song/...`).\n- Comic stories and comic issues, filterable by series, story or author (`v1/comics-story/...`, `v1/comics-issue/...`).\n- Character kinds and image records, both cross-referenced to characters (`v1/kind/...`, `v1/image/...`).\n\nResponses come back as JSON envelopes of the form `{ \"status\": 200, \"data\": [...], \"warning\": \"...\", \"error\": \"...\" }`. The global `limit` (default 50) and `offset` (default 0) query parameters page through list endpoints.\n\nNo authentication is required and CORS is enabled. The service does not document a published rate limit. A downloadable SQLite snapshot of the database and the API source are also offered from the homepage for offline use.",
+        "entity_desc": {
+          "character": "A pony or other named cast member from the show, retrievable in bulk or by id/name and filterable by kind, occupation or residence via `v1/character/all`, `v1/character/[id|name]`, `v1/character/by-kind/[kind]`, `v1/character/by-occupation/[occupation]` and `v1/character/by-residence/[residence]`.",
+          "comic": "An IDW comic story or issue, with story-level (`v1/comics-story/...`) and issue-level (`v1/comics-issue/...`) endpoints that support lookup by id/name and filtering by series, story or author.",
+          "episode": "An aired television episode, available via `v1/episode/all`, `v1/episode/[id]`, `v1/episode/by-overall/[number]`, `v1/episode/by-season/[season]/[episode|all]` and `v1/episode/by-author/[author]`.",
+          "image": "An image asset linked to a character, accessible via `v1/image/all`, `v1/image/[id|name]` and `v1/image/by-character/[id|name]`.",
+          "kind": "A character type or species classification (e.g. pony sub-types), exposed via `v1/kind/all`, `v1/kind/[id|name]` and `v1/kind/by-character/[id|name]`.",
+          "song": "A song performed in the show, retrievable via `v1/song/all`, `v1/song/[id|name]`, `v1/song/by-episode/[id|name]` and `v1/song/by-author/[author]`."
+        },
+        "auth": false
       },
       "config": {
         "auth": {
@@ -24,7 +39,15 @@
         },
         "headers": {
           "content-type": "application/json"
-        }
+        },
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ]
       },
       "entity": {
         "character": {

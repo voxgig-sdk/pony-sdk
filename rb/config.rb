@@ -15,9 +15,6 @@ module PonyConfig
       },
       "options" => {
         "base" => "http://ponyapi.net/v1",
-        "auth" => {
-          "prefix" => "Bearer",
-        },
         "headers" => {
           "content-type" => "application/json",
         },
