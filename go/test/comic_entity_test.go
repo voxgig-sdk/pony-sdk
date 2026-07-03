@@ -129,6 +129,7 @@ func comicBasicSetup(extra map[string]any) *entityTestSetup {
 		"PONY_TEST_COMIC_ENTID": idmap,
 		"PONY_TEST_LIVE":      "FALSE",
 		"PONY_TEST_EXPLAIN":   "FALSE",
+		"PONY_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["PONY_TEST_COMIC_ENTID"])
@@ -139,6 +140,7 @@ func comicBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["PONY_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
+				"apikey": env["PONY_APIKEY"],
 			},
 			extra,
 		})

@@ -1,24 +1,8 @@
 # Pony SDK
 
-Browse My Little Pony: Friendship is Magic characters, episodes, songs, and comics via a simple REST API
+Pony API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Pony API
-
-Pony API is a small REST service that exposes structured data about *My Little Pony: Friendship is Magic* — characters, episodes, songs, comics and related media — served from `http://ponyapi.net/v1/`. The dataset was hand-corrected from the MLP fandom wiki by the maintainer (contact: cloudcolt@protonmail.com).
-
-What you get from the API:
-
-- Character records searchable by id, name, kind, occupation or residence (`v1/character/...`).
-- Episode records searchable by id, season, overall number or author (`v1/episode/...`).
-- Song records, optionally filtered by episode or author (`v1/song/...`).
-- Comic stories and comic issues, filterable by series, story or author (`v1/comics-story/...`, `v1/comics-issue/...`).
-- Character kinds and image records, both cross-referenced to characters (`v1/kind/...`, `v1/image/...`).
-
-Responses come back as JSON envelopes of the form `{ "status": 200, "data": [...], "warning": "...", "error": "..." }`. The global `limit` (default 50) and `offset` (default 0) query parameters page through list endpoints.
-
-No authentication is required and CORS is enabled. The service does not document a published rate limit. A downloadable SQLite snapshot of the database and the API source are also offered from the homepage for offline use.
 
 ## Try it
 
@@ -52,29 +36,31 @@ gem install pony-sdk
 luarocks install pony-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { PonySDK } from 'pony'
 
-const client = new PonySDK({})
+const client = new PonySDK({
+  apikey: process.env.PONY_APIKEY,
+})
 
 // List all characters
 const characters = await client.Character().list()
+console.log(characters.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -104,12 +90,12 @@ The API exposes 6 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Character** | A pony or other named cast member from the show, retrievable in bulk or by id/name and filterable by kind, occupation or residence via `v1/character/all`, `v1/character/[id|name]`, `v1/character/by-kind/[kind]`, `v1/character/by-occupation/[occupation]` and `v1/character/by-residence/[residence]`. | `/character/all` |
-| **Comic** | An IDW comic story or issue, with story-level (`v1/comics-story/...`) and issue-level (`v1/comics-issue/...`) endpoints that support lookup by id/name and filtering by series, story or author. | `/comics/all` |
-| **Episode** | An aired television episode, available via `v1/episode/all`, `v1/episode/[id]`, `v1/episode/by-overall/[number]`, `v1/episode/by-season/[season]/[episode|all]` and `v1/episode/by-author/[author]`. | `/episode/all` |
-| **Image** | An image asset linked to a character, accessible via `v1/image/all`, `v1/image/[id|name]` and `v1/image/by-character/[id|name]`. | `/image/all` |
-| **Kind** | A character type or species classification (e.g. pony sub-types), exposed via `v1/kind/all`, `v1/kind/[id|name]` and `v1/kind/by-character/[id|name]`. | `/kind/all` |
-| **Song** | A song performed in the show, retrievable via `v1/song/all`, `v1/song/[id|name]`, `v1/song/by-episode/[id|name]` and `v1/song/by-author/[author]`. | `/song/all` |
+| **Character** |  | `/character/all` |
+| **Comic** |  | `/comics/all` |
+| **Episode** |  | `/episode/all` |
+| **Image** |  | `/image/all` |
+| **Kind** |  | `/kind/all` |
+| **Song** |  | `/song/all` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -119,17 +105,20 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from pony_sdk import PonySDK
 
-client = PonySDK({})
+client = PonySDK({
+    "apikey": os.environ.get("PONY_APIKEY"),
+})
 
 # List all characters
-characters, err = client.Character(None).list(None, None)
+characters, err = client.Character().list()
+print(characters)
 
 # Load a specific character
-character, err = client.Character(None).load(
-    {"id": "example_id"}, None
-)
+character, err = client.Character().load({"id": "example_id"})
+print(character)
 ```
 
 ### PHP
@@ -138,15 +127,17 @@ character, err = client.Character(None).load(
 <?php
 require_once 'pony_sdk.php';
 
-$client = new PonySDK([]);
+$client = new PonySDK([
+    "apikey" => getenv("PONY_APIKEY"),
+]);
 
 // List all characters
-[$characters, $err] = $client->Character(null)->list(null, null);
+[$characters, $err] = $client->Character()->list();
+print_r($characters);
 
 // Load a specific character
-[$character, $err] = $client->Character(null)->load(
-    ["id" => "example_id"], null
-);
+[$character, $err] = $client->Character()->load(["id" => "example_id"]);
+print_r($character);
 ```
 
 ### Golang
@@ -154,10 +145,13 @@ $client = new PonySDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/pony-sdk/go"
 
-client := sdk.NewPonySDK(map[string]any{})
+client := sdk.NewPonySDK(map[string]any{
+    "apikey": os.Getenv("PONY_APIKEY"),
+})
 
 // List all characters
 characters, err := client.Character(nil).List(nil, nil)
+fmt.Println(characters)
 ```
 
 ### Ruby
@@ -165,15 +159,17 @@ characters, err := client.Character(nil).List(nil, nil)
 ```ruby
 require_relative "Pony_sdk"
 
-client = PonySDK.new({})
+client = PonySDK.new({
+  "apikey" => ENV["PONY_APIKEY"],
+})
 
 # List all characters
-characters, err = client.Character(nil).list(nil, nil)
+characters, err = client.Character().list
+puts characters
 
 # Load a specific character
-character, err = client.Character(nil).load(
-  { "id" => "example_id" }, nil
-)
+character, err = client.Character().load({ "id" => "example_id" })
+puts character
 ```
 
 ### Lua
@@ -181,15 +177,17 @@ character, err = client.Character(nil).load(
 ```lua
 local sdk = require("pony_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("PONY_APIKEY"),
+})
 
 -- List all characters
-local characters, err = client:Character(nil):list(nil, nil)
+local characters, err = client:Character():list()
+print(characters)
 
 -- Load a specific character
-local character, err = client:Character(nil):load(
-  { id = "example_id" }, nil
-)
+local character, err = client:Character():load({ id = "example_id" })
+print(character)
 ```
 
 ## Unit testing in offline mode
@@ -208,25 +206,21 @@ const result = await client.Character().load({ id: 'test01' })
 ### Python
 
 ```python
-client = PonySDK.test(None, None)
-result, err = client.Character(None).load(
-    {"id": "test01"}, None
-)
+client = PonySDK.test()
+result, err = client.Character().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = PonySDK::test(null, null);
-[$result, $err] = $client->Character(null)->load(
-    ["id" => "test01"], null
-);
+$client = PonySDK::test();
+[$result, $err] = $client->Character()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Character(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -235,19 +229,15 @@ result, err := client.Character(nil).Load(
 ### Ruby
 
 ```ruby
-client = PonySDK.test(nil, nil)
-result, err = client.Character(nil).load(
-  { "id" => "test01" }, nil
-)
+client = PonySDK.test
+result, err = client.Character().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Character(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Character():load({ id = "test01" })
 ```
 
 ## How it works
@@ -351,15 +341,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Pony API
-
-- Upstream: [https://ponyapi.net/](https://ponyapi.net/)
-
-- Database content is licensed under CC BY-SA 3.0, derived from the My Little Pony fandom wiki.
-- API source code is licensed under the MIT License.
-- Data was manually curated; the catalogue notes the last content update was 30 April 2020.
-- Attribution to the upstream wiki contributors is required when redistributing the dataset.
 
 ---
 

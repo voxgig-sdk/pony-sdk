@@ -195,12 +195,14 @@ func songDirectSetup(mockres any) *songDirectSetupResult {
 	env := envOverride(map[string]any{
 		"PONY_TEST_SONG_ENTID": map[string]any{},
 		"PONY_TEST_LIVE":    "FALSE",
+		"PONY_APIKEY":       "NONE",
 	})
 
 	live := env["PONY_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["PONY_APIKEY"],
 		}
 		client := sdk.NewPonySDK(mergedOpts)
 

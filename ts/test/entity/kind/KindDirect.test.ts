@@ -136,12 +136,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'PONY_TEST_KIND_ENTID': {},
     'PONY_TEST_LIVE': 'FALSE',
+    'PONY_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.PONY_TEST_LIVE
 
   if (live) {
     const client = new PonySDK({
+      apikey: env.PONY_APIKEY,
     })
 
     let idmap: any = env['PONY_TEST_KIND_ENTID']

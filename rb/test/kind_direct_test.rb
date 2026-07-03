@@ -116,12 +116,14 @@ def kind_direct_setup(mockres)
   env = Runner.env_override({
     "PONY_TEST_KIND_ENTID" => {},
     "PONY_TEST_LIVE" => "FALSE",
+    "PONY_APIKEY" => "NONE",
   })
 
   live = env["PONY_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
+      "apikey" => env["PONY_APIKEY"],
     }
     client = PonySDK.new(merged_opts)
     return {

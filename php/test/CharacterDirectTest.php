@@ -123,12 +123,14 @@ function character_direct_setup($mockres)
     $env = Runner::env_override([
         "PONY_TEST_CHARACTER_ENTID" => [],
         "PONY_TEST_LIVE" => "FALSE",
+        "PONY_APIKEY" => "NONE",
     ]);
 
     $live = $env["PONY_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
+            "apikey" => $env["PONY_APIKEY"],
         ];
         $client = new PonySDK($merged_opts);
         return [

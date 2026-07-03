@@ -92,6 +92,7 @@ function comic_basic_setup($extra)
         "PONY_TEST_COMIC_ENTID" => $idmap,
         "PONY_TEST_LIVE" => "FALSE",
         "PONY_TEST_EXPLAIN" => "FALSE",
+        "PONY_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -103,6 +104,7 @@ function comic_basic_setup($extra)
     if ($env["PONY_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
+                "apikey" => $env["PONY_APIKEY"],
             ],
             $extra ?? [],
         ]);

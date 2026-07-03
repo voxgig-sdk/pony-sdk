@@ -114,6 +114,7 @@ function basicSetup(extra?: any) {
     'PONY_TEST_SONG_ENTID': idmap,
     'PONY_TEST_LIVE': 'FALSE',
     'PONY_TEST_EXPLAIN': 'FALSE',
+    'PONY_APIKEY': 'NONE',
   })
 
   idmap = env['PONY_TEST_SONG_ENTID']
@@ -123,6 +124,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new PonySDK(merge([
       {
+        apikey: env.PONY_APIKEY,
       },
       extra
     ]))
