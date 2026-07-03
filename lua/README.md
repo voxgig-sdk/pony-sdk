@@ -10,7 +10,7 @@ The Lua SDK for the Pony API — an entity-oriented client using Lua conventions
 
 ## Install
 ```bash
-luarocks install pony-sdk
+luarocks install voxgig-sdk-pony
 ```
 
 If the module is not yet published, add the source directory to

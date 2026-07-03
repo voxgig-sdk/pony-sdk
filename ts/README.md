@@ -10,7 +10,7 @@ The TypeScript SDK for the Pony API — a type-safe, entity-oriented client with
 
 ## Install
 ```bash
-npm install pony
+npm install @voxgig-sdk/pony
 ```
 ## Tutorial: your first API call
 

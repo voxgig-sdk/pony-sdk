@@ -10,7 +10,7 @@ The Python SDK for the Pony API — an entity-oriented client following Pythonic
 
 ## Install
 ```bash
-pip install pony-sdk
+pip install voxgig-sdk-pony
 ```
 
 Or install from source:

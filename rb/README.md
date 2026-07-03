@@ -10,13 +10,13 @@ The Ruby SDK for the Pony API — an entity-oriented client using idiomatic Ruby
 
 ## Install
 ```bash
-gem install pony-sdk
+gem install voxgig-sdk-pony
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "pony-sdk"
+gem "voxgig-sdk-pony"
 ```
 
 Then run:
