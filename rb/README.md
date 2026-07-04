@@ -28,16 +28,14 @@ require_relative "Pony_sdk"
 client = PonySDK.new
 ```
 
-### 2. List characters
+### 2. List character records
 
 ```ruby
 begin
-  result = client.character.list
-  if result.is_a?(Array)
-    result.each do |item|
-      d = item.data_get
-      puts "#{d["id"]} #{d["name"]}"
-    end
+  # list returns an Array of Character records — iterate directly.
+  characters = client.Character.list
+  characters.each do |item|
+    puts "#{item["id"]} #{item["name"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -48,8 +46,9 @@ end
 
 ```ruby
 begin
-  result = client.character.load({ "id" => "example_id" })
-  puts result
+  # load returns the bare Character record (raises on error).
+  character = client.Character.load({ "id" => "example_id" })
+  puts character
 rescue => err
   warn "load failed: #{err}"
 end
@@ -96,13 +95,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = PonySDK.test
+client = PonySDK.test({
+  "entity" => { "character" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.character.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+character = client.Character.load({ "id" => "test01" })
+puts character
 ```
 
 ### Use a custom fetch function
@@ -180,8 +183,8 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `direct` | `(fetchargs) -> Hash` | Build and send an HTTP request. Returns a result hash (`result["ok"]`); does not raise. |
 | `Character` | `(data) -> CharacterEntity` | Create a Character entity instance. |
 | `Comic` | `(data) -> ComicEntity` | Create a Comic entity instance. |
-| `Episode` | `(data) -> EpisodeEntity` | Create a Episode entity instance. |
-| `Image` | `(data) -> ImageEntity` | Create a Image entity instance. |
+| `Episode` | `(data) -> EpisodeEntity` | Create an Episode entity instance. |
+| `Image` | `(data) -> ImageEntity` | Create an Image entity instance. |
 | `Kind` | `(data) -> KindEntity` | Create a Kind entity instance. |
 | `Song` | `(data) -> SongEntity` | Create a Song entity instance. |
 
@@ -307,7 +310,7 @@ API path: `/song/all`
 
 ### Character
 
-Create an instance: `const character = client.character`
+Create an instance: `character = client.Character`
 
 #### Operations
 
@@ -327,20 +330,22 @@ Create an instance: `const character = client.character`
 
 #### Example: Load
 
-```ts
-const character = await client.character.load({ id: 'character_id' })
+```ruby
+# load returns the bare Character record (raises on error).
+character = client.Character.load({ "id" => "character_id" })
 ```
 
 #### Example: List
 
-```ts
-const characters = await client.character.list()
+```ruby
+# list returns an Array of Character records (raises on error).
+characters = client.Character.list
 ```
 
 
 ### Comic
 
-Create an instance: `const comic = client.comic`
+Create an instance: `comic = client.Comic`
 
 #### Operations
 
@@ -360,20 +365,22 @@ Create an instance: `const comic = client.comic`
 
 #### Example: Load
 
-```ts
-const comic = await client.comic.load({ id: 'comic_id' })
+```ruby
+# load returns the bare Comic record (raises on error).
+comic = client.Comic.load({ "id" => "comic_id" })
 ```
 
 #### Example: List
 
-```ts
-const comics = await client.comic.list()
+```ruby
+# list returns an Array of Comic records (raises on error).
+comics = client.Comic.list
 ```
 
 
 ### Episode
 
-Create an instance: `const episode = client.episode`
+Create an instance: `episode = client.Episode`
 
 #### Operations
 
@@ -393,20 +400,22 @@ Create an instance: `const episode = client.episode`
 
 #### Example: Load
 
-```ts
-const episode = await client.episode.load({ id: 'episode_id' })
+```ruby
+# load returns the bare Episode record (raises on error).
+episode = client.Episode.load({ "id" => "episode_id" })
 ```
 
 #### Example: List
 
-```ts
-const episodes = await client.episode.list()
+```ruby
+# list returns an Array of Episode records (raises on error).
+episodes = client.Episode.list
 ```
 
 
 ### Image
 
-Create an instance: `const image = client.image`
+Create an instance: `image = client.Image`
 
 #### Operations
 
@@ -425,14 +434,15 @@ Create an instance: `const image = client.image`
 
 #### Example: List
 
-```ts
-const images = await client.image.list()
+```ruby
+# list returns an Array of Image records (raises on error).
+images = client.Image.list
 ```
 
 
 ### Kind
 
-Create an instance: `const kind = client.kind`
+Create an instance: `kind = client.Kind`
 
 #### Operations
 
@@ -452,20 +462,22 @@ Create an instance: `const kind = client.kind`
 
 #### Example: Load
 
-```ts
-const kind = await client.kind.load({ id: 'kind_id' })
+```ruby
+# load returns the bare Kind record (raises on error).
+kind = client.Kind.load({ "id" => "kind_id" })
 ```
 
 #### Example: List
 
-```ts
-const kinds = await client.kind.list()
+```ruby
+# list returns an Array of Kind records (raises on error).
+kinds = client.Kind.list
 ```
 
 
 ### Song
 
-Create an instance: `const song = client.song`
+Create an instance: `song = client.Song`
 
 #### Operations
 
@@ -485,14 +497,16 @@ Create an instance: `const song = client.song`
 
 #### Example: Load
 
-```ts
-const song = await client.song.load({ id: 'song_id' })
+```ruby
+# load returns the bare Song record (raises on error).
+song = client.Song.load({ "id" => "song_id" })
 ```
 
 #### Example: List
 
-```ts
-const songs = await client.song.list()
+```ruby
+# list returns an Array of Song records (raises on error).
+songs = client.Song.list
 ```
 
 
@@ -567,7 +581,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-character = client.character
+character = client.Character
 character.load({ "id" => "example_id" })
 
 # character.data_get now returns the loaded character data

@@ -29,18 +29,16 @@ require_once 'pony_sdk.php';
 $client = new PonySDK();
 ```
 
-### 2. List characters
+### 2. List character records
 
 ```php
 try {
-    $result = $client->character()->list();
-    if (is_array($result)) {
-        foreach ($result as $item) {
-            $d = $item->data_get();
-            echo $d["id"] . " " . $d["name"] . "\n";
-        }
+    // list() returns an array of Character records — iterate directly.
+    $characters = $client->Character()->list();
+    foreach ($characters as $item) {
+        echo $item["id"] . " " . $item["name"] . "\n";
     }
-} catch (\Exception $err) {
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -49,9 +47,10 @@ try {
 
 ```php
 try {
-    $result = $client->character()->load(["id" => "example_id"]);
-    print_r($result);
-} catch (\Exception $err) {
+    // load() returns the bare Character record (throws on error).
+    $character = $client->Character()->load(["id" => "example_id"]);
+    print_r($character);
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -97,13 +96,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = PonySDK::test();
+$client = PonySDK::test([
+    "entity" => ["character" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->character()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$character = $client->Character()->load(["id" => "test01"]);
+print_r($character);
 ```
 
 ### Use a custom fetch function
@@ -184,8 +187,8 @@ Creates a test-mode client with mock transport. Both arguments may be `null`.
 | `direct` | `(array $fetchargs): array` | Build and send an HTTP request. |
 | `Character` | `($data): CharacterEntity` | Create a Character entity instance. |
 | `Comic` | `($data): ComicEntity` | Create a Comic entity instance. |
-| `Episode` | `($data): EpisodeEntity` | Create a Episode entity instance. |
-| `Image` | `($data): ImageEntity` | Create a Image entity instance. |
+| `Episode` | `($data): EpisodeEntity` | Create an Episode entity instance. |
+| `Image` | `($data): ImageEntity` | Create an Image entity instance. |
 | `Kind` | `($data): KindEntity` | Create a Kind entity instance. |
 | `Song` | `($data): SongEntity` | Create a Song entity instance. |
 
@@ -312,7 +315,7 @@ API path: `/song/all`
 
 ### Character
 
-Create an instance: `const character = client.character`
+Create an instance: `$character = $client->Character();`
 
 #### Operations
 
@@ -332,20 +335,22 @@ Create an instance: `const character = client.character`
 
 #### Example: Load
 
-```ts
-const character = await client.character.load({ id: 'character_id' })
+```php
+// load() returns the bare Character record (throws on error).
+$character = $client->Character()->load(["id" => "character_id"]);
 ```
 
 #### Example: List
 
-```ts
-const characters = await client.character.list()
+```php
+// list() returns an array of Character records (throws on error).
+$characters = $client->Character()->list();
 ```
 
 
 ### Comic
 
-Create an instance: `const comic = client.comic`
+Create an instance: `$comic = $client->Comic();`
 
 #### Operations
 
@@ -365,20 +370,22 @@ Create an instance: `const comic = client.comic`
 
 #### Example: Load
 
-```ts
-const comic = await client.comic.load({ id: 'comic_id' })
+```php
+// load() returns the bare Comic record (throws on error).
+$comic = $client->Comic()->load(["id" => "comic_id"]);
 ```
 
 #### Example: List
 
-```ts
-const comics = await client.comic.list()
+```php
+// list() returns an array of Comic records (throws on error).
+$comics = $client->Comic()->list();
 ```
 
 
 ### Episode
 
-Create an instance: `const episode = client.episode`
+Create an instance: `$episode = $client->Episode();`
 
 #### Operations
 
@@ -398,20 +405,22 @@ Create an instance: `const episode = client.episode`
 
 #### Example: Load
 
-```ts
-const episode = await client.episode.load({ id: 'episode_id' })
+```php
+// load() returns the bare Episode record (throws on error).
+$episode = $client->Episode()->load(["id" => "episode_id"]);
 ```
 
 #### Example: List
 
-```ts
-const episodes = await client.episode.list()
+```php
+// list() returns an array of Episode records (throws on error).
+$episodes = $client->Episode()->list();
 ```
 
 
 ### Image
 
-Create an instance: `const image = client.image`
+Create an instance: `$image = $client->Image();`
 
 #### Operations
 
@@ -430,14 +439,15 @@ Create an instance: `const image = client.image`
 
 #### Example: List
 
-```ts
-const images = await client.image.list()
+```php
+// list() returns an array of Image records (throws on error).
+$images = $client->Image()->list();
 ```
 
 
 ### Kind
 
-Create an instance: `const kind = client.kind`
+Create an instance: `$kind = $client->Kind();`
 
 #### Operations
 
@@ -457,20 +467,22 @@ Create an instance: `const kind = client.kind`
 
 #### Example: Load
 
-```ts
-const kind = await client.kind.load({ id: 'kind_id' })
+```php
+// load() returns the bare Kind record (throws on error).
+$kind = $client->Kind()->load(["id" => "kind_id"]);
 ```
 
 #### Example: List
 
-```ts
-const kinds = await client.kind.list()
+```php
+// list() returns an array of Kind records (throws on error).
+$kinds = $client->Kind()->list();
 ```
 
 
 ### Song
 
-Create an instance: `const song = client.song`
+Create an instance: `$song = $client->Song();`
 
 #### Operations
 
@@ -490,14 +502,16 @@ Create an instance: `const song = client.song`
 
 #### Example: Load
 
-```ts
-const song = await client.song.load({ id: 'song_id' })
+```php
+// load() returns the bare Song record (throws on error).
+$song = $client->Song()->load(["id" => "song_id"]);
 ```
 
 #### Example: List
 
-```ts
-const songs = await client.song.list()
+```php
+// list() returns an array of Song records (throws on error).
+$songs = $client->Song()->list();
 ```
 
 
@@ -572,7 +586,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$character = $client->character();
+$character = $client->Character();
 $character->load(["id" => "example_id"]);
 
 // $character->dataGet() now returns the loaded character data

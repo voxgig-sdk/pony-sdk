@@ -169,7 +169,7 @@ Alias for `PonySDK.test()`.
 ## CharacterEntity
 
 ```ts
-const character = client.character
+const character = client.Character()
 ```
 
 ### Fields
@@ -188,7 +188,7 @@ const character = client.character
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.character.list()
+const results = await client.Character().list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -196,7 +196,7 @@ const results = await client.character.list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.character.load({ id: 'character_id' })
+const result = await client.Character().load({ id: 'character_id' })
 ```
 
 ### Common Methods
@@ -230,7 +230,7 @@ Return a copy of the entity options.
 ## ComicEntity
 
 ```ts
-const comic = client.comic
+const comic = client.Comic()
 ```
 
 ### Fields
@@ -249,7 +249,7 @@ const comic = client.comic
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.comic.list()
+const results = await client.Comic().list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -257,7 +257,7 @@ const results = await client.comic.list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.comic.load({ id: 'comic_id' })
+const result = await client.Comic().load({ id: 'comic_id' })
 ```
 
 ### Common Methods
@@ -291,7 +291,7 @@ Return a copy of the entity options.
 ## EpisodeEntity
 
 ```ts
-const episode = client.episode
+const episode = client.Episode()
 ```
 
 ### Fields
@@ -310,7 +310,7 @@ const episode = client.episode
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.episode.list()
+const results = await client.Episode().list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -318,7 +318,7 @@ const results = await client.episode.list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.episode.load({ id: 'episode_id' })
+const result = await client.Episode().load({ id: 'episode_id' })
 ```
 
 ### Common Methods
@@ -352,7 +352,7 @@ Return a copy of the entity options.
 ## ImageEntity
 
 ```ts
-const image = client.image
+const image = client.Image()
 ```
 
 ### Fields
@@ -371,7 +371,7 @@ const image = client.image
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.image.list()
+const results = await client.Image().list()
 ```
 
 ### Common Methods
@@ -405,7 +405,7 @@ Return a copy of the entity options.
 ## KindEntity
 
 ```ts
-const kind = client.kind
+const kind = client.Kind()
 ```
 
 ### Fields
@@ -424,7 +424,7 @@ const kind = client.kind
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.kind.list()
+const results = await client.Kind().list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -432,7 +432,7 @@ const results = await client.kind.list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.kind.load({ id: 'kind_id' })
+const result = await client.Kind().load({ id: 'kind_id' })
 ```
 
 ### Common Methods
@@ -466,7 +466,7 @@ Return a copy of the entity options.
 ## SongEntity
 
 ```ts
-const song = client.song
+const song = client.Song()
 ```
 
 ### Fields
@@ -485,7 +485,7 @@ const song = client.song
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.song.list()
+const results = await client.Song().list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -493,7 +493,7 @@ const results = await client.song.list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.song.load({ id: 'song_id' })
+const result = await client.Song().load({ id: 'song_id' })
 ```
 
 ### Common Methods

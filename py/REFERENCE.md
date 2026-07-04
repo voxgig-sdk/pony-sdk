@@ -100,7 +100,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## CharacterEntity
 
 ```python
-character = client.character
+character = client.Character()
 ```
 
 ### Fields
@@ -119,7 +119,9 @@ character = client.character
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.character.list({})
+results = client.Character().list({})
+for character in results:
+    print(character)
 ```
 
 #### `load(reqmatch, ctrl=None) -> dict`
@@ -127,7 +129,7 @@ results = client.character.list({})
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.character.load({"id": "character_id"})
+result = client.Character().load({"id": "character_id"})
 ```
 
 ### Common Methods
@@ -162,7 +164,7 @@ Return the entity name.
 ## ComicEntity
 
 ```python
-comic = client.comic
+comic = client.Comic()
 ```
 
 ### Fields
@@ -181,7 +183,9 @@ comic = client.comic
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.comic.list({})
+results = client.Comic().list({})
+for comic in results:
+    print(comic)
 ```
 
 #### `load(reqmatch, ctrl=None) -> dict`
@@ -189,7 +193,7 @@ results = client.comic.list({})
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.comic.load({"id": "comic_id"})
+result = client.Comic().load({"id": "comic_id"})
 ```
 
 ### Common Methods
@@ -224,7 +228,7 @@ Return the entity name.
 ## EpisodeEntity
 
 ```python
-episode = client.episode
+episode = client.Episode()
 ```
 
 ### Fields
@@ -243,7 +247,9 @@ episode = client.episode
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.episode.list({})
+results = client.Episode().list({})
+for episode in results:
+    print(episode)
 ```
 
 #### `load(reqmatch, ctrl=None) -> dict`
@@ -251,7 +257,7 @@ results = client.episode.list({})
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.episode.load({"id": "episode_id"})
+result = client.Episode().load({"id": "episode_id"})
 ```
 
 ### Common Methods
@@ -286,7 +292,7 @@ Return the entity name.
 ## ImageEntity
 
 ```python
-image = client.image
+image = client.Image()
 ```
 
 ### Fields
@@ -305,7 +311,9 @@ image = client.image
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.image.list({})
+results = client.Image().list({})
+for image in results:
+    print(image)
 ```
 
 ### Common Methods
@@ -340,7 +348,7 @@ Return the entity name.
 ## KindEntity
 
 ```python
-kind = client.kind
+kind = client.Kind()
 ```
 
 ### Fields
@@ -359,7 +367,9 @@ kind = client.kind
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.kind.list({})
+results = client.Kind().list({})
+for kind in results:
+    print(kind)
 ```
 
 #### `load(reqmatch, ctrl=None) -> dict`
@@ -367,7 +377,7 @@ results = client.kind.list({})
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.kind.load({"id": "kind_id"})
+result = client.Kind().load({"id": "kind_id"})
 ```
 
 ### Common Methods
@@ -402,7 +412,7 @@ Return the entity name.
 ## SongEntity
 
 ```python
-song = client.song
+song = client.Song()
 ```
 
 ### Fields
@@ -421,7 +431,9 @@ song = client.song
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.song.list({})
+results = client.Song().list({})
+for song in results:
+    print(song)
 ```
 
 #### `load(reqmatch, ctrl=None) -> dict`
@@ -429,7 +441,7 @@ results = client.song.list({})
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.song.load({"id": "song_id"})
+result = client.Song().load({"id": "song_id"})
 ```
 
 ### Common Methods

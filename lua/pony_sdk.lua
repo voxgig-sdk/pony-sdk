@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:character():list() / client:character():load({ id = ... })
-function PonySDK:character(data)
+-- Idiomatic facade: client:Character():list() / client:Character():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function PonySDK:Character(data)
   local EntityMod = require("entity.character_entity")
   if data == nil then
     if self._character == nil then
@@ -256,15 +257,10 @@ function PonySDK:character(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:character() instead.
-function PonySDK:Character(data)
-  local EntityMod = require("entity.character_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:comic():list() / client:comic():load({ id = ... })
-function PonySDK:comic(data)
+-- Idiomatic facade: client:Comic():list() / client:Comic():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function PonySDK:Comic(data)
   local EntityMod = require("entity.comic_entity")
   if data == nil then
     if self._comic == nil then
@@ -275,15 +271,10 @@ function PonySDK:comic(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:comic() instead.
-function PonySDK:Comic(data)
-  local EntityMod = require("entity.comic_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:episode():list() / client:episode():load({ id = ... })
-function PonySDK:episode(data)
+-- Idiomatic facade: client:Episode():list() / client:Episode():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function PonySDK:Episode(data)
   local EntityMod = require("entity.episode_entity")
   if data == nil then
     if self._episode == nil then
@@ -294,15 +285,10 @@ function PonySDK:episode(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:episode() instead.
-function PonySDK:Episode(data)
-  local EntityMod = require("entity.episode_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:image():list() / client:image():load({ id = ... })
-function PonySDK:image(data)
+-- Idiomatic facade: client:Image():list() / client:Image():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function PonySDK:Image(data)
   local EntityMod = require("entity.image_entity")
   if data == nil then
     if self._image == nil then
@@ -313,15 +299,10 @@ function PonySDK:image(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:image() instead.
-function PonySDK:Image(data)
-  local EntityMod = require("entity.image_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:kind():list() / client:kind():load({ id = ... })
-function PonySDK:kind(data)
+-- Idiomatic facade: client:Kind():list() / client:Kind():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function PonySDK:Kind(data)
   local EntityMod = require("entity.kind_entity")
   if data == nil then
     if self._kind == nil then
@@ -332,15 +313,10 @@ function PonySDK:kind(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:kind() instead.
-function PonySDK:Kind(data)
-  local EntityMod = require("entity.kind_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:song():list() / client:song():load({ id = ... })
-function PonySDK:song(data)
+-- Idiomatic facade: client:Song():list() / client:Song():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function PonySDK:Song(data)
   local EntityMod = require("entity.song_entity")
   if data == nil then
     if self._song == nil then
@@ -348,12 +324,6 @@ function PonySDK:song(data)
     end
     return self._song
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:song() instead.
-function PonySDK:Song(data)
-  local EntityMod = require("entity.song_entity")
   return EntityMod.new(self, data)
 end
 

@@ -220,105 +220,45 @@ class PonySDK:
         }
 
 
-    @property
-    def character(self):
-        """Idiomatic facade: client.character.list() / client.character.load({"id": ...})."""
-        from entity.character_entity import CharacterEntity
-        cached = getattr(self, "_character", None)
-        if cached is None:
-            cached = CharacterEntity(self, None)
-            self._character = cached
-        return cached
-
-    def Character(self, data=None):
-        # Deprecated: use client.character instead.
+    def Character(self, data=None) -> "CharacterEntity":
+        """Entity factory: client.Character().list({}) / client.Character().load({"id": ...})."""
         from entity.character_entity import CharacterEntity
         return CharacterEntity(self, data)
 
 
-    @property
-    def comic(self):
-        """Idiomatic facade: client.comic.list() / client.comic.load({"id": ...})."""
-        from entity.comic_entity import ComicEntity
-        cached = getattr(self, "_comic", None)
-        if cached is None:
-            cached = ComicEntity(self, None)
-            self._comic = cached
-        return cached
-
-    def Comic(self, data=None):
-        # Deprecated: use client.comic instead.
+    def Comic(self, data=None) -> "ComicEntity":
+        """Entity factory: client.Comic().list({}) / client.Comic().load({"id": ...})."""
         from entity.comic_entity import ComicEntity
         return ComicEntity(self, data)
 
 
-    @property
-    def episode(self):
-        """Idiomatic facade: client.episode.list() / client.episode.load({"id": ...})."""
-        from entity.episode_entity import EpisodeEntity
-        cached = getattr(self, "_episode", None)
-        if cached is None:
-            cached = EpisodeEntity(self, None)
-            self._episode = cached
-        return cached
-
-    def Episode(self, data=None):
-        # Deprecated: use client.episode instead.
+    def Episode(self, data=None) -> "EpisodeEntity":
+        """Entity factory: client.Episode().list({}) / client.Episode().load({"id": ...})."""
         from entity.episode_entity import EpisodeEntity
         return EpisodeEntity(self, data)
 
 
-    @property
-    def image(self):
-        """Idiomatic facade: client.image.list() / client.image.load({"id": ...})."""
-        from entity.image_entity import ImageEntity
-        cached = getattr(self, "_image", None)
-        if cached is None:
-            cached = ImageEntity(self, None)
-            self._image = cached
-        return cached
-
-    def Image(self, data=None):
-        # Deprecated: use client.image instead.
+    def Image(self, data=None) -> "ImageEntity":
+        """Entity factory: client.Image().list({}) / client.Image().load({"id": ...})."""
         from entity.image_entity import ImageEntity
         return ImageEntity(self, data)
 
 
-    @property
-    def kind(self):
-        """Idiomatic facade: client.kind.list() / client.kind.load({"id": ...})."""
-        from entity.kind_entity import KindEntity
-        cached = getattr(self, "_kind", None)
-        if cached is None:
-            cached = KindEntity(self, None)
-            self._kind = cached
-        return cached
-
-    def Kind(self, data=None):
-        # Deprecated: use client.kind instead.
+    def Kind(self, data=None) -> "KindEntity":
+        """Entity factory: client.Kind().list({}) / client.Kind().load({"id": ...})."""
         from entity.kind_entity import KindEntity
         return KindEntity(self, data)
 
 
-    @property
-    def song(self):
-        """Idiomatic facade: client.song.list() / client.song.load({"id": ...})."""
-        from entity.song_entity import SongEntity
-        cached = getattr(self, "_song", None)
-        if cached is None:
-            cached = SongEntity(self, None)
-            self._song = cached
-        return cached
-
-    def Song(self, data=None):
-        # Deprecated: use client.song instead.
+    def Song(self, data=None) -> "SongEntity":
+        """Entity factory: client.Song().list({}) / client.Song().load({"id": ...})."""
         from entity.song_entity import SongEntity
         return SongEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "PonySDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -338,3 +278,14 @@ class PonySDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.character_entity import CharacterEntity
+    from entity.comic_entity import ComicEntity
+    from entity.episode_entity import EpisodeEntity
+    from entity.image_entity import ImageEntity
+    from entity.kind_entity import KindEntity
+    from entity.song_entity import SongEntity

@@ -208,78 +208,42 @@ class PonySDK
   end
 
 
-  # Idiomatic facade: client.character.list / client.character.load({ "id" => ... })
-  def character
-    require_relative 'entity/character_entity'
-    @character ||= CharacterEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.character instead.
+  # Canonical facade: client.Character.list / client.Character.load({ "id" => ... })
   def Character(data = nil)
     require_relative 'entity/character_entity'
     CharacterEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.comic.list / client.comic.load({ "id" => ... })
-  def comic
-    require_relative 'entity/comic_entity'
-    @comic ||= ComicEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.comic instead.
+  # Canonical facade: client.Comic.list / client.Comic.load({ "id" => ... })
   def Comic(data = nil)
     require_relative 'entity/comic_entity'
     ComicEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.episode.list / client.episode.load({ "id" => ... })
-  def episode
-    require_relative 'entity/episode_entity'
-    @episode ||= EpisodeEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.episode instead.
+  # Canonical facade: client.Episode.list / client.Episode.load({ "id" => ... })
   def Episode(data = nil)
     require_relative 'entity/episode_entity'
     EpisodeEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.image.list / client.image.load({ "id" => ... })
-  def image
-    require_relative 'entity/image_entity'
-    @image ||= ImageEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.image instead.
+  # Canonical facade: client.Image.list / client.Image.load({ "id" => ... })
   def Image(data = nil)
     require_relative 'entity/image_entity'
     ImageEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.kind.list / client.kind.load({ "id" => ... })
-  def kind
-    require_relative 'entity/kind_entity'
-    @kind ||= KindEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.kind instead.
+  # Canonical facade: client.Kind.list / client.Kind.load({ "id" => ... })
   def Kind(data = nil)
     require_relative 'entity/kind_entity'
     KindEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.song.list / client.song.load({ "id" => ... })
-  def song
-    require_relative 'entity/song_entity'
-    @song ||= SongEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.song instead.
+  # Canonical facade: client.Song.list / client.Song.load({ "id" => ... })
   def Song(data = nil)
     require_relative 'entity/song_entity'
     SongEntity.new(self, data)

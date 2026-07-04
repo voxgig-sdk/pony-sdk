@@ -31,24 +31,28 @@ from pony_sdk import PonySDK
 client = PonySDK()
 ```
 
-### 2. List characters
+### 2. List character records
+
+`list()` returns a `list` of records (each a `dict`) and raises on
+error — iterate it directly.
 
 ```python
 try:
-    result = client.character.list()
-    for item in result:
-        d = item.data_get()
-        print(d["id"], d["name"])
+    characters = client.Character().list({})
+    for character in characters:
+        print(character)
 except Exception as err:
     print(f"list failed: {err}")
 ```
 
 ### 3. Load a character
 
+`load()` returns the bare record (a `dict`) and raises on error.
+
 ```python
 try:
-    result = client.character.load({"id": "example_id"})
-    print(result)
+    character = client.Character().load({"id": "example_id"})
+    print(character)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -96,8 +100,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = PonySDK.test()
 
-result = client.character.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+character = client.Character().load({"id": "test01"})
+# character contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -175,8 +180,8 @@ Creates a test-mode client with mock transport. Both arguments may be `None`.
 | `direct` | `(fetchargs) -> dict` | Build and send an HTTP request. Returns a result dict (branch on `ok`). |
 | `Character` | `(data) -> CharacterEntity` | Create a Character entity instance. |
 | `Comic` | `(data) -> ComicEntity` | Create a Comic entity instance. |
-| `Episode` | `(data) -> EpisodeEntity` | Create a Episode entity instance. |
-| `Image` | `(data) -> ImageEntity` | Create a Image entity instance. |
+| `Episode` | `(data) -> EpisodeEntity` | Create an Episode entity instance. |
+| `Image` | `(data) -> ImageEntity` | Create an Image entity instance. |
 | `Kind` | `(data) -> KindEntity` | Create a Kind entity instance. |
 | `Song` | `(data) -> SongEntity` | Create a Song entity instance. |
 
@@ -303,7 +308,7 @@ API path: `/song/all`
 
 ### Character
 
-Create an instance: `const character = client.character`
+Create an instance: `character = client.Character()`
 
 #### Operations
 
@@ -323,20 +328,20 @@ Create an instance: `const character = client.character`
 
 #### Example: Load
 
-```ts
-const character = await client.character.load({ id: 'character_id' })
+```python
+character = client.Character().load({"id": "character_id"})
 ```
 
 #### Example: List
 
-```ts
-const characters = await client.character.list()
+```python
+characters = client.Character().list({})
 ```
 
 
 ### Comic
 
-Create an instance: `const comic = client.comic`
+Create an instance: `comic = client.Comic()`
 
 #### Operations
 
@@ -356,20 +361,20 @@ Create an instance: `const comic = client.comic`
 
 #### Example: Load
 
-```ts
-const comic = await client.comic.load({ id: 'comic_id' })
+```python
+comic = client.Comic().load({"id": "comic_id"})
 ```
 
 #### Example: List
 
-```ts
-const comics = await client.comic.list()
+```python
+comics = client.Comic().list({})
 ```
 
 
 ### Episode
 
-Create an instance: `const episode = client.episode`
+Create an instance: `episode = client.Episode()`
 
 #### Operations
 
@@ -389,20 +394,20 @@ Create an instance: `const episode = client.episode`
 
 #### Example: Load
 
-```ts
-const episode = await client.episode.load({ id: 'episode_id' })
+```python
+episode = client.Episode().load({"id": "episode_id"})
 ```
 
 #### Example: List
 
-```ts
-const episodes = await client.episode.list()
+```python
+episodes = client.Episode().list({})
 ```
 
 
 ### Image
 
-Create an instance: `const image = client.image`
+Create an instance: `image = client.Image()`
 
 #### Operations
 
@@ -421,14 +426,14 @@ Create an instance: `const image = client.image`
 
 #### Example: List
 
-```ts
-const images = await client.image.list()
+```python
+images = client.Image().list({})
 ```
 
 
 ### Kind
 
-Create an instance: `const kind = client.kind`
+Create an instance: `kind = client.Kind()`
 
 #### Operations
 
@@ -448,20 +453,20 @@ Create an instance: `const kind = client.kind`
 
 #### Example: Load
 
-```ts
-const kind = await client.kind.load({ id: 'kind_id' })
+```python
+kind = client.Kind().load({"id": "kind_id"})
 ```
 
 #### Example: List
 
-```ts
-const kinds = await client.kind.list()
+```python
+kinds = client.Kind().list({})
 ```
 
 
 ### Song
 
-Create an instance: `const song = client.song`
+Create an instance: `song = client.Song()`
 
 #### Operations
 
@@ -481,14 +486,14 @@ Create an instance: `const song = client.song`
 
 #### Example: Load
 
-```ts
-const song = await client.song.load({ id: 'song_id' })
+```python
+song = client.Song().load({"id": "song_id"})
 ```
 
 #### Example: List
 
-```ts
-const songs = await client.song.list()
+```python
+songs = client.Song().list({})
 ```
 
 
@@ -562,7 +567,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-character = client.character
+character = client.Character()
 character.load({"id": "example_id"})
 
 # character.data_get() now returns the loaded character data

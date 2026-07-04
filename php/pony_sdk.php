@@ -233,10 +233,10 @@ class PonySDK
 
     private $_character = null;
 
-    // Idiomatic facade: $client->character()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Character() (PHP method
-    // names are case-insensitive).
-    public function character($data = null)
+    // Canonical facade: $client->Character()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->character()
+    // resolves here too.
+    public function Character($data = null)
     {
         require_once __DIR__ . '/entity/character_entity.php';
         if ($data === null) {
@@ -251,10 +251,10 @@ class PonySDK
 
     private $_comic = null;
 
-    // Idiomatic facade: $client->comic()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Comic() (PHP method
-    // names are case-insensitive).
-    public function comic($data = null)
+    // Canonical facade: $client->Comic()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->comic()
+    // resolves here too.
+    public function Comic($data = null)
     {
         require_once __DIR__ . '/entity/comic_entity.php';
         if ($data === null) {
@@ -269,10 +269,10 @@ class PonySDK
 
     private $_episode = null;
 
-    // Idiomatic facade: $client->episode()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Episode() (PHP method
-    // names are case-insensitive).
-    public function episode($data = null)
+    // Canonical facade: $client->Episode()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->episode()
+    // resolves here too.
+    public function Episode($data = null)
     {
         require_once __DIR__ . '/entity/episode_entity.php';
         if ($data === null) {
@@ -287,10 +287,10 @@ class PonySDK
 
     private $_image = null;
 
-    // Idiomatic facade: $client->image()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Image() (PHP method
-    // names are case-insensitive).
-    public function image($data = null)
+    // Canonical facade: $client->Image()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->image()
+    // resolves here too.
+    public function Image($data = null)
     {
         require_once __DIR__ . '/entity/image_entity.php';
         if ($data === null) {
@@ -305,10 +305,10 @@ class PonySDK
 
     private $_kind = null;
 
-    // Idiomatic facade: $client->kind()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Kind() (PHP method
-    // names are case-insensitive).
-    public function kind($data = null)
+    // Canonical facade: $client->Kind()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->kind()
+    // resolves here too.
+    public function Kind($data = null)
     {
         require_once __DIR__ . '/entity/kind_entity.php';
         if ($data === null) {
@@ -323,10 +323,10 @@ class PonySDK
 
     private $_song = null;
 
-    // Idiomatic facade: $client->song()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Song() (PHP method
-    // names are case-insensitive).
-    public function song($data = null)
+    // Canonical facade: $client->Song()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->song()
+    // resolves here too.
+    public function Song($data = null)
     {
         require_once __DIR__ . '/entity/song_entity.php';
         if ($data === null) {

@@ -4,136 +4,141 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class Character:
+class CharacterRequired(TypedDict):
     status: int
-    data: Optional[list] = None
-    error: Optional[str] = None
-    warning: Optional[str] = None
 
 
-@dataclass
-class CharacterLoadMatch:
+class Character(CharacterRequired, total=False):
+    data: list
+    error: str
+    warning: str
+
+
+class CharacterLoadMatch(TypedDict):
     id: str
     kind: Any
     occupation: str
     residence: str
 
 
-@dataclass
-class CharacterListMatch:
-    data: Optional[list] = None
-    error: Optional[str] = None
-    status: Optional[int] = None
-    warning: Optional[str] = None
-
-
-@dataclass
-class Comic:
+class CharacterListMatch(TypedDict, total=False):
+    data: list
+    error: str
     status: int
-    data: Optional[list] = None
-    error: Optional[str] = None
-    warning: Optional[str] = None
+    warning: str
 
 
-@dataclass
-class ComicLoadMatch:
+class ComicRequired(TypedDict):
+    status: int
+
+
+class Comic(ComicRequired, total=False):
+    data: list
+    error: str
+    warning: str
+
+
+class ComicLoadMatch(TypedDict):
     id: str
     series: str
 
 
-@dataclass
-class ComicListMatch:
-    data: Optional[list] = None
-    error: Optional[str] = None
-    status: Optional[int] = None
-    warning: Optional[str] = None
-
-
-@dataclass
-class Episode:
+class ComicListMatch(TypedDict, total=False):
+    data: list
+    error: str
     status: int
-    data: Optional[list] = None
-    error: Optional[str] = None
-    warning: Optional[str] = None
+    warning: str
 
 
-@dataclass
-class EpisodeLoadMatch:
+class EpisodeRequired(TypedDict):
+    status: int
+
+
+class Episode(EpisodeRequired, total=False):
+    data: list
+    error: str
+    warning: str
+
+
+class EpisodeLoadMatch(TypedDict):
     id: str
     season: int
 
 
-@dataclass
-class EpisodeListMatch:
-    data: Optional[list] = None
-    error: Optional[str] = None
-    status: Optional[int] = None
-    warning: Optional[str] = None
-
-
-@dataclass
-class Image:
+class EpisodeListMatch(TypedDict, total=False):
+    data: list
+    error: str
     status: int
-    data: Optional[list] = None
-    error: Optional[str] = None
-    warning: Optional[str] = None
+    warning: str
 
 
-@dataclass
-class ImageListMatch:
-    data: Optional[list] = None
-    error: Optional[str] = None
-    status: Optional[int] = None
-    warning: Optional[str] = None
-
-
-@dataclass
-class Kind:
+class ImageRequired(TypedDict):
     status: int
-    data: Optional[list] = None
-    error: Optional[str] = None
-    warning: Optional[str] = None
 
 
-@dataclass
-class KindLoadMatch:
+class Image(ImageRequired, total=False):
+    data: list
+    error: str
+    warning: str
+
+
+class ImageListMatch(TypedDict, total=False):
+    data: list
+    error: str
+    status: int
+    warning: str
+
+
+class KindRequired(TypedDict):
+    status: int
+
+
+class Kind(KindRequired, total=False):
+    data: list
+    error: str
+    warning: str
+
+
+class KindLoadMatch(TypedDict):
     id: str
 
 
-@dataclass
-class KindListMatch:
-    data: Optional[list] = None
-    error: Optional[str] = None
-    status: Optional[int] = None
-    warning: Optional[str] = None
-
-
-@dataclass
-class Song:
+class KindListMatch(TypedDict, total=False):
+    data: list
+    error: str
     status: int
-    data: Optional[list] = None
-    error: Optional[str] = None
-    warning: Optional[str] = None
+    warning: str
 
 
-@dataclass
-class SongLoadMatch:
+class SongRequired(TypedDict):
+    status: int
+
+
+class Song(SongRequired, total=False):
+    data: list
+    error: str
+    warning: str
+
+
+class SongLoadMatch(TypedDict):
     episode: Any
     id: str
 
 
-@dataclass
-class SongListMatch:
-    data: Optional[list] = None
-    error: Optional[str] = None
-    status: Optional[int] = None
-    warning: Optional[str] = None
-
+class SongListMatch(TypedDict, total=False):
+    data: list
+    error: str
+    status: int
+    warning: str
