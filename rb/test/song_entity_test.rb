@@ -43,14 +43,12 @@ class SongEntityTest < Minitest::Test
     song_ref01_ent = client.Song(nil)
     song_ref01_match = {}
 
-    song_ref01_list_result, err = song_ref01_ent.list(song_ref01_match, nil)
-    assert_nil err
+    song_ref01_list_result = song_ref01_ent.list(song_ref01_match, nil)
     assert song_ref01_list_result.is_a?(Array)
 
     # LOAD
     song_ref01_match_dt0 = {}
-    song_ref01_data_dt0_loaded, err = song_ref01_ent.load(song_ref01_match_dt0, nil)
-    assert_nil err
+    song_ref01_data_dt0_loaded = song_ref01_ent.load(song_ref01_match_dt0, nil)
     assert !song_ref01_data_dt0_loaded.nil?
 
   end
@@ -89,7 +87,6 @@ def song_basic_setup(extra)
     "PONY_TEST_SONG_ENTID" => idmap,
     "PONY_TEST_LIVE" => "FALSE",
     "PONY_TEST_EXPLAIN" => "FALSE",
-    "PONY_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -101,7 +98,6 @@ def song_basic_setup(extra)
   if env["PONY_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["PONY_APIKEY"],
       },
       extra || {},
     ])

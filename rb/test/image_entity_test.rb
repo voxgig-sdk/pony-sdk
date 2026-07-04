@@ -43,8 +43,7 @@ class ImageEntityTest < Minitest::Test
     image_ref01_ent = client.Image(nil)
     image_ref01_match = {}
 
-    image_ref01_list_result, err = image_ref01_ent.list(image_ref01_match, nil)
-    assert_nil err
+    image_ref01_list_result = image_ref01_ent.list(image_ref01_match, nil)
     assert image_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def image_basic_setup(extra)
     "PONY_TEST_IMAGE_ENTID" => idmap,
     "PONY_TEST_LIVE" => "FALSE",
     "PONY_TEST_EXPLAIN" => "FALSE",
-    "PONY_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def image_basic_setup(extra)
   if env["PONY_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["PONY_APIKEY"],
       },
       extra || {},
     ])

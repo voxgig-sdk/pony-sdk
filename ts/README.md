@@ -9,9 +9,12 @@ The TypeScript SDK for the Pony API — a type-safe, entity-oriented client with
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/pony
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/pony-sdk/releases](https://github.com/voxgig-sdk/pony-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,15 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { PonySDK } from 'pony'
+import { PonySDK } from '@voxgig-sdk/pony'
 
-const client = new PonySDK({
-  apikey: process.env.PONY_APIKEY,
-})
+const client = new PonySDK()
 ```
 
 ### 2. List characters
 
 ```ts
-const result = await client.Character().list()
+const result = await client.character.list()
 
 if (result.ok) {
   for (const item of result.data) {
@@ -42,7 +43,7 @@ if (result.ok) {
 ### 3. Load a character
 
 ```ts
-const result = await client.Character().load({ id: 'example_id' })
+const result = await client.character.load({ id: 'example_id' })
 
 if (result.ok) {
   console.log(result.data)
@@ -91,7 +92,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = PonySDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.character.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -99,7 +100,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new PonySDK({ apikey: '...' })
+const client = new PonySDK()
 const testClient = client.tester()
 ```
 
@@ -108,7 +109,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.character
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -135,7 +136,6 @@ const logger = {
 }
 
 const client = new PonySDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -146,7 +146,6 @@ Create a `.env.local` file at the project root:
 
 ```
 PONY_TEST_LIVE=TRUE
-PONY_APIKEY=<your-key>
 ```
 
 Then run:
@@ -164,7 +163,6 @@ cd ts && npm test
 
 ```ts
 new PonySDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -175,7 +173,6 @@ new PonySDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -351,7 +348,7 @@ API path: `/song/all`
 
 ### Character
 
-Create an instance: `const character = client.Character()`
+Create an instance: `const character = client.character`
 
 #### Operations
 
@@ -372,19 +369,19 @@ Create an instance: `const character = client.Character()`
 #### Example: Load
 
 ```ts
-const character = await client.Character().load({ id: 'character_id' })
+const character = await client.character.load({ id: 'character_id' })
 ```
 
 #### Example: List
 
 ```ts
-const characters = await client.Character().list()
+const characters = await client.character.list()
 ```
 
 
 ### Comic
 
-Create an instance: `const comic = client.Comic()`
+Create an instance: `const comic = client.comic`
 
 #### Operations
 
@@ -405,19 +402,19 @@ Create an instance: `const comic = client.Comic()`
 #### Example: Load
 
 ```ts
-const comic = await client.Comic().load({ id: 'comic_id' })
+const comic = await client.comic.load({ id: 'comic_id' })
 ```
 
 #### Example: List
 
 ```ts
-const comics = await client.Comic().list()
+const comics = await client.comic.list()
 ```
 
 
 ### Episode
 
-Create an instance: `const episode = client.Episode()`
+Create an instance: `const episode = client.episode`
 
 #### Operations
 
@@ -438,19 +435,19 @@ Create an instance: `const episode = client.Episode()`
 #### Example: Load
 
 ```ts
-const episode = await client.Episode().load({ id: 'episode_id' })
+const episode = await client.episode.load({ id: 'episode_id' })
 ```
 
 #### Example: List
 
 ```ts
-const episodes = await client.Episode().list()
+const episodes = await client.episode.list()
 ```
 
 
 ### Image
 
-Create an instance: `const image = client.Image()`
+Create an instance: `const image = client.image`
 
 #### Operations
 
@@ -470,13 +467,13 @@ Create an instance: `const image = client.Image()`
 #### Example: List
 
 ```ts
-const images = await client.Image().list()
+const images = await client.image.list()
 ```
 
 
 ### Kind
 
-Create an instance: `const kind = client.Kind()`
+Create an instance: `const kind = client.kind`
 
 #### Operations
 
@@ -497,19 +494,19 @@ Create an instance: `const kind = client.Kind()`
 #### Example: Load
 
 ```ts
-const kind = await client.Kind().load({ id: 'kind_id' })
+const kind = await client.kind.load({ id: 'kind_id' })
 ```
 
 #### Example: List
 
 ```ts
-const kinds = await client.Kind().list()
+const kinds = await client.kind.list()
 ```
 
 
 ### Song
 
-Create an instance: `const song = client.Song()`
+Create an instance: `const song = client.song`
 
 #### Operations
 
@@ -530,13 +527,13 @@ Create an instance: `const song = client.Song()`
 #### Example: Load
 
 ```ts
-const song = await client.Song().load({ id: 'song_id' })
+const song = await client.song.load({ id: 'song_id' })
 ```
 
 #### Example: List
 
 ```ts
-const songs = await client.Song().list()
+const songs = await client.song.list()
 ```
 
 
@@ -597,7 +594,7 @@ pony/
 Import the SDK from the package root:
 
 ```ts
-import { PonySDK } from 'pony'
+import { PonySDK } from '@voxgig-sdk/pony'
 ```
 
 ### Entity state
@@ -607,11 +604,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const character = client.character
+await character.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// character.data() now returns the loaded character data
+// character.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

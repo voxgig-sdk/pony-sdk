@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch ComicLoadMatch
+---@param ctrl? table
+---@return Comic
+---@return string? err
 function ComicEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({
@@ -104,6 +108,10 @@ end
 
 
 
+---@param reqmatch ComicListMatch
+---@param ctrl? table
+---@return Comic[]
+---@return string? err
 function ComicEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

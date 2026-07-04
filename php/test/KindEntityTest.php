@@ -50,14 +50,12 @@ class KindEntityTest extends TestCase
         $kind_ref01_ent = $client->Kind(null);
         $kind_ref01_match = [];
 
-        [$kind_ref01_list_result, $err] = $kind_ref01_ent->list($kind_ref01_match, null);
-        $this->assertNull($err);
+        $kind_ref01_list_result = $kind_ref01_ent->list($kind_ref01_match, null);
         $this->assertIsArray($kind_ref01_list_result);
 
         // LOAD
         $kind_ref01_match_dt0 = [];
-        [$kind_ref01_data_dt0_loaded, $err] = $kind_ref01_ent->load($kind_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $kind_ref01_data_dt0_loaded = $kind_ref01_ent->load($kind_ref01_match_dt0, null);
         $this->assertNotNull($kind_ref01_data_dt0_loaded);
 
     }
@@ -92,7 +90,6 @@ function kind_basic_setup($extra)
         "PONY_TEST_KIND_ENTID" => $idmap,
         "PONY_TEST_LIVE" => "FALSE",
         "PONY_TEST_EXPLAIN" => "FALSE",
-        "PONY_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -104,7 +101,6 @@ function kind_basic_setup($extra)
     if ($env["PONY_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["PONY_APIKEY"],
             ],
             $extra ?? [],
         ]);

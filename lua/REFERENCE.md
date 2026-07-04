@@ -19,7 +19,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `table` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -104,7 +103,7 @@ same parameters as `direct()`.
 ## CharacterEntity
 
 ```lua
-local character = client:Character(nil)
+local character = client:character(nil)
 ```
 
 ### Fields
@@ -123,7 +122,7 @@ local character = client:Character(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Character():list()
+local results, err = client:character():list()
 ```
 
 #### `load(reqmatch, ctrl) -> any, err`
@@ -131,7 +130,7 @@ local results, err = client:Character():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Character():load({ id = "character_id" })
+local result, err = client:character():load({ id = "character_id" })
 ```
 
 ### Common Methods
@@ -167,7 +166,7 @@ Return the entity name.
 ## ComicEntity
 
 ```lua
-local comic = client:Comic(nil)
+local comic = client:comic(nil)
 ```
 
 ### Fields
@@ -186,7 +185,7 @@ local comic = client:Comic(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Comic():list()
+local results, err = client:comic():list()
 ```
 
 #### `load(reqmatch, ctrl) -> any, err`
@@ -194,7 +193,7 @@ local results, err = client:Comic():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Comic():load({ id = "comic_id" })
+local result, err = client:comic():load({ id = "comic_id" })
 ```
 
 ### Common Methods
@@ -230,7 +229,7 @@ Return the entity name.
 ## EpisodeEntity
 
 ```lua
-local episode = client:Episode(nil)
+local episode = client:episode(nil)
 ```
 
 ### Fields
@@ -249,7 +248,7 @@ local episode = client:Episode(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Episode():list()
+local results, err = client:episode():list()
 ```
 
 #### `load(reqmatch, ctrl) -> any, err`
@@ -257,7 +256,7 @@ local results, err = client:Episode():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Episode():load({ id = "episode_id" })
+local result, err = client:episode():load({ id = "episode_id" })
 ```
 
 ### Common Methods
@@ -293,7 +292,7 @@ Return the entity name.
 ## ImageEntity
 
 ```lua
-local image = client:Image(nil)
+local image = client:image(nil)
 ```
 
 ### Fields
@@ -312,7 +311,7 @@ local image = client:Image(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Image():list()
+local results, err = client:image():list()
 ```
 
 ### Common Methods
@@ -348,7 +347,7 @@ Return the entity name.
 ## KindEntity
 
 ```lua
-local kind = client:Kind(nil)
+local kind = client:kind(nil)
 ```
 
 ### Fields
@@ -367,7 +366,7 @@ local kind = client:Kind(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Kind():list()
+local results, err = client:kind():list()
 ```
 
 #### `load(reqmatch, ctrl) -> any, err`
@@ -375,7 +374,7 @@ local results, err = client:Kind():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Kind():load({ id = "kind_id" })
+local result, err = client:kind():load({ id = "kind_id" })
 ```
 
 ### Common Methods
@@ -411,7 +410,7 @@ Return the entity name.
 ## SongEntity
 
 ```lua
-local song = client:Song(nil)
+local song = client:song(nil)
 ```
 
 ### Fields
@@ -430,7 +429,7 @@ local song = client:Song(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Song():list()
+local results, err = client:song():list()
 ```
 
 #### `load(reqmatch, ctrl) -> any, err`
@@ -438,7 +437,7 @@ local results, err = client:Song():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Song():load({ id = "song_id" })
+local result, err = client:song():load({ id = "song_id" })
 ```
 
 ### Common Methods

@@ -50,14 +50,12 @@ class ComicEntityTest extends TestCase
         $comic_ref01_ent = $client->Comic(null);
         $comic_ref01_match = [];
 
-        [$comic_ref01_list_result, $err] = $comic_ref01_ent->list($comic_ref01_match, null);
-        $this->assertNull($err);
+        $comic_ref01_list_result = $comic_ref01_ent->list($comic_ref01_match, null);
         $this->assertIsArray($comic_ref01_list_result);
 
         // LOAD
         $comic_ref01_match_dt0 = [];
-        [$comic_ref01_data_dt0_loaded, $err] = $comic_ref01_ent->load($comic_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $comic_ref01_data_dt0_loaded = $comic_ref01_ent->load($comic_ref01_match_dt0, null);
         $this->assertNotNull($comic_ref01_data_dt0_loaded);
 
     }
@@ -92,7 +90,6 @@ function comic_basic_setup($extra)
         "PONY_TEST_COMIC_ENTID" => $idmap,
         "PONY_TEST_LIVE" => "FALSE",
         "PONY_TEST_EXPLAIN" => "FALSE",
-        "PONY_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -104,7 +101,6 @@ function comic_basic_setup($extra)
     if ($env["PONY_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["PONY_APIKEY"],
             ],
             $extra ?? [],
         ]);

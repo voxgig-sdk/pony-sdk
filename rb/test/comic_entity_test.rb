@@ -43,14 +43,12 @@ class ComicEntityTest < Minitest::Test
     comic_ref01_ent = client.Comic(nil)
     comic_ref01_match = {}
 
-    comic_ref01_list_result, err = comic_ref01_ent.list(comic_ref01_match, nil)
-    assert_nil err
+    comic_ref01_list_result = comic_ref01_ent.list(comic_ref01_match, nil)
     assert comic_ref01_list_result.is_a?(Array)
 
     # LOAD
     comic_ref01_match_dt0 = {}
-    comic_ref01_data_dt0_loaded, err = comic_ref01_ent.load(comic_ref01_match_dt0, nil)
-    assert_nil err
+    comic_ref01_data_dt0_loaded = comic_ref01_ent.load(comic_ref01_match_dt0, nil)
     assert !comic_ref01_data_dt0_loaded.nil?
 
   end
@@ -89,7 +87,6 @@ def comic_basic_setup(extra)
     "PONY_TEST_COMIC_ENTID" => idmap,
     "PONY_TEST_LIVE" => "FALSE",
     "PONY_TEST_EXPLAIN" => "FALSE",
-    "PONY_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -101,7 +98,6 @@ def comic_basic_setup(extra)
   if env["PONY_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["PONY_APIKEY"],
       },
       extra || {},
     ])

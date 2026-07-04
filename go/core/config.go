@@ -14,9 +14,6 @@ func MakeConfig() map[string]any {
 		},
 		"options": map[string]any{
 			"base": "http://ponyapi.net/v1",
-			"auth": map[string]any{
-				"prefix": "Bearer",
-			},
 			"headers": map[string]any{
 				"content-type": "application/json",
 			},
@@ -128,6 +125,7 @@ func MakeConfig() map[string]any {
 											"orig": "character",
 											"reqd": true,
 											"type": "`$STRING`",
+											"index$": 0,
 										},
 									},
 									"query": []any{
@@ -187,6 +185,7 @@ func MakeConfig() map[string]any {
 											"orig": "kind",
 											"reqd": true,
 											"type": "`$ANY`",
+											"index$": 0,
 										},
 									},
 									"query": []any{
@@ -242,6 +241,7 @@ func MakeConfig() map[string]any {
 											"orig": "occupation",
 											"reqd": true,
 											"type": "`$STRING`",
+											"index$": 0,
 										},
 									},
 									"query": []any{
@@ -296,6 +296,7 @@ func MakeConfig() map[string]any {
 											"orig": "residence",
 											"reqd": true,
 											"type": "`$STRING`",
+											"index$": 0,
 										},
 									},
 									"query": []any{
@@ -455,6 +456,7 @@ func MakeConfig() map[string]any {
 											"orig": "comic",
 											"reqd": true,
 											"type": "`$STRING`",
+											"index$": 0,
 										},
 									},
 									"query": []any{
@@ -513,6 +515,7 @@ func MakeConfig() map[string]any {
 											"orig": "series",
 											"reqd": true,
 											"type": "`$STRING`",
+											"index$": 0,
 										},
 									},
 									"query": []any{
@@ -666,6 +669,7 @@ func MakeConfig() map[string]any {
 											"orig": "episode",
 											"reqd": true,
 											"type": "`$STRING`",
+											"index$": 0,
 										},
 									},
 									"query": []any{
@@ -724,6 +728,7 @@ func MakeConfig() map[string]any {
 											"orig": "season",
 											"reqd": true,
 											"type": "`$INTEGER`",
+											"index$": 0,
 										},
 									},
 									"query": []any{
@@ -965,6 +970,7 @@ func MakeConfig() map[string]any {
 											"orig": "kind",
 											"reqd": true,
 											"type": "`$STRING`",
+											"index$": 0,
 										},
 									},
 								},
@@ -1096,6 +1102,7 @@ func MakeConfig() map[string]any {
 											"orig": "episode",
 											"reqd": true,
 											"type": "`$ANY`",
+											"index$": 0,
 										},
 									},
 									"query": []any{
@@ -1150,6 +1157,7 @@ func MakeConfig() map[string]any {
 											"orig": "song",
 											"reqd": true,
 											"type": "`$STRING`",
+											"index$": 0,
 										},
 									},
 									"query": []any{

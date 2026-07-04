@@ -50,14 +50,12 @@ class SongEntityTest extends TestCase
         $song_ref01_ent = $client->Song(null);
         $song_ref01_match = [];
 
-        [$song_ref01_list_result, $err] = $song_ref01_ent->list($song_ref01_match, null);
-        $this->assertNull($err);
+        $song_ref01_list_result = $song_ref01_ent->list($song_ref01_match, null);
         $this->assertIsArray($song_ref01_list_result);
 
         // LOAD
         $song_ref01_match_dt0 = [];
-        [$song_ref01_data_dt0_loaded, $err] = $song_ref01_ent->load($song_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $song_ref01_data_dt0_loaded = $song_ref01_ent->load($song_ref01_match_dt0, null);
         $this->assertNotNull($song_ref01_data_dt0_loaded);
 
     }
@@ -92,7 +90,6 @@ function song_basic_setup($extra)
         "PONY_TEST_SONG_ENTID" => $idmap,
         "PONY_TEST_LIVE" => "FALSE",
         "PONY_TEST_EXPLAIN" => "FALSE",
-        "PONY_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -104,7 +101,6 @@ function song_basic_setup($extra)
     if ($env["PONY_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["PONY_APIKEY"],
             ],
             $extra ?? [],
         ]);

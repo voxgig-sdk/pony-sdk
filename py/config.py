@@ -15,9 +15,6 @@ def make_config():
         },
         "options": {
             "base": "http://ponyapi.net/v1",
-            "auth": {
-                "prefix": "Bearer",
-            },
             "headers": {
         "content-type": "application/json",
       },
@@ -129,6 +126,7 @@ def make_config():
                       "orig": "character",
                       "reqd": True,
                       "type": "`$STRING`",
+                      "index$": 0,
                     },
                   ],
                   "query": [
@@ -188,6 +186,7 @@ def make_config():
                       "orig": "kind",
                       "reqd": True,
                       "type": "`$ANY`",
+                      "index$": 0,
                     },
                   ],
                   "query": [
@@ -243,6 +242,7 @@ def make_config():
                       "orig": "occupation",
                       "reqd": True,
                       "type": "`$STRING`",
+                      "index$": 0,
                     },
                   ],
                   "query": [
@@ -297,6 +297,7 @@ def make_config():
                       "orig": "residence",
                       "reqd": True,
                       "type": "`$STRING`",
+                      "index$": 0,
                     },
                   ],
                   "query": [
@@ -456,6 +457,7 @@ def make_config():
                       "orig": "comic",
                       "reqd": True,
                       "type": "`$STRING`",
+                      "index$": 0,
                     },
                   ],
                   "query": [
@@ -514,6 +516,7 @@ def make_config():
                       "orig": "series",
                       "reqd": True,
                       "type": "`$STRING`",
+                      "index$": 0,
                     },
                   ],
                   "query": [
@@ -667,6 +670,7 @@ def make_config():
                       "orig": "episode",
                       "reqd": True,
                       "type": "`$STRING`",
+                      "index$": 0,
                     },
                   ],
                   "query": [
@@ -725,6 +729,7 @@ def make_config():
                       "orig": "season",
                       "reqd": True,
                       "type": "`$INTEGER`",
+                      "index$": 0,
                     },
                   ],
                   "query": [
@@ -966,6 +971,7 @@ def make_config():
                       "orig": "kind",
                       "reqd": True,
                       "type": "`$STRING`",
+                      "index$": 0,
                     },
                   ],
                 },
@@ -1097,6 +1103,7 @@ def make_config():
                       "orig": "episode",
                       "reqd": True,
                       "type": "`$ANY`",
+                      "index$": 0,
                     },
                   ],
                   "query": [
@@ -1151,6 +1158,7 @@ def make_config():
                       "orig": "song",
                       "reqd": True,
                       "type": "`$STRING`",
+                      "index$": 0,
                     },
                   ],
                   "query": [

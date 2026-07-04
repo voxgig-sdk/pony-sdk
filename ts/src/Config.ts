@@ -38,10 +38,6 @@ class Config {
   options = {
     base: 'http://ponyapi.net/v1',
 
-    auth: {
-      prefix: 'Bearer',
-    },
-
     headers: {
       "content-type": "application/json"
     },
@@ -168,7 +164,8 @@ class Config {
                     "name": "id",
                     "orig": "character",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ],
                 "query": [
@@ -227,7 +224,8 @@ class Config {
                     "name": "kind",
                     "orig": "kind",
                     "reqd": true,
-                    "type": "`$ANY`"
+                    "type": "`$ANY`",
+                    "index$": 0
                   }
                 ],
                 "query": [
@@ -282,7 +280,8 @@ class Config {
                     "name": "occupation",
                     "orig": "occupation",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ],
                 "query": [
@@ -336,7 +335,8 @@ class Config {
                     "name": "residence",
                     "orig": "residence",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ],
                 "query": [
@@ -495,7 +495,8 @@ class Config {
                     "name": "id",
                     "orig": "comic",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ],
                 "query": [
@@ -553,7 +554,8 @@ class Config {
                     "name": "series",
                     "orig": "series",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ],
                 "query": [
@@ -706,7 +708,8 @@ class Config {
                     "name": "id",
                     "orig": "episode",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ],
                 "query": [
@@ -764,7 +767,8 @@ class Config {
                     "name": "season",
                     "orig": "season",
                     "reqd": true,
-                    "type": "`$INTEGER`"
+                    "type": "`$INTEGER`",
+                    "index$": 0
                   }
                 ],
                 "query": [
@@ -1005,7 +1009,8 @@ class Config {
                     "name": "id",
                     "orig": "kind",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ]
               },
@@ -1136,7 +1141,8 @@ class Config {
                     "name": "episode",
                     "orig": "episode",
                     "reqd": true,
-                    "type": "`$ANY`"
+                    "type": "`$ANY`",
+                    "index$": 0
                   }
                 ],
                 "query": [
@@ -1190,7 +1196,8 @@ class Config {
                     "name": "id",
                     "orig": "song",
                     "reqd": true,
-                    "type": "`$STRING`"
+                    "type": "`$STRING`",
+                    "index$": 0
                   }
                 ],
                 "query": [

@@ -50,14 +50,12 @@ class TestSongEntity:
         song_ref01_ent = client.Song(None)
         song_ref01_match = {}
 
-        song_ref01_list_result, err = song_ref01_ent.list(song_ref01_match, None)
-        assert err is None
+        song_ref01_list_result = song_ref01_ent.list(song_ref01_match, None)
         assert isinstance(song_ref01_list_result, list)
 
         # LOAD
         song_ref01_match_dt0 = {}
-        song_ref01_data_dt0_loaded, err = song_ref01_ent.load(song_ref01_match_dt0, None)
-        assert err is None
+        song_ref01_data_dt0_loaded = song_ref01_ent.load(song_ref01_match_dt0, None)
         assert song_ref01_data_dt0_loaded is not None
 
 
@@ -98,7 +96,6 @@ def _song_basic_setup(extra):
         "PONY_TEST_SONG_ENTID": idmap,
         "PONY_TEST_LIVE": "FALSE",
         "PONY_TEST_EXPLAIN": "FALSE",
-        "PONY_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -109,7 +106,6 @@ def _song_basic_setup(extra):
     if env.get("PONY_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("PONY_APIKEY"),
             },
             extra or {},
         ])

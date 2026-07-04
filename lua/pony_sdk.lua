@@ -244,36 +244,114 @@ end
 
 
 
+-- Idiomatic facade: client:character():list() / client:character():load({ id = ... })
+function PonySDK:character(data)
+  local EntityMod = require("entity.character_entity")
+  if data == nil then
+    if self._character == nil then
+      self._character = EntityMod.new(self, nil)
+    end
+    return self._character
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:character() instead.
 function PonySDK:Character(data)
   local EntityMod = require("entity.character_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:comic():list() / client:comic():load({ id = ... })
+function PonySDK:comic(data)
+  local EntityMod = require("entity.comic_entity")
+  if data == nil then
+    if self._comic == nil then
+      self._comic = EntityMod.new(self, nil)
+    end
+    return self._comic
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:comic() instead.
 function PonySDK:Comic(data)
   local EntityMod = require("entity.comic_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:episode():list() / client:episode():load({ id = ... })
+function PonySDK:episode(data)
+  local EntityMod = require("entity.episode_entity")
+  if data == nil then
+    if self._episode == nil then
+      self._episode = EntityMod.new(self, nil)
+    end
+    return self._episode
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:episode() instead.
 function PonySDK:Episode(data)
   local EntityMod = require("entity.episode_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:image():list() / client:image():load({ id = ... })
+function PonySDK:image(data)
+  local EntityMod = require("entity.image_entity")
+  if data == nil then
+    if self._image == nil then
+      self._image = EntityMod.new(self, nil)
+    end
+    return self._image
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:image() instead.
 function PonySDK:Image(data)
   local EntityMod = require("entity.image_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:kind():list() / client:kind():load({ id = ... })
+function PonySDK:kind(data)
+  local EntityMod = require("entity.kind_entity")
+  if data == nil then
+    if self._kind == nil then
+      self._kind = EntityMod.new(self, nil)
+    end
+    return self._kind
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:kind() instead.
 function PonySDK:Kind(data)
   local EntityMod = require("entity.kind_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:song():list() / client:song():load({ id = ... })
+function PonySDK:song(data)
+  local EntityMod = require("entity.song_entity")
+  if data == nil then
+    if self._song == nil then
+      self._song = EntityMod.new(self, nil)
+    end
+    return self._song
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:song() instead.
 function PonySDK:Song(data)
   local EntityMod = require("entity.song_entity")
   return EntityMod.new(self, data)

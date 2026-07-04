@@ -144,16 +144,23 @@ class PonySDK:
 
         _, err = utility.prepare_auth(ctx)
         if err is not None:
-            return None, err
+            raise err
 
-        return utility.make_fetch_def(ctx)
+        fetchdef, err = utility.make_fetch_def(ctx)
+        if err is not None:
+            raise err
+
+        return fetchdef
 
     def direct(self, fetchargs=None):
         utility = self._utility
 
-        fetchdef, err = self.prepare(fetchargs)
-        if err is not None:
-            return {"ok": False, "err": err}, None
+        try:
+            fetchdef = self.prepare(fetchargs)
+        except Exception as err:
+            # direct() is the raw-HTTP escape hatch: it never raises, it
+            # returns a result object callers branch on via result["ok"].
+            return {"ok": False, "err": err}
 
         if fetchargs is None:
             fetchargs = {}
@@ -170,13 +177,13 @@ class PonySDK:
         fetched, fetch_err = utility.fetcher(ctx, url, fetchdef)
 
         if fetch_err is not None:
-            return {"ok": False, "err": fetch_err}, None
+            return {"ok": False, "err": fetch_err}
 
         if fetched is None:
             return {
                 "ok": False,
                 "err": ctx.make_error("direct_no_response", "response: undefined"),
-            }, None
+            }
 
         if isinstance(fetched, dict):
             status = helpers.to_int(vs.getprop(fetched, "status"))
@@ -205,40 +212,106 @@ class PonySDK:
                 "status": status,
                 "headers": headers,
                 "data": json_data,
-            }, None
+            }
 
         return {
             "ok": False,
             "err": ctx.make_error("direct_invalid", "invalid response type"),
-        }, None
+        }
 
+
+    @property
+    def character(self):
+        """Idiomatic facade: client.character.list() / client.character.load({"id": ...})."""
+        from entity.character_entity import CharacterEntity
+        cached = getattr(self, "_character", None)
+        if cached is None:
+            cached = CharacterEntity(self, None)
+            self._character = cached
+        return cached
 
     def Character(self, data=None):
+        # Deprecated: use client.character instead.
         from entity.character_entity import CharacterEntity
         return CharacterEntity(self, data)
 
 
+    @property
+    def comic(self):
+        """Idiomatic facade: client.comic.list() / client.comic.load({"id": ...})."""
+        from entity.comic_entity import ComicEntity
+        cached = getattr(self, "_comic", None)
+        if cached is None:
+            cached = ComicEntity(self, None)
+            self._comic = cached
+        return cached
+
     def Comic(self, data=None):
+        # Deprecated: use client.comic instead.
         from entity.comic_entity import ComicEntity
         return ComicEntity(self, data)
 
 
+    @property
+    def episode(self):
+        """Idiomatic facade: client.episode.list() / client.episode.load({"id": ...})."""
+        from entity.episode_entity import EpisodeEntity
+        cached = getattr(self, "_episode", None)
+        if cached is None:
+            cached = EpisodeEntity(self, None)
+            self._episode = cached
+        return cached
+
     def Episode(self, data=None):
+        # Deprecated: use client.episode instead.
         from entity.episode_entity import EpisodeEntity
         return EpisodeEntity(self, data)
 
 
+    @property
+    def image(self):
+        """Idiomatic facade: client.image.list() / client.image.load({"id": ...})."""
+        from entity.image_entity import ImageEntity
+        cached = getattr(self, "_image", None)
+        if cached is None:
+            cached = ImageEntity(self, None)
+            self._image = cached
+        return cached
+
     def Image(self, data=None):
+        # Deprecated: use client.image instead.
         from entity.image_entity import ImageEntity
         return ImageEntity(self, data)
 
 
+    @property
+    def kind(self):
+        """Idiomatic facade: client.kind.list() / client.kind.load({"id": ...})."""
+        from entity.kind_entity import KindEntity
+        cached = getattr(self, "_kind", None)
+        if cached is None:
+            cached = KindEntity(self, None)
+            self._kind = cached
+        return cached
+
     def Kind(self, data=None):
+        # Deprecated: use client.kind instead.
         from entity.kind_entity import KindEntity
         return KindEntity(self, data)
 
 
+    @property
+    def song(self):
+        """Idiomatic facade: client.song.list() / client.song.load({"id": ...})."""
+        from entity.song_entity import SongEntity
+        cached = getattr(self, "_song", None)
+        if cached is None:
+            cached = SongEntity(self, None)
+            self._song = cached
+        return cached
+
     def Song(self, data=None):
+        # Deprecated: use client.song instead.
         from entity.song_entity import SongEntity
         return SongEntity(self, data)
 

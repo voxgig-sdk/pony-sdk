@@ -50,14 +50,12 @@ class TestKindEntity:
         kind_ref01_ent = client.Kind(None)
         kind_ref01_match = {}
 
-        kind_ref01_list_result, err = kind_ref01_ent.list(kind_ref01_match, None)
-        assert err is None
+        kind_ref01_list_result = kind_ref01_ent.list(kind_ref01_match, None)
         assert isinstance(kind_ref01_list_result, list)
 
         # LOAD
         kind_ref01_match_dt0 = {}
-        kind_ref01_data_dt0_loaded, err = kind_ref01_ent.load(kind_ref01_match_dt0, None)
-        assert err is None
+        kind_ref01_data_dt0_loaded = kind_ref01_ent.load(kind_ref01_match_dt0, None)
         assert kind_ref01_data_dt0_loaded is not None
 
 
@@ -98,7 +96,6 @@ def _kind_basic_setup(extra):
         "PONY_TEST_KIND_ENTID": idmap,
         "PONY_TEST_LIVE": "FALSE",
         "PONY_TEST_EXPLAIN": "FALSE",
-        "PONY_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -109,7 +106,6 @@ def _kind_basic_setup(extra):
     if env.get("PONY_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("PONY_APIKEY"),
             },
             extra or {},
         ])

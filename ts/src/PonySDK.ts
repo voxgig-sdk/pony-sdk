@@ -7,6 +7,8 @@ import { ImageEntity } from './entity/ImageEntity'
 import { KindEntity } from './entity/KindEntity'
 import { SongEntity } from './entity/SongEntity'
 
+export type * from './PonyTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -207,36 +209,84 @@ class PonySDK {
 
 
 
+  _character?: CharacterEntity
+
+  // Idiomatic facade: `client.character.list()` / `client.character.load({ id })`.
+  get character(): CharacterEntity {
+    return (this._character ??= new CharacterEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.character` instead. */
   Character(data?: any) {
     const self = this
     return new CharacterEntity(self,data)
   }
 
 
+  _comic?: ComicEntity
+
+  // Idiomatic facade: `client.comic.list()` / `client.comic.load({ id })`.
+  get comic(): ComicEntity {
+    return (this._comic ??= new ComicEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.comic` instead. */
   Comic(data?: any) {
     const self = this
     return new ComicEntity(self,data)
   }
 
 
+  _episode?: EpisodeEntity
+
+  // Idiomatic facade: `client.episode.list()` / `client.episode.load({ id })`.
+  get episode(): EpisodeEntity {
+    return (this._episode ??= new EpisodeEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.episode` instead. */
   Episode(data?: any) {
     const self = this
     return new EpisodeEntity(self,data)
   }
 
 
+  _image?: ImageEntity
+
+  // Idiomatic facade: `client.image.list()` / `client.image.load({ id })`.
+  get image(): ImageEntity {
+    return (this._image ??= new ImageEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.image` instead. */
   Image(data?: any) {
     const self = this
     return new ImageEntity(self,data)
   }
 
 
+  _kind?: KindEntity
+
+  // Idiomatic facade: `client.kind.list()` / `client.kind.load({ id })`.
+  get kind(): KindEntity {
+    return (this._kind ??= new KindEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.kind` instead. */
   Kind(data?: any) {
     const self = this
     return new KindEntity(self,data)
   }
 
 
+  _song?: SongEntity
+
+  // Idiomatic facade: `client.song.list()` / `client.song.load({ id })`.
+  get song(): SongEntity {
+    return (this._song ??= new SongEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.song` instead. */
   Song(data?: any) {
     const self = this
     return new SongEntity(self,data)

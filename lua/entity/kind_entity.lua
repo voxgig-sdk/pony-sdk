@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch KindLoadMatch
+---@param ctrl? table
+---@return Kind
+---@return string? err
 function KindEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({
@@ -104,6 +108,10 @@ end
 
 
 
+---@param reqmatch KindListMatch
+---@param ctrl? table
+---@return Kind[]
+---@return string? err
 function KindEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

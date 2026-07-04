@@ -13,6 +13,9 @@ require_relative 'config'
 require_relative 'feature/base_feature'
 require_relative 'features'
 
+# Load typed models (Struct value objects).
+require_relative 'Pony_types'
+
 
 class PonySDK
   attr_accessor :mode, :features, :options
@@ -131,7 +134,7 @@ class PonySDK
     end
 
     _, err = utility.prepare_auth.call(ctx)
-    return nil, err if err
+    raise err if err
 
     utility.make_fetch_def.call(ctx)
   end
@@ -139,8 +142,14 @@ class PonySDK
   def direct(fetchargs = {})
     utility = @_utility
 
-    fetchdef, err = prepare(fetchargs)
-    return { "ok" => false, "err" => err }, nil if err
+    # direct() is the raw-HTTP escape hatch: it always returns a result hash
+    # ({ "ok" => ..., ... }) and never raises. prepare() raises on error, so
+    # trap that and surface it in the hash.
+    begin
+      fetchdef = prepare(fetchargs)
+    rescue PonyError => err
+      return { "ok" => false, "err" => err }
+    end
 
     fetchargs ||= {}
     ctrl = PonyHelpers.to_map(VoxgigStruct.getprop(fetchargs, "ctrl")) || {}
@@ -153,13 +162,13 @@ class PonySDK
     url = fetchdef["url"] || ""
     fetched, fetch_err = utility.fetcher.call(ctx, url, fetchdef)
 
-    return { "ok" => false, "err" => fetch_err }, nil if fetch_err
+    return { "ok" => false, "err" => fetch_err } if fetch_err
 
     if fetched.nil?
       return {
         "ok" => false,
         "err" => ctx.make_error("direct_no_response", "response: undefined"),
-      }, nil
+      }
     end
 
     if fetched.is_a?(Hash)
@@ -189,46 +198,88 @@ class PonySDK
         "status" => status,
         "headers" => headers,
         "data" => json_data,
-      }, nil
+      }
     end
 
     return {
       "ok" => false,
       "err" => ctx.make_error("direct_invalid", "invalid response type"),
-    }, nil
+    }
   end
 
 
+  # Idiomatic facade: client.character.list / client.character.load({ "id" => ... })
+  def character
+    require_relative 'entity/character_entity'
+    @character ||= CharacterEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.character instead.
   def Character(data = nil)
     require_relative 'entity/character_entity'
     CharacterEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.comic.list / client.comic.load({ "id" => ... })
+  def comic
+    require_relative 'entity/comic_entity'
+    @comic ||= ComicEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.comic instead.
   def Comic(data = nil)
     require_relative 'entity/comic_entity'
     ComicEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.episode.list / client.episode.load({ "id" => ... })
+  def episode
+    require_relative 'entity/episode_entity'
+    @episode ||= EpisodeEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.episode instead.
   def Episode(data = nil)
     require_relative 'entity/episode_entity'
     EpisodeEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.image.list / client.image.load({ "id" => ... })
+  def image
+    require_relative 'entity/image_entity'
+    @image ||= ImageEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.image instead.
   def Image(data = nil)
     require_relative 'entity/image_entity'
     ImageEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.kind.list / client.kind.load({ "id" => ... })
+  def kind
+    require_relative 'entity/kind_entity'
+    @kind ||= KindEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.kind instead.
   def Kind(data = nil)
     require_relative 'entity/kind_entity'
     KindEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.song.list / client.song.load({ "id" => ... })
+  def song
+    require_relative 'entity/song_entity'
+    @song ||= SongEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.song instead.
   def Song(data = nil)
     require_relative 'entity/song_entity'
     SongEntity.new(self, data)

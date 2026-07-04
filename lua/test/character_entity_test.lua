@@ -98,7 +98,6 @@ function character_basic_setup(extra)
     ["PONY_TEST_CHARACTER_ENTID"] = idmap,
     ["PONY_TEST_LIVE"] = "FALSE",
     ["PONY_TEST_EXPLAIN"] = "FALSE",
-    ["PONY_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -110,7 +109,6 @@ function character_basic_setup(extra)
   if env["PONY_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
-        apikey = env["PONY_APIKEY"],
       },
       extra or {},
     })

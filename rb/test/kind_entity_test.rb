@@ -43,14 +43,12 @@ class KindEntityTest < Minitest::Test
     kind_ref01_ent = client.Kind(nil)
     kind_ref01_match = {}
 
-    kind_ref01_list_result, err = kind_ref01_ent.list(kind_ref01_match, nil)
-    assert_nil err
+    kind_ref01_list_result = kind_ref01_ent.list(kind_ref01_match, nil)
     assert kind_ref01_list_result.is_a?(Array)
 
     # LOAD
     kind_ref01_match_dt0 = {}
-    kind_ref01_data_dt0_loaded, err = kind_ref01_ent.load(kind_ref01_match_dt0, nil)
-    assert_nil err
+    kind_ref01_data_dt0_loaded = kind_ref01_ent.load(kind_ref01_match_dt0, nil)
     assert !kind_ref01_data_dt0_loaded.nil?
 
   end
@@ -89,7 +87,6 @@ def kind_basic_setup(extra)
     "PONY_TEST_KIND_ENTID" => idmap,
     "PONY_TEST_LIVE" => "FALSE",
     "PONY_TEST_EXPLAIN" => "FALSE",
-    "PONY_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -101,7 +98,6 @@ def kind_basic_setup(extra)
   if env["PONY_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["PONY_APIKEY"],
       },
       extra || {},
     ])

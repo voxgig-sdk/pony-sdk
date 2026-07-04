@@ -20,9 +20,6 @@ class PonyConfig
             ],
             "options" => [
                 "base" => "http://ponyapi.net/v1",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],
@@ -134,6 +131,7 @@ class PonyConfig
                         'orig' => 'character',
                         'reqd' => true,
                         'type' => '`$STRING`',
+                        'index$' => 0,
                       ],
                     ],
                     'query' => [
@@ -193,6 +191,7 @@ class PonyConfig
                         'orig' => 'kind',
                         'reqd' => true,
                         'type' => '`$ANY`',
+                        'index$' => 0,
                       ],
                     ],
                     'query' => [
@@ -248,6 +247,7 @@ class PonyConfig
                         'orig' => 'occupation',
                         'reqd' => true,
                         'type' => '`$STRING`',
+                        'index$' => 0,
                       ],
                     ],
                     'query' => [
@@ -302,6 +302,7 @@ class PonyConfig
                         'orig' => 'residence',
                         'reqd' => true,
                         'type' => '`$STRING`',
+                        'index$' => 0,
                       ],
                     ],
                     'query' => [
@@ -461,6 +462,7 @@ class PonyConfig
                         'orig' => 'comic',
                         'reqd' => true,
                         'type' => '`$STRING`',
+                        'index$' => 0,
                       ],
                     ],
                     'query' => [
@@ -519,6 +521,7 @@ class PonyConfig
                         'orig' => 'series',
                         'reqd' => true,
                         'type' => '`$STRING`',
+                        'index$' => 0,
                       ],
                     ],
                     'query' => [
@@ -672,6 +675,7 @@ class PonyConfig
                         'orig' => 'episode',
                         'reqd' => true,
                         'type' => '`$STRING`',
+                        'index$' => 0,
                       ],
                     ],
                     'query' => [
@@ -730,6 +734,7 @@ class PonyConfig
                         'orig' => 'season',
                         'reqd' => true,
                         'type' => '`$INTEGER`',
+                        'index$' => 0,
                       ],
                     ],
                     'query' => [
@@ -971,6 +976,7 @@ class PonyConfig
                         'orig' => 'kind',
                         'reqd' => true,
                         'type' => '`$STRING`',
+                        'index$' => 0,
                       ],
                     ],
                   ],
@@ -1102,6 +1108,7 @@ class PonyConfig
                         'orig' => 'episode',
                         'reqd' => true,
                         'type' => '`$ANY`',
+                        'index$' => 0,
                       ],
                     ],
                     'query' => [
@@ -1156,6 +1163,7 @@ class PonyConfig
                         'orig' => 'song',
                         'reqd' => true,
                         'type' => '`$STRING`',
+                        'index$' => 0,
                       ],
                     ],
                     'query' => [

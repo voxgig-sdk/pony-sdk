@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -170,7 +169,7 @@ Alias for `PonySDK.test()`.
 ## CharacterEntity
 
 ```ts
-const character = client.Character()
+const character = client.character
 ```
 
 ### Fields
@@ -189,7 +188,7 @@ const character = client.Character()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Character().list()
+const results = await client.character.list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -197,7 +196,7 @@ const results = await client.Character().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Character().load({ id: 'character_id' })
+const result = await client.character.load({ id: 'character_id' })
 ```
 
 ### Common Methods
@@ -231,7 +230,7 @@ Return a copy of the entity options.
 ## ComicEntity
 
 ```ts
-const comic = client.Comic()
+const comic = client.comic
 ```
 
 ### Fields
@@ -250,7 +249,7 @@ const comic = client.Comic()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Comic().list()
+const results = await client.comic.list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -258,7 +257,7 @@ const results = await client.Comic().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Comic().load({ id: 'comic_id' })
+const result = await client.comic.load({ id: 'comic_id' })
 ```
 
 ### Common Methods
@@ -292,7 +291,7 @@ Return a copy of the entity options.
 ## EpisodeEntity
 
 ```ts
-const episode = client.Episode()
+const episode = client.episode
 ```
 
 ### Fields
@@ -311,7 +310,7 @@ const episode = client.Episode()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Episode().list()
+const results = await client.episode.list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -319,7 +318,7 @@ const results = await client.Episode().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Episode().load({ id: 'episode_id' })
+const result = await client.episode.load({ id: 'episode_id' })
 ```
 
 ### Common Methods
@@ -353,7 +352,7 @@ Return a copy of the entity options.
 ## ImageEntity
 
 ```ts
-const image = client.Image()
+const image = client.image
 ```
 
 ### Fields
@@ -372,7 +371,7 @@ const image = client.Image()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Image().list()
+const results = await client.image.list()
 ```
 
 ### Common Methods
@@ -406,7 +405,7 @@ Return a copy of the entity options.
 ## KindEntity
 
 ```ts
-const kind = client.Kind()
+const kind = client.kind
 ```
 
 ### Fields
@@ -425,7 +424,7 @@ const kind = client.Kind()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Kind().list()
+const results = await client.kind.list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -433,7 +432,7 @@ const results = await client.Kind().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Kind().load({ id: 'kind_id' })
+const result = await client.kind.load({ id: 'kind_id' })
 ```
 
 ### Common Methods
@@ -467,7 +466,7 @@ Return a copy of the entity options.
 ## SongEntity
 
 ```ts
-const song = client.Song()
+const song = client.song
 ```
 
 ### Fields
@@ -486,7 +485,7 @@ const song = client.Song()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Song().list()
+const results = await client.song.list()
 ```
 
 #### `load(match: object, ctrl?: object)`
@@ -494,7 +493,7 @@ const results = await client.Song().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Song().load({ id: 'song_id' })
+const result = await client.song.load({ id: 'song_id' })
 ```
 
 ### Common Methods

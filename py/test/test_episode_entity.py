@@ -50,14 +50,12 @@ class TestEpisodeEntity:
         episode_ref01_ent = client.Episode(None)
         episode_ref01_match = {}
 
-        episode_ref01_list_result, err = episode_ref01_ent.list(episode_ref01_match, None)
-        assert err is None
+        episode_ref01_list_result = episode_ref01_ent.list(episode_ref01_match, None)
         assert isinstance(episode_ref01_list_result, list)
 
         # LOAD
         episode_ref01_match_dt0 = {}
-        episode_ref01_data_dt0_loaded, err = episode_ref01_ent.load(episode_ref01_match_dt0, None)
-        assert err is None
+        episode_ref01_data_dt0_loaded = episode_ref01_ent.load(episode_ref01_match_dt0, None)
         assert episode_ref01_data_dt0_loaded is not None
 
 
@@ -98,7 +96,6 @@ def _episode_basic_setup(extra):
         "PONY_TEST_EPISODE_ENTID": idmap,
         "PONY_TEST_LIVE": "FALSE",
         "PONY_TEST_EXPLAIN": "FALSE",
-        "PONY_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -109,7 +106,6 @@ def _episode_basic_setup(extra):
     if env.get("PONY_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("PONY_APIKEY"),
             },
             extra or {},
         ])

@@ -103,7 +103,7 @@ class PonySDK
         return $this->_rootctx;
     }
 
-    public function prepare(array $fetchargs = []): array
+    public function prepare(array $fetchargs = []): mixed
     {
         $utility = $this->_utility;
         $fetchargs = $fetchargs ?? [];
@@ -149,19 +149,27 @@ class PonySDK
 
         [$_, $err] = ($utility->prepare_auth)($ctx);
         if ($err) {
-            return [null, $err];
+            return ($utility->make_error)($ctx, $err);
         }
 
-        return ($utility->make_fetch_def)($ctx);
+        [$fetchdef, $fd_err] = ($utility->make_fetch_def)($ctx);
+        if ($fd_err) {
+            return ($utility->make_error)($ctx, $fd_err);
+        }
+        return $fetchdef;
     }
 
-    public function direct(array $fetchargs = []): array
+    public function direct(array $fetchargs = []): mixed
     {
         $utility = $this->_utility;
 
-        [$fetchdef, $err] = $this->prepare($fetchargs);
-        if ($err) {
-            return [["ok" => false, "err" => $err], null];
+        // direct() is the raw-HTTP escape hatch: it never throws, it returns
+        // an {ok, err, ...} dict. prepare() now raises on error, so catch it
+        // and surface the failure through the dict instead.
+        try {
+            $fetchdef = $this->prepare($fetchargs);
+        } catch (\Throwable $err) {
+            return ["ok" => false, "err" => $err];
         }
 
         $fetchargs = $fetchargs ?? [];
@@ -176,14 +184,14 @@ class PonySDK
         [$fetched, $fetch_err] = ($utility->fetcher)($ctx, $url, $fetchdef);
 
         if ($fetch_err) {
-            return [["ok" => false, "err" => $fetch_err], null];
+            return ["ok" => false, "err" => $fetch_err];
         }
 
         if ($fetched === null) {
-            return [[
+            return [
                 "ok" => false,
                 "err" => $ctx->make_error("direct_no_response", "response: undefined"),
-            ], null];
+            ];
         }
 
         if (is_array($fetched)) {
@@ -208,59 +216,125 @@ class PonySDK
                 }
             }
 
-            return [[
+            return [
                 "ok" => $status >= 200 && $status < 300,
                 "status" => $status,
                 "headers" => Struct::getprop($fetched, "headers"),
                 "data" => $json_data,
-            ], null];
+            ];
         }
 
-        return [[
+        return [
             "ok" => false,
             "err" => $ctx->make_error("direct_invalid", "invalid response type"),
-        ], null];
+        ];
     }
 
 
-    public function Character($data = null)
+    private $_character = null;
+
+    // Idiomatic facade: $client->character()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Character() (PHP method
+    // names are case-insensitive).
+    public function character($data = null)
     {
         require_once __DIR__ . '/entity/character_entity.php';
+        if ($data === null) {
+            if ($this->_character === null) {
+                $this->_character = new CharacterEntity($this, null);
+            }
+            return $this->_character;
+        }
         return new CharacterEntity($this, $data);
     }
 
 
-    public function Comic($data = null)
+    private $_comic = null;
+
+    // Idiomatic facade: $client->comic()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Comic() (PHP method
+    // names are case-insensitive).
+    public function comic($data = null)
     {
         require_once __DIR__ . '/entity/comic_entity.php';
+        if ($data === null) {
+            if ($this->_comic === null) {
+                $this->_comic = new ComicEntity($this, null);
+            }
+            return $this->_comic;
+        }
         return new ComicEntity($this, $data);
     }
 
 
-    public function Episode($data = null)
+    private $_episode = null;
+
+    // Idiomatic facade: $client->episode()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Episode() (PHP method
+    // names are case-insensitive).
+    public function episode($data = null)
     {
         require_once __DIR__ . '/entity/episode_entity.php';
+        if ($data === null) {
+            if ($this->_episode === null) {
+                $this->_episode = new EpisodeEntity($this, null);
+            }
+            return $this->_episode;
+        }
         return new EpisodeEntity($this, $data);
     }
 
 
-    public function Image($data = null)
+    private $_image = null;
+
+    // Idiomatic facade: $client->image()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Image() (PHP method
+    // names are case-insensitive).
+    public function image($data = null)
     {
         require_once __DIR__ . '/entity/image_entity.php';
+        if ($data === null) {
+            if ($this->_image === null) {
+                $this->_image = new ImageEntity($this, null);
+            }
+            return $this->_image;
+        }
         return new ImageEntity($this, $data);
     }
 
 
-    public function Kind($data = null)
+    private $_kind = null;
+
+    // Idiomatic facade: $client->kind()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Kind() (PHP method
+    // names are case-insensitive).
+    public function kind($data = null)
     {
         require_once __DIR__ . '/entity/kind_entity.php';
+        if ($data === null) {
+            if ($this->_kind === null) {
+                $this->_kind = new KindEntity($this, null);
+            }
+            return $this->_kind;
+        }
         return new KindEntity($this, $data);
     }
 
 
-    public function Song($data = null)
+    private $_song = null;
+
+    // Idiomatic facade: $client->song()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Song() (PHP method
+    // names are case-insensitive).
+    public function song($data = null)
     {
         require_once __DIR__ . '/entity/song_entity.php';
+        if ($data === null) {
+            if ($this->_song === null) {
+                $this->_song = new SongEntity($this, null);
+            }
+            return $this->_song;
+        }
         return new SongEntity($this, $data);
     }
 

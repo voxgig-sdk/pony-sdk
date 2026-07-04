@@ -43,14 +43,12 @@ class EpisodeEntityTest < Minitest::Test
     episode_ref01_ent = client.Episode(nil)
     episode_ref01_match = {}
 
-    episode_ref01_list_result, err = episode_ref01_ent.list(episode_ref01_match, nil)
-    assert_nil err
+    episode_ref01_list_result = episode_ref01_ent.list(episode_ref01_match, nil)
     assert episode_ref01_list_result.is_a?(Array)
 
     # LOAD
     episode_ref01_match_dt0 = {}
-    episode_ref01_data_dt0_loaded, err = episode_ref01_ent.load(episode_ref01_match_dt0, nil)
-    assert_nil err
+    episode_ref01_data_dt0_loaded = episode_ref01_ent.load(episode_ref01_match_dt0, nil)
     assert !episode_ref01_data_dt0_loaded.nil?
 
   end
@@ -89,7 +87,6 @@ def episode_basic_setup(extra)
     "PONY_TEST_EPISODE_ENTID" => idmap,
     "PONY_TEST_LIVE" => "FALSE",
     "PONY_TEST_EXPLAIN" => "FALSE",
-    "PONY_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -101,7 +98,6 @@ def episode_basic_setup(extra)
   if env["PONY_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["PONY_APIKEY"],
       },
       extra || {},
     ])

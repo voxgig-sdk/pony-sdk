@@ -50,8 +50,7 @@ class ImageEntityTest extends TestCase
         $image_ref01_ent = $client->Image(null);
         $image_ref01_match = [];
 
-        [$image_ref01_list_result, $err] = $image_ref01_ent->list($image_ref01_match, null);
-        $this->assertNull($err);
+        $image_ref01_list_result = $image_ref01_ent->list($image_ref01_match, null);
         $this->assertIsArray($image_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function image_basic_setup($extra)
         "PONY_TEST_IMAGE_ENTID" => $idmap,
         "PONY_TEST_LIVE" => "FALSE",
         "PONY_TEST_EXPLAIN" => "FALSE",
-        "PONY_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function image_basic_setup($extra)
     if ($env["PONY_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["PONY_APIKEY"],
             ],
             $extra ?? [],
         ]);

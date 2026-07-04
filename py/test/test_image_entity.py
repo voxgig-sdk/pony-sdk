@@ -50,8 +50,7 @@ class TestImageEntity:
         image_ref01_ent = client.Image(None)
         image_ref01_match = {}
 
-        image_ref01_list_result, err = image_ref01_ent.list(image_ref01_match, None)
-        assert err is None
+        image_ref01_list_result = image_ref01_ent.list(image_ref01_match, None)
         assert isinstance(image_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _image_basic_setup(extra):
         "PONY_TEST_IMAGE_ENTID": idmap,
         "PONY_TEST_LIVE": "FALSE",
         "PONY_TEST_EXPLAIN": "FALSE",
-        "PONY_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _image_basic_setup(extra):
     if env.get("PONY_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("PONY_APIKEY"),
             },
             extra or {},
         ])

@@ -14,9 +14,6 @@ local function make_config()
     },
     options = {
       base = "http://ponyapi.net/v1",
-      auth = {
-        prefix = "Bearer",
-      },
       headers = {
         ["content-type"] = "application/json",
       },
@@ -128,6 +125,7 @@ local function make_config()
                       ["orig"] = "character",
                       ["reqd"] = true,
                       ["type"] = "`$STRING`",
+                      ["index$"] = 0,
                     },
                   },
                   ["query"] = {
@@ -187,6 +185,7 @@ local function make_config()
                       ["orig"] = "kind",
                       ["reqd"] = true,
                       ["type"] = "`$ANY`",
+                      ["index$"] = 0,
                     },
                   },
                   ["query"] = {
@@ -242,6 +241,7 @@ local function make_config()
                       ["orig"] = "occupation",
                       ["reqd"] = true,
                       ["type"] = "`$STRING`",
+                      ["index$"] = 0,
                     },
                   },
                   ["query"] = {
@@ -296,6 +296,7 @@ local function make_config()
                       ["orig"] = "residence",
                       ["reqd"] = true,
                       ["type"] = "`$STRING`",
+                      ["index$"] = 0,
                     },
                   },
                   ["query"] = {
@@ -455,6 +456,7 @@ local function make_config()
                       ["orig"] = "comic",
                       ["reqd"] = true,
                       ["type"] = "`$STRING`",
+                      ["index$"] = 0,
                     },
                   },
                   ["query"] = {
@@ -513,6 +515,7 @@ local function make_config()
                       ["orig"] = "series",
                       ["reqd"] = true,
                       ["type"] = "`$STRING`",
+                      ["index$"] = 0,
                     },
                   },
                   ["query"] = {
@@ -666,6 +669,7 @@ local function make_config()
                       ["orig"] = "episode",
                       ["reqd"] = true,
                       ["type"] = "`$STRING`",
+                      ["index$"] = 0,
                     },
                   },
                   ["query"] = {
@@ -724,6 +728,7 @@ local function make_config()
                       ["orig"] = "season",
                       ["reqd"] = true,
                       ["type"] = "`$INTEGER`",
+                      ["index$"] = 0,
                     },
                   },
                   ["query"] = {
@@ -965,6 +970,7 @@ local function make_config()
                       ["orig"] = "kind",
                       ["reqd"] = true,
                       ["type"] = "`$STRING`",
+                      ["index$"] = 0,
                     },
                   },
                 },
@@ -1096,6 +1102,7 @@ local function make_config()
                       ["orig"] = "episode",
                       ["reqd"] = true,
                       ["type"] = "`$ANY`",
+                      ["index$"] = 0,
                     },
                   },
                   ["query"] = {
@@ -1150,6 +1157,7 @@ local function make_config()
                       ["orig"] = "song",
                       ["reqd"] = true,
                       ["type"] = "`$STRING`",
+                      ["index$"] = 0,
                     },
                   },
                   ["query"] = {

@@ -117,14 +117,12 @@ function character_direct_setup(mockres)
   local env = runner.env_override({
     ["PONY_TEST_CHARACTER_ENTID"] = {},
     ["PONY_TEST_LIVE"] = "FALSE",
-    ["PONY_APIKEY"] = "NONE",
   })
 
   local live = env["PONY_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
-      apikey = env["PONY_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

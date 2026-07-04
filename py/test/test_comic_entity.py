@@ -50,14 +50,12 @@ class TestComicEntity:
         comic_ref01_ent = client.Comic(None)
         comic_ref01_match = {}
 
-        comic_ref01_list_result, err = comic_ref01_ent.list(comic_ref01_match, None)
-        assert err is None
+        comic_ref01_list_result = comic_ref01_ent.list(comic_ref01_match, None)
         assert isinstance(comic_ref01_list_result, list)
 
         # LOAD
         comic_ref01_match_dt0 = {}
-        comic_ref01_data_dt0_loaded, err = comic_ref01_ent.load(comic_ref01_match_dt0, None)
-        assert err is None
+        comic_ref01_data_dt0_loaded = comic_ref01_ent.load(comic_ref01_match_dt0, None)
         assert comic_ref01_data_dt0_loaded is not None
 
 
@@ -98,7 +96,6 @@ def _comic_basic_setup(extra):
         "PONY_TEST_COMIC_ENTID": idmap,
         "PONY_TEST_LIVE": "FALSE",
         "PONY_TEST_EXPLAIN": "FALSE",
-        "PONY_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -109,7 +106,6 @@ def _comic_basic_setup(extra):
     if env.get("PONY_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("PONY_APIKEY"),
             },
             extra or {},
         ])
