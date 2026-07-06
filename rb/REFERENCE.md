@@ -8,7 +8,7 @@ Complete API reference for the Pony Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'pony_sdk'
+require_relative 'Pony_sdk'
 
 client = PonySDK.new(options)
 ```
@@ -113,19 +113,19 @@ character = client.Character
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `Array` | No |  |
+| `error` | `String` | No |  |
+| `status` | `Integer` | Yes |  |
+| `warning` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Character.list(nil)
+results = client.Character.list
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`
@@ -176,19 +176,19 @@ comic = client.Comic
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `Array` | No |  |
+| `error` | `String` | No |  |
+| `status` | `Integer` | Yes |  |
+| `warning` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Comic.list(nil)
+results = client.Comic.list
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`
@@ -239,19 +239,19 @@ episode = client.Episode
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `Array` | No |  |
+| `error` | `String` | No |  |
+| `status` | `Integer` | Yes |  |
+| `warning` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Episode.list(nil)
+results = client.Episode.list
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`
@@ -302,19 +302,19 @@ image = client.Image
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `Array` | No |  |
+| `error` | `String` | No |  |
+| `status` | `Integer` | Yes |  |
+| `warning` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Image.list(nil)
+results = client.Image.list
 ```
 
 ### Common Methods
@@ -357,19 +357,19 @@ kind = client.Kind
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `Array` | No |  |
+| `error` | `String` | No |  |
+| `status` | `Integer` | Yes |  |
+| `warning` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Kind.list(nil)
+results = client.Kind.list
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`
@@ -420,19 +420,19 @@ song = client.Song
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `Array` | No |  |
+| `error` | `String` | No |  |
+| `status` | `Integer` | Yes |  |
+| `warning` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Song.list(nil)
+results = client.Song.list
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`

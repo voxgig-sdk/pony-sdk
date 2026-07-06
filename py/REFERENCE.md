@@ -107,19 +107,19 @@ character = client.Character()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `list` | No |  |
+| `error` | `str` | No |  |
+| `status` | `int` | Yes |  |
+| `warning` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Character().list({})
+results = client.Character().list()
 for character in results:
     print(character)
 ```
@@ -171,19 +171,19 @@ comic = client.Comic()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `list` | No |  |
+| `error` | `str` | No |  |
+| `status` | `int` | Yes |  |
+| `warning` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Comic().list({})
+results = client.Comic().list()
 for comic in results:
     print(comic)
 ```
@@ -235,19 +235,19 @@ episode = client.Episode()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `list` | No |  |
+| `error` | `str` | No |  |
+| `status` | `int` | Yes |  |
+| `warning` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Episode().list({})
+results = client.Episode().list()
 for episode in results:
     print(episode)
 ```
@@ -299,19 +299,19 @@ image = client.Image()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `list` | No |  |
+| `error` | `str` | No |  |
+| `status` | `int` | Yes |  |
+| `warning` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Image().list({})
+results = client.Image().list()
 for image in results:
     print(image)
 ```
@@ -355,19 +355,19 @@ kind = client.Kind()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `list` | No |  |
+| `error` | `str` | No |  |
+| `status` | `int` | Yes |  |
+| `warning` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Kind().list({})
+results = client.Kind().list()
 for kind in results:
     print(kind)
 ```
@@ -419,19 +419,19 @@ song = client.Song()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `list` | No |  |
+| `error` | `str` | No |  |
+| `status` | `int` | Yes |  |
+| `warning` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Song().list({})
+results = client.Song().list()
 for song in results:
     print(song)
 ```

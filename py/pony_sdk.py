@@ -221,37 +221,37 @@ class PonySDK:
 
 
     def Character(self, data=None) -> "CharacterEntity":
-        """Entity factory: client.Character().list({}) / client.Character().load({"id": ...})."""
+        """Entity factory: client.Character().list() / client.Character().load({"id": ...})."""
         from entity.character_entity import CharacterEntity
         return CharacterEntity(self, data)
 
 
     def Comic(self, data=None) -> "ComicEntity":
-        """Entity factory: client.Comic().list({}) / client.Comic().load({"id": ...})."""
+        """Entity factory: client.Comic().list() / client.Comic().load({"id": ...})."""
         from entity.comic_entity import ComicEntity
         return ComicEntity(self, data)
 
 
     def Episode(self, data=None) -> "EpisodeEntity":
-        """Entity factory: client.Episode().list({}) / client.Episode().load({"id": ...})."""
+        """Entity factory: client.Episode().list() / client.Episode().load({"id": ...})."""
         from entity.episode_entity import EpisodeEntity
         return EpisodeEntity(self, data)
 
 
     def Image(self, data=None) -> "ImageEntity":
-        """Entity factory: client.Image().list({}) / client.Image().load({"id": ...})."""
+        """Entity factory: client.Image().list() / client.Image().load({"id": ...})."""
         from entity.image_entity import ImageEntity
         return ImageEntity(self, data)
 
 
     def Kind(self, data=None) -> "KindEntity":
-        """Entity factory: client.Kind().list({}) / client.Kind().load({"id": ...})."""
+        """Entity factory: client.Kind().list() / client.Kind().load({"id": ...})."""
         from entity.kind_entity import KindEntity
         return KindEntity(self, data)
 
 
     def Song(self, data=None) -> "SongEntity":
-        """Entity factory: client.Song().list({}) / client.Song().load({"id": ...})."""
+        """Entity factory: client.Song().list() / client.Song().load({"id": ...})."""
         from entity.song_entity import SongEntity
         return SongEntity(self, data)
 

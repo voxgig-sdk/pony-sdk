@@ -19,7 +19,12 @@ export interface CharacterLoadMatch {
   residence: string
 }
 
-export type CharacterListMatch = Partial<Character>
+export interface CharacterListMatch {
+  data?: any[]
+  error?: string
+  status?: number
+  warning?: string
+}
 
 export interface Comic {
   data?: any[]
@@ -33,7 +38,12 @@ export interface ComicLoadMatch {
   series: string
 }
 
-export type ComicListMatch = Partial<Comic>
+export interface ComicListMatch {
+  data?: any[]
+  error?: string
+  status?: number
+  warning?: string
+}
 
 export interface Episode {
   data?: any[]
@@ -47,7 +57,12 @@ export interface EpisodeLoadMatch {
   season: number
 }
 
-export type EpisodeListMatch = Partial<Episode>
+export interface EpisodeListMatch {
+  data?: any[]
+  error?: string
+  status?: number
+  warning?: string
+}
 
 export interface Image {
   data?: any[]
@@ -56,7 +71,12 @@ export interface Image {
   warning?: string
 }
 
-export type ImageListMatch = Partial<Image>
+export interface ImageListMatch {
+  data?: any[]
+  error?: string
+  status?: number
+  warning?: string
+}
 
 export interface Kind {
   data?: any[]
@@ -69,7 +89,12 @@ export interface KindLoadMatch {
   id: string
 }
 
-export type KindListMatch = Partial<Kind>
+export interface KindListMatch {
+  data?: any[]
+  error?: string
+  status?: number
+  warning?: string
+}
 
 export interface Song {
   data?: any[]
@@ -83,5 +108,10 @@ export interface SongLoadMatch {
   id: string
 }
 
-export type SongListMatch = Partial<Song>
+export interface SongListMatch {
+  data?: any[]
+  error?: string
+  status?: number
+  warning?: string
+}
 

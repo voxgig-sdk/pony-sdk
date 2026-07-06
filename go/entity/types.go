@@ -24,8 +24,7 @@ type CharacterLoadMatch struct {
 	Residence string `json:"residence"`
 }
 
-// CharacterListMatch mirrors the character fields as an all-optional match
-// filter (Go analog of Partial<Character>).
+// CharacterListMatch is the typed request payload for Character.ListTyped.
 type CharacterListMatch struct {
 	Data *[]any `json:"data,omitempty"`
 	Error *string `json:"error,omitempty"`
@@ -47,8 +46,7 @@ type ComicLoadMatch struct {
 	Series string `json:"series"`
 }
 
-// ComicListMatch mirrors the comic fields as an all-optional match
-// filter (Go analog of Partial<Comic>).
+// ComicListMatch is the typed request payload for Comic.ListTyped.
 type ComicListMatch struct {
 	Data *[]any `json:"data,omitempty"`
 	Error *string `json:"error,omitempty"`
@@ -70,8 +68,7 @@ type EpisodeLoadMatch struct {
 	Season int `json:"season"`
 }
 
-// EpisodeListMatch mirrors the episode fields as an all-optional match
-// filter (Go analog of Partial<Episode>).
+// EpisodeListMatch is the typed request payload for Episode.ListTyped.
 type EpisodeListMatch struct {
 	Data *[]any `json:"data,omitempty"`
 	Error *string `json:"error,omitempty"`
@@ -87,8 +84,7 @@ type Image struct {
 	Warning *string `json:"warning,omitempty"`
 }
 
-// ImageListMatch mirrors the image fields as an all-optional match
-// filter (Go analog of Partial<Image>).
+// ImageListMatch is the typed request payload for Image.ListTyped.
 type ImageListMatch struct {
 	Data *[]any `json:"data,omitempty"`
 	Error *string `json:"error,omitempty"`
@@ -109,8 +105,7 @@ type KindLoadMatch struct {
 	Id string `json:"id"`
 }
 
-// KindListMatch mirrors the kind fields as an all-optional match
-// filter (Go analog of Partial<Kind>).
+// KindListMatch is the typed request payload for Kind.ListTyped.
 type KindListMatch struct {
 	Data *[]any `json:"data,omitempty"`
 	Error *string `json:"error,omitempty"`
@@ -132,8 +127,7 @@ type SongLoadMatch struct {
 	Id string `json:"id"`
 }
 
-// SongListMatch mirrors the song fields as an all-optional match
-// filter (Go analog of Partial<Song>).
+// SongListMatch is the typed request payload for Song.ListTyped.
 type SongListMatch struct {
 	Data *[]any `json:"data,omitempty"`
 	Error *string `json:"error,omitempty"`

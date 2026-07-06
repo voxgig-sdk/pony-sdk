@@ -30,7 +30,7 @@ class CharacterLoadMatch
     public string $residence;
 }
 
-/** Match filter for Character#list (any subset of Character fields). */
+/** Request payload for Character#list. */
 class CharacterListMatch
 {
     public ?array $data = null;
@@ -55,7 +55,7 @@ class ComicLoadMatch
     public string $series;
 }
 
-/** Match filter for Comic#list (any subset of Comic fields). */
+/** Request payload for Comic#list. */
 class ComicListMatch
 {
     public ?array $data = null;
@@ -80,7 +80,7 @@ class EpisodeLoadMatch
     public int $season;
 }
 
-/** Match filter for Episode#list (any subset of Episode fields). */
+/** Request payload for Episode#list. */
 class EpisodeListMatch
 {
     public ?array $data = null;
@@ -98,7 +98,7 @@ class Image
     public ?string $warning = null;
 }
 
-/** Match filter for Image#list (any subset of Image fields). */
+/** Request payload for Image#list. */
 class ImageListMatch
 {
     public ?array $data = null;
@@ -122,7 +122,7 @@ class KindLoadMatch
     public string $id;
 }
 
-/** Match filter for Kind#list (any subset of Kind fields). */
+/** Request payload for Kind#list. */
 class KindListMatch
 {
     public ?array $data = null;
@@ -147,7 +147,7 @@ class SongLoadMatch
     public string $id;
 }
 
-/** Match filter for Song#list (any subset of Song fields). */
+/** Request payload for Song#list. */
 class SongListMatch
 {
     public ?array $data = null;

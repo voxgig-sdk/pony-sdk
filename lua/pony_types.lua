@@ -19,6 +19,10 @@
 ---@field residence string
 
 ---@class CharacterListMatch
+---@field data? table
+---@field error? string
+---@field status? number
+---@field warning? string
 
 ---@class Comic
 ---@field data? table
@@ -31,6 +35,10 @@
 ---@field series string
 
 ---@class ComicListMatch
+---@field data? table
+---@field error? string
+---@field status? number
+---@field warning? string
 
 ---@class Episode
 ---@field data? table
@@ -43,6 +51,10 @@
 ---@field season number
 
 ---@class EpisodeListMatch
+---@field data? table
+---@field error? string
+---@field status? number
+---@field warning? string
 
 ---@class Image
 ---@field data? table
@@ -51,6 +63,10 @@
 ---@field warning? string
 
 ---@class ImageListMatch
+---@field data? table
+---@field error? string
+---@field status? number
+---@field warning? string
 
 ---@class Kind
 ---@field data? table
@@ -62,6 +78,10 @@
 ---@field id string
 
 ---@class KindListMatch
+---@field data? table
+---@field error? string
+---@field status? number
+---@field warning? string
 
 ---@class Song
 ---@field data? table
@@ -74,6 +94,10 @@
 ---@field id string
 
 ---@class SongListMatch
+---@field data? table
+---@field error? string
+---@field status? number
+---@field warning? string
 
 local M = {}
 

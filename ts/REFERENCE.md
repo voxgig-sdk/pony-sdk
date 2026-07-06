@@ -176,10 +176,10 @@ const character = client.Character()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `any[]` | No |  |
+| `error` | `string` | No |  |
+| `status` | `number` | Yes |  |
+| `warning` | `string` | No |  |
 
 ### Operations
 
@@ -237,10 +237,10 @@ const comic = client.Comic()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `any[]` | No |  |
+| `error` | `string` | No |  |
+| `status` | `number` | Yes |  |
+| `warning` | `string` | No |  |
 
 ### Operations
 
@@ -298,10 +298,10 @@ const episode = client.Episode()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `any[]` | No |  |
+| `error` | `string` | No |  |
+| `status` | `number` | Yes |  |
+| `warning` | `string` | No |  |
 
 ### Operations
 
@@ -359,10 +359,10 @@ const image = client.Image()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `any[]` | No |  |
+| `error` | `string` | No |  |
+| `status` | `number` | Yes |  |
+| `warning` | `string` | No |  |
 
 ### Operations
 
@@ -412,10 +412,10 @@ const kind = client.Kind()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `any[]` | No |  |
+| `error` | `string` | No |  |
+| `status` | `number` | Yes |  |
+| `warning` | `string` | No |  |
 
 ### Operations
 
@@ -473,10 +473,10 @@ const song = client.Song()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `any[]` | No |  |
+| `error` | `string` | No |  |
+| `status` | `number` | Yes |  |
+| `warning` | `string` | No |  |
 
 ### Operations
 

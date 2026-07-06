@@ -110,10 +110,10 @@ local character = client:Character(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `table` | No |  |
+| `error` | `string` | No |  |
+| `status` | `number` | Yes |  |
+| `warning` | `string` | No |  |
 
 ### Operations
 
@@ -173,10 +173,10 @@ local comic = client:Comic(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `table` | No |  |
+| `error` | `string` | No |  |
+| `status` | `number` | Yes |  |
+| `warning` | `string` | No |  |
 
 ### Operations
 
@@ -236,10 +236,10 @@ local episode = client:Episode(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `table` | No |  |
+| `error` | `string` | No |  |
+| `status` | `number` | Yes |  |
+| `warning` | `string` | No |  |
 
 ### Operations
 
@@ -299,10 +299,10 @@ local image = client:Image(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `table` | No |  |
+| `error` | `string` | No |  |
+| `status` | `number` | Yes |  |
+| `warning` | `string` | No |  |
 
 ### Operations
 
@@ -354,10 +354,10 @@ local kind = client:Kind(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `table` | No |  |
+| `error` | `string` | No |  |
+| `status` | `number` | Yes |  |
+| `warning` | `string` | No |  |
 
 ### Operations
 
@@ -417,10 +417,10 @@ local song = client:Song(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `table` | No |  |
+| `error` | `string` | No |  |
+| `status` | `number` | Yes |  |
+| `warning` | `string` | No |  |
 
 ### Operations
 

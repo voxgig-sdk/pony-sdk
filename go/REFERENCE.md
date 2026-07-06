@@ -117,10 +117,10 @@ character := client.Character(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `[]any` | No |  |
+| `error` | `string` | No |  |
+| `status` | `int` | Yes |  |
+| `warning` | `string` | No |  |
 
 ### Operations
 
@@ -174,10 +174,10 @@ comic := client.Comic(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `[]any` | No |  |
+| `error` | `string` | No |  |
+| `status` | `int` | Yes |  |
+| `warning` | `string` | No |  |
 
 ### Operations
 
@@ -231,10 +231,10 @@ episode := client.Episode(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `[]any` | No |  |
+| `error` | `string` | No |  |
+| `status` | `int` | Yes |  |
+| `warning` | `string` | No |  |
 
 ### Operations
 
@@ -288,10 +288,10 @@ image := client.Image(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `[]any` | No |  |
+| `error` | `string` | No |  |
+| `status` | `int` | Yes |  |
+| `warning` | `string` | No |  |
 
 ### Operations
 
@@ -337,10 +337,10 @@ kind := client.Kind(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `[]any` | No |  |
+| `error` | `string` | No |  |
+| `status` | `int` | Yes |  |
+| `warning` | `string` | No |  |
 
 ### Operations
 
@@ -394,10 +394,10 @@ song := client.Song(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `error` | ``$STRING`` | No |  |
-| `status` | ``$INTEGER`` | Yes |  |
-| `warning` | ``$STRING`` | No |  |
+| `data` | `[]any` | No |  |
+| `error` | `string` | No |  |
+| `status` | `int` | Yes |  |
+| `warning` | `string` | No |  |
 
 ### Operations
 

@@ -50,7 +50,7 @@ CharacterLoadMatch = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Character#list (any subset of Character fields).
+# Request payload for Character#list.
 #
 # @!attribute [rw] data
 #   @return [Array, nil]
@@ -105,7 +105,7 @@ ComicLoadMatch = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Comic#list (any subset of Comic fields).
+# Request payload for Comic#list.
 #
 # @!attribute [rw] data
 #   @return [Array, nil]
@@ -160,7 +160,7 @@ EpisodeLoadMatch = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Episode#list (any subset of Episode fields).
+# Request payload for Episode#list.
 #
 # @!attribute [rw] data
 #   @return [Array, nil]
@@ -202,7 +202,7 @@ Image = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Image#list (any subset of Image fields).
+# Request payload for Image#list.
 #
 # @!attribute [rw] data
 #   @return [Array, nil]
@@ -253,7 +253,7 @@ KindLoadMatch = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Kind#list (any subset of Kind fields).
+# Request payload for Kind#list.
 #
 # @!attribute [rw] data
 #   @return [Array, nil]
@@ -308,7 +308,7 @@ SongLoadMatch = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Song#list (any subset of Song fields).
+# Request payload for Song#list.
 #
 # @!attribute [rw] data
 #   @return [Array, nil]
