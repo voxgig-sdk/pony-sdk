@@ -1,0 +1,8 @@
+# Entity Models
+
+@"character.aontu"
+@"comic.aontu"
+@"episode.aontu"
+@"image.aontu"
+@"kind.aontu"
+@"song.aontu"

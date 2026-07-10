@@ -15,9 +15,9 @@ main: {
           url: "http://ponyapi.net/v1"
         }
       ]
+      summary: "The Pony API provides access to detailed information about characters, episodes, songs, and comics from the animated series My Little Pony: Friendship is Magic."
       title: "Pony API"
       version: "1.0.0"
+      website: "http://ponyapi.net"
     }
   }
-}
-

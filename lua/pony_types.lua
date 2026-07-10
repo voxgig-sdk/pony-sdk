@@ -13,10 +13,10 @@
 ---@field warning? string
 
 ---@class CharacterLoadMatch
----@field id string
----@field kind any
----@field occupation string
----@field residence string
+---@field id? string
+---@field kind? any
+---@field occupation? string
+---@field residence? string
 
 ---@class CharacterListMatch
 ---@field data? table
@@ -31,8 +31,8 @@
 ---@field warning? string
 
 ---@class ComicLoadMatch
----@field id string
----@field series string
+---@field id? string
+---@field series? string
 
 ---@class ComicListMatch
 ---@field data? table
@@ -47,8 +47,8 @@
 ---@field warning? string
 
 ---@class EpisodeLoadMatch
----@field id string
----@field season number
+---@field id? string
+---@field season? number
 
 ---@class EpisodeListMatch
 ---@field data? table
@@ -90,8 +90,8 @@
 ---@field warning? string
 
 ---@class SongLoadMatch
----@field episode any
----@field id string
+---@field episode? any
+---@field id? string
 
 ---@class SongListMatch
 ---@field data? table

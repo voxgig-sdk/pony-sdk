@@ -24,10 +24,10 @@ class Character
 /** Request payload for Character#load. */
 class CharacterLoadMatch
 {
-    public string $id;
-    public mixed $kind;
-    public string $occupation;
-    public string $residence;
+    public ?string $id = null;
+    public mixed $kind = null;
+    public ?string $occupation = null;
+    public ?string $residence = null;
 }
 
 /** Request payload for Character#list. */
@@ -51,8 +51,8 @@ class Comic
 /** Request payload for Comic#load. */
 class ComicLoadMatch
 {
-    public string $id;
-    public string $series;
+    public ?string $id = null;
+    public ?string $series = null;
 }
 
 /** Request payload for Comic#list. */
@@ -76,8 +76,8 @@ class Episode
 /** Request payload for Episode#load. */
 class EpisodeLoadMatch
 {
-    public string $id;
-    public int $season;
+    public ?string $id = null;
+    public ?int $season = null;
 }
 
 /** Request payload for Episode#list. */
@@ -143,8 +143,8 @@ class Song
 /** Request payload for Song#load. */
 class SongLoadMatch
 {
-    public mixed $episode;
-    public string $id;
+    public mixed $episode = null;
+    public ?string $id = null;
 }
 
 /** Request payload for Song#list. */
