@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- Pony SDK exists test
 
 local sdk = require("pony_sdk")
 
