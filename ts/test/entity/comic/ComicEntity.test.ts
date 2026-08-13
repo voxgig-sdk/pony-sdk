@@ -63,7 +63,7 @@ describe('ComicEntity', async () => {
     const comic_ref01_ent = client.Comic()
     const comic_ref01_match: any = {}
 
-    const comic_ref01_list = await comic_ref01_ent.list(comic_ref01_match)
+    const comic_ref01_list = (await comic_ref01_ent.list(comic_ref01_match)).map((e: any) => e.data())
 
 
 

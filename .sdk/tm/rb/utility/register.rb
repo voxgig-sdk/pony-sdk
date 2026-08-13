@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ PonyUtility.registrar = ->(u) {
   u.prepare_params = PonyUtilities::PrepareParams
   u.prepare_path = PonyUtilities::PreparePath
   u.prepare_query = PonyUtilities::PrepareQuery
+  u.graphql_body = PonyUtilities::GraphqlBody
+  u.graphql_errors = PonyUtilities::GraphqlErrors
   u.result_basic = PonyUtilities::ResultBasic
   u.result_body = PonyUtilities::ResultBody
   u.result_headers = PonyUtilities::ResultHeaders

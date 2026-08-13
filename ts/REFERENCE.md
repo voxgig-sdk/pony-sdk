@@ -181,6 +181,26 @@ const character = client.Character()
 | `status` | `number` | Yes |  |
 | `warning` | `string` | No |  |
 
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `all` | `/character/all` | `client.Character().list({ $action: 'all', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Character record — check the API definition for its shape.
+
+```ts
+const result = await client.Character().list({
+  $action: 'all',
+  /* ...the action's own arguments */
+})
+```
+
 ### Operations
 
 #### `list(match: object, ctrl?: object)`
@@ -241,6 +261,26 @@ const comic = client.Comic()
 | `error` | `string` | No |  |
 | `status` | `number` | Yes |  |
 | `warning` | `string` | No |  |
+
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `all` | `/comics/all` | `client.Comic().list({ $action: 'all', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Comic record — check the API definition for its shape.
+
+```ts
+const result = await client.Comic().list({
+  $action: 'all',
+  /* ...the action's own arguments */
+})
+```
 
 ### Operations
 
@@ -303,6 +343,26 @@ const episode = client.Episode()
 | `status` | `number` | Yes |  |
 | `warning` | `string` | No |  |
 
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `all` | `/episode/all` | `client.Episode().list({ $action: 'all', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Episode record — check the API definition for its shape.
+
+```ts
+const result = await client.Episode().list({
+  $action: 'all',
+  /* ...the action's own arguments */
+})
+```
+
 ### Operations
 
 #### `list(match: object, ctrl?: object)`
@@ -364,6 +424,26 @@ const image = client.Image()
 | `status` | `number` | Yes |  |
 | `warning` | `string` | No |  |
 
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `all` | `/image/all` | `client.Image().list({ $action: 'all', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Image record — check the API definition for its shape.
+
+```ts
+const result = await client.Image().list({
+  $action: 'all',
+  /* ...the action's own arguments */
+})
+```
+
 ### Operations
 
 #### `list(match: object, ctrl?: object)`
@@ -416,6 +496,26 @@ const kind = client.Kind()
 | `error` | `string` | No |  |
 | `status` | `number` | Yes |  |
 | `warning` | `string` | No |  |
+
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `all` | `/kind/all` | `client.Kind().list({ $action: 'all', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Kind record — check the API definition for its shape.
+
+```ts
+const result = await client.Kind().list({
+  $action: 'all',
+  /* ...the action's own arguments */
+})
+```
 
 ### Operations
 
@@ -477,6 +577,26 @@ const song = client.Song()
 | `error` | `string` | No |  |
 | `status` | `number` | Yes |  |
 | `warning` | `string` | No |  |
+
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `all` | `/song/all` | `client.Song().list({ $action: 'all', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Song record — check the API definition for its shape.
+
+```ts
+const result = await client.Song().list({
+  $action: 'all',
+  /* ...the action's own arguments */
+})
+```
 
 ### Operations
 

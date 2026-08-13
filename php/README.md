@@ -49,7 +49,7 @@ try {
 
 ```php
 try {
-    // load() returns the bare Character record (throws on error).
+    // load() returns the ENTITY — call data_get() for the Character record (throws on error).
     $character = $client->Character()->load(["id" => "example_id"]);
     print_r($character);
 } catch (\Throwable $err) {
@@ -65,7 +65,7 @@ Entity operations throw a `\Throwable` on failure, so wrap them in
 
 ```php
 try {
-    $characters = $client->Character()->list();
+    $comics = $client->Comic()->list();
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
@@ -137,12 +137,13 @@ data via the `entity` option so offline calls resolve without a live server:
 
 ```php
 $client = PonySDK::test([
-    "entity" => ["character" => ["test01" => ["id" => "test01"]]],
+    "entity" => ["comic" => ["test01" => ["id" => "test01"]]],
 ]);
 
-// Entity ops return the bare mock record (throws on error).
-$character = $client->Character()->list();
-print_r($character);
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
+$comic = $client->Comic()->list();
+print_r($comic);
 ```
 
 ### Use a custom fetch function
@@ -245,7 +246,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -369,7 +370,7 @@ Create an instance: `$character = $client->Character();`
 #### Example: Load
 
 ```php
-// load() returns the bare Character record (throws on error).
+// load() returns the ENTITY — call data_get() for the Character record (throws on error).
 $character = $client->Character()->load(["id" => "character_id"]);
 ```
 
@@ -404,7 +405,7 @@ Create an instance: `$comic = $client->Comic();`
 #### Example: Load
 
 ```php
-// load() returns the bare Comic record (throws on error).
+// load() returns the ENTITY — call data_get() for the Comic record (throws on error).
 $comic = $client->Comic()->load(["id" => "comic_id"]);
 ```
 
@@ -439,7 +440,7 @@ Create an instance: `$episode = $client->Episode();`
 #### Example: Load
 
 ```php
-// load() returns the bare Episode record (throws on error).
+// load() returns the ENTITY — call data_get() for the Episode record (throws on error).
 $episode = $client->Episode()->load(["id" => "episode_id"]);
 ```
 
@@ -501,7 +502,7 @@ Create an instance: `$kind = $client->Kind();`
 #### Example: Load
 
 ```php
-// load() returns the bare Kind record (throws on error).
+// load() returns the ENTITY — call data_get() for the Kind record (throws on error).
 $kind = $client->Kind()->load(["id" => "kind_id"]);
 ```
 
@@ -536,7 +537,7 @@ Create an instance: `$song = $client->Song();`
 #### Example: Load
 
 ```php
-// load() returns the bare Song record (throws on error).
+// load() returns the ENTITY — call data_get() for the Song record (throws on error).
 $song = $client->Song()->load(["id" => "song_id"]);
 ```
 
@@ -624,11 +625,11 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$character = $client->Character();
-$character->list();
+$comic = $client->Comic();
+$comic->list();
 
-// $character->data_get() now returns the character data from the last list
-// $character->match_get() returns the last match criteria
+// $comic->data_get() now returns the comic data from the last list
+// $comic->match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

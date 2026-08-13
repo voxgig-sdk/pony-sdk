@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# Pony SDK exists test
 
 import pytest
 from pony_sdk import PonySDK

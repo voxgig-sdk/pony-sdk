@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'Pony',
   }
 
 
@@ -128,6 +128,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/character/all",
               "parts": [
@@ -189,6 +190,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/character/{character}",
               "parts": [
@@ -249,6 +251,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/character/by-kind/{kind}",
               "parts": [
@@ -305,6 +308,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/character/by-occupation/{occupation}",
               "parts": [
@@ -360,6 +364,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/character/by-residence/{residence}",
               "parts": [
@@ -459,6 +464,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/comics/all",
               "parts": [
@@ -520,6 +526,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/comics/{comics}",
               "parts": [
@@ -579,6 +586,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/comics/by-series/{series}",
               "parts": [
@@ -672,6 +680,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/episode/all",
               "parts": [
@@ -733,6 +742,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/episode/{episode}",
               "parts": [
@@ -792,6 +802,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/episode/by-season/{season}",
               "parts": [
@@ -885,6 +896,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/image/all",
               "parts": [
@@ -973,6 +985,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/kind/all",
               "parts": [
@@ -1014,6 +1027,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/kind/{kind}",
               "parts": [
@@ -1105,6 +1119,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/song/all",
               "parts": [
@@ -1166,6 +1181,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/song/by-episode/{episode}",
               "parts": [
@@ -1221,6 +1237,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/song/{song}",
               "parts": [

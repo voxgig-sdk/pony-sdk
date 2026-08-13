@@ -24,6 +24,12 @@ export interface CharacterListMatch {
   error?: string
   status?: number
   warning?: string
+
+  // Selects a custom action instead of the plain list:
+  //   'all'
+  // The remaining keys are that action's own payload.
+  $action?: string
+  [action: string]: any
 }
 
 export interface Comic {
@@ -43,6 +49,12 @@ export interface ComicListMatch {
   error?: string
   status?: number
   warning?: string
+
+  // Selects a custom action instead of the plain list:
+  //   'all'
+  // The remaining keys are that action's own payload.
+  $action?: string
+  [action: string]: any
 }
 
 export interface Episode {
@@ -62,6 +74,12 @@ export interface EpisodeListMatch {
   error?: string
   status?: number
   warning?: string
+
+  // Selects a custom action instead of the plain list:
+  //   'all'
+  // The remaining keys are that action's own payload.
+  $action?: string
+  [action: string]: any
 }
 
 export interface Image {
@@ -76,6 +94,12 @@ export interface ImageListMatch {
   error?: string
   status?: number
   warning?: string
+
+  // Selects a custom action instead of the plain list:
+  //   'all'
+  // The remaining keys are that action's own payload.
+  $action?: string
+  [action: string]: any
 }
 
 export interface Kind {
@@ -94,6 +118,12 @@ export interface KindListMatch {
   error?: string
   status?: number
   warning?: string
+
+  // Selects a custom action instead of the plain list:
+  //   'all'
+  // The remaining keys are that action's own payload.
+  $action?: string
+  [action: string]: any
 }
 
 export interface Song {
@@ -113,5 +143,11 @@ export interface SongListMatch {
   error?: string
   status?: number
   warning?: string
+
+  // Selects a custom action instead of the plain list:
+  //   'all'
+  // The remaining keys are that action's own payload.
+  $action?: string
+  [action: string]: any
 }
 

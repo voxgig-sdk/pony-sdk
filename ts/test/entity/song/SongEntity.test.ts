@@ -63,7 +63,7 @@ describe('SongEntity', async () => {
     const song_ref01_ent = client.Song()
     const song_ref01_match: any = {}
 
-    const song_ref01_list = await song_ref01_ent.list(song_ref01_match)
+    const song_ref01_list = (await song_ref01_ent.list(song_ref01_match)).map((e: any) => e.data())
 
 
 

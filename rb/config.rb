@@ -89,6 +89,7 @@ module PonyConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/character/all",
                   "parts" => [
@@ -150,6 +151,7 @@ module PonyConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/character/{character}",
                   "parts" => [
@@ -210,6 +212,7 @@ module PonyConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/character/by-kind/{kind}",
                   "parts" => [
@@ -266,6 +269,7 @@ module PonyConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/character/by-occupation/{occupation}",
                   "parts" => [
@@ -321,6 +325,7 @@ module PonyConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/character/by-residence/{residence}",
                   "parts" => [
@@ -420,6 +425,7 @@ module PonyConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/comics/all",
                   "parts" => [
@@ -481,6 +487,7 @@ module PonyConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/comics/{comics}",
                   "parts" => [
@@ -540,6 +547,7 @@ module PonyConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/comics/by-series/{series}",
                   "parts" => [
@@ -633,6 +641,7 @@ module PonyConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/episode/all",
                   "parts" => [
@@ -694,6 +703,7 @@ module PonyConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/episode/{episode}",
                   "parts" => [
@@ -753,6 +763,7 @@ module PonyConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/episode/by-season/{season}",
                   "parts" => [
@@ -846,6 +857,7 @@ module PonyConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/image/all",
                   "parts" => [
@@ -934,6 +946,7 @@ module PonyConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/kind/all",
                   "parts" => [
@@ -975,6 +988,7 @@ module PonyConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/kind/{kind}",
                   "parts" => [
@@ -1066,6 +1080,7 @@ module PonyConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/song/all",
                   "parts" => [
@@ -1127,6 +1142,7 @@ module PonyConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/song/by-episode/{episode}",
                   "parts" => [
@@ -1182,6 +1198,7 @@ module PonyConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/song/{song}",
                   "parts" => [

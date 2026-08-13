@@ -63,7 +63,7 @@ describe('EpisodeEntity', async () => {
     const episode_ref01_ent = client.Episode()
     const episode_ref01_match: any = {}
 
-    const episode_ref01_list = await episode_ref01_ent.list(episode_ref01_match)
+    const episode_ref01_list = (await episode_ref01_ent.list(episode_ref01_match)).map((e: any) => e.data())
 
 
 

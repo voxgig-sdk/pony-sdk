@@ -62,7 +62,7 @@ Entity operations return `(value, err)`. Check `err` before using
 the value:
 
 ```lua
-local characters, err = client:Character():list()
+local comics, err = client:Comic():list()
 if err then error(err) end
 ```
 
@@ -120,7 +120,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:Character():list()
+local result, err = client:Comic():list()
 -- result is the returned data; err is set on failure
 ```
 
@@ -592,11 +592,11 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local character = client:Character()
-character:list()
+local comic = client:Comic()
+comic:list()
 
--- character:data_get() now returns the character data from the last list
--- character:match_get() returns the last match criteria
+-- comic:data_get() now returns the comic data from the last list
+-- comic:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

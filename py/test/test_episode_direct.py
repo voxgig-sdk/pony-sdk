@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from pony_sdk.utility.voxgig_struct import voxgig_struct as vs
 from pony_sdk import PonySDK
-from core import helpers
+from pony_sdk.core import helpers
 from test import runner
 
 

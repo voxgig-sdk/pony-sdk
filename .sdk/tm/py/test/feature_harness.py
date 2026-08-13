@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import PonyControl
-from core.error import PonyError
-from core.result import PonyResult
-from core.spec import PonySpec
+from projectname_sdk.config import make_config
+from projectname_sdk.features import _make_feature
+from projectname_sdk.core.control import PonyControl
+from projectname_sdk.core.error import PonyError
+from projectname_sdk.core.result import PonyResult
+from projectname_sdk.core.spec import PonySpec
 
 
 # True when this SDK was generated with the named feature.

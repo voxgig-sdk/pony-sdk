@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import PonySDK
-from core.error import PonyError
-from core.result import PonyResult
-from core.response import PonyResponse
-from core.spec import PonySpec
-from feature.base_feature import PonyBaseFeature
+from projectname_sdk.core.error import PonyError
+from projectname_sdk.core.result import PonyResult
+from projectname_sdk.core.response import PonyResponse
+from projectname_sdk.core.spec import PonySpec
+from projectname_sdk.feature.base_feature import PonyBaseFeature
 
 
 def _client():

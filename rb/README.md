@@ -48,7 +48,7 @@ end
 
 ```ruby
 begin
-  # load returns the bare Character record (raises on error).
+  # load returns the ENTITY — call data_get for the Character record (raises on error).
   character = client.Character.load({ "id" => "example_id" })
   puts character
 rescue => err
@@ -63,7 +63,7 @@ Entity operations raise on failure, so rescue them:
 
 ```ruby
 begin
-  characters = client.Character.list()
+  comics = client.Comic.list()
 rescue => err
   warn "list failed: #{err}"
 end
@@ -131,12 +131,13 @@ data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
 client = PonySDK.test({
-  "entity" => { "character" => { "test01" => { "id" => "test01" } } },
+  "entity" => { "comic" => { "test01" => { "id" => "test01" } } },
 })
 
-# Entity ops return the bare mock record (raises on error).
-character = client.Character.list()
-puts character
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
+comic = client.Comic.list()
+puts comic
 ```
 
 ### Use a custom fetch function
@@ -359,7 +360,7 @@ Create an instance: `character = client.Character`
 #### Example: Load
 
 ```ruby
-# load returns the bare Character record (raises on error).
+# load returns the ENTITY — call data_get for the Character record (raises on error).
 character = client.Character.load({ "id" => "character_id" })
 ```
 
@@ -394,7 +395,7 @@ Create an instance: `comic = client.Comic`
 #### Example: Load
 
 ```ruby
-# load returns the bare Comic record (raises on error).
+# load returns the ENTITY — call data_get for the Comic record (raises on error).
 comic = client.Comic.load({ "id" => "comic_id" })
 ```
 
@@ -429,7 +430,7 @@ Create an instance: `episode = client.Episode`
 #### Example: Load
 
 ```ruby
-# load returns the bare Episode record (raises on error).
+# load returns the ENTITY — call data_get for the Episode record (raises on error).
 episode = client.Episode.load({ "id" => "episode_id" })
 ```
 
@@ -491,7 +492,7 @@ Create an instance: `kind = client.Kind`
 #### Example: Load
 
 ```ruby
-# load returns the bare Kind record (raises on error).
+# load returns the ENTITY — call data_get for the Kind record (raises on error).
 kind = client.Kind.load({ "id" => "kind_id" })
 ```
 
@@ -526,7 +527,7 @@ Create an instance: `song = client.Song`
 #### Example: Load
 
 ```ruby
-# load returns the bare Song record (raises on error).
+# load returns the ENTITY — call data_get for the Song record (raises on error).
 song = client.Song.load({ "id" => "song_id" })
 ```
 
@@ -614,11 +615,11 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-character = client.Character
-character.list()
+comic = client.Comic
+comic.list()
 
-# character.data_get now returns the character data from the last list
-# character.match_get returns the last match criteria
+# comic.data_get now returns the comic data from the last list
+# comic.match_get returns the last match criteria
 ```
 
 Call `make` to create a fresh instance with the same configuration

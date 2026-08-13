@@ -88,6 +88,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/character/all",
                 ["parts"] = {
@@ -149,6 +150,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/character/{character}",
                 ["parts"] = {
@@ -209,6 +211,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/character/by-kind/{kind}",
                 ["parts"] = {
@@ -265,6 +268,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/character/by-occupation/{occupation}",
                 ["parts"] = {
@@ -320,6 +324,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/character/by-residence/{residence}",
                 ["parts"] = {
@@ -419,6 +424,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/comics/all",
                 ["parts"] = {
@@ -480,6 +486,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/comics/{comics}",
                 ["parts"] = {
@@ -539,6 +546,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/comics/by-series/{series}",
                 ["parts"] = {
@@ -632,6 +640,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/episode/all",
                 ["parts"] = {
@@ -693,6 +702,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/episode/{episode}",
                 ["parts"] = {
@@ -752,6 +762,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/episode/by-season/{season}",
                 ["parts"] = {
@@ -845,6 +856,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/image/all",
                 ["parts"] = {
@@ -933,6 +945,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/kind/all",
                 ["parts"] = {
@@ -974,6 +987,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/kind/{kind}",
                 ["parts"] = {
@@ -1065,6 +1079,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/song/all",
                 ["parts"] = {
@@ -1126,6 +1141,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/song/by-episode/{episode}",
                 ["parts"] = {
@@ -1181,6 +1197,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/song/{song}",
                 ["parts"] = {

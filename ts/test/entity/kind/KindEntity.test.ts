@@ -63,7 +63,7 @@ describe('KindEntity', async () => {
     const kind_ref01_ent = client.Kind()
     const kind_ref01_match: any = {}
 
-    const kind_ref01_list = await kind_ref01_ent.list(kind_ref01_match)
+    const kind_ref01_list = (await kind_ref01_ent.list(kind_ref01_match)).map((e: any) => e.data())
 
 
 
