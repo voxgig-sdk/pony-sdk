@@ -26,11 +26,8 @@ class Character(CharacterRequired, total=False):
     warning: str
 
 
-class CharacterLoadMatch(TypedDict, total=False):
+class CharacterLoadMatch(TypedDict):
     id: str
-    kind: Any
-    occupation: str
-    residence: str
 
 
 class CharacterListMatch(TypedDict, total=False):
@@ -50,9 +47,8 @@ class Comic(ComicRequired, total=False):
     warning: str
 
 
-class ComicLoadMatch(TypedDict, total=False):
+class ComicLoadMatch(TypedDict):
     id: str
-    series: str
 
 
 class ComicListMatch(TypedDict, total=False):
@@ -72,9 +68,8 @@ class Episode(EpisodeRequired, total=False):
     warning: str
 
 
-class EpisodeLoadMatch(TypedDict, total=False):
+class EpisodeLoadMatch(TypedDict):
     id: str
-    season: int
 
 
 class EpisodeListMatch(TypedDict, total=False):
@@ -132,8 +127,7 @@ class Song(SongRequired, total=False):
     warning: str
 
 
-class SongLoadMatch(TypedDict, total=False):
-    episode: Any
+class SongLoadMatch(TypedDict):
     id: str
 
 

@@ -13,10 +13,7 @@ export interface Character {
 }
 
 export interface CharacterLoadMatch {
-  id?: string
-  kind?: any
-  occupation?: string
-  residence?: string
+  id: string
 }
 
 export interface CharacterListMatch {
@@ -40,8 +37,7 @@ export interface Comic {
 }
 
 export interface ComicLoadMatch {
-  id?: string
-  series?: string
+  id: string
 }
 
 export interface ComicListMatch {
@@ -65,8 +61,7 @@ export interface Episode {
 }
 
 export interface EpisodeLoadMatch {
-  id?: string
-  season?: number
+  id: string
 }
 
 export interface EpisodeListMatch {
@@ -134,8 +129,7 @@ export interface Song {
 }
 
 export interface SongLoadMatch {
-  episode?: any
-  id?: string
+  id: string
 }
 
 export interface SongListMatch {

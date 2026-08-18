@@ -577,6 +577,29 @@ const songs = await client.Song().list()
 ```
 
 
+## Open types
+
+6 fields are carried as open values rather than typed structures.
+This follows from the API definition, not from a gap in this SDK: the
+definition describes them with untagged unions —
+`oneOf`/`anyOf` branches with no `discriminator` — so it never states which
+variant a given value is. Nothing can select a branch reliably, so the SDK
+passes the value through unchanged rather than assert a shape the API does not
+guarantee.
+
+| Entity | Field | Variants | Nesting |
+| --- | --- | --- | --- |
+| `character` | `data` | 3 | 4 levels |
+| `comic` | `data` | 3 | 4 levels |
+| `episode` | `data` | 3 | 4 levels |
+| `image` | `data` | 3 | 4 levels |
+| `kind` | `data` | 3 | 4 levels |
+| `song` | `data` | 3 | 4 levels |
+
+These values round-trip unchanged — read them, modify them, send them back. If
+the API adds a `discriminator` to the definition, regenerating will type them.
+Every other field is typed normally.
+
 ## Advanced
 
 > The sections above cover everyday use. The material below explains the

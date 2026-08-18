@@ -9,6 +9,11 @@ main: kit: entity: comic: {
       name: "data"
       req: false
       type: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 4
+        depth: 4
+      }
     }
     {
       name: "error"

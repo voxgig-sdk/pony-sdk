@@ -22,10 +22,7 @@ type Character struct {
 
 // CharacterLoadMatch is the typed request payload for Character.LoadTyped.
 type CharacterLoadMatch struct {
-	Id *string `json:"id,omitempty"`
-	Kind *any `json:"kind,omitempty"`
-	Occupation *string `json:"occupation,omitempty"`
-	Residence *string `json:"residence,omitempty"`
+	Id string `json:"id"`
 }
 
 // CharacterListMatch is the typed request payload for Character.ListTyped.
@@ -46,8 +43,7 @@ type Comic struct {
 
 // ComicLoadMatch is the typed request payload for Comic.LoadTyped.
 type ComicLoadMatch struct {
-	Id *string `json:"id,omitempty"`
-	Series *string `json:"series,omitempty"`
+	Id string `json:"id"`
 }
 
 // ComicListMatch is the typed request payload for Comic.ListTyped.
@@ -68,8 +64,7 @@ type Episode struct {
 
 // EpisodeLoadMatch is the typed request payload for Episode.LoadTyped.
 type EpisodeLoadMatch struct {
-	Id *string `json:"id,omitempty"`
-	Season *int `json:"season,omitempty"`
+	Id string `json:"id"`
 }
 
 // EpisodeListMatch is the typed request payload for Episode.ListTyped.
@@ -127,8 +122,7 @@ type Song struct {
 
 // SongLoadMatch is the typed request payload for Song.LoadTyped.
 type SongLoadMatch struct {
-	Episode *any `json:"episode,omitempty"`
-	Id *string `json:"id,omitempty"`
+	Id string `json:"id"`
 }
 
 // SongListMatch is the typed request payload for Song.ListTyped.

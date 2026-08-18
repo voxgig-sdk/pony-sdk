@@ -32,21 +32,9 @@ Character = Struct.new(
 # Request payload for Character#load.
 #
 # @!attribute [rw] id
-#   @return [String, nil]
-#
-# @!attribute [rw] kind
-#   @return [Object, nil]
-#
-# @!attribute [rw] occupation
-#   @return [String, nil]
-#
-# @!attribute [rw] residence
-#   @return [String, nil]
+#   @return [String]
 CharacterLoadMatch = Struct.new(
   :id,
-  :kind,
-  :occupation,
-  :residence,
   keyword_init: true
 )
 
@@ -95,13 +83,9 @@ Comic = Struct.new(
 # Request payload for Comic#load.
 #
 # @!attribute [rw] id
-#   @return [String, nil]
-#
-# @!attribute [rw] series
-#   @return [String, nil]
+#   @return [String]
 ComicLoadMatch = Struct.new(
   :id,
-  :series,
   keyword_init: true
 )
 
@@ -150,13 +134,9 @@ Episode = Struct.new(
 # Request payload for Episode#load.
 #
 # @!attribute [rw] id
-#   @return [String, nil]
-#
-# @!attribute [rw] season
-#   @return [Integer, nil]
+#   @return [String]
 EpisodeLoadMatch = Struct.new(
   :id,
-  :season,
   keyword_init: true
 )
 
@@ -297,13 +277,9 @@ Song = Struct.new(
 
 # Request payload for Song#load.
 #
-# @!attribute [rw] episode
-#   @return [Object, nil]
-#
 # @!attribute [rw] id
-#   @return [String, nil]
+#   @return [String]
 SongLoadMatch = Struct.new(
-  :episode,
   :id,
   keyword_init: true
 )

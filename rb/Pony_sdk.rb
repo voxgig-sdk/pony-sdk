@@ -28,7 +28,7 @@ class PonySDK
     utility = PonyUtility.new
     @_utility = utility
 
-    config = PonyConfig.make_config
+    config = PonyConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

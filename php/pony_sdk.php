@@ -40,7 +40,7 @@ class PonySDK
         $utility = new PonyUtility();
         $this->_utility = $utility;
 
-        $config = PonyConfig::make_config();
+        $config = PonyConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,
