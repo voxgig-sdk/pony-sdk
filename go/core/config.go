@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "Pony",
+			"slug": "pony",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -38,6 +41,7 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "data",
+						"short": "Array of found objects.",
 						"type": "`$ARRAY`",
 						"union": map[string]any{
 							"branches": 3,
@@ -47,15 +51,18 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "error",
+						"short": "First error message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "status",
 						"req": true,
+						"short": "HTTP status code",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "warning",
+						"short": "Warning messages separated by newline",
 						"type": "`$STRING`",
 					},
 				},
@@ -328,6 +335,7 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "data",
+						"short": "Array of found objects.",
 						"type": "`$ARRAY`",
 						"union": map[string]any{
 							"branches": 3,
@@ -337,15 +345,18 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "error",
+						"short": "First error message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "status",
 						"req": true,
+						"short": "HTTP status code",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "warning",
+						"short": "Warning messages separated by newline",
 						"type": "`$STRING`",
 					},
 				},
@@ -514,6 +525,7 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "data",
+						"short": "Array of found objects.",
 						"type": "`$ARRAY`",
 						"union": map[string]any{
 							"branches": 3,
@@ -523,15 +535,18 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "error",
+						"short": "First error message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "status",
 						"req": true,
+						"short": "HTTP status code",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "warning",
+						"short": "Warning messages separated by newline",
 						"type": "`$STRING`",
 					},
 				},
@@ -700,6 +715,7 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "data",
+						"short": "Array of found objects.",
 						"type": "`$ARRAY`",
 						"union": map[string]any{
 							"branches": 3,
@@ -709,15 +725,18 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "error",
+						"short": "First error message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "status",
 						"req": true,
+						"short": "HTTP status code",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "warning",
+						"short": "Warning messages separated by newline",
 						"type": "`$STRING`",
 					},
 				},
@@ -776,6 +795,7 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "data",
+						"short": "Array of found objects.",
 						"type": "`$ARRAY`",
 						"union": map[string]any{
 							"branches": 3,
@@ -785,15 +805,18 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "error",
+						"short": "First error message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "status",
 						"req": true,
+						"short": "HTTP status code",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "warning",
+						"short": "Warning messages separated by newline",
 						"type": "`$STRING`",
 					},
 				},
@@ -892,6 +915,7 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "data",
+						"short": "Array of found objects.",
 						"type": "`$ARRAY`",
 						"union": map[string]any{
 							"branches": 3,
@@ -901,15 +925,18 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "error",
+						"short": "First error message",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "status",
 						"req": true,
+						"short": "HTTP status code",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "warning",
+						"short": "Warning messages separated by newline",
 						"type": "`$STRING`",
 					},
 				},

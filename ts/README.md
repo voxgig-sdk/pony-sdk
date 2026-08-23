@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -307,10 +307,10 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `error` |  |
-| `status` |  |
-| `warning` |  |
+| `data` | Array of found objects. |
+| `error` | First error message |
+| `status` | HTTP status code |
+| `warning` | Warning messages separated by newline |
 
 Operations: list, load.
 
@@ -320,10 +320,10 @@ API path: `/character/all`
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `error` |  |
-| `status` |  |
-| `warning` |  |
+| `data` | Array of found objects. |
+| `error` | First error message |
+| `status` | HTTP status code |
+| `warning` | Warning messages separated by newline |
 
 Operations: list, load.
 
@@ -333,10 +333,10 @@ API path: `/comics/all`
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `error` |  |
-| `status` |  |
-| `warning` |  |
+| `data` | Array of found objects. |
+| `error` | First error message |
+| `status` | HTTP status code |
+| `warning` | Warning messages separated by newline |
 
 Operations: list, load.
 
@@ -346,10 +346,10 @@ API path: `/episode/all`
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `error` |  |
-| `status` |  |
-| `warning` |  |
+| `data` | Array of found objects. |
+| `error` | First error message |
+| `status` | HTTP status code |
+| `warning` | Warning messages separated by newline |
 
 Operations: list.
 
@@ -359,10 +359,10 @@ API path: `/image/all`
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `error` |  |
-| `status` |  |
-| `warning` |  |
+| `data` | Array of found objects. |
+| `error` | First error message |
+| `status` | HTTP status code |
+| `warning` | Warning messages separated by newline |
 
 Operations: list, load.
 
@@ -372,10 +372,10 @@ API path: `/kind/all`
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `error` |  |
-| `status` |  |
-| `warning` |  |
+| `data` | Array of found objects. |
+| `error` | First error message |
+| `status` | HTTP status code |
+| `warning` | Warning messages separated by newline |
 
 Operations: list, load.
 
@@ -401,10 +401,10 @@ Create an instance: `const character = client.Character()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `any[]` |  |
-| `error` | `string` |  |
-| `status` | `number` |  |
-| `warning` | `string` |  |
+| `data` | `any[]` | Array of found objects. |
+| `error` | `string` | First error message |
+| `status` | `number` | HTTP status code |
+| `warning` | `string` | Warning messages separated by newline |
 
 #### Example: Load
 
@@ -434,10 +434,10 @@ Create an instance: `const comic = client.Comic()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `any[]` |  |
-| `error` | `string` |  |
-| `status` | `number` |  |
-| `warning` | `string` |  |
+| `data` | `any[]` | Array of found objects. |
+| `error` | `string` | First error message |
+| `status` | `number` | HTTP status code |
+| `warning` | `string` | Warning messages separated by newline |
 
 #### Example: Load
 
@@ -467,10 +467,10 @@ Create an instance: `const episode = client.Episode()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `any[]` |  |
-| `error` | `string` |  |
-| `status` | `number` |  |
-| `warning` | `string` |  |
+| `data` | `any[]` | Array of found objects. |
+| `error` | `string` | First error message |
+| `status` | `number` | HTTP status code |
+| `warning` | `string` | Warning messages separated by newline |
 
 #### Example: Load
 
@@ -499,10 +499,10 @@ Create an instance: `const image = client.Image()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `any[]` |  |
-| `error` | `string` |  |
-| `status` | `number` |  |
-| `warning` | `string` |  |
+| `data` | `any[]` | Array of found objects. |
+| `error` | `string` | First error message |
+| `status` | `number` | HTTP status code |
+| `warning` | `string` | Warning messages separated by newline |
 
 #### Example: List
 
@@ -526,10 +526,10 @@ Create an instance: `const kind = client.Kind()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `any[]` |  |
-| `error` | `string` |  |
-| `status` | `number` |  |
-| `warning` | `string` |  |
+| `data` | `any[]` | Array of found objects. |
+| `error` | `string` | First error message |
+| `status` | `number` | HTTP status code |
+| `warning` | `string` | Warning messages separated by newline |
 
 #### Example: Load
 
@@ -559,10 +559,10 @@ Create an instance: `const song = client.Song()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `any[]` |  |
-| `error` | `string` |  |
-| `status` | `number` |  |
-| `warning` | `string` |  |
+| `data` | `any[]` | Array of found objects. |
+| `error` | `string` | First error message |
+| `status` | `number` | HTTP status code |
+| `warning` | `string` | Warning messages separated by newline |
 
 #### Example: Load
 

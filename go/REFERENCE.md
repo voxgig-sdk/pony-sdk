@@ -118,10 +118,10 @@ fmt.Println(character.GetName()) // "character"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `[]any` | No |  |
-| `error` | `string` | No |  |
-| `status` | `int` | Yes |  |
-| `warning` | `string` | No |  |
+| `data` | `[]any` | No | Array of found objects. |
+| `error` | `string` | No | First error message |
+| `status` | `int` | Yes | HTTP status code |
+| `warning` | `string` | No | Warning messages separated by newline |
 
 ### Operations
 
@@ -184,10 +184,10 @@ fmt.Println(comic.GetName()) // "comic"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `[]any` | No |  |
-| `error` | `string` | No |  |
-| `status` | `int` | Yes |  |
-| `warning` | `string` | No |  |
+| `data` | `[]any` | No | Array of found objects. |
+| `error` | `string` | No | First error message |
+| `status` | `int` | Yes | HTTP status code |
+| `warning` | `string` | No | Warning messages separated by newline |
 
 ### Operations
 
@@ -250,10 +250,10 @@ fmt.Println(episode.GetName()) // "episode"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `[]any` | No |  |
-| `error` | `string` | No |  |
-| `status` | `int` | Yes |  |
-| `warning` | `string` | No |  |
+| `data` | `[]any` | No | Array of found objects. |
+| `error` | `string` | No | First error message |
+| `status` | `int` | Yes | HTTP status code |
+| `warning` | `string` | No | Warning messages separated by newline |
 
 ### Operations
 
@@ -316,10 +316,10 @@ fmt.Println(image.GetName()) // "image"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `[]any` | No |  |
-| `error` | `string` | No |  |
-| `status` | `int` | Yes |  |
-| `warning` | `string` | No |  |
+| `data` | `[]any` | No | Array of found objects. |
+| `error` | `string` | No | First error message |
+| `status` | `int` | Yes | HTTP status code |
+| `warning` | `string` | No | Warning messages separated by newline |
 
 ### Operations
 
@@ -370,10 +370,10 @@ fmt.Println(kind.GetName()) // "kind"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `[]any` | No |  |
-| `error` | `string` | No |  |
-| `status` | `int` | Yes |  |
-| `warning` | `string` | No |  |
+| `data` | `[]any` | No | Array of found objects. |
+| `error` | `string` | No | First error message |
+| `status` | `int` | Yes | HTTP status code |
+| `warning` | `string` | No | Warning messages separated by newline |
 
 ### Operations
 
@@ -436,10 +436,10 @@ fmt.Println(song.GetName()) // "song"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `[]any` | No |  |
-| `error` | `string` | No |  |
-| `status` | `int` | Yes |  |
-| `warning` | `string` | No |  |
+| `data` | `[]any` | No | Array of found objects. |
+| `error` | `string` | No | First error message |
+| `status` | `int` | Yes | HTTP status code |
+| `warning` | `string` | No | Warning messages separated by newline |
 
 ### Operations
 

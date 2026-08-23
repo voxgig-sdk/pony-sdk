@@ -36,6 +36,7 @@
               "active": true,
               "name": "data",
               "req": false,
+              "short": "Array of found objects.",
               "type": "`$ARRAY`",
               "union": {
                 "branches": 3,
@@ -47,18 +48,21 @@
               "active": true,
               "name": "error",
               "req": false,
+              "short": "First error message",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "status",
               "req": true,
+              "short": "HTTP status code",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "warning",
               "req": false,
+              "short": "Warning messages separated by newline",
               "type": "`$STRING`"
             }
           ],
@@ -366,6 +370,7 @@
               "active": true,
               "name": "data",
               "req": false,
+              "short": "Array of found objects.",
               "type": "`$ARRAY`",
               "union": {
                 "branches": 3,
@@ -377,18 +382,21 @@
               "active": true,
               "name": "error",
               "req": false,
+              "short": "First error message",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "status",
               "req": true,
+              "short": "HTTP status code",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "warning",
               "req": false,
+              "short": "Warning messages separated by newline",
               "type": "`$STRING`"
             }
           ],
@@ -580,6 +588,7 @@
               "active": true,
               "name": "data",
               "req": false,
+              "short": "Array of found objects.",
               "type": "`$ARRAY`",
               "union": {
                 "branches": 3,
@@ -591,18 +600,21 @@
               "active": true,
               "name": "error",
               "req": false,
+              "short": "First error message",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "status",
               "req": true,
+              "short": "HTTP status code",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "warning",
               "req": false,
+              "short": "Warning messages separated by newline",
               "type": "`$STRING`"
             }
           ],
@@ -794,6 +806,7 @@
               "active": true,
               "name": "data",
               "req": false,
+              "short": "Array of found objects.",
               "type": "`$ARRAY`",
               "union": {
                 "branches": 3,
@@ -805,18 +818,21 @@
               "active": true,
               "name": "error",
               "req": false,
+              "short": "First error message",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "status",
               "req": true,
+              "short": "HTTP status code",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "warning",
               "req": false,
+              "short": "Warning messages separated by newline",
               "type": "`$STRING`"
             }
           ],
@@ -886,6 +902,7 @@
               "active": true,
               "name": "data",
               "req": false,
+              "short": "Array of found objects.",
               "type": "`$ARRAY`",
               "union": {
                 "branches": 3,
@@ -897,18 +914,21 @@
               "active": true,
               "name": "error",
               "req": false,
+              "short": "First error message",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "status",
               "req": true,
+              "short": "HTTP status code",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "warning",
               "req": false,
+              "short": "Warning messages separated by newline",
               "type": "`$STRING`"
             }
           ],
@@ -1020,6 +1040,7 @@
               "active": true,
               "name": "data",
               "req": false,
+              "short": "Array of found objects.",
               "type": "`$ARRAY`",
               "union": {
                 "branches": 3,
@@ -1031,18 +1052,21 @@
               "active": true,
               "name": "error",
               "req": false,
+              "short": "First error message",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "status",
               "req": true,
+              "short": "HTTP status code",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "warning",
               "req": false,
+              "short": "Warning messages separated by newline",
               "type": "`$STRING`"
             }
           ],

@@ -6,7 +6,7 @@ The Golang SDK for the Pony API — an entity-oriented client using standard Go 
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Character(nil)` — each with the same small set of operations (`List`, `Load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -274,10 +274,10 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"data"` |  |
-| `"error"` |  |
-| `"status"` |  |
-| `"warning"` |  |
+| `"data"` | Array of found objects. |
+| `"error"` | First error message |
+| `"status"` | HTTP status code |
+| `"warning"` | Warning messages separated by newline |
 
 Operations: List, Load.
 
@@ -287,10 +287,10 @@ API path: `/character/all`
 
 | Field | Description |
 | --- | --- |
-| `"data"` |  |
-| `"error"` |  |
-| `"status"` |  |
-| `"warning"` |  |
+| `"data"` | Array of found objects. |
+| `"error"` | First error message |
+| `"status"` | HTTP status code |
+| `"warning"` | Warning messages separated by newline |
 
 Operations: List, Load.
 
@@ -300,10 +300,10 @@ API path: `/comics/all`
 
 | Field | Description |
 | --- | --- |
-| `"data"` |  |
-| `"error"` |  |
-| `"status"` |  |
-| `"warning"` |  |
+| `"data"` | Array of found objects. |
+| `"error"` | First error message |
+| `"status"` | HTTP status code |
+| `"warning"` | Warning messages separated by newline |
 
 Operations: List, Load.
 
@@ -313,10 +313,10 @@ API path: `/episode/all`
 
 | Field | Description |
 | --- | --- |
-| `"data"` |  |
-| `"error"` |  |
-| `"status"` |  |
-| `"warning"` |  |
+| `"data"` | Array of found objects. |
+| `"error"` | First error message |
+| `"status"` | HTTP status code |
+| `"warning"` | Warning messages separated by newline |
 
 Operations: List.
 
@@ -326,10 +326,10 @@ API path: `/image/all`
 
 | Field | Description |
 | --- | --- |
-| `"data"` |  |
-| `"error"` |  |
-| `"status"` |  |
-| `"warning"` |  |
+| `"data"` | Array of found objects. |
+| `"error"` | First error message |
+| `"status"` | HTTP status code |
+| `"warning"` | Warning messages separated by newline |
 
 Operations: List, Load.
 
@@ -339,10 +339,10 @@ API path: `/kind/all`
 
 | Field | Description |
 | --- | --- |
-| `"data"` |  |
-| `"error"` |  |
-| `"status"` |  |
-| `"warning"` |  |
+| `"data"` | Array of found objects. |
+| `"error"` | First error message |
+| `"status"` | HTTP status code |
+| `"warning"` | Warning messages separated by newline |
 
 Operations: List, Load.
 
@@ -368,10 +368,10 @@ Create an instance: `character := client.Character(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `[]any` |  |
-| `error` | `string` |  |
-| `status` | `int` |  |
-| `warning` | `string` |  |
+| `data` | `[]any` | Array of found objects. |
+| `error` | `string` | First error message |
+| `status` | `int` | HTTP status code |
+| `warning` | `string` | Warning messages separated by newline |
 
 #### Example: Load
 
@@ -409,10 +409,10 @@ Create an instance: `comic := client.Comic(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `[]any` |  |
-| `error` | `string` |  |
-| `status` | `int` |  |
-| `warning` | `string` |  |
+| `data` | `[]any` | Array of found objects. |
+| `error` | `string` | First error message |
+| `status` | `int` | HTTP status code |
+| `warning` | `string` | Warning messages separated by newline |
 
 #### Example: Load
 
@@ -450,10 +450,10 @@ Create an instance: `episode := client.Episode(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `[]any` |  |
-| `error` | `string` |  |
-| `status` | `int` |  |
-| `warning` | `string` |  |
+| `data` | `[]any` | Array of found objects. |
+| `error` | `string` | First error message |
+| `status` | `int` | HTTP status code |
+| `warning` | `string` | Warning messages separated by newline |
 
 #### Example: Load
 
@@ -490,10 +490,10 @@ Create an instance: `image := client.Image(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `[]any` |  |
-| `error` | `string` |  |
-| `status` | `int` |  |
-| `warning` | `string` |  |
+| `data` | `[]any` | Array of found objects. |
+| `error` | `string` | First error message |
+| `status` | `int` | HTTP status code |
+| `warning` | `string` | Warning messages separated by newline |
 
 #### Example: List
 
@@ -521,10 +521,10 @@ Create an instance: `kind := client.Kind(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `[]any` |  |
-| `error` | `string` |  |
-| `status` | `int` |  |
-| `warning` | `string` |  |
+| `data` | `[]any` | Array of found objects. |
+| `error` | `string` | First error message |
+| `status` | `int` | HTTP status code |
+| `warning` | `string` | Warning messages separated by newline |
 
 #### Example: Load
 
@@ -562,10 +562,10 @@ Create an instance: `song := client.Song(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `[]any` |  |
-| `error` | `string` |  |
-| `status` | `int` |  |
-| `warning` | `string` |  |
+| `data` | `[]any` | Array of found objects. |
+| `error` | `string` | First error message |
+| `status` | `int` | HTTP status code |
+| `warning` | `string` | Warning messages separated by newline |
 
 #### Example: Load
 

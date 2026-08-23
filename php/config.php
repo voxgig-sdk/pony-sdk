@@ -33,6 +33,9 @@ class PonyConfig
         return [
             "main" => [
                 "name" => "Pony",
+                "slug" => "pony",
+                "version" => "0.0.1",
+                "target" => "php",
             ],
             "feature" => [
                 "test" => [
@@ -60,6 +63,7 @@ class PonyConfig
           'fields' => [
             [
               'name' => 'data',
+              'short' => 'Array of found objects.',
               'type' => '`$ARRAY`',
               'union' => [
                 'branches' => 3,
@@ -69,15 +73,18 @@ class PonyConfig
             ],
             [
               'name' => 'error',
+              'short' => 'First error message',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'status',
               'req' => true,
+              'short' => 'HTTP status code',
               'type' => '`$INTEGER`',
             ],
             [
               'name' => 'warning',
+              'short' => 'Warning messages separated by newline',
               'type' => '`$STRING`',
             ],
           ],
@@ -350,6 +357,7 @@ class PonyConfig
           'fields' => [
             [
               'name' => 'data',
+              'short' => 'Array of found objects.',
               'type' => '`$ARRAY`',
               'union' => [
                 'branches' => 3,
@@ -359,15 +367,18 @@ class PonyConfig
             ],
             [
               'name' => 'error',
+              'short' => 'First error message',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'status',
               'req' => true,
+              'short' => 'HTTP status code',
               'type' => '`$INTEGER`',
             ],
             [
               'name' => 'warning',
+              'short' => 'Warning messages separated by newline',
               'type' => '`$STRING`',
             ],
           ],
@@ -536,6 +547,7 @@ class PonyConfig
           'fields' => [
             [
               'name' => 'data',
+              'short' => 'Array of found objects.',
               'type' => '`$ARRAY`',
               'union' => [
                 'branches' => 3,
@@ -545,15 +557,18 @@ class PonyConfig
             ],
             [
               'name' => 'error',
+              'short' => 'First error message',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'status',
               'req' => true,
+              'short' => 'HTTP status code',
               'type' => '`$INTEGER`',
             ],
             [
               'name' => 'warning',
+              'short' => 'Warning messages separated by newline',
               'type' => '`$STRING`',
             ],
           ],
@@ -722,6 +737,7 @@ class PonyConfig
           'fields' => [
             [
               'name' => 'data',
+              'short' => 'Array of found objects.',
               'type' => '`$ARRAY`',
               'union' => [
                 'branches' => 3,
@@ -731,15 +747,18 @@ class PonyConfig
             ],
             [
               'name' => 'error',
+              'short' => 'First error message',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'status',
               'req' => true,
+              'short' => 'HTTP status code',
               'type' => '`$INTEGER`',
             ],
             [
               'name' => 'warning',
+              'short' => 'Warning messages separated by newline',
               'type' => '`$STRING`',
             ],
           ],
@@ -798,6 +817,7 @@ class PonyConfig
           'fields' => [
             [
               'name' => 'data',
+              'short' => 'Array of found objects.',
               'type' => '`$ARRAY`',
               'union' => [
                 'branches' => 3,
@@ -807,15 +827,18 @@ class PonyConfig
             ],
             [
               'name' => 'error',
+              'short' => 'First error message',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'status',
               'req' => true,
+              'short' => 'HTTP status code',
               'type' => '`$INTEGER`',
             ],
             [
               'name' => 'warning',
+              'short' => 'Warning messages separated by newline',
               'type' => '`$STRING`',
             ],
           ],
@@ -914,6 +937,7 @@ class PonyConfig
           'fields' => [
             [
               'name' => 'data',
+              'short' => 'Array of found objects.',
               'type' => '`$ARRAY`',
               'union' => [
                 'branches' => 3,
@@ -923,15 +947,18 @@ class PonyConfig
             ],
             [
               'name' => 'error',
+              'short' => 'First error message',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'status',
               'req' => true,
+              'short' => 'HTTP status code',
               'type' => '`$INTEGER`',
             ],
             [
               'name' => 'warning',
+              'short' => 'Warning messages separated by newline',
               'type' => '`$STRING`',
             ],
           ],

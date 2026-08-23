@@ -19,6 +19,9 @@ module PonyConfig
     {
       "main" => {
         "name" => "Pony",
+        "slug" => "pony",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -46,6 +49,7 @@ module PonyConfig
           "fields" => [
             {
               "name" => "data",
+              "short" => "Array of found objects.",
               "type" => "`$ARRAY`",
               "union" => {
                 "branches" => 3,
@@ -55,15 +59,18 @@ module PonyConfig
             },
             {
               "name" => "error",
+              "short" => "First error message",
               "type" => "`$STRING`",
             },
             {
               "name" => "status",
               "req" => true,
+              "short" => "HTTP status code",
               "type" => "`$INTEGER`",
             },
             {
               "name" => "warning",
+              "short" => "Warning messages separated by newline",
               "type" => "`$STRING`",
             },
           ],
@@ -336,6 +343,7 @@ module PonyConfig
           "fields" => [
             {
               "name" => "data",
+              "short" => "Array of found objects.",
               "type" => "`$ARRAY`",
               "union" => {
                 "branches" => 3,
@@ -345,15 +353,18 @@ module PonyConfig
             },
             {
               "name" => "error",
+              "short" => "First error message",
               "type" => "`$STRING`",
             },
             {
               "name" => "status",
               "req" => true,
+              "short" => "HTTP status code",
               "type" => "`$INTEGER`",
             },
             {
               "name" => "warning",
+              "short" => "Warning messages separated by newline",
               "type" => "`$STRING`",
             },
           ],
@@ -522,6 +533,7 @@ module PonyConfig
           "fields" => [
             {
               "name" => "data",
+              "short" => "Array of found objects.",
               "type" => "`$ARRAY`",
               "union" => {
                 "branches" => 3,
@@ -531,15 +543,18 @@ module PonyConfig
             },
             {
               "name" => "error",
+              "short" => "First error message",
               "type" => "`$STRING`",
             },
             {
               "name" => "status",
               "req" => true,
+              "short" => "HTTP status code",
               "type" => "`$INTEGER`",
             },
             {
               "name" => "warning",
+              "short" => "Warning messages separated by newline",
               "type" => "`$STRING`",
             },
           ],
@@ -708,6 +723,7 @@ module PonyConfig
           "fields" => [
             {
               "name" => "data",
+              "short" => "Array of found objects.",
               "type" => "`$ARRAY`",
               "union" => {
                 "branches" => 3,
@@ -717,15 +733,18 @@ module PonyConfig
             },
             {
               "name" => "error",
+              "short" => "First error message",
               "type" => "`$STRING`",
             },
             {
               "name" => "status",
               "req" => true,
+              "short" => "HTTP status code",
               "type" => "`$INTEGER`",
             },
             {
               "name" => "warning",
+              "short" => "Warning messages separated by newline",
               "type" => "`$STRING`",
             },
           ],
@@ -784,6 +803,7 @@ module PonyConfig
           "fields" => [
             {
               "name" => "data",
+              "short" => "Array of found objects.",
               "type" => "`$ARRAY`",
               "union" => {
                 "branches" => 3,
@@ -793,15 +813,18 @@ module PonyConfig
             },
             {
               "name" => "error",
+              "short" => "First error message",
               "type" => "`$STRING`",
             },
             {
               "name" => "status",
               "req" => true,
+              "short" => "HTTP status code",
               "type" => "`$INTEGER`",
             },
             {
               "name" => "warning",
+              "short" => "Warning messages separated by newline",
               "type" => "`$STRING`",
             },
           ],
@@ -900,6 +923,7 @@ module PonyConfig
           "fields" => [
             {
               "name" => "data",
+              "short" => "Array of found objects.",
               "type" => "`$ARRAY`",
               "union" => {
                 "branches" => 3,
@@ -909,15 +933,18 @@ module PonyConfig
             },
             {
               "name" => "error",
+              "short" => "First error message",
               "type" => "`$STRING`",
             },
             {
               "name" => "status",
               "req" => true,
+              "short" => "HTTP status code",
               "type" => "`$INTEGER`",
             },
             {
               "name" => "warning",
+              "short" => "Warning messages separated by newline",
               "type" => "`$STRING`",
             },
           ],

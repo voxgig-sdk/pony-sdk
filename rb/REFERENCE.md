@@ -113,10 +113,10 @@ character = client.Character
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Array` | No |  |
-| `error` | `String` | No |  |
-| `status` | `Integer` | Yes |  |
-| `warning` | `String` | No |  |
+| `data` | `Array` | No | Array of found objects. |
+| `error` | `String` | No | First error message |
+| `status` | `Integer` | Yes | HTTP status code |
+| `warning` | `String` | No | Warning messages separated by newline |
 
 ### Operations
 
@@ -176,10 +176,10 @@ comic = client.Comic
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Array` | No |  |
-| `error` | `String` | No |  |
-| `status` | `Integer` | Yes |  |
-| `warning` | `String` | No |  |
+| `data` | `Array` | No | Array of found objects. |
+| `error` | `String` | No | First error message |
+| `status` | `Integer` | Yes | HTTP status code |
+| `warning` | `String` | No | Warning messages separated by newline |
 
 ### Operations
 
@@ -239,10 +239,10 @@ episode = client.Episode
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Array` | No |  |
-| `error` | `String` | No |  |
-| `status` | `Integer` | Yes |  |
-| `warning` | `String` | No |  |
+| `data` | `Array` | No | Array of found objects. |
+| `error` | `String` | No | First error message |
+| `status` | `Integer` | Yes | HTTP status code |
+| `warning` | `String` | No | Warning messages separated by newline |
 
 ### Operations
 
@@ -302,10 +302,10 @@ image = client.Image
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Array` | No |  |
-| `error` | `String` | No |  |
-| `status` | `Integer` | Yes |  |
-| `warning` | `String` | No |  |
+| `data` | `Array` | No | Array of found objects. |
+| `error` | `String` | No | First error message |
+| `status` | `Integer` | Yes | HTTP status code |
+| `warning` | `String` | No | Warning messages separated by newline |
 
 ### Operations
 
@@ -357,10 +357,10 @@ kind = client.Kind
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Array` | No |  |
-| `error` | `String` | No |  |
-| `status` | `Integer` | Yes |  |
-| `warning` | `String` | No |  |
+| `data` | `Array` | No | Array of found objects. |
+| `error` | `String` | No | First error message |
+| `status` | `Integer` | Yes | HTTP status code |
+| `warning` | `String` | No | Warning messages separated by newline |
 
 ### Operations
 
@@ -420,10 +420,10 @@ song = client.Song
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Array` | No |  |
-| `error` | `String` | No |  |
-| `status` | `Integer` | Yes |  |
-| `warning` | `String` | No |  |
+| `data` | `Array` | No | Array of found objects. |
+| `error` | `String` | No | First error message |
+| `status` | `Integer` | Yes | HTTP status code |
+| `warning` | `String` | No | Warning messages separated by newline |
 
 ### Operations
 

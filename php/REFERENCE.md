@@ -112,10 +112,10 @@ $character = $client->Character();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `array` | No |  |
-| `error` | `string` | No |  |
-| `status` | `int` | Yes |  |
-| `warning` | `string` | No |  |
+| `data` | `array` | No | Array of found objects. |
+| `error` | `string` | No | First error message |
+| `status` | `int` | Yes | HTTP status code |
+| `warning` | `string` | No | Warning messages separated by newline |
 
 ### Operations
 
@@ -175,10 +175,10 @@ $comic = $client->Comic();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `array` | No |  |
-| `error` | `string` | No |  |
-| `status` | `int` | Yes |  |
-| `warning` | `string` | No |  |
+| `data` | `array` | No | Array of found objects. |
+| `error` | `string` | No | First error message |
+| `status` | `int` | Yes | HTTP status code |
+| `warning` | `string` | No | Warning messages separated by newline |
 
 ### Operations
 
@@ -238,10 +238,10 @@ $episode = $client->Episode();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `array` | No |  |
-| `error` | `string` | No |  |
-| `status` | `int` | Yes |  |
-| `warning` | `string` | No |  |
+| `data` | `array` | No | Array of found objects. |
+| `error` | `string` | No | First error message |
+| `status` | `int` | Yes | HTTP status code |
+| `warning` | `string` | No | Warning messages separated by newline |
 
 ### Operations
 
@@ -301,10 +301,10 @@ $image = $client->Image();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `array` | No |  |
-| `error` | `string` | No |  |
-| `status` | `int` | Yes |  |
-| `warning` | `string` | No |  |
+| `data` | `array` | No | Array of found objects. |
+| `error` | `string` | No | First error message |
+| `status` | `int` | Yes | HTTP status code |
+| `warning` | `string` | No | Warning messages separated by newline |
 
 ### Operations
 
@@ -356,10 +356,10 @@ $kind = $client->Kind();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `array` | No |  |
-| `error` | `string` | No |  |
-| `status` | `int` | Yes |  |
-| `warning` | `string` | No |  |
+| `data` | `array` | No | Array of found objects. |
+| `error` | `string` | No | First error message |
+| `status` | `int` | Yes | HTTP status code |
+| `warning` | `string` | No | Warning messages separated by newline |
 
 ### Operations
 
@@ -419,10 +419,10 @@ $song = $client->Song();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `array` | No |  |
-| `error` | `string` | No |  |
-| `status` | `int` | Yes |  |
-| `warning` | `string` | No |  |
+| `data` | `array` | No | Array of found objects. |
+| `error` | `string` | No | First error message |
+| `status` | `int` | Yes | HTTP status code |
+| `warning` | `string` | No | Warning messages separated by newline |
 
 ### Operations
 

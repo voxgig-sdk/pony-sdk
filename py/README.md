@@ -261,10 +261,10 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `error` |  |
-| `status` |  |
-| `warning` |  |
+| `data` | Array of found objects. |
+| `error` | First error message |
+| `status` | HTTP status code |
+| `warning` | Warning messages separated by newline |
 
 Operations: List, Load.
 
@@ -274,10 +274,10 @@ API path: `/character/all`
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `error` |  |
-| `status` |  |
-| `warning` |  |
+| `data` | Array of found objects. |
+| `error` | First error message |
+| `status` | HTTP status code |
+| `warning` | Warning messages separated by newline |
 
 Operations: List, Load.
 
@@ -287,10 +287,10 @@ API path: `/comics/all`
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `error` |  |
-| `status` |  |
-| `warning` |  |
+| `data` | Array of found objects. |
+| `error` | First error message |
+| `status` | HTTP status code |
+| `warning` | Warning messages separated by newline |
 
 Operations: List, Load.
 
@@ -300,10 +300,10 @@ API path: `/episode/all`
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `error` |  |
-| `status` |  |
-| `warning` |  |
+| `data` | Array of found objects. |
+| `error` | First error message |
+| `status` | HTTP status code |
+| `warning` | Warning messages separated by newline |
 
 Operations: List.
 
@@ -313,10 +313,10 @@ API path: `/image/all`
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `error` |  |
-| `status` |  |
-| `warning` |  |
+| `data` | Array of found objects. |
+| `error` | First error message |
+| `status` | HTTP status code |
+| `warning` | Warning messages separated by newline |
 
 Operations: List, Load.
 
@@ -326,10 +326,10 @@ API path: `/kind/all`
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `error` |  |
-| `status` |  |
-| `warning` |  |
+| `data` | Array of found objects. |
+| `error` | First error message |
+| `status` | HTTP status code |
+| `warning` | Warning messages separated by newline |
 
 Operations: List, Load.
 
@@ -355,10 +355,10 @@ Create an instance: `character = client.Character()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `list` |  |
-| `error` | `str` |  |
-| `status` | `int` |  |
-| `warning` | `str` |  |
+| `data` | `list` | Array of found objects. |
+| `error` | `str` | First error message |
+| `status` | `int` | HTTP status code |
+| `warning` | `str` | Warning messages separated by newline |
 
 #### Example: Load
 
@@ -388,10 +388,10 @@ Create an instance: `comic = client.Comic()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `list` |  |
-| `error` | `str` |  |
-| `status` | `int` |  |
-| `warning` | `str` |  |
+| `data` | `list` | Array of found objects. |
+| `error` | `str` | First error message |
+| `status` | `int` | HTTP status code |
+| `warning` | `str` | Warning messages separated by newline |
 
 #### Example: Load
 
@@ -421,10 +421,10 @@ Create an instance: `episode = client.Episode()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `list` |  |
-| `error` | `str` |  |
-| `status` | `int` |  |
-| `warning` | `str` |  |
+| `data` | `list` | Array of found objects. |
+| `error` | `str` | First error message |
+| `status` | `int` | HTTP status code |
+| `warning` | `str` | Warning messages separated by newline |
 
 #### Example: Load
 
@@ -453,10 +453,10 @@ Create an instance: `image = client.Image()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `list` |  |
-| `error` | `str` |  |
-| `status` | `int` |  |
-| `warning` | `str` |  |
+| `data` | `list` | Array of found objects. |
+| `error` | `str` | First error message |
+| `status` | `int` | HTTP status code |
+| `warning` | `str` | Warning messages separated by newline |
 
 #### Example: List
 
@@ -480,10 +480,10 @@ Create an instance: `kind = client.Kind()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `list` |  |
-| `error` | `str` |  |
-| `status` | `int` |  |
-| `warning` | `str` |  |
+| `data` | `list` | Array of found objects. |
+| `error` | `str` | First error message |
+| `status` | `int` | HTTP status code |
+| `warning` | `str` | Warning messages separated by newline |
 
 #### Example: Load
 
@@ -513,10 +513,10 @@ Create an instance: `song = client.Song()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `list` |  |
-| `error` | `str` |  |
-| `status` | `int` |  |
-| `warning` | `str` |  |
+| `data` | `list` | Array of found objects. |
+| `error` | `str` | First error message |
+| `status` | `int` | HTTP status code |
+| `warning` | `str` | Warning messages separated by newline |
 
 #### Example: Load
 

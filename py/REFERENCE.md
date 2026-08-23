@@ -107,10 +107,10 @@ character = client.Character()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `list` | No |  |
-| `error` | `str` | No |  |
-| `status` | `int` | Yes |  |
-| `warning` | `str` | No |  |
+| `data` | `list` | No | Array of found objects. |
+| `error` | `str` | No | First error message |
+| `status` | `int` | Yes | HTTP status code |
+| `warning` | `str` | No | Warning messages separated by newline |
 
 ### Operations
 
@@ -171,10 +171,10 @@ comic = client.Comic()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `list` | No |  |
-| `error` | `str` | No |  |
-| `status` | `int` | Yes |  |
-| `warning` | `str` | No |  |
+| `data` | `list` | No | Array of found objects. |
+| `error` | `str` | No | First error message |
+| `status` | `int` | Yes | HTTP status code |
+| `warning` | `str` | No | Warning messages separated by newline |
 
 ### Operations
 
@@ -235,10 +235,10 @@ episode = client.Episode()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `list` | No |  |
-| `error` | `str` | No |  |
-| `status` | `int` | Yes |  |
-| `warning` | `str` | No |  |
+| `data` | `list` | No | Array of found objects. |
+| `error` | `str` | No | First error message |
+| `status` | `int` | Yes | HTTP status code |
+| `warning` | `str` | No | Warning messages separated by newline |
 
 ### Operations
 
@@ -299,10 +299,10 @@ image = client.Image()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `list` | No |  |
-| `error` | `str` | No |  |
-| `status` | `int` | Yes |  |
-| `warning` | `str` | No |  |
+| `data` | `list` | No | Array of found objects. |
+| `error` | `str` | No | First error message |
+| `status` | `int` | Yes | HTTP status code |
+| `warning` | `str` | No | Warning messages separated by newline |
 
 ### Operations
 
@@ -355,10 +355,10 @@ kind = client.Kind()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `list` | No |  |
-| `error` | `str` | No |  |
-| `status` | `int` | Yes |  |
-| `warning` | `str` | No |  |
+| `data` | `list` | No | Array of found objects. |
+| `error` | `str` | No | First error message |
+| `status` | `int` | Yes | HTTP status code |
+| `warning` | `str` | No | Warning messages separated by newline |
 
 ### Operations
 
@@ -419,10 +419,10 @@ song = client.Song()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `list` | No |  |
-| `error` | `str` | No |  |
-| `status` | `int` | Yes |  |
-| `warning` | `str` | No |  |
+| `data` | `list` | No | Array of found objects. |
+| `error` | `str` | No | First error message |
+| `status` | `int` | Yes | HTTP status code |
+| `warning` | `str` | No | Warning messages separated by newline |
 
 ### Operations
 

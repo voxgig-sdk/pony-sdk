@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'Pony',
+        slug: "pony",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -71,6 +82,7 @@ class Config {
       "fields": [
         {
           "name": "data",
+          "short": "Array of found objects.",
           "type": "`$ARRAY`",
           "union": {
             "branches": 3,
@@ -80,15 +92,18 @@ class Config {
         },
         {
           "name": "error",
+          "short": "First error message",
           "type": "`$STRING`"
         },
         {
           "name": "status",
           "req": true,
+          "short": "HTTP status code",
           "type": "`$INTEGER`"
         },
         {
           "name": "warning",
+          "short": "Warning messages separated by newline",
           "type": "`$STRING`"
         }
       ],
@@ -361,6 +376,7 @@ class Config {
       "fields": [
         {
           "name": "data",
+          "short": "Array of found objects.",
           "type": "`$ARRAY`",
           "union": {
             "branches": 3,
@@ -370,15 +386,18 @@ class Config {
         },
         {
           "name": "error",
+          "short": "First error message",
           "type": "`$STRING`"
         },
         {
           "name": "status",
           "req": true,
+          "short": "HTTP status code",
           "type": "`$INTEGER`"
         },
         {
           "name": "warning",
+          "short": "Warning messages separated by newline",
           "type": "`$STRING`"
         }
       ],
@@ -547,6 +566,7 @@ class Config {
       "fields": [
         {
           "name": "data",
+          "short": "Array of found objects.",
           "type": "`$ARRAY`",
           "union": {
             "branches": 3,
@@ -556,15 +576,18 @@ class Config {
         },
         {
           "name": "error",
+          "short": "First error message",
           "type": "`$STRING`"
         },
         {
           "name": "status",
           "req": true,
+          "short": "HTTP status code",
           "type": "`$INTEGER`"
         },
         {
           "name": "warning",
+          "short": "Warning messages separated by newline",
           "type": "`$STRING`"
         }
       ],
@@ -733,6 +756,7 @@ class Config {
       "fields": [
         {
           "name": "data",
+          "short": "Array of found objects.",
           "type": "`$ARRAY`",
           "union": {
             "branches": 3,
@@ -742,15 +766,18 @@ class Config {
         },
         {
           "name": "error",
+          "short": "First error message",
           "type": "`$STRING`"
         },
         {
           "name": "status",
           "req": true,
+          "short": "HTTP status code",
           "type": "`$INTEGER`"
         },
         {
           "name": "warning",
+          "short": "Warning messages separated by newline",
           "type": "`$STRING`"
         }
       ],
@@ -809,6 +836,7 @@ class Config {
       "fields": [
         {
           "name": "data",
+          "short": "Array of found objects.",
           "type": "`$ARRAY`",
           "union": {
             "branches": 3,
@@ -818,15 +846,18 @@ class Config {
         },
         {
           "name": "error",
+          "short": "First error message",
           "type": "`$STRING`"
         },
         {
           "name": "status",
           "req": true,
+          "short": "HTTP status code",
           "type": "`$INTEGER`"
         },
         {
           "name": "warning",
+          "short": "Warning messages separated by newline",
           "type": "`$STRING`"
         }
       ],
@@ -925,6 +956,7 @@ class Config {
       "fields": [
         {
           "name": "data",
+          "short": "Array of found objects.",
           "type": "`$ARRAY`",
           "union": {
             "branches": 3,
@@ -934,15 +966,18 @@ class Config {
         },
         {
           "name": "error",
+          "short": "First error message",
           "type": "`$STRING`"
         },
         {
           "name": "status",
           "req": true,
+          "short": "HTTP status code",
           "type": "`$INTEGER`"
         },
         {
           "name": "warning",
+          "short": "Warning messages separated by newline",
           "type": "`$STRING`"
         }
       ],

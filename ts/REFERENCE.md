@@ -176,10 +176,10 @@ const character = client.Character()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `any[]` | No |  |
-| `error` | `string` | No |  |
-| `status` | `number` | Yes |  |
-| `warning` | `string` | No |  |
+| `data` | `any[]` | No | Array of found objects. |
+| `error` | `string` | No | First error message |
+| `status` | `number` | Yes | HTTP status code |
+| `warning` | `string` | No | Warning messages separated by newline |
 
 ### Actions
 
@@ -257,10 +257,10 @@ const comic = client.Comic()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `any[]` | No |  |
-| `error` | `string` | No |  |
-| `status` | `number` | Yes |  |
-| `warning` | `string` | No |  |
+| `data` | `any[]` | No | Array of found objects. |
+| `error` | `string` | No | First error message |
+| `status` | `number` | Yes | HTTP status code |
+| `warning` | `string` | No | Warning messages separated by newline |
 
 ### Actions
 
@@ -338,10 +338,10 @@ const episode = client.Episode()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `any[]` | No |  |
-| `error` | `string` | No |  |
-| `status` | `number` | Yes |  |
-| `warning` | `string` | No |  |
+| `data` | `any[]` | No | Array of found objects. |
+| `error` | `string` | No | First error message |
+| `status` | `number` | Yes | HTTP status code |
+| `warning` | `string` | No | Warning messages separated by newline |
 
 ### Actions
 
@@ -419,10 +419,10 @@ const image = client.Image()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `any[]` | No |  |
-| `error` | `string` | No |  |
-| `status` | `number` | Yes |  |
-| `warning` | `string` | No |  |
+| `data` | `any[]` | No | Array of found objects. |
+| `error` | `string` | No | First error message |
+| `status` | `number` | Yes | HTTP status code |
+| `warning` | `string` | No | Warning messages separated by newline |
 
 ### Actions
 
@@ -492,10 +492,10 @@ const kind = client.Kind()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `any[]` | No |  |
-| `error` | `string` | No |  |
-| `status` | `number` | Yes |  |
-| `warning` | `string` | No |  |
+| `data` | `any[]` | No | Array of found objects. |
+| `error` | `string` | No | First error message |
+| `status` | `number` | Yes | HTTP status code |
+| `warning` | `string` | No | Warning messages separated by newline |
 
 ### Actions
 
@@ -573,10 +573,10 @@ const song = client.Song()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `any[]` | No |  |
-| `error` | `string` | No |  |
-| `status` | `number` | Yes |  |
-| `warning` | `string` | No |  |
+| `data` | `any[]` | No | Array of found objects. |
+| `error` | `string` | No | First error message |
+| `status` | `number` | Yes | HTTP status code |
+| `warning` | `string` | No | Warning messages separated by newline |
 
 ### Actions
 

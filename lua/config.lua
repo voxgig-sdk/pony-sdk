@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "Pony",
+      slug = "pony",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -34,6 +37,7 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "data",
+            ["short"] = "Array of found objects.",
             ["type"] = "`$ARRAY`",
             ["union"] = {
               ["branches"] = 3,
@@ -43,15 +47,18 @@ local function make_config()
           },
           {
             ["name"] = "error",
+            ["short"] = "First error message",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "status",
             ["req"] = true,
+            ["short"] = "HTTP status code",
             ["type"] = "`$INTEGER`",
           },
           {
             ["name"] = "warning",
+            ["short"] = "Warning messages separated by newline",
             ["type"] = "`$STRING`",
           },
         },
@@ -324,6 +331,7 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "data",
+            ["short"] = "Array of found objects.",
             ["type"] = "`$ARRAY`",
             ["union"] = {
               ["branches"] = 3,
@@ -333,15 +341,18 @@ local function make_config()
           },
           {
             ["name"] = "error",
+            ["short"] = "First error message",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "status",
             ["req"] = true,
+            ["short"] = "HTTP status code",
             ["type"] = "`$INTEGER`",
           },
           {
             ["name"] = "warning",
+            ["short"] = "Warning messages separated by newline",
             ["type"] = "`$STRING`",
           },
         },
@@ -510,6 +521,7 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "data",
+            ["short"] = "Array of found objects.",
             ["type"] = "`$ARRAY`",
             ["union"] = {
               ["branches"] = 3,
@@ -519,15 +531,18 @@ local function make_config()
           },
           {
             ["name"] = "error",
+            ["short"] = "First error message",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "status",
             ["req"] = true,
+            ["short"] = "HTTP status code",
             ["type"] = "`$INTEGER`",
           },
           {
             ["name"] = "warning",
+            ["short"] = "Warning messages separated by newline",
             ["type"] = "`$STRING`",
           },
         },
@@ -696,6 +711,7 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "data",
+            ["short"] = "Array of found objects.",
             ["type"] = "`$ARRAY`",
             ["union"] = {
               ["branches"] = 3,
@@ -705,15 +721,18 @@ local function make_config()
           },
           {
             ["name"] = "error",
+            ["short"] = "First error message",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "status",
             ["req"] = true,
+            ["short"] = "HTTP status code",
             ["type"] = "`$INTEGER`",
           },
           {
             ["name"] = "warning",
+            ["short"] = "Warning messages separated by newline",
             ["type"] = "`$STRING`",
           },
         },
@@ -772,6 +791,7 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "data",
+            ["short"] = "Array of found objects.",
             ["type"] = "`$ARRAY`",
             ["union"] = {
               ["branches"] = 3,
@@ -781,15 +801,18 @@ local function make_config()
           },
           {
             ["name"] = "error",
+            ["short"] = "First error message",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "status",
             ["req"] = true,
+            ["short"] = "HTTP status code",
             ["type"] = "`$INTEGER`",
           },
           {
             ["name"] = "warning",
+            ["short"] = "Warning messages separated by newline",
             ["type"] = "`$STRING`",
           },
         },
@@ -888,6 +911,7 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "data",
+            ["short"] = "Array of found objects.",
             ["type"] = "`$ARRAY`",
             ["union"] = {
               ["branches"] = 3,
@@ -897,15 +921,18 @@ local function make_config()
           },
           {
             ["name"] = "error",
+            ["short"] = "First error message",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "status",
             ["req"] = true,
+            ["short"] = "HTTP status code",
             ["type"] = "`$INTEGER`",
           },
           {
             ["name"] = "warning",
+            ["short"] = "Warning messages separated by newline",
             ["type"] = "`$STRING`",
           },
         },
