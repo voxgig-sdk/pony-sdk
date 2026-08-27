@@ -16,6 +16,7 @@ import (
 type Character struct {
 	Data *[]any `json:"data,omitempty"`
 	Error *string `json:"error,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Status int `json:"status"`
 	Warning *string `json:"warning,omitempty"`
 }
@@ -29,6 +30,7 @@ type CharacterLoadMatch struct {
 type CharacterListMatch struct {
 	Data *[]any `json:"data,omitempty"`
 	Error *string `json:"error,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Status *int `json:"status,omitempty"`
 	Warning *string `json:"warning,omitempty"`
 }
@@ -37,6 +39,7 @@ type CharacterListMatch struct {
 type Comic struct {
 	Data *[]any `json:"data,omitempty"`
 	Error *string `json:"error,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Status int `json:"status"`
 	Warning *string `json:"warning,omitempty"`
 }
@@ -50,6 +53,7 @@ type ComicLoadMatch struct {
 type ComicListMatch struct {
 	Data *[]any `json:"data,omitempty"`
 	Error *string `json:"error,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Status *int `json:"status,omitempty"`
 	Warning *string `json:"warning,omitempty"`
 }
@@ -58,6 +62,7 @@ type ComicListMatch struct {
 type Episode struct {
 	Data *[]any `json:"data,omitempty"`
 	Error *string `json:"error,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Status int `json:"status"`
 	Warning *string `json:"warning,omitempty"`
 }
@@ -71,6 +76,7 @@ type EpisodeLoadMatch struct {
 type EpisodeListMatch struct {
 	Data *[]any `json:"data,omitempty"`
 	Error *string `json:"error,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Status *int `json:"status,omitempty"`
 	Warning *string `json:"warning,omitempty"`
 }
@@ -95,6 +101,7 @@ type ImageListMatch struct {
 type Kind struct {
 	Data *[]any `json:"data,omitempty"`
 	Error *string `json:"error,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Status int `json:"status"`
 	Warning *string `json:"warning,omitempty"`
 }
@@ -108,6 +115,7 @@ type KindLoadMatch struct {
 type KindListMatch struct {
 	Data *[]any `json:"data,omitempty"`
 	Error *string `json:"error,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Status *int `json:"status,omitempty"`
 	Warning *string `json:"warning,omitempty"`
 }
@@ -116,6 +124,7 @@ type KindListMatch struct {
 type Song struct {
 	Data *[]any `json:"data,omitempty"`
 	Error *string `json:"error,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Status int `json:"status"`
 	Warning *string `json:"warning,omitempty"`
 }
@@ -129,6 +138,7 @@ type SongLoadMatch struct {
 type SongListMatch struct {
 	Data *[]any `json:"data,omitempty"`
 	Error *string `json:"error,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Status *int `json:"status,omitempty"`
 	Warning *string `json:"warning,omitempty"`
 }

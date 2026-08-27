@@ -43,7 +43,7 @@ local characters, err = client:Character():list()
 if err then error(err) end
 
 for _, item in ipairs(characters) do
-  print(item["error"])
+  print(item["id"], item["error"])
 end
 ```
 
@@ -248,6 +248,7 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | --- | --- |
 | `data` | Array of found objects. |
 | `error` | First error message |
+| `id` |  |
 | `status` | HTTP status code |
 | `warning` | Warning messages separated by newline |
 
@@ -261,6 +262,7 @@ API path: `/character/all`
 | --- | --- |
 | `data` | Array of found objects. |
 | `error` | First error message |
+| `id` |  |
 | `status` | HTTP status code |
 | `warning` | Warning messages separated by newline |
 
@@ -274,6 +276,7 @@ API path: `/comics/all`
 | --- | --- |
 | `data` | Array of found objects. |
 | `error` | First error message |
+| `id` |  |
 | `status` | HTTP status code |
 | `warning` | Warning messages separated by newline |
 
@@ -300,6 +303,7 @@ API path: `/image/all`
 | --- | --- |
 | `data` | Array of found objects. |
 | `error` | First error message |
+| `id` |  |
 | `status` | HTTP status code |
 | `warning` | Warning messages separated by newline |
 
@@ -313,6 +317,7 @@ API path: `/kind/all`
 | --- | --- |
 | `data` | Array of found objects. |
 | `error` | First error message |
+| `id` |  |
 | `status` | HTTP status code |
 | `warning` | Warning messages separated by newline |
 
@@ -342,6 +347,7 @@ Create an instance: `local character = client:Character(nil)`
 | --- | --- | --- |
 | `data` | `table` | Array of found objects. |
 | `error` | `string` | First error message |
+| `id` | `string` |  |
 | `status` | `number` | HTTP status code |
 | `warning` | `string` | Warning messages separated by newline |
 
@@ -375,6 +381,7 @@ Create an instance: `local comic = client:Comic(nil)`
 | --- | --- | --- |
 | `data` | `table` | Array of found objects. |
 | `error` | `string` | First error message |
+| `id` | `string` |  |
 | `status` | `number` | HTTP status code |
 | `warning` | `string` | Warning messages separated by newline |
 
@@ -408,6 +415,7 @@ Create an instance: `local episode = client:Episode(nil)`
 | --- | --- | --- |
 | `data` | `table` | Array of found objects. |
 | `error` | `string` | First error message |
+| `id` | `string` |  |
 | `status` | `number` | HTTP status code |
 | `warning` | `string` | Warning messages separated by newline |
 
@@ -467,6 +475,7 @@ Create an instance: `local kind = client:Kind(nil)`
 | --- | --- | --- |
 | `data` | `table` | Array of found objects. |
 | `error` | `string` | First error message |
+| `id` | `string` |  |
 | `status` | `number` | HTTP status code |
 | `warning` | `string` | Warning messages separated by newline |
 
@@ -500,6 +509,7 @@ Create an instance: `local song = client:Song(nil)`
 | --- | --- | --- |
 | `data` | `table` | Array of found objects. |
 | `error` | `string` | First error message |
+| `id` | `string` |  |
 | `status` | `number` | HTTP status code |
 | `warning` | `string` | Warning messages separated by newline |
 

@@ -178,6 +178,7 @@ const character = client.Character()
 | --- | --- | --- | --- |
 | `data` | `any[]` | No | Array of found objects. |
 | `error` | `string` | No | First error message |
+| `id` | `string` | No |  |
 | `status` | `number` | Yes | HTTP status code |
 | `warning` | `string` | No | Warning messages separated by newline |
 
@@ -259,6 +260,7 @@ const comic = client.Comic()
 | --- | --- | --- | --- |
 | `data` | `any[]` | No | Array of found objects. |
 | `error` | `string` | No | First error message |
+| `id` | `string` | No |  |
 | `status` | `number` | Yes | HTTP status code |
 | `warning` | `string` | No | Warning messages separated by newline |
 
@@ -340,6 +342,7 @@ const episode = client.Episode()
 | --- | --- | --- | --- |
 | `data` | `any[]` | No | Array of found objects. |
 | `error` | `string` | No | First error message |
+| `id` | `string` | No |  |
 | `status` | `number` | Yes | HTTP status code |
 | `warning` | `string` | No | Warning messages separated by newline |
 
@@ -494,6 +497,7 @@ const kind = client.Kind()
 | --- | --- | --- | --- |
 | `data` | `any[]` | No | Array of found objects. |
 | `error` | `string` | No | First error message |
+| `id` | `string` | No |  |
 | `status` | `number` | Yes | HTTP status code |
 | `warning` | `string` | No | Warning messages separated by newline |
 
@@ -575,6 +579,7 @@ const song = client.Song()
 | --- | --- | --- | --- |
 | `data` | `any[]` | No | Array of found objects. |
 | `error` | `string` | No | First error message |
+| `id` | `string` | No |  |
 | `status` | `number` | Yes | HTTP status code |
 | `warning` | `string` | No | Warning messages separated by newline |
 

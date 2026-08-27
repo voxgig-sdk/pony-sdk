@@ -83,9 +83,13 @@ class KindEntityTest < Minitest::Test
     assert kind_ref01_list_result.is_a?(Array)
 
     # LOAD
-    kind_ref01_match_dt0 = {}
+    kind_ref01_match_dt0 = {
+      "id" => kind_ref01_data["id"],
+    }
     kind_ref01_data_dt0_loaded = kind_ref01_ent.load(kind_ref01_match_dt0, nil)
-    assert !kind_ref01_data_dt0_loaded.nil?
+    kind_ref01_data_dt0_load_result = Helpers.to_map(kind_ref01_data_dt0_loaded.respond_to?(:data_get) ? kind_ref01_data_dt0_loaded.data_get : kind_ref01_data_dt0_loaded)
+    assert !kind_ref01_data_dt0_load_result.nil?
+    assert_equal kind_ref01_data_dt0_load_result["id"], kind_ref01_data["id"]
 
   end
 end

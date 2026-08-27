@@ -28,6 +28,7 @@ module PonyConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
@@ -60,6 +61,10 @@ module PonyConfig
             {
               "name" => "error",
               "short" => "First error message",
+              "type" => "`$STRING`",
+            },
+            {
+              "name" => "id",
               "type" => "`$STRING`",
             },
             {
@@ -357,6 +362,10 @@ module PonyConfig
               "type" => "`$STRING`",
             },
             {
+              "name" => "id",
+              "type" => "`$STRING`",
+            },
+            {
               "name" => "status",
               "req" => true,
               "short" => "HTTP status code",
@@ -544,6 +553,10 @@ module PonyConfig
             {
               "name" => "error",
               "short" => "First error message",
+              "type" => "`$STRING`",
+            },
+            {
+              "name" => "id",
               "type" => "`$STRING`",
             },
             {
@@ -817,6 +830,10 @@ module PonyConfig
               "type" => "`$STRING`",
             },
             {
+              "name" => "id",
+              "type" => "`$STRING`",
+            },
+            {
               "name" => "status",
               "req" => true,
               "short" => "HTTP status code",
@@ -934,6 +951,10 @@ module PonyConfig
             {
               "name" => "error",
               "short" => "First error message",
+              "type" => "`$STRING`",
+            },
+            {
+              "name" => "id",
               "type" => "`$STRING`",
             },
             {

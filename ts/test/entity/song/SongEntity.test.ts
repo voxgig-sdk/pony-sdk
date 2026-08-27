@@ -66,6 +66,12 @@ describe('SongEntity', async () => {
     const song_ref01_list = (await song_ref01_ent.list(song_ref01_match)).map((e: any) => e.data())
 
 
+    // LOAD
+    const song_ref01_match_dt0: any = {}
+    song_ref01_match_dt0.id = song_ref01_data.id
+    const song_ref01_data_dt0 = (await song_ref01_ent.load(song_ref01_match_dt0)).data()
+    assert(song_ref01_data_dt0.id === song_ref01_data.id)
+
 
   })
 })

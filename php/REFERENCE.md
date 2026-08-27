@@ -114,6 +114,7 @@ $character = $client->Character();
 | --- | --- | --- | --- |
 | `data` | `array` | No | Array of found objects. |
 | `error` | `string` | No | First error message |
+| `id` | `string` | No |  |
 | `status` | `int` | Yes | HTTP status code |
 | `warning` | `string` | No | Warning messages separated by newline |
 
@@ -177,6 +178,7 @@ $comic = $client->Comic();
 | --- | --- | --- | --- |
 | `data` | `array` | No | Array of found objects. |
 | `error` | `string` | No | First error message |
+| `id` | `string` | No |  |
 | `status` | `int` | Yes | HTTP status code |
 | `warning` | `string` | No | Warning messages separated by newline |
 
@@ -240,6 +242,7 @@ $episode = $client->Episode();
 | --- | --- | --- | --- |
 | `data` | `array` | No | Array of found objects. |
 | `error` | `string` | No | First error message |
+| `id` | `string` | No |  |
 | `status` | `int` | Yes | HTTP status code |
 | `warning` | `string` | No | Warning messages separated by newline |
 
@@ -358,6 +361,7 @@ $kind = $client->Kind();
 | --- | --- | --- | --- |
 | `data` | `array` | No | Array of found objects. |
 | `error` | `string` | No | First error message |
+| `id` | `string` | No |  |
 | `status` | `int` | Yes | HTTP status code |
 | `warning` | `string` | No | Warning messages separated by newline |
 
@@ -421,6 +425,7 @@ $song = $client->Song();
 | --- | --- | --- | --- |
 | `data` | `array` | No | Array of found objects. |
 | `error` | `string` | No | First error message |
+| `id` | `string` | No |  |
 | `status` | `int` | Yes | HTTP status code |
 | `warning` | `string` | No | Warning messages separated by newline |
 

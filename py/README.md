@@ -263,6 +263,7 @@ On error, `ok` is `False` and `err` contains the error value.
 | --- | --- |
 | `data` | Array of found objects. |
 | `error` | First error message |
+| `id` |  |
 | `status` | HTTP status code |
 | `warning` | Warning messages separated by newline |
 
@@ -276,6 +277,7 @@ API path: `/character/all`
 | --- | --- |
 | `data` | Array of found objects. |
 | `error` | First error message |
+| `id` |  |
 | `status` | HTTP status code |
 | `warning` | Warning messages separated by newline |
 
@@ -289,6 +291,7 @@ API path: `/comics/all`
 | --- | --- |
 | `data` | Array of found objects. |
 | `error` | First error message |
+| `id` |  |
 | `status` | HTTP status code |
 | `warning` | Warning messages separated by newline |
 
@@ -315,6 +318,7 @@ API path: `/image/all`
 | --- | --- |
 | `data` | Array of found objects. |
 | `error` | First error message |
+| `id` |  |
 | `status` | HTTP status code |
 | `warning` | Warning messages separated by newline |
 
@@ -328,6 +332,7 @@ API path: `/kind/all`
 | --- | --- |
 | `data` | Array of found objects. |
 | `error` | First error message |
+| `id` |  |
 | `status` | HTTP status code |
 | `warning` | Warning messages separated by newline |
 
@@ -357,6 +362,7 @@ Create an instance: `character = client.Character()`
 | --- | --- | --- |
 | `data` | `list` | Array of found objects. |
 | `error` | `str` | First error message |
+| `id` | `str` |  |
 | `status` | `int` | HTTP status code |
 | `warning` | `str` | Warning messages separated by newline |
 
@@ -390,6 +396,7 @@ Create an instance: `comic = client.Comic()`
 | --- | --- | --- |
 | `data` | `list` | Array of found objects. |
 | `error` | `str` | First error message |
+| `id` | `str` |  |
 | `status` | `int` | HTTP status code |
 | `warning` | `str` | Warning messages separated by newline |
 
@@ -423,6 +430,7 @@ Create an instance: `episode = client.Episode()`
 | --- | --- | --- |
 | `data` | `list` | Array of found objects. |
 | `error` | `str` | First error message |
+| `id` | `str` |  |
 | `status` | `int` | HTTP status code |
 | `warning` | `str` | Warning messages separated by newline |
 
@@ -482,6 +490,7 @@ Create an instance: `kind = client.Kind()`
 | --- | --- | --- |
 | `data` | `list` | Array of found objects. |
 | `error` | `str` | First error message |
+| `id` | `str` |  |
 | `status` | `int` | HTTP status code |
 | `warning` | `str` | Warning messages separated by newline |
 
@@ -515,6 +524,7 @@ Create an instance: `song = client.Song()`
 | --- | --- | --- |
 | `data` | `list` | Array of found objects. |
 | `error` | `str` | First error message |
+| `id` | `str` |  |
 | `status` | `int` | HTTP status code |
 | `warning` | `str` | Warning messages separated by newline |
 

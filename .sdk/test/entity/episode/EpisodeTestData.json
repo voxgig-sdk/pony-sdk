@@ -3,27 +3,27 @@
     "episode": {
       "EPISODE00": {
         "data": [],
-        "error": "s29",
-        "status": "s2a",
-        "warning": "s2b",
-        "season": "SEASON01",
-        "id": "EPISODE00"
+        "error": "s33",
+        "id": "EPISODE00",
+        "status": "s35",
+        "warning": "s36",
+        "season": "SEASON01"
       },
       "EPISODE01": {
         "data": [],
-        "error": "s51",
-        "status": "s52",
-        "warning": "s53",
-        "season": "SEASON01",
-        "id": "EPISODE01"
+        "error": "s65",
+        "id": "EPISODE01",
+        "status": "s67",
+        "warning": "s68",
+        "season": "SEASON01"
       },
       "EPISODE02": {
         "data": [],
-        "error": "s79",
-        "status": "s7a",
-        "warning": "s7b",
-        "season": "SEASON01",
-        "id": "EPISODE02"
+        "error": "s97",
+        "id": "EPISODE02",
+        "status": "s99",
+        "warning": "s9a",
+        "season": "SEASON01"
       }
     }
   },
@@ -31,9 +31,9 @@
     "episode": {
       "episode_ref01": {
         "data": [],
-        "error": "sa1",
-        "status": "sa2",
-        "warning": "sa3"
+        "error": "sc9",
+        "status": "scb",
+        "warning": "scc"
       }
     }
   }

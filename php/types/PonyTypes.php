@@ -17,6 +17,7 @@ class Character
 {
     public ?array $data = null;
     public ?string $error = null;
+    public ?string $id = null;
     public int $status;
     public ?string $warning = null;
 }
@@ -32,6 +33,7 @@ class CharacterListMatch
 {
     public ?array $data = null;
     public ?string $error = null;
+    public ?string $id = null;
     public ?int $status = null;
     public ?string $warning = null;
 }
@@ -41,6 +43,7 @@ class Comic
 {
     public ?array $data = null;
     public ?string $error = null;
+    public ?string $id = null;
     public int $status;
     public ?string $warning = null;
 }
@@ -56,6 +59,7 @@ class ComicListMatch
 {
     public ?array $data = null;
     public ?string $error = null;
+    public ?string $id = null;
     public ?int $status = null;
     public ?string $warning = null;
 }
@@ -65,6 +69,7 @@ class Episode
 {
     public ?array $data = null;
     public ?string $error = null;
+    public ?string $id = null;
     public int $status;
     public ?string $warning = null;
 }
@@ -80,6 +85,7 @@ class EpisodeListMatch
 {
     public ?array $data = null;
     public ?string $error = null;
+    public ?string $id = null;
     public ?int $status = null;
     public ?string $warning = null;
 }
@@ -107,6 +113,7 @@ class Kind
 {
     public ?array $data = null;
     public ?string $error = null;
+    public ?string $id = null;
     public int $status;
     public ?string $warning = null;
 }
@@ -122,6 +129,7 @@ class KindListMatch
 {
     public ?array $data = null;
     public ?string $error = null;
+    public ?string $id = null;
     public ?int $status = null;
     public ?string $warning = null;
 }
@@ -131,6 +139,7 @@ class Song
 {
     public ?array $data = null;
     public ?string $error = null;
+    public ?string $id = null;
     public int $status;
     public ?string $warning = null;
 }
@@ -146,6 +155,7 @@ class SongListMatch
 {
     public ?array $data = null;
     public ?string $error = null;
+    public ?string $id = null;
     public ?int $status = null;
     public ?string $warning = null;
 }

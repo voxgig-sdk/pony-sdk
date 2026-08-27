@@ -16,6 +16,7 @@ local function make_config()
         ["options"] = {
           ["active"] = false,
         },
+        ["transport"] = "base",
       },
     },
     options = {
@@ -48,6 +49,10 @@ local function make_config()
           {
             ["name"] = "error",
             ["short"] = "First error message",
+            ["type"] = "`$STRING`",
+          },
+          {
+            ["name"] = "id",
             ["type"] = "`$STRING`",
           },
           {
@@ -345,6 +350,10 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["name"] = "id",
+            ["type"] = "`$STRING`",
+          },
+          {
             ["name"] = "status",
             ["req"] = true,
             ["short"] = "HTTP status code",
@@ -532,6 +541,10 @@ local function make_config()
           {
             ["name"] = "error",
             ["short"] = "First error message",
+            ["type"] = "`$STRING`",
+          },
+          {
+            ["name"] = "id",
             ["type"] = "`$STRING`",
           },
           {
@@ -805,6 +818,10 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["name"] = "id",
+            ["type"] = "`$STRING`",
+          },
+          {
             ["name"] = "status",
             ["req"] = true,
             ["short"] = "HTTP status code",
@@ -922,6 +939,10 @@ local function make_config()
           {
             ["name"] = "error",
             ["short"] = "First error message",
+            ["type"] = "`$STRING`",
+          },
+          {
+            ["name"] = "id",
             ["type"] = "`$STRING`",
           },
           {

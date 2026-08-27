@@ -66,6 +66,12 @@ describe('KindEntity', async () => {
     const kind_ref01_list = (await kind_ref01_ent.list(kind_ref01_match)).map((e: any) => e.data())
 
 
+    // LOAD
+    const kind_ref01_match_dt0: any = {}
+    kind_ref01_match_dt0.id = kind_ref01_data.id
+    const kind_ref01_data_dt0 = (await kind_ref01_ent.load(kind_ref01_match_dt0)).data()
+    assert(kind_ref01_data_dt0.id === kind_ref01_data.id)
+
 
   })
 })

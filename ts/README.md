@@ -159,7 +159,7 @@ await entity.list()
 
 // Subsequent calls reuse the stored state
 const data = entity.data()
-console.log(data)
+console.log(data.id)
 ```
 
 ### Add custom middleware
@@ -309,6 +309,7 @@ The `prepare()` method returns:
 | --- | --- |
 | `data` | Array of found objects. |
 | `error` | First error message |
+| `id` |  |
 | `status` | HTTP status code |
 | `warning` | Warning messages separated by newline |
 
@@ -322,6 +323,7 @@ API path: `/character/all`
 | --- | --- |
 | `data` | Array of found objects. |
 | `error` | First error message |
+| `id` |  |
 | `status` | HTTP status code |
 | `warning` | Warning messages separated by newline |
 
@@ -335,6 +337,7 @@ API path: `/comics/all`
 | --- | --- |
 | `data` | Array of found objects. |
 | `error` | First error message |
+| `id` |  |
 | `status` | HTTP status code |
 | `warning` | Warning messages separated by newline |
 
@@ -361,6 +364,7 @@ API path: `/image/all`
 | --- | --- |
 | `data` | Array of found objects. |
 | `error` | First error message |
+| `id` |  |
 | `status` | HTTP status code |
 | `warning` | Warning messages separated by newline |
 
@@ -374,6 +378,7 @@ API path: `/kind/all`
 | --- | --- |
 | `data` | Array of found objects. |
 | `error` | First error message |
+| `id` |  |
 | `status` | HTTP status code |
 | `warning` | Warning messages separated by newline |
 
@@ -403,6 +408,7 @@ Create an instance: `const character = client.Character()`
 | --- | --- | --- |
 | `data` | `any[]` | Array of found objects. |
 | `error` | `string` | First error message |
+| `id` | `string` |  |
 | `status` | `number` | HTTP status code |
 | `warning` | `string` | Warning messages separated by newline |
 
@@ -436,6 +442,7 @@ Create an instance: `const comic = client.Comic()`
 | --- | --- | --- |
 | `data` | `any[]` | Array of found objects. |
 | `error` | `string` | First error message |
+| `id` | `string` |  |
 | `status` | `number` | HTTP status code |
 | `warning` | `string` | Warning messages separated by newline |
 
@@ -469,6 +476,7 @@ Create an instance: `const episode = client.Episode()`
 | --- | --- | --- |
 | `data` | `any[]` | Array of found objects. |
 | `error` | `string` | First error message |
+| `id` | `string` |  |
 | `status` | `number` | HTTP status code |
 | `warning` | `string` | Warning messages separated by newline |
 
@@ -528,6 +536,7 @@ Create an instance: `const kind = client.Kind()`
 | --- | --- | --- |
 | `data` | `any[]` | Array of found objects. |
 | `error` | `string` | First error message |
+| `id` | `string` |  |
 | `status` | `number` | HTTP status code |
 | `warning` | `string` | Warning messages separated by newline |
 
@@ -561,6 +570,7 @@ Create an instance: `const song = client.Song()`
 | --- | --- | --- |
 | `data` | `any[]` | Array of found objects. |
 | `error` | `string` | First error message |
+| `id` | `string` |  |
 | `status` | `number` | HTTP status code |
 | `warning` | `string` | Warning messages separated by newline |
 

@@ -3,24 +3,24 @@
     "kind": {
       "KIND00": {
         "data": [],
-        "error": "s29",
-        "status": "s2a",
-        "warning": "s2b",
-        "id": "KIND00"
+        "error": "s33",
+        "id": "KIND00",
+        "status": "s35",
+        "warning": "s36"
       },
       "KIND01": {
         "data": [],
-        "error": "s51",
-        "status": "s52",
-        "warning": "s53",
-        "id": "KIND01"
+        "error": "s65",
+        "id": "KIND01",
+        "status": "s67",
+        "warning": "s68"
       },
       "KIND02": {
         "data": [],
-        "error": "s79",
-        "status": "s7a",
-        "warning": "s7b",
-        "id": "KIND02"
+        "error": "s97",
+        "id": "KIND02",
+        "status": "s99",
+        "warning": "s9a"
       }
     }
   },
@@ -28,9 +28,9 @@
     "kind": {
       "kind_ref01": {
         "data": [],
-        "error": "sa1",
-        "status": "sa2",
-        "warning": "sa3"
+        "error": "sc9",
+        "status": "scb",
+        "warning": "scc"
       }
     }
   }

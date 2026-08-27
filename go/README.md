@@ -276,6 +276,7 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | --- | --- |
 | `"data"` | Array of found objects. |
 | `"error"` | First error message |
+| `"id"` |  |
 | `"status"` | HTTP status code |
 | `"warning"` | Warning messages separated by newline |
 
@@ -289,6 +290,7 @@ API path: `/character/all`
 | --- | --- |
 | `"data"` | Array of found objects. |
 | `"error"` | First error message |
+| `"id"` |  |
 | `"status"` | HTTP status code |
 | `"warning"` | Warning messages separated by newline |
 
@@ -302,6 +304,7 @@ API path: `/comics/all`
 | --- | --- |
 | `"data"` | Array of found objects. |
 | `"error"` | First error message |
+| `"id"` |  |
 | `"status"` | HTTP status code |
 | `"warning"` | Warning messages separated by newline |
 
@@ -328,6 +331,7 @@ API path: `/image/all`
 | --- | --- |
 | `"data"` | Array of found objects. |
 | `"error"` | First error message |
+| `"id"` |  |
 | `"status"` | HTTP status code |
 | `"warning"` | Warning messages separated by newline |
 
@@ -341,6 +345,7 @@ API path: `/kind/all`
 | --- | --- |
 | `"data"` | Array of found objects. |
 | `"error"` | First error message |
+| `"id"` |  |
 | `"status"` | HTTP status code |
 | `"warning"` | Warning messages separated by newline |
 
@@ -370,6 +375,7 @@ Create an instance: `character := client.Character(nil)`
 | --- | --- | --- |
 | `data` | `[]any` | Array of found objects. |
 | `error` | `string` | First error message |
+| `id` | `string` |  |
 | `status` | `int` | HTTP status code |
 | `warning` | `string` | Warning messages separated by newline |
 
@@ -411,6 +417,7 @@ Create an instance: `comic := client.Comic(nil)`
 | --- | --- | --- |
 | `data` | `[]any` | Array of found objects. |
 | `error` | `string` | First error message |
+| `id` | `string` |  |
 | `status` | `int` | HTTP status code |
 | `warning` | `string` | Warning messages separated by newline |
 
@@ -452,6 +459,7 @@ Create an instance: `episode := client.Episode(nil)`
 | --- | --- | --- |
 | `data` | `[]any` | Array of found objects. |
 | `error` | `string` | First error message |
+| `id` | `string` |  |
 | `status` | `int` | HTTP status code |
 | `warning` | `string` | Warning messages separated by newline |
 
@@ -523,6 +531,7 @@ Create an instance: `kind := client.Kind(nil)`
 | --- | --- | --- |
 | `data` | `[]any` | Array of found objects. |
 | `error` | `string` | First error message |
+| `id` | `string` |  |
 | `status` | `int` | HTTP status code |
 | `warning` | `string` | Warning messages separated by newline |
 
@@ -564,6 +573,7 @@ Create an instance: `song := client.Song(nil)`
 | --- | --- | --- |
 | `data` | `[]any` | Array of found objects. |
 | `error` | `string` | First error message |
+| `id` | `string` |  |
 | `status` | `int` | HTTP status code |
 | `warning` | `string` | Warning messages separated by newline |
 

@@ -93,9 +93,13 @@ class ComicEntityTest extends TestCase
         $this->assertIsArray($comic_ref01_list_result);
 
         // LOAD
-        $comic_ref01_match_dt0 = [];
+        $comic_ref01_match_dt0 = [
+            "id" => $comic_ref01_data["id"],
+        ];
         $comic_ref01_data_dt0_loaded = $comic_ref01_ent->load($comic_ref01_match_dt0, null);
-        $this->assertNotNull($comic_ref01_data_dt0_loaded);
+        $comic_ref01_data_dt0_load_result = Helpers::to_map(is_object($comic_ref01_data_dt0_loaded) && method_exists($comic_ref01_data_dt0_loaded, 'data_get') ? $comic_ref01_data_dt0_loaded->data_get() : $comic_ref01_data_dt0_loaded);
+        $this->assertNotNull($comic_ref01_data_dt0_load_result);
+        $this->assertEquals($comic_ref01_data_dt0_load_result["id"], $comic_ref01_data["id"]);
 
     }
 }

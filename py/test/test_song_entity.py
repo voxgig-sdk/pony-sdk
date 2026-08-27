@@ -88,9 +88,13 @@ class TestSongEntity:
         assert isinstance(song_ref01_list_result, list)
 
         # LOAD
-        song_ref01_match_dt0 = {}
+        song_ref01_match_dt0 = {
+            "id": song_ref01_data["id"],
+        }
         song_ref01_data_dt0_loaded = song_ref01_ent.load(song_ref01_match_dt0, None)
-        assert song_ref01_data_dt0_loaded is not None
+        song_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(song_ref01_data_dt0_loaded))
+        assert song_ref01_data_dt0_load_result is not None
+        assert song_ref01_data_dt0_load_result["id"] == song_ref01_data["id"]
 
 
 

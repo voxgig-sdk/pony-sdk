@@ -3,33 +3,33 @@
     "character": {
       "CHARACTER00": {
         "data": [],
-        "error": "s29",
-        "status": "s2a",
-        "warning": "s2b",
+        "error": "s33",
+        "id": "CHARACTER00",
+        "status": "s35",
+        "warning": "s36",
         "kind": "KIND01",
         "occupation": "OCCUPATION01",
-        "residence": "RESIDENCE01",
-        "id": "CHARACTER00"
+        "residence": "RESIDENCE01"
       },
       "CHARACTER01": {
         "data": [],
-        "error": "s51",
-        "status": "s52",
-        "warning": "s53",
+        "error": "s65",
+        "id": "CHARACTER01",
+        "status": "s67",
+        "warning": "s68",
         "kind": "KIND01",
         "occupation": "OCCUPATION01",
-        "residence": "RESIDENCE01",
-        "id": "CHARACTER01"
+        "residence": "RESIDENCE01"
       },
       "CHARACTER02": {
         "data": [],
-        "error": "s79",
-        "status": "s7a",
-        "warning": "s7b",
+        "error": "s97",
+        "id": "CHARACTER02",
+        "status": "s99",
+        "warning": "s9a",
         "kind": "KIND01",
         "occupation": "OCCUPATION01",
-        "residence": "RESIDENCE01",
-        "id": "CHARACTER02"
+        "residence": "RESIDENCE01"
       }
     }
   },
@@ -37,9 +37,9 @@
     "character": {
       "character_ref01": {
         "data": [],
-        "error": "sa1",
-        "status": "sa2",
-        "warning": "sa3"
+        "error": "sc9",
+        "status": "scb",
+        "warning": "scc"
       }
     }
   }

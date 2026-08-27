@@ -8,6 +8,7 @@
 export interface Character {
   data?: any[]
   error?: string
+  id?: string
   status: number
   warning?: string
 }
@@ -19,6 +20,7 @@ export interface CharacterLoadMatch {
 export interface CharacterListMatch {
   data?: any[]
   error?: string
+  id?: string
   status?: number
   warning?: string
 
@@ -32,6 +34,7 @@ export interface CharacterListMatch {
 export interface Comic {
   data?: any[]
   error?: string
+  id?: string
   status: number
   warning?: string
 }
@@ -43,6 +46,7 @@ export interface ComicLoadMatch {
 export interface ComicListMatch {
   data?: any[]
   error?: string
+  id?: string
   status?: number
   warning?: string
 
@@ -56,6 +60,7 @@ export interface ComicListMatch {
 export interface Episode {
   data?: any[]
   error?: string
+  id?: string
   status: number
   warning?: string
 }
@@ -67,6 +72,7 @@ export interface EpisodeLoadMatch {
 export interface EpisodeListMatch {
   data?: any[]
   error?: string
+  id?: string
   status?: number
   warning?: string
 
@@ -100,6 +106,7 @@ export interface ImageListMatch {
 export interface Kind {
   data?: any[]
   error?: string
+  id?: string
   status: number
   warning?: string
 }
@@ -111,6 +118,7 @@ export interface KindLoadMatch {
 export interface KindListMatch {
   data?: any[]
   error?: string
+  id?: string
   status?: number
   warning?: string
 
@@ -124,6 +132,7 @@ export interface KindListMatch {
 export interface Song {
   data?: any[]
   error?: string
+  id?: string
   status: number
   warning?: string
 }
@@ -135,6 +144,7 @@ export interface SongLoadMatch {
 export interface SongListMatch {
   data?: any[]
   error?: string
+  id?: string
   status?: number
   warning?: string
 

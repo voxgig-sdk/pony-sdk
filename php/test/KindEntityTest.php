@@ -93,9 +93,13 @@ class KindEntityTest extends TestCase
         $this->assertIsArray($kind_ref01_list_result);
 
         // LOAD
-        $kind_ref01_match_dt0 = [];
+        $kind_ref01_match_dt0 = [
+            "id" => $kind_ref01_data["id"],
+        ];
         $kind_ref01_data_dt0_loaded = $kind_ref01_ent->load($kind_ref01_match_dt0, null);
-        $this->assertNotNull($kind_ref01_data_dt0_loaded);
+        $kind_ref01_data_dt0_load_result = Helpers::to_map(is_object($kind_ref01_data_dt0_loaded) && method_exists($kind_ref01_data_dt0_loaded, 'data_get') ? $kind_ref01_data_dt0_loaded->data_get() : $kind_ref01_data_dt0_loaded);
+        $this->assertNotNull($kind_ref01_data_dt0_load_result);
+        $this->assertEquals($kind_ref01_data_dt0_load_result["id"], $kind_ref01_data["id"]);
 
     }
 }

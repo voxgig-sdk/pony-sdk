@@ -115,6 +115,7 @@ character = client.Character
 | --- | --- | --- | --- |
 | `data` | `Array` | No | Array of found objects. |
 | `error` | `String` | No | First error message |
+| `id` | `String` | No |  |
 | `status` | `Integer` | Yes | HTTP status code |
 | `warning` | `String` | No | Warning messages separated by newline |
 
@@ -178,6 +179,7 @@ comic = client.Comic
 | --- | --- | --- | --- |
 | `data` | `Array` | No | Array of found objects. |
 | `error` | `String` | No | First error message |
+| `id` | `String` | No |  |
 | `status` | `Integer` | Yes | HTTP status code |
 | `warning` | `String` | No | Warning messages separated by newline |
 
@@ -241,6 +243,7 @@ episode = client.Episode
 | --- | --- | --- | --- |
 | `data` | `Array` | No | Array of found objects. |
 | `error` | `String` | No | First error message |
+| `id` | `String` | No |  |
 | `status` | `Integer` | Yes | HTTP status code |
 | `warning` | `String` | No | Warning messages separated by newline |
 
@@ -359,6 +362,7 @@ kind = client.Kind
 | --- | --- | --- | --- |
 | `data` | `Array` | No | Array of found objects. |
 | `error` | `String` | No | First error message |
+| `id` | `String` | No |  |
 | `status` | `Integer` | Yes | HTTP status code |
 | `warning` | `String` | No | Warning messages separated by newline |
 
@@ -422,6 +426,7 @@ song = client.Song
 | --- | --- | --- | --- |
 | `data` | `Array` | No | Array of found objects. |
 | `error` | `String` | No | First error message |
+| `id` | `String` | No |  |
 | `status` | `Integer` | Yes | HTTP status code |
 | `warning` | `String` | No | Warning messages separated by newline |
 

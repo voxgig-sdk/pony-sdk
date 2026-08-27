@@ -37,7 +37,7 @@ begin
   # list returns an Array of Character records — iterate directly.
   characters = client.Character.list
   characters.each do |item|
-    puts "#{item["data"]}"
+    puts "#{item["id"]} #{item["data"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -260,6 +260,7 @@ returns a result `Hash` with these keys:
 | --- | --- |
 | `data` | Array of found objects. |
 | `error` | First error message |
+| `id` |  |
 | `status` | HTTP status code |
 | `warning` | Warning messages separated by newline |
 
@@ -273,6 +274,7 @@ API path: `/character/all`
 | --- | --- |
 | `data` | Array of found objects. |
 | `error` | First error message |
+| `id` |  |
 | `status` | HTTP status code |
 | `warning` | Warning messages separated by newline |
 
@@ -286,6 +288,7 @@ API path: `/comics/all`
 | --- | --- |
 | `data` | Array of found objects. |
 | `error` | First error message |
+| `id` |  |
 | `status` | HTTP status code |
 | `warning` | Warning messages separated by newline |
 
@@ -312,6 +315,7 @@ API path: `/image/all`
 | --- | --- |
 | `data` | Array of found objects. |
 | `error` | First error message |
+| `id` |  |
 | `status` | HTTP status code |
 | `warning` | Warning messages separated by newline |
 
@@ -325,6 +329,7 @@ API path: `/kind/all`
 | --- | --- |
 | `data` | Array of found objects. |
 | `error` | First error message |
+| `id` |  |
 | `status` | HTTP status code |
 | `warning` | Warning messages separated by newline |
 
@@ -354,6 +359,7 @@ Create an instance: `character = client.Character`
 | --- | --- | --- |
 | `data` | `Array` | Array of found objects. |
 | `error` | `String` | First error message |
+| `id` | `String` |  |
 | `status` | `Integer` | HTTP status code |
 | `warning` | `String` | Warning messages separated by newline |
 
@@ -389,6 +395,7 @@ Create an instance: `comic = client.Comic`
 | --- | --- | --- |
 | `data` | `Array` | Array of found objects. |
 | `error` | `String` | First error message |
+| `id` | `String` |  |
 | `status` | `Integer` | HTTP status code |
 | `warning` | `String` | Warning messages separated by newline |
 
@@ -424,6 +431,7 @@ Create an instance: `episode = client.Episode`
 | --- | --- | --- |
 | `data` | `Array` | Array of found objects. |
 | `error` | `String` | First error message |
+| `id` | `String` |  |
 | `status` | `Integer` | HTTP status code |
 | `warning` | `String` | Warning messages separated by newline |
 
@@ -486,6 +494,7 @@ Create an instance: `kind = client.Kind`
 | --- | --- | --- |
 | `data` | `Array` | Array of found objects. |
 | `error` | `String` | First error message |
+| `id` | `String` |  |
 | `status` | `Integer` | HTTP status code |
 | `warning` | `String` | Warning messages separated by newline |
 
@@ -521,6 +530,7 @@ Create an instance: `song = client.Song`
 | --- | --- | --- |
 | `data` | `Array` | Array of found objects. |
 | `error` | `String` | First error message |
+| `id` | `String` |  |
 | `status` | `Integer` | HTTP status code |
 | `warning` | `String` | Warning messages separated by newline |
 

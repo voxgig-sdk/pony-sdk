@@ -66,6 +66,12 @@ describe('ComicEntity', async () => {
     const comic_ref01_list = (await comic_ref01_ent.list(comic_ref01_match)).map((e: any) => e.data())
 
 
+    // LOAD
+    const comic_ref01_match_dt0: any = {}
+    comic_ref01_match_dt0.id = comic_ref01_data.id
+    const comic_ref01_data_dt0 = (await comic_ref01_ent.load(comic_ref01_match_dt0)).data()
+    assert(comic_ref01_data_dt0.id === comic_ref01_data.id)
+
 
   })
 })

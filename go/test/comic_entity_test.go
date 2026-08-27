@@ -121,13 +121,19 @@ func TestComicEntity(t *testing.T) {
 		}
 
 		// LOAD
-		comicRef01MatchDt0 := map[string]any{}
+		comicRef01MatchDt0 := map[string]any{
+			"id": comicRef01Data["id"],
+		}
 		comicRef01DataDt0Loaded, err := comicRef01Ent.Load(comicRef01MatchDt0, nil)
 		if err != nil {
 			t.Fatalf("load failed: %v", err)
 		}
-		if comicRef01DataDt0Loaded == nil {
-			t.Fatal("expected load result to be non-nil")
+		comicRef01DataDt0LoadResult := core.ToMapAny(entityData(comicRef01DataDt0Loaded))
+		if comicRef01DataDt0LoadResult == nil {
+			t.Fatal("expected load result to be a map")
+		}
+		if comicRef01DataDt0LoadResult["id"] != comicRef01Data["id"] {
+			t.Fatal("expected load result id to match")
 		}
 
 	})

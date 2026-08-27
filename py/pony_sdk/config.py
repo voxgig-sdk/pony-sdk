@@ -37,6 +37,7 @@ def make_config():
         "options": {
           "active": False,
         },
+        "transport": "base",
       },
         },
         "options": {
@@ -69,6 +70,10 @@ def make_config():
           {
             "name": "error",
             "short": "First error message",
+            "type": "`$STRING`",
+          },
+          {
+            "name": "id",
             "type": "`$STRING`",
           },
           {
@@ -366,6 +371,10 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "name": "id",
+            "type": "`$STRING`",
+          },
+          {
             "name": "status",
             "req": True,
             "short": "HTTP status code",
@@ -553,6 +562,10 @@ def make_config():
           {
             "name": "error",
             "short": "First error message",
+            "type": "`$STRING`",
+          },
+          {
+            "name": "id",
             "type": "`$STRING`",
           },
           {
@@ -826,6 +839,10 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "name": "id",
+            "type": "`$STRING`",
+          },
+          {
             "name": "status",
             "req": True,
             "short": "HTTP status code",
@@ -943,6 +960,10 @@ def make_config():
           {
             "name": "error",
             "short": "First error message",
+            "type": "`$STRING`",
+          },
+          {
+            "name": "id",
             "type": "`$STRING`",
           },
           {

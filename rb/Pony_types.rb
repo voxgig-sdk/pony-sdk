@@ -16,6 +16,9 @@
 # @!attribute [rw] error
 #   @return [String, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] status
 #   @return [Integer]
 #
@@ -24,6 +27,7 @@
 Character = Struct.new(
   :data,
   :error,
+  :id,
   :status,
   :warning,
   keyword_init: true
@@ -46,6 +50,9 @@ CharacterLoadMatch = Struct.new(
 # @!attribute [rw] error
 #   @return [String, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] status
 #   @return [Integer, nil]
 #
@@ -54,6 +61,7 @@ CharacterLoadMatch = Struct.new(
 CharacterListMatch = Struct.new(
   :data,
   :error,
+  :id,
   :status,
   :warning,
   keyword_init: true
@@ -67,6 +75,9 @@ CharacterListMatch = Struct.new(
 # @!attribute [rw] error
 #   @return [String, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] status
 #   @return [Integer]
 #
@@ -75,6 +86,7 @@ CharacterListMatch = Struct.new(
 Comic = Struct.new(
   :data,
   :error,
+  :id,
   :status,
   :warning,
   keyword_init: true
@@ -97,6 +109,9 @@ ComicLoadMatch = Struct.new(
 # @!attribute [rw] error
 #   @return [String, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] status
 #   @return [Integer, nil]
 #
@@ -105,6 +120,7 @@ ComicLoadMatch = Struct.new(
 ComicListMatch = Struct.new(
   :data,
   :error,
+  :id,
   :status,
   :warning,
   keyword_init: true
@@ -118,6 +134,9 @@ ComicListMatch = Struct.new(
 # @!attribute [rw] error
 #   @return [String, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] status
 #   @return [Integer]
 #
@@ -126,6 +145,7 @@ ComicListMatch = Struct.new(
 Episode = Struct.new(
   :data,
   :error,
+  :id,
   :status,
   :warning,
   keyword_init: true
@@ -148,6 +168,9 @@ EpisodeLoadMatch = Struct.new(
 # @!attribute [rw] error
 #   @return [String, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] status
 #   @return [Integer, nil]
 #
@@ -156,6 +179,7 @@ EpisodeLoadMatch = Struct.new(
 EpisodeListMatch = Struct.new(
   :data,
   :error,
+  :id,
   :status,
   :warning,
   keyword_init: true
@@ -211,6 +235,9 @@ ImageListMatch = Struct.new(
 # @!attribute [rw] error
 #   @return [String, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] status
 #   @return [Integer]
 #
@@ -219,6 +246,7 @@ ImageListMatch = Struct.new(
 Kind = Struct.new(
   :data,
   :error,
+  :id,
   :status,
   :warning,
   keyword_init: true
@@ -241,6 +269,9 @@ KindLoadMatch = Struct.new(
 # @!attribute [rw] error
 #   @return [String, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] status
 #   @return [Integer, nil]
 #
@@ -249,6 +280,7 @@ KindLoadMatch = Struct.new(
 KindListMatch = Struct.new(
   :data,
   :error,
+  :id,
   :status,
   :warning,
   keyword_init: true
@@ -262,6 +294,9 @@ KindListMatch = Struct.new(
 # @!attribute [rw] error
 #   @return [String, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] status
 #   @return [Integer]
 #
@@ -270,6 +305,7 @@ KindListMatch = Struct.new(
 Song = Struct.new(
   :data,
   :error,
+  :id,
   :status,
   :warning,
   keyword_init: true
@@ -292,6 +328,9 @@ SongLoadMatch = Struct.new(
 # @!attribute [rw] error
 #   @return [String, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] status
 #   @return [Integer, nil]
 #
@@ -300,6 +339,7 @@ SongLoadMatch = Struct.new(
 SongListMatch = Struct.new(
   :data,
   :error,
+  :id,
   :status,
   :warning,
   keyword_init: true

@@ -40,7 +40,8 @@ class Config {
      test:     {
       "options": {
         "active": false
-      }
+      },
+      "transport": "base"
     },
 
   }
@@ -93,6 +94,10 @@ class Config {
         {
           "name": "error",
           "short": "First error message",
+          "type": "`$STRING`"
+        },
+        {
+          "name": "id",
           "type": "`$STRING`"
         },
         {
@@ -390,6 +395,10 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "name": "id",
+          "type": "`$STRING`"
+        },
+        {
           "name": "status",
           "req": true,
           "short": "HTTP status code",
@@ -577,6 +586,10 @@ class Config {
         {
           "name": "error",
           "short": "First error message",
+          "type": "`$STRING`"
+        },
+        {
+          "name": "id",
           "type": "`$STRING`"
         },
         {
@@ -850,6 +863,10 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "name": "id",
+          "type": "`$STRING`"
+        },
+        {
           "name": "status",
           "req": true,
           "short": "HTTP status code",
@@ -967,6 +984,10 @@ class Config {
         {
           "name": "error",
           "short": "First error message",
+          "type": "`$STRING`"
+        },
+        {
+          "name": "id",
           "type": "`$STRING`"
         },
         {

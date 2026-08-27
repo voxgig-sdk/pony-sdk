@@ -23,6 +23,7 @@ class CharacterRequired(TypedDict):
 class Character(CharacterRequired, total=False):
     data: list
     error: str
+    id: str
     warning: str
 
 
@@ -33,6 +34,7 @@ class CharacterLoadMatch(TypedDict):
 class CharacterListMatch(TypedDict, total=False):
     data: list
     error: str
+    id: str
     status: int
     warning: str
 
@@ -44,6 +46,7 @@ class ComicRequired(TypedDict):
 class Comic(ComicRequired, total=False):
     data: list
     error: str
+    id: str
     warning: str
 
 
@@ -54,6 +57,7 @@ class ComicLoadMatch(TypedDict):
 class ComicListMatch(TypedDict, total=False):
     data: list
     error: str
+    id: str
     status: int
     warning: str
 
@@ -65,6 +69,7 @@ class EpisodeRequired(TypedDict):
 class Episode(EpisodeRequired, total=False):
     data: list
     error: str
+    id: str
     warning: str
 
 
@@ -75,6 +80,7 @@ class EpisodeLoadMatch(TypedDict):
 class EpisodeListMatch(TypedDict, total=False):
     data: list
     error: str
+    id: str
     status: int
     warning: str
 
@@ -103,6 +109,7 @@ class KindRequired(TypedDict):
 class Kind(KindRequired, total=False):
     data: list
     error: str
+    id: str
     warning: str
 
 
@@ -113,6 +120,7 @@ class KindLoadMatch(TypedDict):
 class KindListMatch(TypedDict, total=False):
     data: list
     error: str
+    id: str
     status: int
     warning: str
 
@@ -124,6 +132,7 @@ class SongRequired(TypedDict):
 class Song(SongRequired, total=False):
     data: list
     error: str
+    id: str
     warning: str
 
 
@@ -134,5 +143,6 @@ class SongLoadMatch(TypedDict):
 class SongListMatch(TypedDict, total=False):
     data: list
     error: str
+    id: str
     status: int
     warning: str

@@ -42,6 +42,7 @@ class PonyConfig
           'options' => [
             'active' => false,
           ],
+          'transport' => 'base',
         ],
             ],
             "options" => [
@@ -74,6 +75,10 @@ class PonyConfig
             [
               'name' => 'error',
               'short' => 'First error message',
+              'type' => '`$STRING`',
+            ],
+            [
+              'name' => 'id',
               'type' => '`$STRING`',
             ],
             [
@@ -371,6 +376,10 @@ class PonyConfig
               'type' => '`$STRING`',
             ],
             [
+              'name' => 'id',
+              'type' => '`$STRING`',
+            ],
+            [
               'name' => 'status',
               'req' => true,
               'short' => 'HTTP status code',
@@ -558,6 +567,10 @@ class PonyConfig
             [
               'name' => 'error',
               'short' => 'First error message',
+              'type' => '`$STRING`',
+            ],
+            [
+              'name' => 'id',
               'type' => '`$STRING`',
             ],
             [
@@ -831,6 +844,10 @@ class PonyConfig
               'type' => '`$STRING`',
             ],
             [
+              'name' => 'id',
+              'type' => '`$STRING`',
+            ],
+            [
               'name' => 'status',
               'req' => true,
               'short' => 'HTTP status code',
@@ -948,6 +965,10 @@ class PonyConfig
             [
               'name' => 'error',
               'short' => 'First error message',
+              'type' => '`$STRING`',
+            ],
+            [
+              'name' => 'id',
               'type' => '`$STRING`',
             ],
             [

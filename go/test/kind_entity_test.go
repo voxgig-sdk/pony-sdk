@@ -121,13 +121,19 @@ func TestKindEntity(t *testing.T) {
 		}
 
 		// LOAD
-		kindRef01MatchDt0 := map[string]any{}
+		kindRef01MatchDt0 := map[string]any{
+			"id": kindRef01Data["id"],
+		}
 		kindRef01DataDt0Loaded, err := kindRef01Ent.Load(kindRef01MatchDt0, nil)
 		if err != nil {
 			t.Fatalf("load failed: %v", err)
 		}
-		if kindRef01DataDt0Loaded == nil {
-			t.Fatal("expected load result to be non-nil")
+		kindRef01DataDt0LoadResult := core.ToMapAny(entityData(kindRef01DataDt0Loaded))
+		if kindRef01DataDt0LoadResult == nil {
+			t.Fatal("expected load result to be a map")
+		}
+		if kindRef01DataDt0LoadResult["id"] != kindRef01Data["id"] {
+			t.Fatal("expected load result id to match")
 		}
 
 	})

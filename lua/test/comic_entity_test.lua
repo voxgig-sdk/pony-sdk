@@ -92,10 +92,14 @@ describe("ComicEntity", function()
     assert.is_table(comic_ref01_list_result)
 
     -- LOAD
-    local comic_ref01_match_dt0 = {}
+    local comic_ref01_match_dt0 = {
+      id = comic_ref01_data["id"],
+    }
     local comic_ref01_data_dt0_loaded, err = comic_ref01_ent:load(comic_ref01_match_dt0, nil)
     assert.is_nil(err)
-    assert.is_not_nil(comic_ref01_data_dt0_loaded)
+    local comic_ref01_data_dt0_load_result = helpers.to_map(type(comic_ref01_data_dt0_loaded) == 'table' and comic_ref01_data_dt0_loaded.data_get and comic_ref01_data_dt0_loaded:data_get() or comic_ref01_data_dt0_loaded)
+    assert.is_not_nil(comic_ref01_data_dt0_load_result)
+    assert.are.equal(comic_ref01_data_dt0_load_result["id"], comic_ref01_data["id"])
 
   end)
 end)

@@ -121,13 +121,19 @@ func TestSongEntity(t *testing.T) {
 		}
 
 		// LOAD
-		songRef01MatchDt0 := map[string]any{}
+		songRef01MatchDt0 := map[string]any{
+			"id": songRef01Data["id"],
+		}
 		songRef01DataDt0Loaded, err := songRef01Ent.Load(songRef01MatchDt0, nil)
 		if err != nil {
 			t.Fatalf("load failed: %v", err)
 		}
-		if songRef01DataDt0Loaded == nil {
-			t.Fatal("expected load result to be non-nil")
+		songRef01DataDt0LoadResult := core.ToMapAny(entityData(songRef01DataDt0Loaded))
+		if songRef01DataDt0LoadResult == nil {
+			t.Fatal("expected load result to be a map")
+		}
+		if songRef01DataDt0LoadResult["id"] != songRef01Data["id"] {
+			t.Fatal("expected load result id to match")
 		}
 
 	})

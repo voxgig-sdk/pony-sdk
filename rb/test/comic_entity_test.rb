@@ -83,9 +83,13 @@ class ComicEntityTest < Minitest::Test
     assert comic_ref01_list_result.is_a?(Array)
 
     # LOAD
-    comic_ref01_match_dt0 = {}
+    comic_ref01_match_dt0 = {
+      "id" => comic_ref01_data["id"],
+    }
     comic_ref01_data_dt0_loaded = comic_ref01_ent.load(comic_ref01_match_dt0, nil)
-    assert !comic_ref01_data_dt0_loaded.nil?
+    comic_ref01_data_dt0_load_result = Helpers.to_map(comic_ref01_data_dt0_loaded.respond_to?(:data_get) ? comic_ref01_data_dt0_loaded.data_get : comic_ref01_data_dt0_loaded)
+    assert !comic_ref01_data_dt0_load_result.nil?
+    assert_equal comic_ref01_data_dt0_load_result["id"], comic_ref01_data["id"]
 
   end
 end

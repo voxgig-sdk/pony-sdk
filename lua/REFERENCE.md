@@ -112,6 +112,7 @@ local character = client:Character(nil)
 | --- | --- | --- | --- |
 | `data` | `table` | No | Array of found objects. |
 | `error` | `string` | No | First error message |
+| `id` | `string` | No |  |
 | `status` | `number` | Yes | HTTP status code |
 | `warning` | `string` | No | Warning messages separated by newline |
 
@@ -175,6 +176,7 @@ local comic = client:Comic(nil)
 | --- | --- | --- | --- |
 | `data` | `table` | No | Array of found objects. |
 | `error` | `string` | No | First error message |
+| `id` | `string` | No |  |
 | `status` | `number` | Yes | HTTP status code |
 | `warning` | `string` | No | Warning messages separated by newline |
 
@@ -238,6 +240,7 @@ local episode = client:Episode(nil)
 | --- | --- | --- | --- |
 | `data` | `table` | No | Array of found objects. |
 | `error` | `string` | No | First error message |
+| `id` | `string` | No |  |
 | `status` | `number` | Yes | HTTP status code |
 | `warning` | `string` | No | Warning messages separated by newline |
 
@@ -356,6 +359,7 @@ local kind = client:Kind(nil)
 | --- | --- | --- | --- |
 | `data` | `table` | No | Array of found objects. |
 | `error` | `string` | No | First error message |
+| `id` | `string` | No |  |
 | `status` | `number` | Yes | HTTP status code |
 | `warning` | `string` | No | Warning messages separated by newline |
 
@@ -419,6 +423,7 @@ local song = client:Song(nil)
 | --- | --- | --- | --- |
 | `data` | `table` | No | Array of found objects. |
 | `error` | `string` | No | First error message |
+| `id` | `string` | No |  |
 | `status` | `number` | Yes | HTTP status code |
 | `warning` | `string` | No | Warning messages separated by newline |
 

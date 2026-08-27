@@ -3,27 +3,27 @@
     "comic": {
       "COMIC00": {
         "data": [],
-        "error": "s29",
-        "status": "s2a",
-        "warning": "s2b",
-        "series": "SERIES01",
-        "id": "COMIC00"
+        "error": "s33",
+        "id": "COMIC00",
+        "status": "s35",
+        "warning": "s36",
+        "series": "SERIES01"
       },
       "COMIC01": {
         "data": [],
-        "error": "s51",
-        "status": "s52",
-        "warning": "s53",
-        "series": "SERIES01",
-        "id": "COMIC01"
+        "error": "s65",
+        "id": "COMIC01",
+        "status": "s67",
+        "warning": "s68",
+        "series": "SERIES01"
       },
       "COMIC02": {
         "data": [],
-        "error": "s79",
-        "status": "s7a",
-        "warning": "s7b",
-        "series": "SERIES01",
-        "id": "COMIC02"
+        "error": "s97",
+        "id": "COMIC02",
+        "status": "s99",
+        "warning": "s9a",
+        "series": "SERIES01"
       }
     }
   },
@@ -31,9 +31,9 @@
     "comic": {
       "comic_ref01": {
         "data": [],
-        "error": "sa1",
-        "status": "sa2",
-        "warning": "sa3"
+        "error": "sc9",
+        "status": "scb",
+        "warning": "scc"
       }
     }
   }

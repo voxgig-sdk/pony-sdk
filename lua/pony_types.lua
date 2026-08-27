@@ -9,6 +9,7 @@
 ---@class Character
 ---@field data? table
 ---@field error? string
+---@field id? string
 ---@field status number
 ---@field warning? string
 
@@ -18,12 +19,14 @@
 ---@class CharacterListMatch
 ---@field data? table
 ---@field error? string
+---@field id? string
 ---@field status? number
 ---@field warning? string
 
 ---@class Comic
 ---@field data? table
 ---@field error? string
+---@field id? string
 ---@field status number
 ---@field warning? string
 
@@ -33,12 +36,14 @@
 ---@class ComicListMatch
 ---@field data? table
 ---@field error? string
+---@field id? string
 ---@field status? number
 ---@field warning? string
 
 ---@class Episode
 ---@field data? table
 ---@field error? string
+---@field id? string
 ---@field status number
 ---@field warning? string
 
@@ -48,6 +53,7 @@
 ---@class EpisodeListMatch
 ---@field data? table
 ---@field error? string
+---@field id? string
 ---@field status? number
 ---@field warning? string
 
@@ -66,6 +72,7 @@
 ---@class Kind
 ---@field data? table
 ---@field error? string
+---@field id? string
 ---@field status number
 ---@field warning? string
 
@@ -75,12 +82,14 @@
 ---@class KindListMatch
 ---@field data? table
 ---@field error? string
+---@field id? string
 ---@field status? number
 ---@field warning? string
 
 ---@class Song
 ---@field data? table
 ---@field error? string
+---@field id? string
 ---@field status number
 ---@field warning? string
 
@@ -90,6 +99,7 @@
 ---@class SongListMatch
 ---@field data? table
 ---@field error? string
+---@field id? string
 ---@field status? number
 ---@field warning? string
 

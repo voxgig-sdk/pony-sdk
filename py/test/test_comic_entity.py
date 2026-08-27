@@ -88,9 +88,13 @@ class TestComicEntity:
         assert isinstance(comic_ref01_list_result, list)
 
         # LOAD
-        comic_ref01_match_dt0 = {}
+        comic_ref01_match_dt0 = {
+            "id": comic_ref01_data["id"],
+        }
         comic_ref01_data_dt0_loaded = comic_ref01_ent.load(comic_ref01_match_dt0, None)
-        assert comic_ref01_data_dt0_loaded is not None
+        comic_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(comic_ref01_data_dt0_loaded))
+        assert comic_ref01_data_dt0_load_result is not None
+        assert comic_ref01_data_dt0_load_result["id"] == comic_ref01_data["id"]
 
 
 
