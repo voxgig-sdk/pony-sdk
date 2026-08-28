@@ -37,33 +37,29 @@ Character = Struct.new(
 #
 # @!attribute [rw] id
 #   @return [String]
+#
+# @!attribute [rw] limit
+#   @return [Integer, nil]
+#
+# @!attribute [rw] offset
+#   @return [Integer, nil]
 CharacterLoadMatch = Struct.new(
   :id,
+  :limit,
+  :offset,
   keyword_init: true
 )
 
 # Request payload for Character#list.
 #
-# @!attribute [rw] data
-#   @return [Array, nil]
-#
-# @!attribute [rw] error
-#   @return [String, nil]
-#
-# @!attribute [rw] id
-#   @return [String, nil]
-#
-# @!attribute [rw] status
+# @!attribute [rw] limit
 #   @return [Integer, nil]
 #
-# @!attribute [rw] warning
-#   @return [String, nil]
+# @!attribute [rw] offset
+#   @return [Integer, nil]
 CharacterListMatch = Struct.new(
-  :data,
-  :error,
-  :id,
-  :status,
-  :warning,
+  :limit,
+  :offset,
   keyword_init: true
 )
 
@@ -96,33 +92,29 @@ Comic = Struct.new(
 #
 # @!attribute [rw] id
 #   @return [String]
+#
+# @!attribute [rw] limit
+#   @return [Integer, nil]
+#
+# @!attribute [rw] offset
+#   @return [Integer, nil]
 ComicLoadMatch = Struct.new(
   :id,
+  :limit,
+  :offset,
   keyword_init: true
 )
 
 # Request payload for Comic#list.
 #
-# @!attribute [rw] data
-#   @return [Array, nil]
-#
-# @!attribute [rw] error
-#   @return [String, nil]
-#
-# @!attribute [rw] id
-#   @return [String, nil]
-#
-# @!attribute [rw] status
+# @!attribute [rw] limit
 #   @return [Integer, nil]
 #
-# @!attribute [rw] warning
-#   @return [String, nil]
+# @!attribute [rw] offset
+#   @return [Integer, nil]
 ComicListMatch = Struct.new(
-  :data,
-  :error,
-  :id,
-  :status,
-  :warning,
+  :limit,
+  :offset,
   keyword_init: true
 )
 
@@ -155,33 +147,29 @@ Episode = Struct.new(
 #
 # @!attribute [rw] id
 #   @return [String]
+#
+# @!attribute [rw] limit
+#   @return [Integer, nil]
+#
+# @!attribute [rw] offset
+#   @return [Integer, nil]
 EpisodeLoadMatch = Struct.new(
   :id,
+  :limit,
+  :offset,
   keyword_init: true
 )
 
 # Request payload for Episode#list.
 #
-# @!attribute [rw] data
-#   @return [Array, nil]
-#
-# @!attribute [rw] error
-#   @return [String, nil]
-#
-# @!attribute [rw] id
-#   @return [String, nil]
-#
-# @!attribute [rw] status
+# @!attribute [rw] limit
 #   @return [Integer, nil]
 #
-# @!attribute [rw] warning
-#   @return [String, nil]
+# @!attribute [rw] offset
+#   @return [Integer, nil]
 EpisodeListMatch = Struct.new(
-  :data,
-  :error,
-  :id,
-  :status,
-  :warning,
+  :limit,
+  :offset,
   keyword_init: true
 )
 
@@ -208,22 +196,14 @@ Image = Struct.new(
 
 # Request payload for Image#list.
 #
-# @!attribute [rw] data
-#   @return [Array, nil]
-#
-# @!attribute [rw] error
-#   @return [String, nil]
-#
-# @!attribute [rw] status
+# @!attribute [rw] limit
 #   @return [Integer, nil]
 #
-# @!attribute [rw] warning
-#   @return [String, nil]
+# @!attribute [rw] offset
+#   @return [Integer, nil]
 ImageListMatch = Struct.new(
-  :data,
-  :error,
-  :status,
-  :warning,
+  :limit,
+  :offset,
   keyword_init: true
 )
 
@@ -263,26 +243,14 @@ KindLoadMatch = Struct.new(
 
 # Request payload for Kind#list.
 #
-# @!attribute [rw] data
-#   @return [Array, nil]
-#
-# @!attribute [rw] error
-#   @return [String, nil]
-#
-# @!attribute [rw] id
-#   @return [String, nil]
-#
-# @!attribute [rw] status
+# @!attribute [rw] limit
 #   @return [Integer, nil]
 #
-# @!attribute [rw] warning
-#   @return [String, nil]
+# @!attribute [rw] offset
+#   @return [Integer, nil]
 KindListMatch = Struct.new(
-  :data,
-  :error,
-  :id,
-  :status,
-  :warning,
+  :limit,
+  :offset,
   keyword_init: true
 )
 
@@ -315,33 +283,29 @@ Song = Struct.new(
 #
 # @!attribute [rw] id
 #   @return [String]
+#
+# @!attribute [rw] limit
+#   @return [Integer, nil]
+#
+# @!attribute [rw] offset
+#   @return [Integer, nil]
 SongLoadMatch = Struct.new(
   :id,
+  :limit,
+  :offset,
   keyword_init: true
 )
 
 # Request payload for Song#list.
 #
-# @!attribute [rw] data
-#   @return [Array, nil]
-#
-# @!attribute [rw] error
-#   @return [String, nil]
-#
-# @!attribute [rw] id
-#   @return [String, nil]
-#
-# @!attribute [rw] status
+# @!attribute [rw] limit
 #   @return [Integer, nil]
 #
-# @!attribute [rw] warning
-#   @return [String, nil]
+# @!attribute [rw] offset
+#   @return [Integer, nil]
 SongListMatch = Struct.new(
-  :data,
-  :error,
-  :id,
-  :status,
-  :warning,
+  :limit,
+  :offset,
   keyword_init: true
 )
 

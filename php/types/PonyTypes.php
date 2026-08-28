@@ -26,16 +26,15 @@ class Character
 class CharacterLoadMatch
 {
     public string $id;
+    public ?int $limit = null;
+    public ?int $offset = null;
 }
 
 /** Request payload for Character#list. */
 class CharacterListMatch
 {
-    public ?array $data = null;
-    public ?string $error = null;
-    public ?string $id = null;
-    public ?int $status = null;
-    public ?string $warning = null;
+    public ?int $limit = null;
+    public ?int $offset = null;
 }
 
 /** Comic entity data model. */
@@ -52,16 +51,15 @@ class Comic
 class ComicLoadMatch
 {
     public string $id;
+    public ?int $limit = null;
+    public ?int $offset = null;
 }
 
 /** Request payload for Comic#list. */
 class ComicListMatch
 {
-    public ?array $data = null;
-    public ?string $error = null;
-    public ?string $id = null;
-    public ?int $status = null;
-    public ?string $warning = null;
+    public ?int $limit = null;
+    public ?int $offset = null;
 }
 
 /** Episode entity data model. */
@@ -78,16 +76,15 @@ class Episode
 class EpisodeLoadMatch
 {
     public string $id;
+    public ?int $limit = null;
+    public ?int $offset = null;
 }
 
 /** Request payload for Episode#list. */
 class EpisodeListMatch
 {
-    public ?array $data = null;
-    public ?string $error = null;
-    public ?string $id = null;
-    public ?int $status = null;
-    public ?string $warning = null;
+    public ?int $limit = null;
+    public ?int $offset = null;
 }
 
 /** Image entity data model. */
@@ -102,10 +99,8 @@ class Image
 /** Request payload for Image#list. */
 class ImageListMatch
 {
-    public ?array $data = null;
-    public ?string $error = null;
-    public ?int $status = null;
-    public ?string $warning = null;
+    public ?int $limit = null;
+    public ?int $offset = null;
 }
 
 /** Kind entity data model. */
@@ -127,11 +122,8 @@ class KindLoadMatch
 /** Request payload for Kind#list. */
 class KindListMatch
 {
-    public ?array $data = null;
-    public ?string $error = null;
-    public ?string $id = null;
-    public ?int $status = null;
-    public ?string $warning = null;
+    public ?int $limit = null;
+    public ?int $offset = null;
 }
 
 /** Song entity data model. */
@@ -148,15 +140,14 @@ class Song
 class SongLoadMatch
 {
     public string $id;
+    public ?int $limit = null;
+    public ?int $offset = null;
 }
 
 /** Request payload for Song#list. */
 class SongListMatch
 {
-    public ?array $data = null;
-    public ?string $error = null;
-    public ?string $id = null;
-    public ?int $status = null;
-    public ?string $warning = null;
+    public ?int $limit = null;
+    public ?int $offset = null;
 }
 

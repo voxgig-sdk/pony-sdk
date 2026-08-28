@@ -15,14 +15,13 @@ export interface Character {
 
 export interface CharacterLoadMatch {
   id: string
+  limit?: number
+  offset?: number
 }
 
 export interface CharacterListMatch {
-  data?: any[]
-  error?: string
-  id?: string
-  status?: number
-  warning?: string
+  limit?: number
+  offset?: number
 
   // Selects a custom action instead of the plain list:
   //   'all'
@@ -41,14 +40,13 @@ export interface Comic {
 
 export interface ComicLoadMatch {
   id: string
+  limit?: number
+  offset?: number
 }
 
 export interface ComicListMatch {
-  data?: any[]
-  error?: string
-  id?: string
-  status?: number
-  warning?: string
+  limit?: number
+  offset?: number
 
   // Selects a custom action instead of the plain list:
   //   'all'
@@ -67,14 +65,13 @@ export interface Episode {
 
 export interface EpisodeLoadMatch {
   id: string
+  limit?: number
+  offset?: number
 }
 
 export interface EpisodeListMatch {
-  data?: any[]
-  error?: string
-  id?: string
-  status?: number
-  warning?: string
+  limit?: number
+  offset?: number
 
   // Selects a custom action instead of the plain list:
   //   'all'
@@ -91,10 +88,8 @@ export interface Image {
 }
 
 export interface ImageListMatch {
-  data?: any[]
-  error?: string
-  status?: number
-  warning?: string
+  limit?: number
+  offset?: number
 
   // Selects a custom action instead of the plain list:
   //   'all'
@@ -116,11 +111,8 @@ export interface KindLoadMatch {
 }
 
 export interface KindListMatch {
-  data?: any[]
-  error?: string
-  id?: string
-  status?: number
-  warning?: string
+  limit?: number
+  offset?: number
 
   // Selects a custom action instead of the plain list:
   //   'all'
@@ -139,14 +131,13 @@ export interface Song {
 
 export interface SongLoadMatch {
   id: string
+  limit?: number
+  offset?: number
 }
 
 export interface SongListMatch {
-  data?: any[]
-  error?: string
-  id?: string
-  status?: number
-  warning?: string
+  limit?: number
+  offset?: number
 
   // Selects a custom action instead of the plain list:
   //   'all'

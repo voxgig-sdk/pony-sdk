@@ -24,15 +24,14 @@ type Character struct {
 // CharacterLoadMatch is the typed request payload for Character.LoadTyped.
 type CharacterLoadMatch struct {
 	Id string `json:"id"`
+	Limit *int `json:"limit,omitempty"`
+	Offset *int `json:"offset,omitempty"`
 }
 
 // CharacterListMatch is the typed request payload for Character.ListTyped.
 type CharacterListMatch struct {
-	Data *[]any `json:"data,omitempty"`
-	Error *string `json:"error,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Status *int `json:"status,omitempty"`
-	Warning *string `json:"warning,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	Offset *int `json:"offset,omitempty"`
 }
 
 // Comic is the typed data model for the comic entity.
@@ -47,15 +46,14 @@ type Comic struct {
 // ComicLoadMatch is the typed request payload for Comic.LoadTyped.
 type ComicLoadMatch struct {
 	Id string `json:"id"`
+	Limit *int `json:"limit,omitempty"`
+	Offset *int `json:"offset,omitempty"`
 }
 
 // ComicListMatch is the typed request payload for Comic.ListTyped.
 type ComicListMatch struct {
-	Data *[]any `json:"data,omitempty"`
-	Error *string `json:"error,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Status *int `json:"status,omitempty"`
-	Warning *string `json:"warning,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	Offset *int `json:"offset,omitempty"`
 }
 
 // Episode is the typed data model for the episode entity.
@@ -70,15 +68,14 @@ type Episode struct {
 // EpisodeLoadMatch is the typed request payload for Episode.LoadTyped.
 type EpisodeLoadMatch struct {
 	Id string `json:"id"`
+	Limit *int `json:"limit,omitempty"`
+	Offset *int `json:"offset,omitempty"`
 }
 
 // EpisodeListMatch is the typed request payload for Episode.ListTyped.
 type EpisodeListMatch struct {
-	Data *[]any `json:"data,omitempty"`
-	Error *string `json:"error,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Status *int `json:"status,omitempty"`
-	Warning *string `json:"warning,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	Offset *int `json:"offset,omitempty"`
 }
 
 // Image is the typed data model for the image entity.
@@ -91,10 +88,8 @@ type Image struct {
 
 // ImageListMatch is the typed request payload for Image.ListTyped.
 type ImageListMatch struct {
-	Data *[]any `json:"data,omitempty"`
-	Error *string `json:"error,omitempty"`
-	Status *int `json:"status,omitempty"`
-	Warning *string `json:"warning,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	Offset *int `json:"offset,omitempty"`
 }
 
 // Kind is the typed data model for the kind entity.
@@ -113,11 +108,8 @@ type KindLoadMatch struct {
 
 // KindListMatch is the typed request payload for Kind.ListTyped.
 type KindListMatch struct {
-	Data *[]any `json:"data,omitempty"`
-	Error *string `json:"error,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Status *int `json:"status,omitempty"`
-	Warning *string `json:"warning,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	Offset *int `json:"offset,omitempty"`
 }
 
 // Song is the typed data model for the song entity.
@@ -132,15 +124,14 @@ type Song struct {
 // SongLoadMatch is the typed request payload for Song.LoadTyped.
 type SongLoadMatch struct {
 	Id string `json:"id"`
+	Limit *int `json:"limit,omitempty"`
+	Offset *int `json:"offset,omitempty"`
 }
 
 // SongListMatch is the typed request payload for Song.ListTyped.
 type SongListMatch struct {
-	Data *[]any `json:"data,omitempty"`
-	Error *string `json:"error,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Status *int `json:"status,omitempty"`
-	Warning *string `json:"warning,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	Offset *int `json:"offset,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

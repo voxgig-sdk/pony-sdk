@@ -15,13 +15,12 @@
 
 ---@class CharacterLoadMatch
 ---@field id string
+---@field limit? number
+---@field offset? number
 
 ---@class CharacterListMatch
----@field data? table
----@field error? string
----@field id? string
----@field status? number
----@field warning? string
+---@field limit? number
+---@field offset? number
 
 ---@class Comic
 ---@field data? table
@@ -32,13 +31,12 @@
 
 ---@class ComicLoadMatch
 ---@field id string
+---@field limit? number
+---@field offset? number
 
 ---@class ComicListMatch
----@field data? table
----@field error? string
----@field id? string
----@field status? number
----@field warning? string
+---@field limit? number
+---@field offset? number
 
 ---@class Episode
 ---@field data? table
@@ -49,13 +47,12 @@
 
 ---@class EpisodeLoadMatch
 ---@field id string
+---@field limit? number
+---@field offset? number
 
 ---@class EpisodeListMatch
----@field data? table
----@field error? string
----@field id? string
----@field status? number
----@field warning? string
+---@field limit? number
+---@field offset? number
 
 ---@class Image
 ---@field data? table
@@ -64,10 +61,8 @@
 ---@field warning? string
 
 ---@class ImageListMatch
----@field data? table
----@field error? string
----@field status? number
----@field warning? string
+---@field limit? number
+---@field offset? number
 
 ---@class Kind
 ---@field data? table
@@ -80,11 +75,8 @@
 ---@field id string
 
 ---@class KindListMatch
----@field data? table
----@field error? string
----@field id? string
----@field status? number
----@field warning? string
+---@field limit? number
+---@field offset? number
 
 ---@class Song
 ---@field data? table
@@ -95,13 +87,12 @@
 
 ---@class SongLoadMatch
 ---@field id string
+---@field limit? number
+---@field offset? number
 
 ---@class SongListMatch
----@field data? table
----@field error? string
----@field id? string
----@field status? number
----@field warning? string
+---@field limit? number
+---@field offset? number
 
 local M = {}
 

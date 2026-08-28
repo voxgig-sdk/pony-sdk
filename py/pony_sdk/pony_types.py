@@ -27,16 +27,18 @@ class Character(CharacterRequired, total=False):
     warning: str
 
 
-class CharacterLoadMatch(TypedDict):
+class CharacterLoadMatchRequired(TypedDict):
     id: str
+
+
+class CharacterLoadMatch(CharacterLoadMatchRequired, total=False):
+    limit: int
+    offset: int
 
 
 class CharacterListMatch(TypedDict, total=False):
-    data: list
-    error: str
-    id: str
-    status: int
-    warning: str
+    limit: int
+    offset: int
 
 
 class ComicRequired(TypedDict):
@@ -50,16 +52,18 @@ class Comic(ComicRequired, total=False):
     warning: str
 
 
-class ComicLoadMatch(TypedDict):
+class ComicLoadMatchRequired(TypedDict):
     id: str
+
+
+class ComicLoadMatch(ComicLoadMatchRequired, total=False):
+    limit: int
+    offset: int
 
 
 class ComicListMatch(TypedDict, total=False):
-    data: list
-    error: str
-    id: str
-    status: int
-    warning: str
+    limit: int
+    offset: int
 
 
 class EpisodeRequired(TypedDict):
@@ -73,16 +77,18 @@ class Episode(EpisodeRequired, total=False):
     warning: str
 
 
-class EpisodeLoadMatch(TypedDict):
+class EpisodeLoadMatchRequired(TypedDict):
     id: str
+
+
+class EpisodeLoadMatch(EpisodeLoadMatchRequired, total=False):
+    limit: int
+    offset: int
 
 
 class EpisodeListMatch(TypedDict, total=False):
-    data: list
-    error: str
-    id: str
-    status: int
-    warning: str
+    limit: int
+    offset: int
 
 
 class ImageRequired(TypedDict):
@@ -96,10 +102,8 @@ class Image(ImageRequired, total=False):
 
 
 class ImageListMatch(TypedDict, total=False):
-    data: list
-    error: str
-    status: int
-    warning: str
+    limit: int
+    offset: int
 
 
 class KindRequired(TypedDict):
@@ -118,11 +122,8 @@ class KindLoadMatch(TypedDict):
 
 
 class KindListMatch(TypedDict, total=False):
-    data: list
-    error: str
-    id: str
-    status: int
-    warning: str
+    limit: int
+    offset: int
 
 
 class SongRequired(TypedDict):
@@ -136,13 +137,15 @@ class Song(SongRequired, total=False):
     warning: str
 
 
-class SongLoadMatch(TypedDict):
+class SongLoadMatchRequired(TypedDict):
     id: str
+
+
+class SongLoadMatch(SongLoadMatchRequired, total=False):
+    limit: int
+    offset: int
 
 
 class SongListMatch(TypedDict, total=False):
-    data: list
-    error: str
-    id: str
-    status: int
-    warning: str
+    limit: int
+    offset: int
