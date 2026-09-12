@@ -74,9 +74,13 @@ main: kit: entity: episode: {
           }
           method: "GET"
           orig: "/episode/all"
-          parts: [
-            "episode"
-            "all"
+          segments: [
+            {
+              lit: "episode"
+            }
+            {
+              lit: "all"
+            }
           ]
           select: {
             "$action": "all"
@@ -127,15 +131,19 @@ main: kit: entity: episode: {
           }
           method: "GET"
           orig: "/episode/{episode}"
-          parts: [
-            "episode"
-            "{id}"
-          ]
           rename: {
             param: {
               episode: "id"
             }
           }
+          segments: [
+            {
+              lit: "episode"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"
@@ -180,10 +188,16 @@ main: kit: entity: episode: {
           }
           method: "GET"
           orig: "/episode/by-season/{season}"
-          parts: [
-            "episode"
-            "by-season"
-            "{season}"
+          segments: [
+            {
+              lit: "episode"
+            }
+            {
+              lit: "by-season"
+            }
+            {
+              var: "season"
+            }
           ]
           select: {
             exist: [

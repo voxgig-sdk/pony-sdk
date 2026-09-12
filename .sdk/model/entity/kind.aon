@@ -74,9 +74,13 @@ main: kit: entity: kind: {
           }
           method: "GET"
           orig: "/kind/all"
-          parts: [
-            "kind"
-            "all"
+          segments: [
+            {
+              lit: "kind"
+            }
+            {
+              lit: "all"
+            }
           ]
           select: {
             "$action": "all"
@@ -109,15 +113,19 @@ main: kit: entity: kind: {
           }
           method: "GET"
           orig: "/kind/{kind}"
-          parts: [
-            "kind"
-            "{id}"
-          ]
           rename: {
             param: {
               kind: "id"
             }
           }
+          segments: [
+            {
+              lit: "kind"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"

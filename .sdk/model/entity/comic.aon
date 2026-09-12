@@ -74,9 +74,13 @@ main: kit: entity: comic: {
           }
           method: "GET"
           orig: "/comics/all"
-          parts: [
-            "comics"
-            "all"
+          segments: [
+            {
+              lit: "comics"
+            }
+            {
+              lit: "all"
+            }
           ]
           select: {
             "$action": "all"
@@ -127,15 +131,19 @@ main: kit: entity: comic: {
           }
           method: "GET"
           orig: "/comics/{comics}"
-          parts: [
-            "comics"
-            "{id}"
-          ]
           rename: {
             param: {
               comics: "id"
             }
           }
+          segments: [
+            {
+              lit: "comics"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"
@@ -180,10 +188,16 @@ main: kit: entity: comic: {
           }
           method: "GET"
           orig: "/comics/by-series/{series}"
-          parts: [
-            "comics"
-            "by-series"
-            "{series}"
+          segments: [
+            {
+              lit: "comics"
+            }
+            {
+              lit: "by-series"
+            }
+            {
+              var: "series"
+            }
           ]
           select: {
             exist: [

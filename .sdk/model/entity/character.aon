@@ -74,9 +74,13 @@ main: kit: entity: character: {
           }
           method: "GET"
           orig: "/character/all"
-          parts: [
-            "character"
-            "all"
+          segments: [
+            {
+              lit: "character"
+            }
+            {
+              lit: "all"
+            }
           ]
           select: {
             "$action": "all"
@@ -127,15 +131,19 @@ main: kit: entity: character: {
           }
           method: "GET"
           orig: "/character/{character}"
-          parts: [
-            "character"
-            "{id}"
-          ]
           rename: {
             param: {
               character: "id"
             }
           }
+          segments: [
+            {
+              lit: "character"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"
@@ -181,10 +189,16 @@ main: kit: entity: character: {
           }
           method: "GET"
           orig: "/character/by-kind/{kind}"
-          parts: [
-            "character"
-            "by-kind"
-            "{kind}"
+          segments: [
+            {
+              lit: "character"
+            }
+            {
+              lit: "by-kind"
+            }
+            {
+              var: "kind"
+            }
           ]
           select: {
             exist: [
@@ -231,10 +245,16 @@ main: kit: entity: character: {
           }
           method: "GET"
           orig: "/character/by-occupation/{occupation}"
-          parts: [
-            "character"
-            "by-occupation"
-            "{occupation}"
+          segments: [
+            {
+              lit: "character"
+            }
+            {
+              lit: "by-occupation"
+            }
+            {
+              var: "occupation"
+            }
           ]
           select: {
             exist: [
@@ -280,10 +300,16 @@ main: kit: entity: character: {
           }
           method: "GET"
           orig: "/character/by-residence/{residence}"
-          parts: [
-            "character"
-            "by-residence"
-            "{residence}"
+          segments: [
+            {
+              lit: "character"
+            }
+            {
+              lit: "by-residence"
+            }
+            {
+              var: "residence"
+            }
           ]
           select: {
             exist: [

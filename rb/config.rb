@@ -79,6 +79,10 @@ module PonyConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "character",
           "op" => {
             "list" => {
@@ -107,9 +111,13 @@ module PonyConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/character/all",
-                  "parts" => [
-                    "character",
-                    "all",
+                  "segments" => [
+                    {
+                      "lit" => "character",
+                    },
+                    {
+                      "lit" => "all",
+                    },
                   ],
                   "select" => {
                     "$action" => "all",
@@ -122,6 +130,10 @@ module PonyConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "character",
+                    "all",
+                  ],
                 },
               ],
             },
@@ -160,15 +172,19 @@ module PonyConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/character/{character}",
-                  "parts" => [
-                    "character",
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "character" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "lit" => "character",
+                    },
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -180,6 +196,10 @@ module PonyConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "character",
+                    "{id}",
+                  ],
                 },
                 {
                   "args" => {
@@ -213,10 +233,16 @@ module PonyConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/character/by-kind/{kind}",
-                  "parts" => [
-                    "character",
-                    "by-kind",
-                    "{kind}",
+                  "segments" => [
+                    {
+                      "lit" => "character",
+                    },
+                    {
+                      "lit" => "by-kind",
+                    },
+                    {
+                      "var" => "kind",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -229,6 +255,11 @@ module PonyConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "character",
+                    "by-kind",
+                    "{kind}",
+                  ],
                 },
                 {
                   "args" => {
@@ -262,10 +293,16 @@ module PonyConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/character/by-occupation/{occupation}",
-                  "parts" => [
-                    "character",
-                    "by-occupation",
-                    "{occupation}",
+                  "segments" => [
+                    {
+                      "lit" => "character",
+                    },
+                    {
+                      "lit" => "by-occupation",
+                    },
+                    {
+                      "var" => "occupation",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -278,6 +315,11 @@ module PonyConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "character",
+                    "by-occupation",
+                    "{occupation}",
+                  ],
                 },
                 {
                   "args" => {
@@ -310,10 +352,16 @@ module PonyConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/character/by-residence/{residence}",
-                  "parts" => [
-                    "character",
-                    "by-residence",
-                    "{residence}",
+                  "segments" => [
+                    {
+                      "lit" => "character",
+                    },
+                    {
+                      "lit" => "by-residence",
+                    },
+                    {
+                      "var" => "residence",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -326,6 +374,11 @@ module PonyConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "character",
+                    "by-residence",
+                    "{residence}",
+                  ],
                 },
               ],
             },
@@ -377,6 +430,10 @@ module PonyConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "comic",
           "op" => {
             "list" => {
@@ -405,9 +462,13 @@ module PonyConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/comics/all",
-                  "parts" => [
-                    "comics",
-                    "all",
+                  "segments" => [
+                    {
+                      "lit" => "comics",
+                    },
+                    {
+                      "lit" => "all",
+                    },
                   ],
                   "select" => {
                     "$action" => "all",
@@ -420,6 +481,10 @@ module PonyConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "comics",
+                    "all",
+                  ],
                 },
               ],
             },
@@ -458,15 +523,19 @@ module PonyConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/comics/{comics}",
-                  "parts" => [
-                    "comics",
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "comics" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "lit" => "comics",
+                    },
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -478,6 +547,10 @@ module PonyConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "comics",
+                    "{id}",
+                  ],
                 },
                 {
                   "args" => {
@@ -510,10 +583,16 @@ module PonyConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/comics/by-series/{series}",
-                  "parts" => [
-                    "comics",
-                    "by-series",
-                    "{series}",
+                  "segments" => [
+                    {
+                      "lit" => "comics",
+                    },
+                    {
+                      "lit" => "by-series",
+                    },
+                    {
+                      "var" => "series",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -526,6 +605,11 @@ module PonyConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "comics",
+                    "by-series",
+                    "{series}",
+                  ],
                 },
               ],
             },
@@ -571,6 +655,10 @@ module PonyConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "episode",
           "op" => {
             "list" => {
@@ -599,9 +687,13 @@ module PonyConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/episode/all",
-                  "parts" => [
-                    "episode",
-                    "all",
+                  "segments" => [
+                    {
+                      "lit" => "episode",
+                    },
+                    {
+                      "lit" => "all",
+                    },
                   ],
                   "select" => {
                     "$action" => "all",
@@ -614,6 +706,10 @@ module PonyConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "episode",
+                    "all",
+                  ],
                 },
               ],
             },
@@ -652,15 +748,19 @@ module PonyConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/episode/{episode}",
-                  "parts" => [
-                    "episode",
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "episode" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "lit" => "episode",
+                    },
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -672,6 +772,10 @@ module PonyConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "episode",
+                    "{id}",
+                  ],
                 },
                 {
                   "args" => {
@@ -704,10 +808,16 @@ module PonyConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/episode/by-season/{season}",
-                  "parts" => [
-                    "episode",
-                    "by-season",
-                    "{season}",
+                  "segments" => [
+                    {
+                      "lit" => "episode",
+                    },
+                    {
+                      "lit" => "by-season",
+                    },
+                    {
+                      "var" => "season",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -720,6 +830,11 @@ module PonyConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "episode",
+                    "by-season",
+                    "{season}",
+                  ],
                 },
               ],
             },
@@ -789,9 +904,13 @@ module PonyConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/image/all",
-                  "parts" => [
-                    "image",
-                    "all",
+                  "segments" => [
+                    {
+                      "lit" => "image",
+                    },
+                    {
+                      "lit" => "all",
+                    },
                   ],
                   "select" => {
                     "$action" => "all",
@@ -804,6 +923,10 @@ module PonyConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "image",
+                    "all",
+                  ],
                 },
               ],
             },
@@ -845,6 +968,10 @@ module PonyConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "kind",
           "op" => {
             "list" => {
@@ -873,9 +1000,13 @@ module PonyConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/kind/all",
-                  "parts" => [
-                    "kind",
-                    "all",
+                  "segments" => [
+                    {
+                      "lit" => "kind",
+                    },
+                    {
+                      "lit" => "all",
+                    },
                   ],
                   "select" => {
                     "$action" => "all",
@@ -888,6 +1019,10 @@ module PonyConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "kind",
+                    "all",
+                  ],
                 },
               ],
             },
@@ -910,15 +1045,19 @@ module PonyConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/kind/{kind}",
-                  "parts" => [
-                    "kind",
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "kind" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "lit" => "kind",
+                    },
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -928,6 +1067,10 @@ module PonyConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "kind",
+                    "{id}",
+                  ],
                 },
               ],
             },
@@ -969,6 +1112,10 @@ module PonyConfig
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "song",
           "op" => {
             "list" => {
@@ -997,9 +1144,13 @@ module PonyConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/song/all",
-                  "parts" => [
-                    "song",
-                    "all",
+                  "segments" => [
+                    {
+                      "lit" => "song",
+                    },
+                    {
+                      "lit" => "all",
+                    },
                   ],
                   "select" => {
                     "$action" => "all",
@@ -1012,6 +1163,10 @@ module PonyConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "song",
+                    "all",
+                  ],
                 },
               ],
             },
@@ -1050,10 +1205,16 @@ module PonyConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/song/by-episode/{episode}",
-                  "parts" => [
-                    "song",
-                    "by-episode",
-                    "{episode}",
+                  "segments" => [
+                    {
+                      "lit" => "song",
+                    },
+                    {
+                      "lit" => "by-episode",
+                    },
+                    {
+                      "var" => "episode",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -1066,6 +1227,11 @@ module PonyConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "song",
+                    "by-episode",
+                    "{episode}",
+                  ],
                 },
                 {
                   "args" => {
@@ -1098,15 +1264,19 @@ module PonyConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/song/{song}",
-                  "parts" => [
-                    "song",
-                    "{id}",
-                  ],
                   "rename" => {
                     "param" => {
                       "song" => "id",
                     },
                   },
+                  "segments" => [
+                    {
+                      "lit" => "song",
+                    },
+                    {
+                      "var" => "id",
+                    },
+                  ],
                   "select" => {
                     "exist" => [
                       "id",
@@ -1118,6 +1288,10 @@ module PonyConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "song",
+                    "{id}",
+                  ],
                 },
               ],
             },

@@ -74,9 +74,13 @@ main: kit: entity: song: {
           }
           method: "GET"
           orig: "/song/all"
-          parts: [
-            "song"
-            "all"
+          segments: [
+            {
+              lit: "song"
+            }
+            {
+              lit: "all"
+            }
           ]
           select: {
             "$action": "all"
@@ -127,10 +131,16 @@ main: kit: entity: song: {
           }
           method: "GET"
           orig: "/song/by-episode/{episode}"
-          parts: [
-            "song"
-            "by-episode"
-            "{episode}"
+          segments: [
+            {
+              lit: "song"
+            }
+            {
+              lit: "by-episode"
+            }
+            {
+              var: "episode"
+            }
           ]
           select: {
             exist: [
@@ -176,15 +186,19 @@ main: kit: entity: song: {
           }
           method: "GET"
           orig: "/song/{song}"
-          parts: [
-            "song"
-            "{id}"
-          ]
           rename: {
             param: {
               song: "id"
             }
           }
+          segments: [
+            {
+              lit: "song"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"

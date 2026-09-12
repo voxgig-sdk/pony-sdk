@@ -64,9 +64,13 @@ main: kit: entity: image: {
           }
           method: "GET"
           orig: "/image/all"
-          parts: [
-            "image"
-            "all"
+          segments: [
+            {
+              lit: "image"
+            }
+            {
+              lit: "all"
+            }
           ]
           select: {
             "$action": "all"
