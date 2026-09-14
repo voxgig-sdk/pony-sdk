@@ -105,7 +105,7 @@ local results, err = client:Comic():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/pony` | publish pending — [install from git tag](https://github.com/voxgig-sdk/pony-sdk/releases) |
+| TypeScript | `@voxgig-sdk/pony-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/pony-sdk/releases) |
 | Python | `voxgig-sdk-pony` | publish pending — [install from git tag](https://github.com/voxgig-sdk/pony-sdk/releases) |
 | PHP | `voxgig-sdk/pony` | publish pending — [install from git tag](https://github.com/voxgig-sdk/pony-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/pony-sdk/go` | `go get github.com/voxgig-sdk/pony-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Comic():list()
 ### TypeScript
 
 ```ts
-import { PonySDK } from '@voxgig-sdk/pony'
+import { PonySDK } from '@voxgig-sdk/pony-sdk'
 
 const client = new PonySDK()
 

@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { PonySDK } from '@voxgig-sdk/pony'
+import { PonySDK } from '@voxgig-sdk/pony-sdk'
 
 const client = new PonySDK()
 ```
@@ -692,7 +692,7 @@ pony/
 Import the SDK from the package root:
 
 ```ts
-import { PonySDK } from '@voxgig-sdk/pony'
+import { PonySDK } from '@voxgig-sdk/pony-sdk'
 ```
 
 ### Entity state

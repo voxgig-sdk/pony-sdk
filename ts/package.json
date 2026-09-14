@@ -1,5 +1,5 @@
 {
-  "name": "@voxgig-sdk/pony",
+  "name": "@voxgig-sdk/pony-sdk",
   "version": "0.0.1",
   "description": "Unofficial generated TypeScript SDK for the Pony public API. Not affiliated with or endorsed by the upstream API provider.",
   "keywords": [
