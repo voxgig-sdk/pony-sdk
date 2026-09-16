@@ -1,12 +1,18 @@
 # Pony SDK feature factory
 
 from pony_sdk.feature.base_feature import PonyBaseFeature
+from pony_sdk.feature.ratelimit_feature import PonyRatelimitFeature
+from pony_sdk.feature.retry_feature import PonyRetryFeature
 from pony_sdk.feature.test_feature import PonyTestFeature
+from pony_sdk.feature.timeout_feature import PonyTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: PonyBaseFeature(),
+    "ratelimit": lambda: PonyRatelimitFeature(),
+    "retry": lambda: PonyRetryFeature(),
     "test": lambda: PonyTestFeature(),
+    "timeout": lambda: PonyTimeoutFeature(),
 }
 
 
