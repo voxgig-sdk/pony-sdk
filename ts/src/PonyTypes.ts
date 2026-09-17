@@ -81,10 +81,6 @@ export interface EpisodeListMatch {
 }
 
 export interface Image {
-  data?: any[]
-  error?: string
-  status: number
-  warning?: string
 }
 
 export interface ImageListMatch {

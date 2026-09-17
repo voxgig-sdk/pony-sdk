@@ -300,15 +300,6 @@ Return the entity name.
 $image = $client->Image();
 ```
 
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `data` | `array` | No | Array of found objects. |
-| `error` | `string` | No | First error message |
-| `status` | `int` | Yes | HTTP status code |
-| `warning` | `string` | No | Warning messages separated by newline |
-
 ### Operations
 
 #### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`

@@ -919,34 +919,7 @@ def make_config():
         },
       },
       "image": {
-        "fields": [
-          {
-            "name": "data",
-            "short": "Array of found objects.",
-            "type": "`$ARRAY`",
-            "union": {
-              "branches": 3,
-              "count": 4,
-              "depth": 4,
-            },
-          },
-          {
-            "name": "error",
-            "short": "First error message",
-            "type": "`$STRING`",
-          },
-          {
-            "name": "status",
-            "req": True,
-            "short": "HTTP status code",
-            "type": "`$INTEGER`",
-          },
-          {
-            "name": "warning",
-            "short": "Warning messages separated by newline",
-            "type": "`$STRING`",
-          },
-        ],
+        "fields": [],
         "name": "image",
         "op": {
           "list": {

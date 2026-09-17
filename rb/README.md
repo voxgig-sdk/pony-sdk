@@ -300,10 +300,6 @@ API path: `/episode/all`
 
 | Field | Description |
 | --- | --- |
-| `data` | Array of found objects. |
-| `error` | First error message |
-| `status` | HTTP status code |
-| `warning` | Warning messages separated by newline |
 
 Operations: List.
 
@@ -459,15 +455,6 @@ Create an instance: `image = client.Image`
 | Method | Description |
 | --- | --- |
 | `list(match)` | List entities matching the criteria. |
-
-#### Fields
-
-| Field | Type | Description |
-| --- | --- | --- |
-| `data` | `Array` | Array of found objects. |
-| `error` | `String` | First error message |
-| `status` | `Integer` | HTTP status code |
-| `warning` | `String` | Warning messages separated by newline |
 
 #### Example: List
 
@@ -632,7 +619,7 @@ activated earlier.
 
 ## Open types
 
-6 fields are carried as open values rather than typed structures.
+5 fields are carried as open values rather than typed structures.
 This follows from the API definition, not from a gap in this SDK: the
 definition describes them with untagged unions —
 `oneOf`/`anyOf` branches with no `discriminator` — so it never states which
@@ -645,7 +632,6 @@ guarantee.
 | `character` | `data` | 3 | 4 levels |
 | `comic` | `data` | 3 | 4 levels |
 | `episode` | `data` | 3 | 4 levels |
-| `image` | `data` | 3 | 4 levels |
 | `kind` | `data` | 3 | 4 levels |
 | `song` | `data` | 3 | 4 levels |
 
@@ -714,6 +700,7 @@ Use `Helpers.to_map()` to safely validate that a value is a hash.
 rb/
 ├── Pony_sdk.rb       -- Main SDK module
 ├── config.rb                  -- Configuration
+├── schema.rb                  -- Generated option + entity specs
 ├── features.rb                -- Feature factory
 ├── core/                      -- Core types and context
 ├── entity/                    -- Entity implementations

@@ -53,10 +53,6 @@ export interface EpisodeListMatch {
     [action: string]: any;
 }
 export interface Image {
-    data?: any[];
-    error?: string;
-    status: number;
-    warning?: string;
 }
 export interface ImageListMatch {
     limit?: number;

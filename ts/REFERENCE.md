@@ -418,15 +418,6 @@ Return a copy of the entity options.
 const image = client.Image()
 ```
 
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `data` | `any[]` | No | Array of found objects. |
-| `error` | `string` | No | First error message |
-| `status` | `number` | Yes | HTTP status code |
-| `warning` | `string` | No | Warning messages separated by newline |
-
 ### Actions
 
 This entity exposes custom API actions in addition to the standard

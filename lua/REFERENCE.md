@@ -298,15 +298,6 @@ Return the entity name.
 local image = client:Image(nil)
 ```
 
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `data` | `table` | No | Array of found objects. |
-| `error` | `string` | No | First error message |
-| `status` | `number` | Yes | HTTP status code |
-| `warning` | `string` | No | Warning messages separated by newline |
-
 ### Operations
 
 #### `list(reqmatch, ctrl) -> any, err`

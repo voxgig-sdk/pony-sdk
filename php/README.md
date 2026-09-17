@@ -311,10 +311,6 @@ API path: `/episode/all`
 
 | Field | Description |
 | --- | --- |
-| `data` | Array of found objects. |
-| `error` | First error message |
-| `status` | HTTP status code |
-| `warning` | Warning messages separated by newline |
 
 Operations: List.
 
@@ -470,15 +466,6 @@ Create an instance: `$image = $client->Image();`
 | Method | Description |
 | --- | --- |
 | `list(match)` | List entities matching the criteria. |
-
-#### Fields
-
-| Field | Type | Description |
-| --- | --- | --- |
-| `data` | `array` | Array of found objects. |
-| `error` | `string` | First error message |
-| `status` | `int` | HTTP status code |
-| `warning` | `string` | Warning messages separated by newline |
 
 #### Example: List
 
@@ -643,7 +630,7 @@ activated earlier.
 
 ## Open types
 
-6 fields are carried as open values rather than typed structures.
+5 fields are carried as open values rather than typed structures.
 This follows from the API definition, not from a gap in this SDK: the
 definition describes them with untagged unions —
 `oneOf`/`anyOf` branches with no `discriminator` — so it never states which
@@ -656,7 +643,6 @@ guarantee.
 | `character` | `data` | 3 | 4 levels |
 | `comic` | `data` | 3 | 4 levels |
 | `episode` | `data` | 3 | 4 levels |
-| `image` | `data` | 3 | 4 levels |
 | `kind` | `data` | 3 | 4 levels |
 | `song` | `data` | 3 | 4 levels |
 
@@ -725,6 +711,7 @@ Use `Helpers::to_map()` to safely validate that a value is an array.
 php/
 ├── pony_sdk.php          -- Main SDK class
 ├── config.php                     -- Configuration
+├── schema.php                     -- Generated option + entity specs
 ├── features.php                   -- Feature factory
 ├── core/                          -- Core types and context
 ├── entity/                        -- Entity implementations

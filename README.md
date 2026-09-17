@@ -105,12 +105,12 @@ local results, err = client:Comic():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/pony-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/pony-sdk/releases) |
-| Python | `voxgig-sdk-pony` | publish pending — [install from git tag](https://github.com/voxgig-sdk/pony-sdk/releases) |
-| PHP | `voxgig-sdk/pony` | publish pending — [install from git tag](https://github.com/voxgig-sdk/pony-sdk/releases) |
+| TypeScript | `@voxgig-sdk/pony-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/pony-sdk/tags) |
+| Python | `voxgig-sdk-pony` | publish pending — [install from git tag](https://github.com/voxgig-sdk/pony-sdk/tags) |
+| PHP | `voxgig-sdk/pony` | publish pending — [install from git tag](https://github.com/voxgig-sdk/pony-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/pony-sdk/go` | `go get github.com/voxgig-sdk/pony-sdk/go@latest` |
-| Ruby | `voxgig-sdk-pony` | publish pending — [install from git tag](https://github.com/voxgig-sdk/pony-sdk/releases) |
-| Lua | `voxgig-sdk-pony` | publish pending — [install from git tag](https://github.com/voxgig-sdk/pony-sdk/releases) |
+| Ruby | `voxgig-sdk-pony` | publish pending — [install from git tag](https://github.com/voxgig-sdk/pony-sdk/tags) |
+| Lua | `voxgig-sdk-pony` | publish pending — [install from git tag](https://github.com/voxgig-sdk/pony-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/pony-sdk/go-cli` | `go install github.com/voxgig-sdk/pony-sdk/go-cli/cmd/pony@latest` |
 | Go MCP server | `github.com/voxgig-sdk/pony-sdk/go-mcp` | `go get github.com/voxgig-sdk/pony-sdk/go-mcp@latest` |
 

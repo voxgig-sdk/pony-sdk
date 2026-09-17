@@ -90,10 +90,6 @@ class EpisodeListMatch
 /** Image entity data model. */
 class Image
 {
-    public ?array $data = null;
-    public ?string $error = null;
-    public int $status;
-    public ?string $warning = null;
 }
 
 /** Request payload for Image#list. */

@@ -80,10 +80,6 @@ type EpisodeListMatch struct {
 
 // Image is the typed data model for the image entity.
 type Image struct {
-	Data *[]any `json:"data,omitempty"`
-	Error *string `json:"error,omitempty"`
-	Status int `json:"status"`
-	Warning *string `json:"warning,omitempty"`
 }
 
 // ImageListMatch is the typed request payload for Image.ListTyped.

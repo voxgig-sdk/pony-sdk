@@ -894,34 +894,7 @@ func MakeConfig() map[string]any {
 				},
 			},
 			"image": map[string]any{
-				"fields": []any{
-					map[string]any{
-						"name": "data",
-						"short": "Array of found objects.",
-						"type": "`$ARRAY`",
-						"union": map[string]any{
-							"branches": 3,
-							"count": 4,
-							"depth": 4,
-						},
-					},
-					map[string]any{
-						"name": "error",
-						"short": "First error message",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "status",
-						"req": true,
-						"short": "HTTP status code",
-						"type": "`$INTEGER`",
-					},
-					map[string]any{
-						"name": "warning",
-						"short": "Warning messages separated by newline",
-						"type": "`$STRING`",
-					},
-				},
+				"fields": []any{},
 				"name": "image",
 				"op": map[string]any{
 					"list": map[string]any{

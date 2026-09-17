@@ -572,29 +572,7 @@ declare class Config {
             };
         };
         image: {
-            fields: ({
-                name: string;
-                short: string;
-                type: string;
-                union: {
-                    branches: number;
-                    count: number;
-                    depth: number;
-                };
-                req?: undefined;
-            } | {
-                name: string;
-                short: string;
-                type: string;
-                union?: undefined;
-                req?: undefined;
-            } | {
-                name: string;
-                req: boolean;
-                short: string;
-                type: string;
-                union?: undefined;
-            })[];
+            fields: never[];
             name: string;
             op: {
                 list: {

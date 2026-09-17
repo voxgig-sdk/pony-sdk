@@ -91,14 +91,8 @@ class EpisodeListMatch(TypedDict, total=False):
     offset: int
 
 
-class ImageRequired(TypedDict):
-    status: int
-
-
-class Image(ImageRequired, total=False):
-    data: list
-    error: str
-    warning: str
+class Image(TypedDict):
+    pass
 
 
 class ImageListMatch(TypedDict, total=False):

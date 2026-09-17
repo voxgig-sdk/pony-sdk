@@ -1,34 +1,14 @@
 {
   "existing": {
     "image": {
-      "IMAGE00": {
-        "data": [],
-        "error": "s29",
-        "status": 42,
-        "warning": "s2b"
-      },
-      "IMAGE01": {
-        "data": [],
-        "error": "s51",
-        "status": 82,
-        "warning": "s53"
-      },
-      "IMAGE02": {
-        "data": [],
-        "error": "s79",
-        "status": 122,
-        "warning": "s7b"
-      }
+      "IMAGE00": {},
+      "IMAGE01": {},
+      "IMAGE02": {}
     }
   },
   "new": {
     "image": {
-      "image_ref01": {
-        "data": [],
-        "error": "sa1",
-        "status": 162,
-        "warning": "sa3"
-      }
+      "image_ref01": {}
     }
   },
   "requests": {

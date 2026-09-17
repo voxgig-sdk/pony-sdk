@@ -298,15 +298,6 @@ Return the entity name.
 image = client.Image()
 ```
 
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `data` | `list` | No | Array of found objects. |
-| `error` | `str` | No | First error message |
-| `status` | `int` | Yes | HTTP status code |
-| `warning` | `str` | No | Warning messages separated by newline |
-
 ### Operations
 
 #### `list(reqmatch=None, ctrl=None) -> list`

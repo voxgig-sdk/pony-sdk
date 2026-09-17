@@ -174,25 +174,8 @@ EpisodeListMatch = Struct.new(
 )
 
 # Image entity data model.
-#
-# @!attribute [rw] data
-#   @return [Array, nil]
-#
-# @!attribute [rw] error
-#   @return [String, nil]
-#
-# @!attribute [rw] status
-#   @return [Integer]
-#
-# @!attribute [rw] warning
-#   @return [String, nil]
-Image = Struct.new(
-  :data,
-  :error,
-  :status,
-  :warning,
-  keyword_init: true
-)
+class Image
+end
 
 # Request payload for Image#list.
 #

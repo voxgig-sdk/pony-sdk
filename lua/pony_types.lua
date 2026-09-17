@@ -55,10 +55,6 @@
 ---@field offset? number
 
 ---@class Image
----@field data? table
----@field error? string
----@field status number
----@field warning? string
 
 ---@class ImageListMatch
 ---@field limit? number

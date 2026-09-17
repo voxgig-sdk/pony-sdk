@@ -315,15 +315,6 @@ image := client.Image(nil)
 fmt.Println(image.GetName()) // "image"
 ```
 
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `data` | `[]any` | No | Array of found objects. |
-| `error` | `string` | No | First error message |
-| `status` | `int` | Yes | HTTP status code |
-| `warning` | `string` | No | Warning messages separated by newline |
-
 ### Operations
 
 #### `List(reqmatch, ctrl map[string]any) (any, error)`

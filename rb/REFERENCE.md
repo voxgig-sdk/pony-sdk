@@ -301,15 +301,6 @@ Return the entity name.
 image = client.Image
 ```
 
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `data` | `Array` | No | Array of found objects. |
-| `error` | `String` | No | First error message |
-| `status` | `Integer` | Yes | HTTP status code |
-| `warning` | `String` | No | Warning messages separated by newline |
-
 ### Operations
 
 #### `list(reqmatch = nil, ctrl = nil) -> Array`
