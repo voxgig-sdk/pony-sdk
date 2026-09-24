@@ -1,0 +1,240 @@
+# Entity: comic
+
+main: kit: entity: comic: {
+
+  alias: field: {}
+
+  fields: {
+    data: {
+      h: "Data"
+      n: "data"
+      r: false
+      sh: "Array of found objects."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 4
+        depth: 4
+      }
+    }
+    error: {
+      h: "Error"
+      n: "error"
+      r: false
+      sh: "First error message"
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "HTTP status code"
+      t: "`$INTEGER`"
+    }
+    warning: {
+      h: "Warning"
+      n: "warning"
+      r: false
+      sh: "Warning messages separated by newline"
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "comic"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /comics/all"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: 50
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 0
+                k: "query"
+                n: "offset"
+                or: "offset"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/comics/all"
+          q: {
+            "$action": "all"
+            exist: [
+              "limit"
+              "offset"
+            ]
+          }
+          s: [
+            {
+              lit: "comics"
+            }
+            {
+              lit: "all"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /comics/{comics}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "comic"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: 50
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 0
+                k: "query"
+                n: "offset"
+                or: "offset"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/comics/{comics}"
+          q: {
+            exist: [
+              "id"
+              "limit"
+              "offset"
+            ]
+          }
+          r: {
+            param: {
+              comics: "id"
+            }
+          }
+          s: [
+            {
+              lit: "comics"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /comics/by-series/{series}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "series"
+                or: "series"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: 50
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 0
+                k: "query"
+                n: "offset"
+                or: "offset"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/comics/by-series/{series}"
+          q: {
+            exist: [
+              "limit"
+              "offset"
+              "series"
+            ]
+          }
+          s: [
+            {
+              lit: "comics"
+            }
+            {
+              lit: "by-series"
+            }
+            {
+              var: "series"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

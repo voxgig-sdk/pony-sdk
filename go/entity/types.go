@@ -1,7 +1,7 @@
 // Typed models for the Pony SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,11 +14,6 @@ import (
 
 // Character is the typed data model for the character entity.
 type Character struct {
-	Data *[]any `json:"data,omitempty"`
-	Error *string `json:"error,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Status int `json:"status"`
-	Warning *string `json:"warning,omitempty"`
 }
 
 // CharacterLoadMatch is the typed request payload for Character.LoadTyped.
@@ -36,11 +31,6 @@ type CharacterListMatch struct {
 
 // Comic is the typed data model for the comic entity.
 type Comic struct {
-	Data *[]any `json:"data,omitempty"`
-	Error *string `json:"error,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Status int `json:"status"`
-	Warning *string `json:"warning,omitempty"`
 }
 
 // ComicLoadMatch is the typed request payload for Comic.LoadTyped.
@@ -58,11 +48,6 @@ type ComicListMatch struct {
 
 // Episode is the typed data model for the episode entity.
 type Episode struct {
-	Data *[]any `json:"data,omitempty"`
-	Error *string `json:"error,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Status int `json:"status"`
-	Warning *string `json:"warning,omitempty"`
 }
 
 // EpisodeLoadMatch is the typed request payload for Episode.LoadTyped.
@@ -90,11 +75,6 @@ type ImageListMatch struct {
 
 // Kind is the typed data model for the kind entity.
 type Kind struct {
-	Data *[]any `json:"data,omitempty"`
-	Error *string `json:"error,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Status int `json:"status"`
-	Warning *string `json:"warning,omitempty"`
 }
 
 // KindLoadMatch is the typed request payload for Kind.LoadTyped.
@@ -110,11 +90,6 @@ type KindListMatch struct {
 
 // Song is the typed data model for the song entity.
 type Song struct {
-	Data *[]any `json:"data,omitempty"`
-	Error *string `json:"error,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Status int `json:"status"`
-	Warning *string `json:"warning,omitempty"`
 }
 
 // SongLoadMatch is the typed request payload for Song.LoadTyped.

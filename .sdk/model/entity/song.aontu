@@ -1,0 +1,240 @@
+# Entity: song
+
+main: kit: entity: song: {
+
+  alias: field: {}
+
+  fields: {
+    data: {
+      h: "Data"
+      n: "data"
+      r: false
+      sh: "Array of found objects."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 4
+        depth: 4
+      }
+    }
+    error: {
+      h: "Error"
+      n: "error"
+      r: false
+      sh: "First error message"
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "HTTP status code"
+      t: "`$INTEGER`"
+    }
+    warning: {
+      h: "Warning"
+      n: "warning"
+      r: false
+      sh: "Warning messages separated by newline"
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "song"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /song/all"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: 50
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 0
+                k: "query"
+                n: "offset"
+                or: "offset"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/song/all"
+          q: {
+            "$action": "all"
+            exist: [
+              "limit"
+              "offset"
+            ]
+          }
+          s: [
+            {
+              lit: "song"
+            }
+            {
+              lit: "all"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /song/by-episode/{episode}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "episode"
+                or: "episode"
+                r: true
+                t: "`$ANY`"
+              }
+            ]
+            query: [
+              {
+                ex: 50
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 0
+                k: "query"
+                n: "offset"
+                or: "offset"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/song/by-episode/{episode}"
+          q: {
+            exist: [
+              "episode"
+              "limit"
+              "offset"
+            ]
+          }
+          s: [
+            {
+              lit: "song"
+            }
+            {
+              lit: "by-episode"
+            }
+            {
+              var: "episode"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /song/{song}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "song"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: 50
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 0
+                k: "query"
+                n: "offset"
+                or: "offset"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/song/{song}"
+          q: {
+            exist: [
+              "id"
+              "limit"
+              "offset"
+            ]
+          }
+          r: {
+            param: {
+              song: "id"
+            }
+          }
+          s: [
+            {
+              lit: "song"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

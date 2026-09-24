@@ -96,33 +96,33 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "data",
-						"short": "Array of found objects.",
+						"title": "Data",
 						"type": "`$ARRAY`",
-						"union": map[string]any{
-							"branches": 3,
-							"count": 4,
-							"depth": 4,
-						},
+						"short": "Array of found objects.",
 					},
 					map[string]any{
 						"name": "error",
-						"short": "First error message",
+						"title": "Error",
 						"type": "`$STRING`",
+						"short": "First error message",
 					},
 					map[string]any{
 						"name": "id",
+						"title": "Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "status",
+						"title": "Status",
+						"type": "`$INTEGER`",
 						"req": true,
 						"short": "HTTP status code",
-						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "warning",
-						"short": "Warning messages separated by newline",
+						"title": "Warning",
 						"type": "`$STRING`",
+						"short": "Warning messages separated by newline",
 					},
 				},
 				"id": map[string]any{
@@ -136,24 +136,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": 50,
-											"kind": "query",
-											"name": "limit",
-											"orig": "limit",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 0,
-											"kind": "query",
-											"name": "offset",
-											"orig": "offset",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/character/all",
@@ -165,20 +147,39 @@ func MakeConfig() map[string]any {
 										"lit": "all",
 									},
 								},
+								"parts": []any{
+									"character",
+									"all",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "limit",
+											"orig": "limit",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 50,
+										},
+										map[string]any{
+											"name": "offset",
+											"orig": "offset",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 0,
+										},
+									},
+								},
 								"select": map[string]any{
 									"$action": "all",
 									"exist": []any{
 										"limit",
 										"offset",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"character",
-									"all",
 								},
 							},
 						},
@@ -188,47 +189,55 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"kind": "param",
-											"name": "id",
-											"orig": "character",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-									"query": []any{
-										map[string]any{
-											"example": 50,
-											"kind": "query",
-											"name": "limit",
-											"orig": "limit",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 0,
-											"kind": "query",
-											"name": "offset",
-											"orig": "offset",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/character/{character}",
-								"rename": map[string]any{
-									"param": map[string]any{
-										"character": "id",
-									},
-								},
 								"segments": []any{
 									map[string]any{
 										"lit": "character",
 									},
 									map[string]any{
 										"var": "id",
+									},
+								},
+								"parts": []any{
+									"character",
+									"{id}",
+								},
+								"rename": map[string]any{
+									"param": map[string]any{
+										"character": "id",
+									},
+								},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "id",
+											"orig": "character",
+											"type": "`$STRING`",
+											"kind": "param",
+											"reqd": true,
+										},
+									},
+									"query": []any{
+										map[string]any{
+											"name": "limit",
+											"orig": "limit",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 50,
+										},
+										map[string]any{
+											"name": "offset",
+											"orig": "offset",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 0,
+										},
 									},
 								},
 								"select": map[string]any{
@@ -238,44 +247,8 @@ func MakeConfig() map[string]any {
 										"offset",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"character",
-									"{id}",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"example": "dragon",
-											"kind": "param",
-											"name": "kind",
-											"orig": "kind",
-											"reqd": true,
-											"type": "`$ANY`",
-										},
-									},
-									"query": []any{
-										map[string]any{
-											"example": 50,
-											"kind": "query",
-											"name": "limit",
-											"orig": "limit",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 0,
-											"kind": "query",
-											"name": "offset",
-											"orig": "offset",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/character/by-kind/{kind}",
@@ -290,6 +263,44 @@ func MakeConfig() map[string]any {
 										"var": "kind",
 									},
 								},
+								"parts": []any{
+									"character",
+									"by-kind",
+									"{kind}",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "kind",
+											"orig": "kind",
+											"type": "`$ANY`",
+											"kind": "param",
+											"reqd": true,
+											"example": "dragon",
+										},
+									},
+									"query": []any{
+										map[string]any{
+											"name": "limit",
+											"orig": "limit",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 50,
+										},
+										map[string]any{
+											"name": "offset",
+											"orig": "offset",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 0,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"kind",
@@ -297,45 +308,8 @@ func MakeConfig() map[string]any {
 										"offset",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"character",
-									"by-kind",
-									"{kind}",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"example": "crusader",
-											"kind": "param",
-											"name": "occupation",
-											"orig": "occupation",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-									"query": []any{
-										map[string]any{
-											"example": 50,
-											"kind": "query",
-											"name": "limit",
-											"orig": "limit",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 0,
-											"kind": "query",
-											"name": "offset",
-											"orig": "offset",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/character/by-occupation/{occupation}",
@@ -350,6 +324,44 @@ func MakeConfig() map[string]any {
 										"var": "occupation",
 									},
 								},
+								"parts": []any{
+									"character",
+									"by-occupation",
+									"{occupation}",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "occupation",
+											"orig": "occupation",
+											"type": "`$STRING`",
+											"kind": "param",
+											"reqd": true,
+											"example": "crusader",
+										},
+									},
+									"query": []any{
+										map[string]any{
+											"name": "limit",
+											"orig": "limit",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 50,
+										},
+										map[string]any{
+											"name": "offset",
+											"orig": "offset",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 0,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"limit",
@@ -357,44 +369,8 @@ func MakeConfig() map[string]any {
 										"offset",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"character",
-									"by-occupation",
-									"{occupation}",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"kind": "param",
-											"name": "residence",
-											"orig": "residence",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-									"query": []any{
-										map[string]any{
-											"example": 50,
-											"kind": "query",
-											"name": "limit",
-											"orig": "limit",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 0,
-											"kind": "query",
-											"name": "offset",
-											"orig": "offset",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/character/by-residence/{residence}",
@@ -409,6 +385,43 @@ func MakeConfig() map[string]any {
 										"var": "residence",
 									},
 								},
+								"parts": []any{
+									"character",
+									"by-residence",
+									"{residence}",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "residence",
+											"orig": "residence",
+											"type": "`$STRING`",
+											"kind": "param",
+											"reqd": true,
+										},
+									},
+									"query": []any{
+										map[string]any{
+											"name": "limit",
+											"orig": "limit",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 50,
+										},
+										map[string]any{
+											"name": "offset",
+											"orig": "offset",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 0,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"limit",
@@ -416,64 +429,45 @@ func MakeConfig() map[string]any {
 										"residence",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"character",
-									"by-residence",
-									"{residence}",
-								},
 							},
 						},
 					},
 				},
 				"relations": map[string]any{
-					"ancestors": []any{
-						[]any{
-							"by_kind",
-						},
-						[]any{
-							"by_occupation",
-						},
-						[]any{
-							"by_residence",
-						},
-					},
+					"ancestors": []any{},
 				},
 			},
 			"comic": map[string]any{
 				"fields": []any{
 					map[string]any{
 						"name": "data",
-						"short": "Array of found objects.",
+						"title": "Data",
 						"type": "`$ARRAY`",
-						"union": map[string]any{
-							"branches": 3,
-							"count": 4,
-							"depth": 4,
-						},
+						"short": "Array of found objects.",
 					},
 					map[string]any{
 						"name": "error",
-						"short": "First error message",
+						"title": "Error",
 						"type": "`$STRING`",
+						"short": "First error message",
 					},
 					map[string]any{
 						"name": "id",
+						"title": "Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "status",
+						"title": "Status",
+						"type": "`$INTEGER`",
 						"req": true,
 						"short": "HTTP status code",
-						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "warning",
-						"short": "Warning messages separated by newline",
+						"title": "Warning",
 						"type": "`$STRING`",
+						"short": "Warning messages separated by newline",
 					},
 				},
 				"id": map[string]any{
@@ -487,24 +481,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": 50,
-											"kind": "query",
-											"name": "limit",
-											"orig": "limit",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 0,
-											"kind": "query",
-											"name": "offset",
-											"orig": "offset",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/comics/all",
@@ -516,20 +492,39 @@ func MakeConfig() map[string]any {
 										"lit": "all",
 									},
 								},
+								"parts": []any{
+									"comics",
+									"all",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "limit",
+											"orig": "limit",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 50,
+										},
+										map[string]any{
+											"name": "offset",
+											"orig": "offset",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 0,
+										},
+									},
+								},
 								"select": map[string]any{
 									"$action": "all",
 									"exist": []any{
 										"limit",
 										"offset",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"comics",
-									"all",
 								},
 							},
 						},
@@ -539,47 +534,55 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"kind": "param",
-											"name": "id",
-											"orig": "comic",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-									"query": []any{
-										map[string]any{
-											"example": 50,
-											"kind": "query",
-											"name": "limit",
-											"orig": "limit",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 0,
-											"kind": "query",
-											"name": "offset",
-											"orig": "offset",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/comics/{comics}",
-								"rename": map[string]any{
-									"param": map[string]any{
-										"comics": "id",
-									},
-								},
 								"segments": []any{
 									map[string]any{
 										"lit": "comics",
 									},
 									map[string]any{
 										"var": "id",
+									},
+								},
+								"parts": []any{
+									"comics",
+									"{id}",
+								},
+								"rename": map[string]any{
+									"param": map[string]any{
+										"comics": "id",
+									},
+								},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "id",
+											"orig": "comic",
+											"type": "`$STRING`",
+											"kind": "param",
+											"reqd": true,
+										},
+									},
+									"query": []any{
+										map[string]any{
+											"name": "limit",
+											"orig": "limit",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 50,
+										},
+										map[string]any{
+											"name": "offset",
+											"orig": "offset",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 0,
+										},
 									},
 								},
 								"select": map[string]any{
@@ -589,43 +592,8 @@ func MakeConfig() map[string]any {
 										"offset",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"comics",
-									"{id}",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"kind": "param",
-											"name": "series",
-											"orig": "series",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-									"query": []any{
-										map[string]any{
-											"example": 50,
-											"kind": "query",
-											"name": "limit",
-											"orig": "limit",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 0,
-											"kind": "query",
-											"name": "offset",
-											"orig": "offset",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/comics/by-series/{series}",
@@ -640,6 +608,43 @@ func MakeConfig() map[string]any {
 										"var": "series",
 									},
 								},
+								"parts": []any{
+									"comics",
+									"by-series",
+									"{series}",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "series",
+											"orig": "series",
+											"type": "`$STRING`",
+											"kind": "param",
+											"reqd": true,
+										},
+									},
+									"query": []any{
+										map[string]any{
+											"name": "limit",
+											"orig": "limit",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 50,
+										},
+										map[string]any{
+											"name": "offset",
+											"orig": "offset",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 0,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"limit",
@@ -647,58 +652,45 @@ func MakeConfig() map[string]any {
 										"series",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"comics",
-									"by-series",
-									"{series}",
-								},
 							},
 						},
 					},
 				},
 				"relations": map[string]any{
-					"ancestors": []any{
-						[]any{
-							"by_series",
-						},
-					},
+					"ancestors": []any{},
 				},
 			},
 			"episode": map[string]any{
 				"fields": []any{
 					map[string]any{
 						"name": "data",
-						"short": "Array of found objects.",
+						"title": "Data",
 						"type": "`$ARRAY`",
-						"union": map[string]any{
-							"branches": 3,
-							"count": 4,
-							"depth": 4,
-						},
+						"short": "Array of found objects.",
 					},
 					map[string]any{
 						"name": "error",
-						"short": "First error message",
+						"title": "Error",
 						"type": "`$STRING`",
+						"short": "First error message",
 					},
 					map[string]any{
 						"name": "id",
+						"title": "Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "status",
+						"title": "Status",
+						"type": "`$INTEGER`",
 						"req": true,
 						"short": "HTTP status code",
-						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "warning",
-						"short": "Warning messages separated by newline",
+						"title": "Warning",
 						"type": "`$STRING`",
+						"short": "Warning messages separated by newline",
 					},
 				},
 				"id": map[string]any{
@@ -712,24 +704,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": 50,
-											"kind": "query",
-											"name": "limit",
-											"orig": "limit",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 0,
-											"kind": "query",
-											"name": "offset",
-											"orig": "offset",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/episode/all",
@@ -741,20 +715,39 @@ func MakeConfig() map[string]any {
 										"lit": "all",
 									},
 								},
+								"parts": []any{
+									"episode",
+									"all",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "limit",
+											"orig": "limit",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 50,
+										},
+										map[string]any{
+											"name": "offset",
+											"orig": "offset",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 0,
+										},
+									},
+								},
 								"select": map[string]any{
 									"$action": "all",
 									"exist": []any{
 										"limit",
 										"offset",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"episode",
-									"all",
 								},
 							},
 						},
@@ -764,47 +757,55 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"kind": "param",
-											"name": "id",
-											"orig": "episode",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-									"query": []any{
-										map[string]any{
-											"example": 50,
-											"kind": "query",
-											"name": "limit",
-											"orig": "limit",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 0,
-											"kind": "query",
-											"name": "offset",
-											"orig": "offset",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/episode/{episode}",
-								"rename": map[string]any{
-									"param": map[string]any{
-										"episode": "id",
-									},
-								},
 								"segments": []any{
 									map[string]any{
 										"lit": "episode",
 									},
 									map[string]any{
 										"var": "id",
+									},
+								},
+								"parts": []any{
+									"episode",
+									"{id}",
+								},
+								"rename": map[string]any{
+									"param": map[string]any{
+										"episode": "id",
+									},
+								},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "id",
+											"orig": "episode",
+											"type": "`$STRING`",
+											"kind": "param",
+											"reqd": true,
+										},
+									},
+									"query": []any{
+										map[string]any{
+											"name": "limit",
+											"orig": "limit",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 50,
+										},
+										map[string]any{
+											"name": "offset",
+											"orig": "offset",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 0,
+										},
 									},
 								},
 								"select": map[string]any{
@@ -814,43 +815,8 @@ func MakeConfig() map[string]any {
 										"offset",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"episode",
-									"{id}",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"kind": "param",
-											"name": "season",
-											"orig": "season",
-											"reqd": true,
-											"type": "`$INTEGER`",
-										},
-									},
-									"query": []any{
-										map[string]any{
-											"example": 50,
-											"kind": "query",
-											"name": "limit",
-											"orig": "limit",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 0,
-											"kind": "query",
-											"name": "offset",
-											"orig": "offset",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/episode/by-season/{season}",
@@ -865,6 +831,43 @@ func MakeConfig() map[string]any {
 										"var": "season",
 									},
 								},
+								"parts": []any{
+									"episode",
+									"by-season",
+									"{season}",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "season",
+											"orig": "season",
+											"type": "`$INTEGER`",
+											"kind": "param",
+											"reqd": true,
+										},
+									},
+									"query": []any{
+										map[string]any{
+											"name": "limit",
+											"orig": "limit",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 50,
+										},
+										map[string]any{
+											"name": "offset",
+											"orig": "offset",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 0,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"limit",
@@ -872,25 +875,12 @@ func MakeConfig() map[string]any {
 										"season",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"episode",
-									"by-season",
-									"{season}",
-								},
 							},
 						},
 					},
 				},
 				"relations": map[string]any{
-					"ancestors": []any{
-						[]any{
-							"by_season",
-						},
-					},
+					"ancestors": []any{},
 				},
 			},
 			"image": map[string]any{
@@ -902,24 +892,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": 50,
-											"kind": "query",
-											"name": "limit",
-											"orig": "limit",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 0,
-											"kind": "query",
-											"name": "offset",
-											"orig": "offset",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/image/all",
@@ -931,20 +903,39 @@ func MakeConfig() map[string]any {
 										"lit": "all",
 									},
 								},
+								"parts": []any{
+									"image",
+									"all",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "limit",
+											"orig": "limit",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 50,
+										},
+										map[string]any{
+											"name": "offset",
+											"orig": "offset",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 0,
+										},
+									},
+								},
 								"select": map[string]any{
 									"$action": "all",
 									"exist": []any{
 										"limit",
 										"offset",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"image",
-									"all",
 								},
 							},
 						},
@@ -958,33 +949,33 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "data",
-						"short": "Array of found objects.",
+						"title": "Data",
 						"type": "`$ARRAY`",
-						"union": map[string]any{
-							"branches": 3,
-							"count": 4,
-							"depth": 4,
-						},
+						"short": "Array of found objects.",
 					},
 					map[string]any{
 						"name": "error",
-						"short": "First error message",
+						"title": "Error",
 						"type": "`$STRING`",
+						"short": "First error message",
 					},
 					map[string]any{
 						"name": "id",
+						"title": "Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "status",
+						"title": "Status",
+						"type": "`$INTEGER`",
 						"req": true,
 						"short": "HTTP status code",
-						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "warning",
-						"short": "Warning messages separated by newline",
+						"title": "Warning",
 						"type": "`$STRING`",
+						"short": "Warning messages separated by newline",
 					},
 				},
 				"id": map[string]any{
@@ -998,24 +989,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": 50,
-											"kind": "query",
-											"name": "limit",
-											"orig": "limit",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 0,
-											"kind": "query",
-											"name": "offset",
-											"orig": "offset",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/kind/all",
@@ -1027,20 +1000,39 @@ func MakeConfig() map[string]any {
 										"lit": "all",
 									},
 								},
+								"parts": []any{
+									"kind",
+									"all",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "limit",
+											"orig": "limit",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 50,
+										},
+										map[string]any{
+											"name": "offset",
+											"orig": "offset",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 0,
+										},
+									},
+								},
 								"select": map[string]any{
 									"$action": "all",
 									"exist": []any{
 										"limit",
 										"offset",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"kind",
-									"all",
 								},
 							},
 						},
@@ -1050,25 +1042,9 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"kind": "param",
-											"name": "id",
-											"orig": "kind",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/kind/{kind}",
-								"rename": map[string]any{
-									"param": map[string]any{
-										"kind": "id",
-									},
-								},
 								"segments": []any{
 									map[string]any{
 										"lit": "kind",
@@ -1077,18 +1053,34 @@ func MakeConfig() map[string]any {
 										"var": "id",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"id",
+								"parts": []any{
+									"kind",
+									"{id}",
+								},
+								"rename": map[string]any{
+									"param": map[string]any{
+										"kind": "id",
 									},
 								},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"kind",
-									"{id}",
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "id",
+											"orig": "kind",
+											"type": "`$STRING`",
+											"kind": "param",
+											"reqd": true,
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"id",
+									},
 								},
 							},
 						},
@@ -1102,33 +1094,33 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "data",
-						"short": "Array of found objects.",
+						"title": "Data",
 						"type": "`$ARRAY`",
-						"union": map[string]any{
-							"branches": 3,
-							"count": 4,
-							"depth": 4,
-						},
+						"short": "Array of found objects.",
 					},
 					map[string]any{
 						"name": "error",
-						"short": "First error message",
+						"title": "Error",
 						"type": "`$STRING`",
+						"short": "First error message",
 					},
 					map[string]any{
 						"name": "id",
+						"title": "Id",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "status",
+						"title": "Status",
+						"type": "`$INTEGER`",
 						"req": true,
 						"short": "HTTP status code",
-						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "warning",
-						"short": "Warning messages separated by newline",
+						"title": "Warning",
 						"type": "`$STRING`",
+						"short": "Warning messages separated by newline",
 					},
 				},
 				"id": map[string]any{
@@ -1142,24 +1134,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": 50,
-											"kind": "query",
-											"name": "limit",
-											"orig": "limit",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 0,
-											"kind": "query",
-											"name": "offset",
-											"orig": "offset",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/song/all",
@@ -1171,20 +1145,39 @@ func MakeConfig() map[string]any {
 										"lit": "all",
 									},
 								},
+								"parts": []any{
+									"song",
+									"all",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "limit",
+											"orig": "limit",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 50,
+										},
+										map[string]any{
+											"name": "offset",
+											"orig": "offset",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 0,
+										},
+									},
+								},
 								"select": map[string]any{
 									"$action": "all",
 									"exist": []any{
 										"limit",
 										"offset",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"song",
-									"all",
 								},
 							},
 						},
@@ -1194,33 +1187,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"kind": "param",
-											"name": "episode",
-											"orig": "episode",
-											"reqd": true,
-											"type": "`$ANY`",
-										},
-									},
-									"query": []any{
-										map[string]any{
-											"example": 50,
-											"kind": "query",
-											"name": "limit",
-											"orig": "limit",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 0,
-											"kind": "query",
-											"name": "offset",
-											"orig": "offset",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/song/by-episode/{episode}",
@@ -1235,6 +1201,43 @@ func MakeConfig() map[string]any {
 										"var": "episode",
 									},
 								},
+								"parts": []any{
+									"song",
+									"by-episode",
+									"{episode}",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "episode",
+											"orig": "episode",
+											"type": "`$ANY`",
+											"kind": "param",
+											"reqd": true,
+										},
+									},
+									"query": []any{
+										map[string]any{
+											"name": "limit",
+											"orig": "limit",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 50,
+										},
+										map[string]any{
+											"name": "offset",
+											"orig": "offset",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 0,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"episode",
@@ -1242,58 +1245,57 @@ func MakeConfig() map[string]any {
 										"offset",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"song",
-									"by-episode",
-									"{episode}",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"params": []any{
-										map[string]any{
-											"kind": "param",
-											"name": "id",
-											"orig": "song",
-											"reqd": true,
-											"type": "`$STRING`",
-										},
-									},
-									"query": []any{
-										map[string]any{
-											"example": 50,
-											"kind": "query",
-											"name": "limit",
-											"orig": "limit",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 0,
-											"kind": "query",
-											"name": "offset",
-											"orig": "offset",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/song/{song}",
-								"rename": map[string]any{
-									"param": map[string]any{
-										"song": "id",
-									},
-								},
 								"segments": []any{
 									map[string]any{
 										"lit": "song",
 									},
 									map[string]any{
 										"var": "id",
+									},
+								},
+								"parts": []any{
+									"song",
+									"{id}",
+								},
+								"rename": map[string]any{
+									"param": map[string]any{
+										"song": "id",
+									},
+								},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"params": []any{
+										map[string]any{
+											"name": "id",
+											"orig": "song",
+											"type": "`$STRING`",
+											"kind": "param",
+											"reqd": true,
+										},
+									},
+									"query": []any{
+										map[string]any{
+											"name": "limit",
+											"orig": "limit",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 50,
+										},
+										map[string]any{
+											"name": "offset",
+											"orig": "offset",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 0,
+										},
 									},
 								},
 								"select": map[string]any{
@@ -1303,24 +1305,12 @@ func MakeConfig() map[string]any {
 										"offset",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"song",
-									"{id}",
-								},
 							},
 						},
 					},
 				},
 				"relations": map[string]any{
-					"ancestors": []any{
-						[]any{
-							"by_episode",
-						},
-					},
+					"ancestors": []any{},
 				},
 			},
 		},

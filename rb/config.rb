@@ -104,33 +104,33 @@ module PonyConfig
           "fields" => [
             {
               "name" => "data",
-              "short" => "Array of found objects.",
+              "title" => "Data",
               "type" => "`$ARRAY`",
-              "union" => {
-                "branches" => 3,
-                "count" => 4,
-                "depth" => 4,
-              },
+              "short" => "Array of found objects.",
             },
             {
               "name" => "error",
-              "short" => "First error message",
+              "title" => "Error",
               "type" => "`$STRING`",
+              "short" => "First error message",
             },
             {
               "name" => "id",
+              "title" => "Id",
               "type" => "`$STRING`",
             },
             {
               "name" => "status",
+              "title" => "Status",
+              "type" => "`$INTEGER`",
               "req" => true,
               "short" => "HTTP status code",
-              "type" => "`$INTEGER`",
             },
             {
               "name" => "warning",
-              "short" => "Warning messages separated by newline",
+              "title" => "Warning",
               "type" => "`$STRING`",
+              "short" => "Warning messages separated by newline",
             },
           ],
           "id" => {
@@ -144,24 +144,6 @@ module PonyConfig
               "name" => "list",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => 50,
-                        "kind" => "query",
-                        "name" => "limit",
-                        "orig" => "limit",
-                        "type" => "`$INTEGER`",
-                      },
-                      {
-                        "example" => 0,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/character/all",
@@ -173,6 +155,33 @@ module PonyConfig
                       "lit" => "all",
                     },
                   ],
+                  "parts" => [
+                    "character",
+                    "all",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "limit",
+                        "orig" => "limit",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 50,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 0,
+                      },
+                    ],
+                  },
                   "select" => {
                     "$action" => "all",
                     "exist" => [
@@ -180,14 +189,6 @@ module PonyConfig
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "character",
-                    "all",
-                  ],
                 },
               ],
             },
@@ -196,41 +197,9 @@ module PonyConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "params" => [
-                      {
-                        "kind" => "param",
-                        "name" => "id",
-                        "orig" => "character",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                    "query" => [
-                      {
-                        "example" => 50,
-                        "kind" => "query",
-                        "name" => "limit",
-                        "orig" => "limit",
-                        "type" => "`$INTEGER`",
-                      },
-                      {
-                        "example" => 0,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/character/{character}",
-                  "rename" => {
-                    "param" => {
-                      "character" => "id",
-                    },
-                  },
                   "segments" => [
                     {
                       "lit" => "character",
@@ -239,6 +208,46 @@ module PonyConfig
                       "var" => "id",
                     },
                   ],
+                  "parts" => [
+                    "character",
+                    "{id}",
+                  ],
+                  "rename" => {
+                    "param" => {
+                      "character" => "id",
+                    },
+                  },
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "params" => [
+                      {
+                        "name" => "id",
+                        "orig" => "character",
+                        "type" => "`$STRING`",
+                        "kind" => "param",
+                        "reqd" => true,
+                      },
+                    ],
+                    "query" => [
+                      {
+                        "name" => "limit",
+                        "orig" => "limit",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 50,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 0,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "id",
@@ -246,44 +255,8 @@ module PonyConfig
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "character",
-                    "{id}",
-                  ],
                 },
                 {
-                  "args" => {
-                    "params" => [
-                      {
-                        "example" => "dragon",
-                        "kind" => "param",
-                        "name" => "kind",
-                        "orig" => "kind",
-                        "reqd" => true,
-                        "type" => "`$ANY`",
-                      },
-                    ],
-                    "query" => [
-                      {
-                        "example" => 50,
-                        "kind" => "query",
-                        "name" => "limit",
-                        "orig" => "limit",
-                        "type" => "`$INTEGER`",
-                      },
-                      {
-                        "example" => 0,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/character/by-kind/{kind}",
@@ -298,6 +271,44 @@ module PonyConfig
                       "var" => "kind",
                     },
                   ],
+                  "parts" => [
+                    "character",
+                    "by-kind",
+                    "{kind}",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "params" => [
+                      {
+                        "name" => "kind",
+                        "orig" => "kind",
+                        "type" => "`$ANY`",
+                        "kind" => "param",
+                        "reqd" => true,
+                        "example" => "dragon",
+                      },
+                    ],
+                    "query" => [
+                      {
+                        "name" => "limit",
+                        "orig" => "limit",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 50,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 0,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "kind",
@@ -305,45 +316,8 @@ module PonyConfig
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "character",
-                    "by-kind",
-                    "{kind}",
-                  ],
                 },
                 {
-                  "args" => {
-                    "params" => [
-                      {
-                        "example" => "crusader",
-                        "kind" => "param",
-                        "name" => "occupation",
-                        "orig" => "occupation",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                    "query" => [
-                      {
-                        "example" => 50,
-                        "kind" => "query",
-                        "name" => "limit",
-                        "orig" => "limit",
-                        "type" => "`$INTEGER`",
-                      },
-                      {
-                        "example" => 0,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/character/by-occupation/{occupation}",
@@ -358,6 +332,44 @@ module PonyConfig
                       "var" => "occupation",
                     },
                   ],
+                  "parts" => [
+                    "character",
+                    "by-occupation",
+                    "{occupation}",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "params" => [
+                      {
+                        "name" => "occupation",
+                        "orig" => "occupation",
+                        "type" => "`$STRING`",
+                        "kind" => "param",
+                        "reqd" => true,
+                        "example" => "crusader",
+                      },
+                    ],
+                    "query" => [
+                      {
+                        "name" => "limit",
+                        "orig" => "limit",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 50,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 0,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "limit",
@@ -365,44 +377,8 @@ module PonyConfig
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "character",
-                    "by-occupation",
-                    "{occupation}",
-                  ],
                 },
                 {
-                  "args" => {
-                    "params" => [
-                      {
-                        "kind" => "param",
-                        "name" => "residence",
-                        "orig" => "residence",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                    "query" => [
-                      {
-                        "example" => 50,
-                        "kind" => "query",
-                        "name" => "limit",
-                        "orig" => "limit",
-                        "type" => "`$INTEGER`",
-                      },
-                      {
-                        "example" => 0,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/character/by-residence/{residence}",
@@ -417,6 +393,43 @@ module PonyConfig
                       "var" => "residence",
                     },
                   ],
+                  "parts" => [
+                    "character",
+                    "by-residence",
+                    "{residence}",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "params" => [
+                      {
+                        "name" => "residence",
+                        "orig" => "residence",
+                        "type" => "`$STRING`",
+                        "kind" => "param",
+                        "reqd" => true,
+                      },
+                    ],
+                    "query" => [
+                      {
+                        "name" => "limit",
+                        "orig" => "limit",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 50,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 0,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "limit",
@@ -424,64 +437,45 @@ module PonyConfig
                       "residence",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "character",
-                    "by-residence",
-                    "{residence}",
-                  ],
                 },
               ],
             },
           },
           "relations" => {
-            "ancestors" => [
-              [
-                "by_kind",
-              ],
-              [
-                "by_occupation",
-              ],
-              [
-                "by_residence",
-              ],
-            ],
+            "ancestors" => [],
           },
         },
         "comic" => {
           "fields" => [
             {
               "name" => "data",
-              "short" => "Array of found objects.",
+              "title" => "Data",
               "type" => "`$ARRAY`",
-              "union" => {
-                "branches" => 3,
-                "count" => 4,
-                "depth" => 4,
-              },
+              "short" => "Array of found objects.",
             },
             {
               "name" => "error",
-              "short" => "First error message",
+              "title" => "Error",
               "type" => "`$STRING`",
+              "short" => "First error message",
             },
             {
               "name" => "id",
+              "title" => "Id",
               "type" => "`$STRING`",
             },
             {
               "name" => "status",
+              "title" => "Status",
+              "type" => "`$INTEGER`",
               "req" => true,
               "short" => "HTTP status code",
-              "type" => "`$INTEGER`",
             },
             {
               "name" => "warning",
-              "short" => "Warning messages separated by newline",
+              "title" => "Warning",
               "type" => "`$STRING`",
+              "short" => "Warning messages separated by newline",
             },
           ],
           "id" => {
@@ -495,24 +489,6 @@ module PonyConfig
               "name" => "list",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => 50,
-                        "kind" => "query",
-                        "name" => "limit",
-                        "orig" => "limit",
-                        "type" => "`$INTEGER`",
-                      },
-                      {
-                        "example" => 0,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/comics/all",
@@ -524,6 +500,33 @@ module PonyConfig
                       "lit" => "all",
                     },
                   ],
+                  "parts" => [
+                    "comics",
+                    "all",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "limit",
+                        "orig" => "limit",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 50,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 0,
+                      },
+                    ],
+                  },
                   "select" => {
                     "$action" => "all",
                     "exist" => [
@@ -531,14 +534,6 @@ module PonyConfig
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "comics",
-                    "all",
-                  ],
                 },
               ],
             },
@@ -547,41 +542,9 @@ module PonyConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "params" => [
-                      {
-                        "kind" => "param",
-                        "name" => "id",
-                        "orig" => "comic",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                    "query" => [
-                      {
-                        "example" => 50,
-                        "kind" => "query",
-                        "name" => "limit",
-                        "orig" => "limit",
-                        "type" => "`$INTEGER`",
-                      },
-                      {
-                        "example" => 0,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/comics/{comics}",
-                  "rename" => {
-                    "param" => {
-                      "comics" => "id",
-                    },
-                  },
                   "segments" => [
                     {
                       "lit" => "comics",
@@ -590,6 +553,46 @@ module PonyConfig
                       "var" => "id",
                     },
                   ],
+                  "parts" => [
+                    "comics",
+                    "{id}",
+                  ],
+                  "rename" => {
+                    "param" => {
+                      "comics" => "id",
+                    },
+                  },
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "params" => [
+                      {
+                        "name" => "id",
+                        "orig" => "comic",
+                        "type" => "`$STRING`",
+                        "kind" => "param",
+                        "reqd" => true,
+                      },
+                    ],
+                    "query" => [
+                      {
+                        "name" => "limit",
+                        "orig" => "limit",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 50,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 0,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "id",
@@ -597,43 +600,8 @@ module PonyConfig
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "comics",
-                    "{id}",
-                  ],
                 },
                 {
-                  "args" => {
-                    "params" => [
-                      {
-                        "kind" => "param",
-                        "name" => "series",
-                        "orig" => "series",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                    "query" => [
-                      {
-                        "example" => 50,
-                        "kind" => "query",
-                        "name" => "limit",
-                        "orig" => "limit",
-                        "type" => "`$INTEGER`",
-                      },
-                      {
-                        "example" => 0,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/comics/by-series/{series}",
@@ -648,6 +616,43 @@ module PonyConfig
                       "var" => "series",
                     },
                   ],
+                  "parts" => [
+                    "comics",
+                    "by-series",
+                    "{series}",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "params" => [
+                      {
+                        "name" => "series",
+                        "orig" => "series",
+                        "type" => "`$STRING`",
+                        "kind" => "param",
+                        "reqd" => true,
+                      },
+                    ],
+                    "query" => [
+                      {
+                        "name" => "limit",
+                        "orig" => "limit",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 50,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 0,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "limit",
@@ -655,58 +660,45 @@ module PonyConfig
                       "series",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "comics",
-                    "by-series",
-                    "{series}",
-                  ],
                 },
               ],
             },
           },
           "relations" => {
-            "ancestors" => [
-              [
-                "by_series",
-              ],
-            ],
+            "ancestors" => [],
           },
         },
         "episode" => {
           "fields" => [
             {
               "name" => "data",
-              "short" => "Array of found objects.",
+              "title" => "Data",
               "type" => "`$ARRAY`",
-              "union" => {
-                "branches" => 3,
-                "count" => 4,
-                "depth" => 4,
-              },
+              "short" => "Array of found objects.",
             },
             {
               "name" => "error",
-              "short" => "First error message",
+              "title" => "Error",
               "type" => "`$STRING`",
+              "short" => "First error message",
             },
             {
               "name" => "id",
+              "title" => "Id",
               "type" => "`$STRING`",
             },
             {
               "name" => "status",
+              "title" => "Status",
+              "type" => "`$INTEGER`",
               "req" => true,
               "short" => "HTTP status code",
-              "type" => "`$INTEGER`",
             },
             {
               "name" => "warning",
-              "short" => "Warning messages separated by newline",
+              "title" => "Warning",
               "type" => "`$STRING`",
+              "short" => "Warning messages separated by newline",
             },
           ],
           "id" => {
@@ -720,24 +712,6 @@ module PonyConfig
               "name" => "list",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => 50,
-                        "kind" => "query",
-                        "name" => "limit",
-                        "orig" => "limit",
-                        "type" => "`$INTEGER`",
-                      },
-                      {
-                        "example" => 0,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/episode/all",
@@ -749,6 +723,33 @@ module PonyConfig
                       "lit" => "all",
                     },
                   ],
+                  "parts" => [
+                    "episode",
+                    "all",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "limit",
+                        "orig" => "limit",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 50,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 0,
+                      },
+                    ],
+                  },
                   "select" => {
                     "$action" => "all",
                     "exist" => [
@@ -756,14 +757,6 @@ module PonyConfig
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "episode",
-                    "all",
-                  ],
                 },
               ],
             },
@@ -772,41 +765,9 @@ module PonyConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "params" => [
-                      {
-                        "kind" => "param",
-                        "name" => "id",
-                        "orig" => "episode",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                    "query" => [
-                      {
-                        "example" => 50,
-                        "kind" => "query",
-                        "name" => "limit",
-                        "orig" => "limit",
-                        "type" => "`$INTEGER`",
-                      },
-                      {
-                        "example" => 0,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/episode/{episode}",
-                  "rename" => {
-                    "param" => {
-                      "episode" => "id",
-                    },
-                  },
                   "segments" => [
                     {
                       "lit" => "episode",
@@ -815,6 +776,46 @@ module PonyConfig
                       "var" => "id",
                     },
                   ],
+                  "parts" => [
+                    "episode",
+                    "{id}",
+                  ],
+                  "rename" => {
+                    "param" => {
+                      "episode" => "id",
+                    },
+                  },
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "params" => [
+                      {
+                        "name" => "id",
+                        "orig" => "episode",
+                        "type" => "`$STRING`",
+                        "kind" => "param",
+                        "reqd" => true,
+                      },
+                    ],
+                    "query" => [
+                      {
+                        "name" => "limit",
+                        "orig" => "limit",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 50,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 0,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "id",
@@ -822,43 +823,8 @@ module PonyConfig
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "episode",
-                    "{id}",
-                  ],
                 },
                 {
-                  "args" => {
-                    "params" => [
-                      {
-                        "kind" => "param",
-                        "name" => "season",
-                        "orig" => "season",
-                        "reqd" => true,
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                    "query" => [
-                      {
-                        "example" => 50,
-                        "kind" => "query",
-                        "name" => "limit",
-                        "orig" => "limit",
-                        "type" => "`$INTEGER`",
-                      },
-                      {
-                        "example" => 0,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/episode/by-season/{season}",
@@ -873,6 +839,43 @@ module PonyConfig
                       "var" => "season",
                     },
                   ],
+                  "parts" => [
+                    "episode",
+                    "by-season",
+                    "{season}",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "params" => [
+                      {
+                        "name" => "season",
+                        "orig" => "season",
+                        "type" => "`$INTEGER`",
+                        "kind" => "param",
+                        "reqd" => true,
+                      },
+                    ],
+                    "query" => [
+                      {
+                        "name" => "limit",
+                        "orig" => "limit",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 50,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 0,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "limit",
@@ -880,25 +883,12 @@ module PonyConfig
                       "season",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "episode",
-                    "by-season",
-                    "{season}",
-                  ],
                 },
               ],
             },
           },
           "relations" => {
-            "ancestors" => [
-              [
-                "by_season",
-              ],
-            ],
+            "ancestors" => [],
           },
         },
         "image" => {
@@ -910,24 +900,6 @@ module PonyConfig
               "name" => "list",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => 50,
-                        "kind" => "query",
-                        "name" => "limit",
-                        "orig" => "limit",
-                        "type" => "`$INTEGER`",
-                      },
-                      {
-                        "example" => 0,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/image/all",
@@ -939,6 +911,33 @@ module PonyConfig
                       "lit" => "all",
                     },
                   ],
+                  "parts" => [
+                    "image",
+                    "all",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "limit",
+                        "orig" => "limit",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 50,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 0,
+                      },
+                    ],
+                  },
                   "select" => {
                     "$action" => "all",
                     "exist" => [
@@ -946,14 +945,6 @@ module PonyConfig
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "image",
-                    "all",
-                  ],
                 },
               ],
             },
@@ -966,33 +957,33 @@ module PonyConfig
           "fields" => [
             {
               "name" => "data",
-              "short" => "Array of found objects.",
+              "title" => "Data",
               "type" => "`$ARRAY`",
-              "union" => {
-                "branches" => 3,
-                "count" => 4,
-                "depth" => 4,
-              },
+              "short" => "Array of found objects.",
             },
             {
               "name" => "error",
-              "short" => "First error message",
+              "title" => "Error",
               "type" => "`$STRING`",
+              "short" => "First error message",
             },
             {
               "name" => "id",
+              "title" => "Id",
               "type" => "`$STRING`",
             },
             {
               "name" => "status",
+              "title" => "Status",
+              "type" => "`$INTEGER`",
               "req" => true,
               "short" => "HTTP status code",
-              "type" => "`$INTEGER`",
             },
             {
               "name" => "warning",
-              "short" => "Warning messages separated by newline",
+              "title" => "Warning",
               "type" => "`$STRING`",
+              "short" => "Warning messages separated by newline",
             },
           ],
           "id" => {
@@ -1006,24 +997,6 @@ module PonyConfig
               "name" => "list",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => 50,
-                        "kind" => "query",
-                        "name" => "limit",
-                        "orig" => "limit",
-                        "type" => "`$INTEGER`",
-                      },
-                      {
-                        "example" => 0,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/kind/all",
@@ -1035,6 +1008,33 @@ module PonyConfig
                       "lit" => "all",
                     },
                   ],
+                  "parts" => [
+                    "kind",
+                    "all",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "limit",
+                        "orig" => "limit",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 50,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 0,
+                      },
+                    ],
+                  },
                   "select" => {
                     "$action" => "all",
                     "exist" => [
@@ -1042,14 +1042,6 @@ module PonyConfig
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "kind",
-                    "all",
-                  ],
                 },
               ],
             },
@@ -1058,25 +1050,9 @@ module PonyConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "params" => [
-                      {
-                        "kind" => "param",
-                        "name" => "id",
-                        "orig" => "kind",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/kind/{kind}",
-                  "rename" => {
-                    "param" => {
-                      "kind" => "id",
-                    },
-                  },
                   "segments" => [
                     {
                       "lit" => "kind",
@@ -1085,19 +1061,35 @@ module PonyConfig
                       "var" => "id",
                     },
                   ],
-                  "select" => {
-                    "exist" => [
-                      "id",
-                    ],
+                  "parts" => [
+                    "kind",
+                    "{id}",
+                  ],
+                  "rename" => {
+                    "param" => {
+                      "kind" => "id",
+                    },
                   },
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "parts" => [
-                    "kind",
-                    "{id}",
-                  ],
+                  "args" => {
+                    "params" => [
+                      {
+                        "name" => "id",
+                        "orig" => "kind",
+                        "type" => "`$STRING`",
+                        "kind" => "param",
+                        "reqd" => true,
+                      },
+                    ],
+                  },
+                  "select" => {
+                    "exist" => [
+                      "id",
+                    ],
+                  },
                 },
               ],
             },
@@ -1110,33 +1102,33 @@ module PonyConfig
           "fields" => [
             {
               "name" => "data",
-              "short" => "Array of found objects.",
+              "title" => "Data",
               "type" => "`$ARRAY`",
-              "union" => {
-                "branches" => 3,
-                "count" => 4,
-                "depth" => 4,
-              },
+              "short" => "Array of found objects.",
             },
             {
               "name" => "error",
-              "short" => "First error message",
+              "title" => "Error",
               "type" => "`$STRING`",
+              "short" => "First error message",
             },
             {
               "name" => "id",
+              "title" => "Id",
               "type" => "`$STRING`",
             },
             {
               "name" => "status",
+              "title" => "Status",
+              "type" => "`$INTEGER`",
               "req" => true,
               "short" => "HTTP status code",
-              "type" => "`$INTEGER`",
             },
             {
               "name" => "warning",
-              "short" => "Warning messages separated by newline",
+              "title" => "Warning",
               "type" => "`$STRING`",
+              "short" => "Warning messages separated by newline",
             },
           ],
           "id" => {
@@ -1150,24 +1142,6 @@ module PonyConfig
               "name" => "list",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => 50,
-                        "kind" => "query",
-                        "name" => "limit",
-                        "orig" => "limit",
-                        "type" => "`$INTEGER`",
-                      },
-                      {
-                        "example" => 0,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/song/all",
@@ -1179,6 +1153,33 @@ module PonyConfig
                       "lit" => "all",
                     },
                   ],
+                  "parts" => [
+                    "song",
+                    "all",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "limit",
+                        "orig" => "limit",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 50,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 0,
+                      },
+                    ],
+                  },
                   "select" => {
                     "$action" => "all",
                     "exist" => [
@@ -1186,14 +1187,6 @@ module PonyConfig
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "song",
-                    "all",
-                  ],
                 },
               ],
             },
@@ -1202,33 +1195,6 @@ module PonyConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "params" => [
-                      {
-                        "kind" => "param",
-                        "name" => "episode",
-                        "orig" => "episode",
-                        "reqd" => true,
-                        "type" => "`$ANY`",
-                      },
-                    ],
-                    "query" => [
-                      {
-                        "example" => 50,
-                        "kind" => "query",
-                        "name" => "limit",
-                        "orig" => "limit",
-                        "type" => "`$INTEGER`",
-                      },
-                      {
-                        "example" => 0,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/song/by-episode/{episode}",
@@ -1243,6 +1209,43 @@ module PonyConfig
                       "var" => "episode",
                     },
                   ],
+                  "parts" => [
+                    "song",
+                    "by-episode",
+                    "{episode}",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "params" => [
+                      {
+                        "name" => "episode",
+                        "orig" => "episode",
+                        "type" => "`$ANY`",
+                        "kind" => "param",
+                        "reqd" => true,
+                      },
+                    ],
+                    "query" => [
+                      {
+                        "name" => "limit",
+                        "orig" => "limit",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 50,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 0,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "episode",
@@ -1250,52 +1253,11 @@ module PonyConfig
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "song",
-                    "by-episode",
-                    "{episode}",
-                  ],
                 },
                 {
-                  "args" => {
-                    "params" => [
-                      {
-                        "kind" => "param",
-                        "name" => "id",
-                        "orig" => "song",
-                        "reqd" => true,
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                    "query" => [
-                      {
-                        "example" => 50,
-                        "kind" => "query",
-                        "name" => "limit",
-                        "orig" => "limit",
-                        "type" => "`$INTEGER`",
-                      },
-                      {
-                        "example" => 0,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/song/{song}",
-                  "rename" => {
-                    "param" => {
-                      "song" => "id",
-                    },
-                  },
                   "segments" => [
                     {
                       "lit" => "song",
@@ -1304,6 +1266,46 @@ module PonyConfig
                       "var" => "id",
                     },
                   ],
+                  "parts" => [
+                    "song",
+                    "{id}",
+                  ],
+                  "rename" => {
+                    "param" => {
+                      "song" => "id",
+                    },
+                  },
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "params" => [
+                      {
+                        "name" => "id",
+                        "orig" => "song",
+                        "type" => "`$STRING`",
+                        "kind" => "param",
+                        "reqd" => true,
+                      },
+                    ],
+                    "query" => [
+                      {
+                        "name" => "limit",
+                        "orig" => "limit",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 50,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 0,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "id",
@@ -1311,24 +1313,12 @@ module PonyConfig
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "song",
-                    "{id}",
-                  ],
                 },
               ],
             },
           },
           "relations" => {
-            "ancestors" => [
-              [
-                "by_episode",
-              ],
-            ],
+            "ancestors" => [],
           },
         },
       },

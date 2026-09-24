@@ -124,7 +124,7 @@ function song_basic_setup(extra)
 
   -- Generate idmap via transform.
   local idmap = vs.transform(
-    { "song01", "song02", "song03", "by_episode01", "by_episode02", "by_episode03" },
+    { "song01", "song02", "song03" },
     {
       ["`$PACK`"] = { "", {
         ["`$KEY`"] = "`$COPY`",

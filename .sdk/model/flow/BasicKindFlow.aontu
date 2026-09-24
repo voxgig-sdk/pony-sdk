@@ -1,0 +1,44 @@
+# BasicKindFlow
+
+main: kit: flow: BasicKindFlow:
+{
+  entity: "kind",
+  kind: "basic",
+  name: "BasicKindFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "kind_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "kind_ref01",
+        srcdatavar: "kind_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "kind01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-kind_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicKindFlow"
+}

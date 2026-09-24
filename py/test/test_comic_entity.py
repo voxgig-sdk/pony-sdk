@@ -114,7 +114,7 @@ def _comic_basic_setup(extra):
 
     # Generate idmap via transform.
     idmap = vs.transform(
-        ["comic01", "comic02", "comic03", "by_series01", "by_series02", "by_series03"],
+        ["comic01", "comic02", "comic03"],
         {
             "`$PACK`": ["", {
                 "`$KEY`": "`$COPY`",

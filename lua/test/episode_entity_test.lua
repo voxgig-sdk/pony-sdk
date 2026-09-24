@@ -124,7 +124,7 @@ function episode_basic_setup(extra)
 
   -- Generate idmap via transform.
   local idmap = vs.transform(
-    { "episode01", "episode02", "episode03", "by_season01", "by_season02", "by_season03" },
+    { "episode01", "episode02", "episode03" },
     {
       ["`$PACK`"] = { "", {
         ["`$KEY`"] = "`$COPY`",

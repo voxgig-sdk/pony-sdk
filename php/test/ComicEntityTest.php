@@ -119,7 +119,7 @@ function comic_basic_setup($extra)
 
     // Generate idmap.
     $idmap = [];
-    foreach (["comic01", "comic02", "comic03", "by_series01", "by_series02", "by_series03"] as $k) {
+    foreach (["comic01", "comic02", "comic03"] as $k) {
         $idmap[$k] = strtoupper($k);
     }
 

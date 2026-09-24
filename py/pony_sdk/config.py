@@ -121,33 +121,33 @@ def make_config():
         "fields": [
           {
             "name": "data",
-            "short": "Array of found objects.",
+            "title": "Data",
             "type": "`$ARRAY`",
-            "union": {
-              "branches": 3,
-              "count": 4,
-              "depth": 4,
-            },
+            "short": "Array of found objects.",
           },
           {
             "name": "error",
-            "short": "First error message",
+            "title": "Error",
             "type": "`$STRING`",
+            "short": "First error message",
           },
           {
             "name": "id",
+            "title": "Id",
             "type": "`$STRING`",
           },
           {
             "name": "status",
+            "title": "Status",
+            "type": "`$INTEGER`",
             "req": True,
             "short": "HTTP status code",
-            "type": "`$INTEGER`",
           },
           {
             "name": "warning",
-            "short": "Warning messages separated by newline",
+            "title": "Warning",
             "type": "`$STRING`",
+            "short": "Warning messages separated by newline",
           },
         ],
         "id": {
@@ -161,24 +161,6 @@ def make_config():
             "name": "list",
             "points": [
               {
-                "args": {
-                  "query": [
-                    {
-                      "example": 50,
-                      "kind": "query",
-                      "name": "limit",
-                      "orig": "limit",
-                      "type": "`$INTEGER`",
-                    },
-                    {
-                      "example": 0,
-                      "kind": "query",
-                      "name": "offset",
-                      "orig": "offset",
-                      "type": "`$INTEGER`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/character/all",
@@ -190,6 +172,33 @@ def make_config():
                     "lit": "all",
                   },
                 ],
+                "parts": [
+                  "character",
+                  "all",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "limit",
+                      "orig": "limit",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 50,
+                    },
+                    {
+                      "name": "offset",
+                      "orig": "offset",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 0,
+                    },
+                  ],
+                },
                 "select": {
                   "$action": "all",
                   "exist": [
@@ -197,14 +206,6 @@ def make_config():
                     "offset",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "parts": [
-                  "character",
-                  "all",
-                ],
               },
             ],
           },
@@ -213,41 +214,9 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "args": {
-                  "params": [
-                    {
-                      "kind": "param",
-                      "name": "id",
-                      "orig": "character",
-                      "reqd": True,
-                      "type": "`$STRING`",
-                    },
-                  ],
-                  "query": [
-                    {
-                      "example": 50,
-                      "kind": "query",
-                      "name": "limit",
-                      "orig": "limit",
-                      "type": "`$INTEGER`",
-                    },
-                    {
-                      "example": 0,
-                      "kind": "query",
-                      "name": "offset",
-                      "orig": "offset",
-                      "type": "`$INTEGER`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/character/{character}",
-                "rename": {
-                  "param": {
-                    "character": "id",
-                  },
-                },
                 "segments": [
                   {
                     "lit": "character",
@@ -256,6 +225,46 @@ def make_config():
                     "var": "id",
                   },
                 ],
+                "parts": [
+                  "character",
+                  "{id}",
+                ],
+                "rename": {
+                  "param": {
+                    "character": "id",
+                  },
+                },
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "params": [
+                    {
+                      "name": "id",
+                      "orig": "character",
+                      "type": "`$STRING`",
+                      "kind": "param",
+                      "reqd": True,
+                    },
+                  ],
+                  "query": [
+                    {
+                      "name": "limit",
+                      "orig": "limit",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 50,
+                    },
+                    {
+                      "name": "offset",
+                      "orig": "offset",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 0,
+                    },
+                  ],
+                },
                 "select": {
                   "exist": [
                     "id",
@@ -263,44 +272,8 @@ def make_config():
                     "offset",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "parts": [
-                  "character",
-                  "{id}",
-                ],
               },
               {
-                "args": {
-                  "params": [
-                    {
-                      "example": "dragon",
-                      "kind": "param",
-                      "name": "kind",
-                      "orig": "kind",
-                      "reqd": True,
-                      "type": "`$ANY`",
-                    },
-                  ],
-                  "query": [
-                    {
-                      "example": 50,
-                      "kind": "query",
-                      "name": "limit",
-                      "orig": "limit",
-                      "type": "`$INTEGER`",
-                    },
-                    {
-                      "example": 0,
-                      "kind": "query",
-                      "name": "offset",
-                      "orig": "offset",
-                      "type": "`$INTEGER`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/character/by-kind/{kind}",
@@ -315,6 +288,44 @@ def make_config():
                     "var": "kind",
                   },
                 ],
+                "parts": [
+                  "character",
+                  "by-kind",
+                  "{kind}",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "params": [
+                    {
+                      "name": "kind",
+                      "orig": "kind",
+                      "type": "`$ANY`",
+                      "kind": "param",
+                      "reqd": True,
+                      "example": "dragon",
+                    },
+                  ],
+                  "query": [
+                    {
+                      "name": "limit",
+                      "orig": "limit",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 50,
+                    },
+                    {
+                      "name": "offset",
+                      "orig": "offset",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 0,
+                    },
+                  ],
+                },
                 "select": {
                   "exist": [
                     "kind",
@@ -322,45 +333,8 @@ def make_config():
                     "offset",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "parts": [
-                  "character",
-                  "by-kind",
-                  "{kind}",
-                ],
               },
               {
-                "args": {
-                  "params": [
-                    {
-                      "example": "crusader",
-                      "kind": "param",
-                      "name": "occupation",
-                      "orig": "occupation",
-                      "reqd": True,
-                      "type": "`$STRING`",
-                    },
-                  ],
-                  "query": [
-                    {
-                      "example": 50,
-                      "kind": "query",
-                      "name": "limit",
-                      "orig": "limit",
-                      "type": "`$INTEGER`",
-                    },
-                    {
-                      "example": 0,
-                      "kind": "query",
-                      "name": "offset",
-                      "orig": "offset",
-                      "type": "`$INTEGER`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/character/by-occupation/{occupation}",
@@ -375,6 +349,44 @@ def make_config():
                     "var": "occupation",
                   },
                 ],
+                "parts": [
+                  "character",
+                  "by-occupation",
+                  "{occupation}",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "params": [
+                    {
+                      "name": "occupation",
+                      "orig": "occupation",
+                      "type": "`$STRING`",
+                      "kind": "param",
+                      "reqd": True,
+                      "example": "crusader",
+                    },
+                  ],
+                  "query": [
+                    {
+                      "name": "limit",
+                      "orig": "limit",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 50,
+                    },
+                    {
+                      "name": "offset",
+                      "orig": "offset",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 0,
+                    },
+                  ],
+                },
                 "select": {
                   "exist": [
                     "limit",
@@ -382,44 +394,8 @@ def make_config():
                     "offset",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "parts": [
-                  "character",
-                  "by-occupation",
-                  "{occupation}",
-                ],
               },
               {
-                "args": {
-                  "params": [
-                    {
-                      "kind": "param",
-                      "name": "residence",
-                      "orig": "residence",
-                      "reqd": True,
-                      "type": "`$STRING`",
-                    },
-                  ],
-                  "query": [
-                    {
-                      "example": 50,
-                      "kind": "query",
-                      "name": "limit",
-                      "orig": "limit",
-                      "type": "`$INTEGER`",
-                    },
-                    {
-                      "example": 0,
-                      "kind": "query",
-                      "name": "offset",
-                      "orig": "offset",
-                      "type": "`$INTEGER`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/character/by-residence/{residence}",
@@ -434,6 +410,43 @@ def make_config():
                     "var": "residence",
                   },
                 ],
+                "parts": [
+                  "character",
+                  "by-residence",
+                  "{residence}",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "params": [
+                    {
+                      "name": "residence",
+                      "orig": "residence",
+                      "type": "`$STRING`",
+                      "kind": "param",
+                      "reqd": True,
+                    },
+                  ],
+                  "query": [
+                    {
+                      "name": "limit",
+                      "orig": "limit",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 50,
+                    },
+                    {
+                      "name": "offset",
+                      "orig": "offset",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 0,
+                    },
+                  ],
+                },
                 "select": {
                   "exist": [
                     "limit",
@@ -441,64 +454,45 @@ def make_config():
                     "residence",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "parts": [
-                  "character",
-                  "by-residence",
-                  "{residence}",
-                ],
               },
             ],
           },
         },
         "relations": {
-          "ancestors": [
-            [
-              "by_kind",
-            ],
-            [
-              "by_occupation",
-            ],
-            [
-              "by_residence",
-            ],
-          ],
+          "ancestors": [],
         },
       },
       "comic": {
         "fields": [
           {
             "name": "data",
-            "short": "Array of found objects.",
+            "title": "Data",
             "type": "`$ARRAY`",
-            "union": {
-              "branches": 3,
-              "count": 4,
-              "depth": 4,
-            },
+            "short": "Array of found objects.",
           },
           {
             "name": "error",
-            "short": "First error message",
+            "title": "Error",
             "type": "`$STRING`",
+            "short": "First error message",
           },
           {
             "name": "id",
+            "title": "Id",
             "type": "`$STRING`",
           },
           {
             "name": "status",
+            "title": "Status",
+            "type": "`$INTEGER`",
             "req": True,
             "short": "HTTP status code",
-            "type": "`$INTEGER`",
           },
           {
             "name": "warning",
-            "short": "Warning messages separated by newline",
+            "title": "Warning",
             "type": "`$STRING`",
+            "short": "Warning messages separated by newline",
           },
         ],
         "id": {
@@ -512,24 +506,6 @@ def make_config():
             "name": "list",
             "points": [
               {
-                "args": {
-                  "query": [
-                    {
-                      "example": 50,
-                      "kind": "query",
-                      "name": "limit",
-                      "orig": "limit",
-                      "type": "`$INTEGER`",
-                    },
-                    {
-                      "example": 0,
-                      "kind": "query",
-                      "name": "offset",
-                      "orig": "offset",
-                      "type": "`$INTEGER`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/comics/all",
@@ -541,6 +517,33 @@ def make_config():
                     "lit": "all",
                   },
                 ],
+                "parts": [
+                  "comics",
+                  "all",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "limit",
+                      "orig": "limit",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 50,
+                    },
+                    {
+                      "name": "offset",
+                      "orig": "offset",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 0,
+                    },
+                  ],
+                },
                 "select": {
                   "$action": "all",
                   "exist": [
@@ -548,14 +551,6 @@ def make_config():
                     "offset",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "parts": [
-                  "comics",
-                  "all",
-                ],
               },
             ],
           },
@@ -564,41 +559,9 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "args": {
-                  "params": [
-                    {
-                      "kind": "param",
-                      "name": "id",
-                      "orig": "comic",
-                      "reqd": True,
-                      "type": "`$STRING`",
-                    },
-                  ],
-                  "query": [
-                    {
-                      "example": 50,
-                      "kind": "query",
-                      "name": "limit",
-                      "orig": "limit",
-                      "type": "`$INTEGER`",
-                    },
-                    {
-                      "example": 0,
-                      "kind": "query",
-                      "name": "offset",
-                      "orig": "offset",
-                      "type": "`$INTEGER`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/comics/{comics}",
-                "rename": {
-                  "param": {
-                    "comics": "id",
-                  },
-                },
                 "segments": [
                   {
                     "lit": "comics",
@@ -607,6 +570,46 @@ def make_config():
                     "var": "id",
                   },
                 ],
+                "parts": [
+                  "comics",
+                  "{id}",
+                ],
+                "rename": {
+                  "param": {
+                    "comics": "id",
+                  },
+                },
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "params": [
+                    {
+                      "name": "id",
+                      "orig": "comic",
+                      "type": "`$STRING`",
+                      "kind": "param",
+                      "reqd": True,
+                    },
+                  ],
+                  "query": [
+                    {
+                      "name": "limit",
+                      "orig": "limit",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 50,
+                    },
+                    {
+                      "name": "offset",
+                      "orig": "offset",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 0,
+                    },
+                  ],
+                },
                 "select": {
                   "exist": [
                     "id",
@@ -614,43 +617,8 @@ def make_config():
                     "offset",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "parts": [
-                  "comics",
-                  "{id}",
-                ],
               },
               {
-                "args": {
-                  "params": [
-                    {
-                      "kind": "param",
-                      "name": "series",
-                      "orig": "series",
-                      "reqd": True,
-                      "type": "`$STRING`",
-                    },
-                  ],
-                  "query": [
-                    {
-                      "example": 50,
-                      "kind": "query",
-                      "name": "limit",
-                      "orig": "limit",
-                      "type": "`$INTEGER`",
-                    },
-                    {
-                      "example": 0,
-                      "kind": "query",
-                      "name": "offset",
-                      "orig": "offset",
-                      "type": "`$INTEGER`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/comics/by-series/{series}",
@@ -665,6 +633,43 @@ def make_config():
                     "var": "series",
                   },
                 ],
+                "parts": [
+                  "comics",
+                  "by-series",
+                  "{series}",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "params": [
+                    {
+                      "name": "series",
+                      "orig": "series",
+                      "type": "`$STRING`",
+                      "kind": "param",
+                      "reqd": True,
+                    },
+                  ],
+                  "query": [
+                    {
+                      "name": "limit",
+                      "orig": "limit",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 50,
+                    },
+                    {
+                      "name": "offset",
+                      "orig": "offset",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 0,
+                    },
+                  ],
+                },
                 "select": {
                   "exist": [
                     "limit",
@@ -672,58 +677,45 @@ def make_config():
                     "series",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "parts": [
-                  "comics",
-                  "by-series",
-                  "{series}",
-                ],
               },
             ],
           },
         },
         "relations": {
-          "ancestors": [
-            [
-              "by_series",
-            ],
-          ],
+          "ancestors": [],
         },
       },
       "episode": {
         "fields": [
           {
             "name": "data",
-            "short": "Array of found objects.",
+            "title": "Data",
             "type": "`$ARRAY`",
-            "union": {
-              "branches": 3,
-              "count": 4,
-              "depth": 4,
-            },
+            "short": "Array of found objects.",
           },
           {
             "name": "error",
-            "short": "First error message",
+            "title": "Error",
             "type": "`$STRING`",
+            "short": "First error message",
           },
           {
             "name": "id",
+            "title": "Id",
             "type": "`$STRING`",
           },
           {
             "name": "status",
+            "title": "Status",
+            "type": "`$INTEGER`",
             "req": True,
             "short": "HTTP status code",
-            "type": "`$INTEGER`",
           },
           {
             "name": "warning",
-            "short": "Warning messages separated by newline",
+            "title": "Warning",
             "type": "`$STRING`",
+            "short": "Warning messages separated by newline",
           },
         ],
         "id": {
@@ -737,24 +729,6 @@ def make_config():
             "name": "list",
             "points": [
               {
-                "args": {
-                  "query": [
-                    {
-                      "example": 50,
-                      "kind": "query",
-                      "name": "limit",
-                      "orig": "limit",
-                      "type": "`$INTEGER`",
-                    },
-                    {
-                      "example": 0,
-                      "kind": "query",
-                      "name": "offset",
-                      "orig": "offset",
-                      "type": "`$INTEGER`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/episode/all",
@@ -766,6 +740,33 @@ def make_config():
                     "lit": "all",
                   },
                 ],
+                "parts": [
+                  "episode",
+                  "all",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "limit",
+                      "orig": "limit",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 50,
+                    },
+                    {
+                      "name": "offset",
+                      "orig": "offset",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 0,
+                    },
+                  ],
+                },
                 "select": {
                   "$action": "all",
                   "exist": [
@@ -773,14 +774,6 @@ def make_config():
                     "offset",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "parts": [
-                  "episode",
-                  "all",
-                ],
               },
             ],
           },
@@ -789,41 +782,9 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "args": {
-                  "params": [
-                    {
-                      "kind": "param",
-                      "name": "id",
-                      "orig": "episode",
-                      "reqd": True,
-                      "type": "`$STRING`",
-                    },
-                  ],
-                  "query": [
-                    {
-                      "example": 50,
-                      "kind": "query",
-                      "name": "limit",
-                      "orig": "limit",
-                      "type": "`$INTEGER`",
-                    },
-                    {
-                      "example": 0,
-                      "kind": "query",
-                      "name": "offset",
-                      "orig": "offset",
-                      "type": "`$INTEGER`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/episode/{episode}",
-                "rename": {
-                  "param": {
-                    "episode": "id",
-                  },
-                },
                 "segments": [
                   {
                     "lit": "episode",
@@ -832,6 +793,46 @@ def make_config():
                     "var": "id",
                   },
                 ],
+                "parts": [
+                  "episode",
+                  "{id}",
+                ],
+                "rename": {
+                  "param": {
+                    "episode": "id",
+                  },
+                },
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "params": [
+                    {
+                      "name": "id",
+                      "orig": "episode",
+                      "type": "`$STRING`",
+                      "kind": "param",
+                      "reqd": True,
+                    },
+                  ],
+                  "query": [
+                    {
+                      "name": "limit",
+                      "orig": "limit",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 50,
+                    },
+                    {
+                      "name": "offset",
+                      "orig": "offset",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 0,
+                    },
+                  ],
+                },
                 "select": {
                   "exist": [
                     "id",
@@ -839,43 +840,8 @@ def make_config():
                     "offset",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "parts": [
-                  "episode",
-                  "{id}",
-                ],
               },
               {
-                "args": {
-                  "params": [
-                    {
-                      "kind": "param",
-                      "name": "season",
-                      "orig": "season",
-                      "reqd": True,
-                      "type": "`$INTEGER`",
-                    },
-                  ],
-                  "query": [
-                    {
-                      "example": 50,
-                      "kind": "query",
-                      "name": "limit",
-                      "orig": "limit",
-                      "type": "`$INTEGER`",
-                    },
-                    {
-                      "example": 0,
-                      "kind": "query",
-                      "name": "offset",
-                      "orig": "offset",
-                      "type": "`$INTEGER`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/episode/by-season/{season}",
@@ -890,6 +856,43 @@ def make_config():
                     "var": "season",
                   },
                 ],
+                "parts": [
+                  "episode",
+                  "by-season",
+                  "{season}",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "params": [
+                    {
+                      "name": "season",
+                      "orig": "season",
+                      "type": "`$INTEGER`",
+                      "kind": "param",
+                      "reqd": True,
+                    },
+                  ],
+                  "query": [
+                    {
+                      "name": "limit",
+                      "orig": "limit",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 50,
+                    },
+                    {
+                      "name": "offset",
+                      "orig": "offset",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 0,
+                    },
+                  ],
+                },
                 "select": {
                   "exist": [
                     "limit",
@@ -897,25 +900,12 @@ def make_config():
                     "season",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "parts": [
-                  "episode",
-                  "by-season",
-                  "{season}",
-                ],
               },
             ],
           },
         },
         "relations": {
-          "ancestors": [
-            [
-              "by_season",
-            ],
-          ],
+          "ancestors": [],
         },
       },
       "image": {
@@ -927,24 +917,6 @@ def make_config():
             "name": "list",
             "points": [
               {
-                "args": {
-                  "query": [
-                    {
-                      "example": 50,
-                      "kind": "query",
-                      "name": "limit",
-                      "orig": "limit",
-                      "type": "`$INTEGER`",
-                    },
-                    {
-                      "example": 0,
-                      "kind": "query",
-                      "name": "offset",
-                      "orig": "offset",
-                      "type": "`$INTEGER`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/image/all",
@@ -956,6 +928,33 @@ def make_config():
                     "lit": "all",
                   },
                 ],
+                "parts": [
+                  "image",
+                  "all",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "limit",
+                      "orig": "limit",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 50,
+                    },
+                    {
+                      "name": "offset",
+                      "orig": "offset",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 0,
+                    },
+                  ],
+                },
                 "select": {
                   "$action": "all",
                   "exist": [
@@ -963,14 +962,6 @@ def make_config():
                     "offset",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "parts": [
-                  "image",
-                  "all",
-                ],
               },
             ],
           },
@@ -983,33 +974,33 @@ def make_config():
         "fields": [
           {
             "name": "data",
-            "short": "Array of found objects.",
+            "title": "Data",
             "type": "`$ARRAY`",
-            "union": {
-              "branches": 3,
-              "count": 4,
-              "depth": 4,
-            },
+            "short": "Array of found objects.",
           },
           {
             "name": "error",
-            "short": "First error message",
+            "title": "Error",
             "type": "`$STRING`",
+            "short": "First error message",
           },
           {
             "name": "id",
+            "title": "Id",
             "type": "`$STRING`",
           },
           {
             "name": "status",
+            "title": "Status",
+            "type": "`$INTEGER`",
             "req": True,
             "short": "HTTP status code",
-            "type": "`$INTEGER`",
           },
           {
             "name": "warning",
-            "short": "Warning messages separated by newline",
+            "title": "Warning",
             "type": "`$STRING`",
+            "short": "Warning messages separated by newline",
           },
         ],
         "id": {
@@ -1023,24 +1014,6 @@ def make_config():
             "name": "list",
             "points": [
               {
-                "args": {
-                  "query": [
-                    {
-                      "example": 50,
-                      "kind": "query",
-                      "name": "limit",
-                      "orig": "limit",
-                      "type": "`$INTEGER`",
-                    },
-                    {
-                      "example": 0,
-                      "kind": "query",
-                      "name": "offset",
-                      "orig": "offset",
-                      "type": "`$INTEGER`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/kind/all",
@@ -1052,6 +1025,33 @@ def make_config():
                     "lit": "all",
                   },
                 ],
+                "parts": [
+                  "kind",
+                  "all",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "limit",
+                      "orig": "limit",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 50,
+                    },
+                    {
+                      "name": "offset",
+                      "orig": "offset",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 0,
+                    },
+                  ],
+                },
                 "select": {
                   "$action": "all",
                   "exist": [
@@ -1059,14 +1059,6 @@ def make_config():
                     "offset",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "parts": [
-                  "kind",
-                  "all",
-                ],
               },
             ],
           },
@@ -1075,25 +1067,9 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "args": {
-                  "params": [
-                    {
-                      "kind": "param",
-                      "name": "id",
-                      "orig": "kind",
-                      "reqd": True,
-                      "type": "`$STRING`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/kind/{kind}",
-                "rename": {
-                  "param": {
-                    "kind": "id",
-                  },
-                },
                 "segments": [
                   {
                     "lit": "kind",
@@ -1102,19 +1078,35 @@ def make_config():
                     "var": "id",
                   },
                 ],
-                "select": {
-                  "exist": [
-                    "id",
-                  ],
+                "parts": [
+                  "kind",
+                  "{id}",
+                ],
+                "rename": {
+                  "param": {
+                    "kind": "id",
+                  },
                 },
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "parts": [
-                  "kind",
-                  "{id}",
-                ],
+                "args": {
+                  "params": [
+                    {
+                      "name": "id",
+                      "orig": "kind",
+                      "type": "`$STRING`",
+                      "kind": "param",
+                      "reqd": True,
+                    },
+                  ],
+                },
+                "select": {
+                  "exist": [
+                    "id",
+                  ],
+                },
               },
             ],
           },
@@ -1127,33 +1119,33 @@ def make_config():
         "fields": [
           {
             "name": "data",
-            "short": "Array of found objects.",
+            "title": "Data",
             "type": "`$ARRAY`",
-            "union": {
-              "branches": 3,
-              "count": 4,
-              "depth": 4,
-            },
+            "short": "Array of found objects.",
           },
           {
             "name": "error",
-            "short": "First error message",
+            "title": "Error",
             "type": "`$STRING`",
+            "short": "First error message",
           },
           {
             "name": "id",
+            "title": "Id",
             "type": "`$STRING`",
           },
           {
             "name": "status",
+            "title": "Status",
+            "type": "`$INTEGER`",
             "req": True,
             "short": "HTTP status code",
-            "type": "`$INTEGER`",
           },
           {
             "name": "warning",
-            "short": "Warning messages separated by newline",
+            "title": "Warning",
             "type": "`$STRING`",
+            "short": "Warning messages separated by newline",
           },
         ],
         "id": {
@@ -1167,24 +1159,6 @@ def make_config():
             "name": "list",
             "points": [
               {
-                "args": {
-                  "query": [
-                    {
-                      "example": 50,
-                      "kind": "query",
-                      "name": "limit",
-                      "orig": "limit",
-                      "type": "`$INTEGER`",
-                    },
-                    {
-                      "example": 0,
-                      "kind": "query",
-                      "name": "offset",
-                      "orig": "offset",
-                      "type": "`$INTEGER`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/song/all",
@@ -1196,6 +1170,33 @@ def make_config():
                     "lit": "all",
                   },
                 ],
+                "parts": [
+                  "song",
+                  "all",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "limit",
+                      "orig": "limit",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 50,
+                    },
+                    {
+                      "name": "offset",
+                      "orig": "offset",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 0,
+                    },
+                  ],
+                },
                 "select": {
                   "$action": "all",
                   "exist": [
@@ -1203,14 +1204,6 @@ def make_config():
                     "offset",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "parts": [
-                  "song",
-                  "all",
-                ],
               },
             ],
           },
@@ -1219,33 +1212,6 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "args": {
-                  "params": [
-                    {
-                      "kind": "param",
-                      "name": "episode",
-                      "orig": "episode",
-                      "reqd": True,
-                      "type": "`$ANY`",
-                    },
-                  ],
-                  "query": [
-                    {
-                      "example": 50,
-                      "kind": "query",
-                      "name": "limit",
-                      "orig": "limit",
-                      "type": "`$INTEGER`",
-                    },
-                    {
-                      "example": 0,
-                      "kind": "query",
-                      "name": "offset",
-                      "orig": "offset",
-                      "type": "`$INTEGER`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/song/by-episode/{episode}",
@@ -1260,6 +1226,43 @@ def make_config():
                     "var": "episode",
                   },
                 ],
+                "parts": [
+                  "song",
+                  "by-episode",
+                  "{episode}",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "params": [
+                    {
+                      "name": "episode",
+                      "orig": "episode",
+                      "type": "`$ANY`",
+                      "kind": "param",
+                      "reqd": True,
+                    },
+                  ],
+                  "query": [
+                    {
+                      "name": "limit",
+                      "orig": "limit",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 50,
+                    },
+                    {
+                      "name": "offset",
+                      "orig": "offset",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 0,
+                    },
+                  ],
+                },
                 "select": {
                   "exist": [
                     "episode",
@@ -1267,52 +1270,11 @@ def make_config():
                     "offset",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "parts": [
-                  "song",
-                  "by-episode",
-                  "{episode}",
-                ],
               },
               {
-                "args": {
-                  "params": [
-                    {
-                      "kind": "param",
-                      "name": "id",
-                      "orig": "song",
-                      "reqd": True,
-                      "type": "`$STRING`",
-                    },
-                  ],
-                  "query": [
-                    {
-                      "example": 50,
-                      "kind": "query",
-                      "name": "limit",
-                      "orig": "limit",
-                      "type": "`$INTEGER`",
-                    },
-                    {
-                      "example": 0,
-                      "kind": "query",
-                      "name": "offset",
-                      "orig": "offset",
-                      "type": "`$INTEGER`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/song/{song}",
-                "rename": {
-                  "param": {
-                    "song": "id",
-                  },
-                },
                 "segments": [
                   {
                     "lit": "song",
@@ -1321,6 +1283,46 @@ def make_config():
                     "var": "id",
                   },
                 ],
+                "parts": [
+                  "song",
+                  "{id}",
+                ],
+                "rename": {
+                  "param": {
+                    "song": "id",
+                  },
+                },
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "params": [
+                    {
+                      "name": "id",
+                      "orig": "song",
+                      "type": "`$STRING`",
+                      "kind": "param",
+                      "reqd": True,
+                    },
+                  ],
+                  "query": [
+                    {
+                      "name": "limit",
+                      "orig": "limit",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 50,
+                    },
+                    {
+                      "name": "offset",
+                      "orig": "offset",
+                      "type": "`$INTEGER`",
+                      "kind": "query",
+                      "example": 0,
+                    },
+                  ],
+                },
                 "select": {
                   "exist": [
                     "id",
@@ -1328,24 +1330,12 @@ def make_config():
                     "offset",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "parts": [
-                  "song",
-                  "{id}",
-                ],
               },
             ],
           },
         },
         "relations": {
-          "ancestors": [
-            [
-              "by_episode",
-            ],
-          ],
+          "ancestors": [],
         },
       },
     },

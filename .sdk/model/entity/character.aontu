@@ -1,0 +1,362 @@
+# Entity: character
+
+main: kit: entity: character: {
+
+  alias: field: {}
+
+  fields: {
+    data: {
+      h: "Data"
+      n: "data"
+      r: false
+      sh: "Array of found objects."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 4
+        depth: 4
+      }
+    }
+    error: {
+      h: "Error"
+      n: "error"
+      r: false
+      sh: "First error message"
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "HTTP status code"
+      t: "`$INTEGER`"
+    }
+    warning: {
+      h: "Warning"
+      n: "warning"
+      r: false
+      sh: "Warning messages separated by newline"
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "character"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /character/all"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: 50
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 0
+                k: "query"
+                n: "offset"
+                or: "offset"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/character/all"
+          q: {
+            "$action": "all"
+            exist: [
+              "limit"
+              "offset"
+            ]
+          }
+          s: [
+            {
+              lit: "character"
+            }
+            {
+              lit: "all"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /character/{character}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "character"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: 50
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 0
+                k: "query"
+                n: "offset"
+                or: "offset"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/character/{character}"
+          q: {
+            exist: [
+              "id"
+              "limit"
+              "offset"
+            ]
+          }
+          r: {
+            param: {
+              character: "id"
+            }
+          }
+          s: [
+            {
+              lit: "character"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /character/by-kind/{kind}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "dragon"
+                k: "param"
+                n: "kind"
+                or: "kind"
+                r: true
+                t: "`$ANY`"
+              }
+            ]
+            query: [
+              {
+                ex: 50
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 0
+                k: "query"
+                n: "offset"
+                or: "offset"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/character/by-kind/{kind}"
+          q: {
+            exist: [
+              "kind"
+              "limit"
+              "offset"
+            ]
+          }
+          s: [
+            {
+              lit: "character"
+            }
+            {
+              lit: "by-kind"
+            }
+            {
+              var: "kind"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /character/by-occupation/{occupation}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "crusader"
+                k: "param"
+                n: "occupation"
+                or: "occupation"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: 50
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 0
+                k: "query"
+                n: "offset"
+                or: "offset"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/character/by-occupation/{occupation}"
+          q: {
+            exist: [
+              "limit"
+              "occupation"
+              "offset"
+            ]
+          }
+          s: [
+            {
+              lit: "character"
+            }
+            {
+              lit: "by-occupation"
+            }
+            {
+              var: "occupation"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /character/by-residence/{residence}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "residence"
+                or: "residence"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: 50
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 0
+                k: "query"
+                n: "offset"
+                or: "offset"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/character/by-residence/{residence}"
+          q: {
+            exist: [
+              "limit"
+              "offset"
+              "residence"
+            ]
+          }
+          s: [
+            {
+              lit: "character"
+            }
+            {
+              lit: "by-residence"
+            }
+            {
+              var: "residence"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

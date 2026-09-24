@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ImageEntity = void 0;
 const PonyEntityBase_1 = require("../PonyEntityBase");
-// TODO: needs Entity superclass
 class ImageEntity extends PonyEntityBase_1.PonyEntityBase {
     constructor(client, entopts) {
         super(client, entopts);

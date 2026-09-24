@@ -164,7 +164,7 @@ func comicBasicSetup(extra map[string]any) *entityTestSetup {
 
 	// Generate idmap via transform, matching TS pattern.
 	idmap, _ := vs.Transform(
-		[]any{"comic01", "comic02", "comic03", "by_series01", "by_series02", "by_series03"},
+		[]any{"comic01", "comic02", "comic03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
 				"`$KEY`": "`$COPY`",

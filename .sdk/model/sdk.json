@@ -24,53 +24,124 @@
         "repr": "auto"
       },
       "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "character": {
           "active": true,
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "data",
-              "req": false,
-              "short": "Array of found objects.",
-              "type": "`$ARRAY`",
+          "fields": {
+            "data": {
+              "a": true,
+              "h": "Data",
+              "n": "data",
+              "r": false,
+              "sh": "Array of found objects.",
+              "t": "`$ARRAY`",
               "union": {
                 "branches": 3,
                 "count": 4,
                 "depth": 4
               }
             },
-            {
-              "active": true,
-              "name": "error",
-              "req": false,
-              "short": "First error message",
-              "type": "`$STRING`"
+            "error": {
+              "a": true,
+              "h": "Error",
+              "n": "error",
+              "r": false,
+              "sh": "First error message",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": false,
-              "type": "`$STRING`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "status",
-              "req": true,
-              "short": "HTTP status code",
-              "type": "`$INTEGER`"
+            "status": {
+              "a": true,
+              "h": "Status",
+              "n": "status",
+              "r": true,
+              "sh": "HTTP status code",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "warning",
-              "req": false,
-              "short": "Warning messages separated by newline",
-              "type": "`$STRING`"
+            "warning": {
+              "a": true,
+              "h": "Warning",
+              "n": "warning",
+              "r": false,
+              "sh": "Warning messages separated by newline",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -82,39 +153,46 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /character/all",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "example": 50,
-                        "kind": "query",
-                        "name": "limit",
-                        "orig": "limit",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 50,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "example": 0,
-                        "kind": "query",
-                        "name": "offset",
-                        "orig": "offset",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "offset",
+                        "or": "offset",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /character/all",
-                    "json": "{\"operationId\":\"getAllCharacters\",\"parameters\":[{\"description\":\"Limit of the response data array\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":50,\"type\":\"integer\"}},{\"description\":\"Offset of the response data array (SQL-like behavior)\",\"in\":\"query\",\"name\":\"offset\",\"required\":false,\"schema\":{\"default\":0,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"allOf\":[{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"length\":{\"description\":\"Length of the song\",\"type\":\"string\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"},\"video_url\":{\"description\":\"Video URL\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"},\"error\":{\"description\":\"First error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"},\"warning\":{\"description\":\"Warning messages separated by newline\",\"type\":\"string\"}},\"required\":[\"status\"],\"type\":\"object\"},{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}]}}},\"description\":\"Successful response with character data\"},\"400\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Some arguments are not valid\",\"status\":400},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Bad Request - Some arguments are not valid\"},\"405\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Method not allowed\",\"status\":405},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Method Not Allowed - Invalid method\"},\"500\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Internal server error\",\"status\":500},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Internal Server Error - Server-side error in database query\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/character/all",
+                  "q": {
+                    "$action": "all",
+                    "exist": [
+                      "limit",
+                      "offset"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/character/all",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "character"
                     },
@@ -122,14 +200,7 @@
                       "lit": "all"
                     }
                   ],
-                  "select": {
-                    "$action": "all",
-                    "exist": [
-                      "limit",
-                      "offset"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -141,54 +212,60 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /character/{character}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "params": [
                       {
-                        "active": true,
-                        "kind": "param",
-                        "name": "id",
-                        "orig": "character",
-                        "reqd": true,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "character",
+                        "r": true,
+                        "t": "`$STRING`"
                       }
                     ],
                     "query": [
                       {
-                        "active": true,
-                        "example": 50,
-                        "kind": "query",
-                        "name": "limit",
-                        "orig": "limit",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 50,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "example": 0,
-                        "kind": "query",
-                        "name": "offset",
-                        "orig": "offset",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "offset",
+                        "or": "offset",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /character/{character}",
-                    "json": "{\"operationId\":\"getCharacter\",\"parameters\":[{\"description\":\"Character ID (integer) or name (string)\",\"in\":\"path\",\"name\":\"character\",\"required\":true,\"schema\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"}]}},{\"description\":\"Limit of the response data array\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":50,\"type\":\"integer\"}},{\"description\":\"Offset of the response data array (SQL-like behavior)\",\"in\":\"query\",\"name\":\"offset\",\"required\":false,\"schema\":{\"default\":0,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"allOf\":[{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"length\":{\"description\":\"Length of the song\",\"type\":\"string\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"},\"video_url\":{\"description\":\"Video URL\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"},\"error\":{\"description\":\"First error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"},\"warning\":{\"description\":\"Warning messages separated by newline\",\"type\":\"string\"}},\"required\":[\"status\"],\"type\":\"object\"},{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}]}}},\"description\":\"Successful response with character data\"},\"400\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Some arguments are not valid\",\"status\":400},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Bad Request - Some arguments are not valid\"},\"405\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Method not allowed\",\"status\":405},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Method Not Allowed - Invalid method\"},\"500\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Internal server error\",\"status\":500},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Internal Server Error - Server-side error in database query\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/character/{character}",
+                  "q": {
+                    "exist": [
+                      "id",
+                      "limit",
+                      "offset"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/character/{character}",
-                  "rename": {
+                  "r": {
                     "param": {
                       "character": "id"
                     }
                   },
-                  "segments": [
+                  "s": [
                     {
                       "lit": "character"
                     },
@@ -196,63 +273,63 @@
                       "var": "id"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "id",
-                      "limit",
-                      "offset"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /character/by-kind/{kind}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "params": [
                       {
-                        "active": true,
-                        "example": "dragon",
-                        "kind": "param",
-                        "name": "kind",
-                        "orig": "kind",
-                        "reqd": true,
-                        "type": "`$ANY`"
+                        "a": true,
+                        "ex": "dragon",
+                        "k": "param",
+                        "n": "kind",
+                        "or": "kind",
+                        "r": true,
+                        "t": "`$ANY`"
                       }
                     ],
                     "query": [
                       {
-                        "active": true,
-                        "example": 50,
-                        "kind": "query",
-                        "name": "limit",
-                        "orig": "limit",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 50,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "example": 0,
-                        "kind": "query",
-                        "name": "offset",
-                        "orig": "offset",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "offset",
+                        "or": "offset",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /character/by-kind/{kind}",
-                    "json": "{\"operationId\":\"getCharactersByKind\",\"parameters\":[{\"description\":\"Kind ID (integer) or name (string)\",\"examples\":{\"integer\":{\"summary\":\"Search by kind ID\",\"value\":1},\"string\":{\"summary\":\"Search by kind name\",\"value\":\"dragon\"}},\"in\":\"path\",\"name\":\"kind\",\"required\":true,\"schema\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"}]}},{\"description\":\"Limit of the response data array\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":50,\"type\":\"integer\"}},{\"description\":\"Offset of the response data array (SQL-like behavior)\",\"in\":\"query\",\"name\":\"offset\",\"required\":false,\"schema\":{\"default\":0,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"allOf\":[{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"length\":{\"description\":\"Length of the song\",\"type\":\"string\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"},\"video_url\":{\"description\":\"Video URL\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"},\"error\":{\"description\":\"First error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"},\"warning\":{\"description\":\"Warning messages separated by newline\",\"type\":\"string\"}},\"required\":[\"status\"],\"type\":\"object\"},{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}]}}},\"description\":\"Successful response with character data\"},\"400\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Some arguments are not valid\",\"status\":400},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Bad Request - Some arguments are not valid\"},\"405\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Method not allowed\",\"status\":405},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Method Not Allowed - Invalid method\"},\"500\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Internal server error\",\"status\":500},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Internal Server Error - Server-side error in database query\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/character/by-kind/{kind}",
+                  "q": {
+                    "exist": [
+                      "kind",
+                      "limit",
+                      "offset"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/character/by-kind/{kind}",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "character"
                     },
@@ -263,63 +340,63 @@
                       "var": "kind"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "kind",
-                      "limit",
-                      "offset"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /character/by-occupation/{occupation}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "params": [
                       {
-                        "active": true,
-                        "example": "crusader",
-                        "kind": "param",
-                        "name": "occupation",
-                        "orig": "occupation",
-                        "reqd": true,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "crusader",
+                        "k": "param",
+                        "n": "occupation",
+                        "or": "occupation",
+                        "r": true,
+                        "t": "`$STRING`"
                       }
                     ],
                     "query": [
                       {
-                        "active": true,
-                        "example": 50,
-                        "kind": "query",
-                        "name": "limit",
-                        "orig": "limit",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 50,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "example": 0,
-                        "kind": "query",
-                        "name": "offset",
-                        "orig": "offset",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "offset",
+                        "or": "offset",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /character/by-occupation/{occupation}",
-                    "json": "{\"operationId\":\"getCharactersByOccupation\",\"parameters\":[{\"description\":\"Occupation string to search for\",\"example\":\"crusader\",\"in\":\"path\",\"name\":\"occupation\",\"required\":true,\"schema\":{\"type\":\"string\"}},{\"description\":\"Limit of the response data array\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":50,\"type\":\"integer\"}},{\"description\":\"Offset of the response data array (SQL-like behavior)\",\"in\":\"query\",\"name\":\"offset\",\"required\":false,\"schema\":{\"default\":0,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"allOf\":[{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"length\":{\"description\":\"Length of the song\",\"type\":\"string\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"},\"video_url\":{\"description\":\"Video URL\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"},\"error\":{\"description\":\"First error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"},\"warning\":{\"description\":\"Warning messages separated by newline\",\"type\":\"string\"}},\"required\":[\"status\"],\"type\":\"object\"},{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}]}}},\"description\":\"Successful response with character data\"},\"400\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Some arguments are not valid\",\"status\":400},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Bad Request - Some arguments are not valid\"},\"405\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Method not allowed\",\"status\":405},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Method Not Allowed - Invalid method\"},\"500\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Internal server error\",\"status\":500},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Internal Server Error - Server-side error in database query\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/character/by-occupation/{occupation}",
+                  "q": {
+                    "exist": [
+                      "limit",
+                      "occupation",
+                      "offset"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/character/by-occupation/{occupation}",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "character"
                     },
@@ -330,62 +407,62 @@
                       "var": "occupation"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "limit",
-                      "occupation",
-                      "offset"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /character/by-residence/{residence}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "params": [
                       {
-                        "active": true,
-                        "kind": "param",
-                        "name": "residence",
-                        "orig": "residence",
-                        "reqd": true,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "param",
+                        "n": "residence",
+                        "or": "residence",
+                        "r": true,
+                        "t": "`$STRING`"
                       }
                     ],
                     "query": [
                       {
-                        "active": true,
-                        "example": 50,
-                        "kind": "query",
-                        "name": "limit",
-                        "orig": "limit",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 50,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "example": 0,
-                        "kind": "query",
-                        "name": "offset",
-                        "orig": "offset",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "offset",
+                        "or": "offset",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /character/by-residence/{residence}",
-                    "json": "{\"operationId\":\"getCharactersByResidence\",\"parameters\":[{\"description\":\"Residence string to search for\",\"in\":\"path\",\"name\":\"residence\",\"required\":true,\"schema\":{\"type\":\"string\"}},{\"description\":\"Limit of the response data array\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":50,\"type\":\"integer\"}},{\"description\":\"Offset of the response data array (SQL-like behavior)\",\"in\":\"query\",\"name\":\"offset\",\"required\":false,\"schema\":{\"default\":0,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"allOf\":[{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"length\":{\"description\":\"Length of the song\",\"type\":\"string\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"},\"video_url\":{\"description\":\"Video URL\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"},\"error\":{\"description\":\"First error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"},\"warning\":{\"description\":\"Warning messages separated by newline\",\"type\":\"string\"}},\"required\":[\"status\"],\"type\":\"object\"},{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}]}}},\"description\":\"Successful response with character data\"},\"400\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Some arguments are not valid\",\"status\":400},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Bad Request - Some arguments are not valid\"},\"405\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Method not allowed\",\"status\":405},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Method Not Allowed - Invalid method\"},\"500\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Internal server error\",\"status\":500},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Internal Server Error - Server-side error in database query\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/character/by-residence/{residence}",
+                  "q": {
+                    "exist": [
+                      "limit",
+                      "offset",
+                      "residence"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/character/by-residence/{residence}",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "character"
                     },
@@ -396,14 +473,7 @@
                       "var": "residence"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "limit",
-                      "offset",
-                      "residence"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -412,17 +482,7 @@
             }
           },
           "relations": {
-            "ancestors": [
-              [
-                "by_kind"
-              ],
-              [
-                "by_occupation"
-              ],
-              [
-                "by_residence"
-              ]
-            ]
+            "ancestors": []
           }
         },
         "comic": {
@@ -430,47 +490,52 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "data",
-              "req": false,
-              "short": "Array of found objects.",
-              "type": "`$ARRAY`",
+          "fields": {
+            "data": {
+              "a": true,
+              "h": "Data",
+              "n": "data",
+              "r": false,
+              "sh": "Array of found objects.",
+              "t": "`$ARRAY`",
               "union": {
                 "branches": 3,
                 "count": 4,
                 "depth": 4
               }
             },
-            {
-              "active": true,
-              "name": "error",
-              "req": false,
-              "short": "First error message",
-              "type": "`$STRING`"
+            "error": {
+              "a": true,
+              "h": "Error",
+              "n": "error",
+              "r": false,
+              "sh": "First error message",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": false,
-              "type": "`$STRING`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "status",
-              "req": true,
-              "short": "HTTP status code",
-              "type": "`$INTEGER`"
+            "status": {
+              "a": true,
+              "h": "Status",
+              "n": "status",
+              "r": true,
+              "sh": "HTTP status code",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "warning",
-              "req": false,
-              "short": "Warning messages separated by newline",
-              "type": "`$STRING`"
+            "warning": {
+              "a": true,
+              "h": "Warning",
+              "n": "warning",
+              "r": false,
+              "sh": "Warning messages separated by newline",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -482,39 +547,46 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /comics/all",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "example": 50,
-                        "kind": "query",
-                        "name": "limit",
-                        "orig": "limit",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 50,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "example": 0,
-                        "kind": "query",
-                        "name": "offset",
-                        "orig": "offset",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "offset",
+                        "or": "offset",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /comics/all",
-                    "json": "{\"operationId\":\"getAllComics\",\"parameters\":[{\"description\":\"Limit of the response data array\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":50,\"type\":\"integer\"}},{\"description\":\"Offset of the response data array (SQL-like behavior)\",\"in\":\"query\",\"name\":\"offset\",\"required\":false,\"schema\":{\"default\":0,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"allOf\":[{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"length\":{\"description\":\"Length of the song\",\"type\":\"string\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"},\"video_url\":{\"description\":\"Video URL\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"},\"error\":{\"description\":\"First error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"},\"warning\":{\"description\":\"Warning messages separated by newline\",\"type\":\"string\"}},\"required\":[\"status\"],\"type\":\"object\"},{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}]}}},\"description\":\"Successful response with comics data\"},\"400\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Some arguments are not valid\",\"status\":400},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Bad Request - Some arguments are not valid\"},\"405\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Method not allowed\",\"status\":405},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Method Not Allowed - Invalid method\"},\"500\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Internal server error\",\"status\":500},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Internal Server Error - Server-side error in database query\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/comics/all",
+                  "q": {
+                    "$action": "all",
+                    "exist": [
+                      "limit",
+                      "offset"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/comics/all",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "comics"
                     },
@@ -522,14 +594,7 @@
                       "lit": "all"
                     }
                   ],
-                  "select": {
-                    "$action": "all",
-                    "exist": [
-                      "limit",
-                      "offset"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -541,54 +606,60 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /comics/{comics}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "params": [
                       {
-                        "active": true,
-                        "kind": "param",
-                        "name": "id",
-                        "orig": "comic",
-                        "reqd": true,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "comic",
+                        "r": true,
+                        "t": "`$STRING`"
                       }
                     ],
                     "query": [
                       {
-                        "active": true,
-                        "example": 50,
-                        "kind": "query",
-                        "name": "limit",
-                        "orig": "limit",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 50,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "example": 0,
-                        "kind": "query",
-                        "name": "offset",
-                        "orig": "offset",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "offset",
+                        "or": "offset",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /comics/{comics}",
-                    "json": "{\"operationId\":\"getComics\",\"parameters\":[{\"description\":\"Comics ID (integer) or name (string)\",\"in\":\"path\",\"name\":\"comics\",\"required\":true,\"schema\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"}]}},{\"description\":\"Limit of the response data array\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":50,\"type\":\"integer\"}},{\"description\":\"Offset of the response data array (SQL-like behavior)\",\"in\":\"query\",\"name\":\"offset\",\"required\":false,\"schema\":{\"default\":0,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"allOf\":[{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"length\":{\"description\":\"Length of the song\",\"type\":\"string\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"},\"video_url\":{\"description\":\"Video URL\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"},\"error\":{\"description\":\"First error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"},\"warning\":{\"description\":\"Warning messages separated by newline\",\"type\":\"string\"}},\"required\":[\"status\"],\"type\":\"object\"},{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}]}}},\"description\":\"Successful response with comics data\"},\"400\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Some arguments are not valid\",\"status\":400},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Bad Request - Some arguments are not valid\"},\"405\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Method not allowed\",\"status\":405},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Method Not Allowed - Invalid method\"},\"500\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Internal server error\",\"status\":500},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Internal Server Error - Server-side error in database query\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/comics/{comics}",
+                  "q": {
+                    "exist": [
+                      "id",
+                      "limit",
+                      "offset"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/comics/{comics}",
-                  "rename": {
+                  "r": {
                     "param": {
                       "comics": "id"
                     }
                   },
-                  "segments": [
+                  "s": [
                     {
                       "lit": "comics"
                     },
@@ -596,62 +667,62 @@
                       "var": "id"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "id",
-                      "limit",
-                      "offset"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /comics/by-series/{series}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "params": [
                       {
-                        "active": true,
-                        "kind": "param",
-                        "name": "series",
-                        "orig": "series",
-                        "reqd": true,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "param",
+                        "n": "series",
+                        "or": "series",
+                        "r": true,
+                        "t": "`$STRING`"
                       }
                     ],
                     "query": [
                       {
-                        "active": true,
-                        "example": 50,
-                        "kind": "query",
-                        "name": "limit",
-                        "orig": "limit",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 50,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "example": 0,
-                        "kind": "query",
-                        "name": "offset",
-                        "orig": "offset",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "offset",
+                        "or": "offset",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /comics/by-series/{series}",
-                    "json": "{\"operationId\":\"getComicsBySeries\",\"parameters\":[{\"description\":\"Series name\",\"in\":\"path\",\"name\":\"series\",\"required\":true,\"schema\":{\"type\":\"string\"}},{\"description\":\"Limit of the response data array\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":50,\"type\":\"integer\"}},{\"description\":\"Offset of the response data array (SQL-like behavior)\",\"in\":\"query\",\"name\":\"offset\",\"required\":false,\"schema\":{\"default\":0,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"allOf\":[{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"length\":{\"description\":\"Length of the song\",\"type\":\"string\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"},\"video_url\":{\"description\":\"Video URL\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"},\"error\":{\"description\":\"First error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"},\"warning\":{\"description\":\"Warning messages separated by newline\",\"type\":\"string\"}},\"required\":[\"status\"],\"type\":\"object\"},{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}]}}},\"description\":\"Successful response with comics data\"},\"400\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Some arguments are not valid\",\"status\":400},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Bad Request - Some arguments are not valid\"},\"405\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Method not allowed\",\"status\":405},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Method Not Allowed - Invalid method\"},\"500\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Internal server error\",\"status\":500},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Internal Server Error - Server-side error in database query\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/comics/by-series/{series}",
+                  "q": {
+                    "exist": [
+                      "limit",
+                      "offset",
+                      "series"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/comics/by-series/{series}",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "comics"
                     },
@@ -662,14 +733,7 @@
                       "var": "series"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "limit",
-                      "offset",
-                      "series"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -678,11 +742,7 @@
             }
           },
           "relations": {
-            "ancestors": [
-              [
-                "by_series"
-              ]
-            ]
+            "ancestors": []
           }
         },
         "episode": {
@@ -690,47 +750,52 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "data",
-              "req": false,
-              "short": "Array of found objects.",
-              "type": "`$ARRAY`",
+          "fields": {
+            "data": {
+              "a": true,
+              "h": "Data",
+              "n": "data",
+              "r": false,
+              "sh": "Array of found objects.",
+              "t": "`$ARRAY`",
               "union": {
                 "branches": 3,
                 "count": 4,
                 "depth": 4
               }
             },
-            {
-              "active": true,
-              "name": "error",
-              "req": false,
-              "short": "First error message",
-              "type": "`$STRING`"
+            "error": {
+              "a": true,
+              "h": "Error",
+              "n": "error",
+              "r": false,
+              "sh": "First error message",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": false,
-              "type": "`$STRING`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "status",
-              "req": true,
-              "short": "HTTP status code",
-              "type": "`$INTEGER`"
+            "status": {
+              "a": true,
+              "h": "Status",
+              "n": "status",
+              "r": true,
+              "sh": "HTTP status code",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "warning",
-              "req": false,
-              "short": "Warning messages separated by newline",
-              "type": "`$STRING`"
+            "warning": {
+              "a": true,
+              "h": "Warning",
+              "n": "warning",
+              "r": false,
+              "sh": "Warning messages separated by newline",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -742,39 +807,46 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /episode/all",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "example": 50,
-                        "kind": "query",
-                        "name": "limit",
-                        "orig": "limit",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 50,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "example": 0,
-                        "kind": "query",
-                        "name": "offset",
-                        "orig": "offset",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "offset",
+                        "or": "offset",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /episode/all",
-                    "json": "{\"operationId\":\"getAllEpisodes\",\"parameters\":[{\"description\":\"Limit of the response data array\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":50,\"type\":\"integer\"}},{\"description\":\"Offset of the response data array (SQL-like behavior)\",\"in\":\"query\",\"name\":\"offset\",\"required\":false,\"schema\":{\"default\":0,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"allOf\":[{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"length\":{\"description\":\"Length of the song\",\"type\":\"string\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"},\"video_url\":{\"description\":\"Video URL\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"},\"error\":{\"description\":\"First error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"},\"warning\":{\"description\":\"Warning messages separated by newline\",\"type\":\"string\"}},\"required\":[\"status\"],\"type\":\"object\"},{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}]}}},\"description\":\"Successful response with episode data\"},\"400\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Some arguments are not valid\",\"status\":400},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Bad Request - Some arguments are not valid\"},\"405\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Method not allowed\",\"status\":405},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Method Not Allowed - Invalid method\"},\"500\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Internal server error\",\"status\":500},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Internal Server Error - Server-side error in database query\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/episode/all",
+                  "q": {
+                    "$action": "all",
+                    "exist": [
+                      "limit",
+                      "offset"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/episode/all",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "episode"
                     },
@@ -782,14 +854,7 @@
                       "lit": "all"
                     }
                   ],
-                  "select": {
-                    "$action": "all",
-                    "exist": [
-                      "limit",
-                      "offset"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -801,54 +866,60 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /episode/{episode}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "params": [
                       {
-                        "active": true,
-                        "kind": "param",
-                        "name": "id",
-                        "orig": "episode",
-                        "reqd": true,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "episode",
+                        "r": true,
+                        "t": "`$STRING`"
                       }
                     ],
                     "query": [
                       {
-                        "active": true,
-                        "example": 50,
-                        "kind": "query",
-                        "name": "limit",
-                        "orig": "limit",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 50,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "example": 0,
-                        "kind": "query",
-                        "name": "offset",
-                        "orig": "offset",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "offset",
+                        "or": "offset",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /episode/{episode}",
-                    "json": "{\"operationId\":\"getEpisode\",\"parameters\":[{\"description\":\"Episode ID (integer) or name (string)\",\"in\":\"path\",\"name\":\"episode\",\"required\":true,\"schema\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"}]}},{\"description\":\"Limit of the response data array\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":50,\"type\":\"integer\"}},{\"description\":\"Offset of the response data array (SQL-like behavior)\",\"in\":\"query\",\"name\":\"offset\",\"required\":false,\"schema\":{\"default\":0,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"allOf\":[{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"length\":{\"description\":\"Length of the song\",\"type\":\"string\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"},\"video_url\":{\"description\":\"Video URL\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"},\"error\":{\"description\":\"First error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"},\"warning\":{\"description\":\"Warning messages separated by newline\",\"type\":\"string\"}},\"required\":[\"status\"],\"type\":\"object\"},{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}]}}},\"description\":\"Successful response with episode data\"},\"400\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Some arguments are not valid\",\"status\":400},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Bad Request - Some arguments are not valid\"},\"405\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Method not allowed\",\"status\":405},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Method Not Allowed - Invalid method\"},\"500\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Internal server error\",\"status\":500},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Internal Server Error - Server-side error in database query\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/episode/{episode}",
+                  "q": {
+                    "exist": [
+                      "id",
+                      "limit",
+                      "offset"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/episode/{episode}",
-                  "rename": {
+                  "r": {
                     "param": {
                       "episode": "id"
                     }
                   },
-                  "segments": [
+                  "s": [
                     {
                       "lit": "episode"
                     },
@@ -856,62 +927,62 @@
                       "var": "id"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "id",
-                      "limit",
-                      "offset"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /episode/by-season/{season}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "params": [
                       {
-                        "active": true,
-                        "kind": "param",
-                        "name": "season",
-                        "orig": "season",
-                        "reqd": true,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "k": "param",
+                        "n": "season",
+                        "or": "season",
+                        "r": true,
+                        "t": "`$INTEGER`"
                       }
                     ],
                     "query": [
                       {
-                        "active": true,
-                        "example": 50,
-                        "kind": "query",
-                        "name": "limit",
-                        "orig": "limit",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 50,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "example": 0,
-                        "kind": "query",
-                        "name": "offset",
-                        "orig": "offset",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "offset",
+                        "or": "offset",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /episode/by-season/{season}",
-                    "json": "{\"operationId\":\"getEpisodesBySeason\",\"parameters\":[{\"description\":\"Season number\",\"in\":\"path\",\"name\":\"season\",\"required\":true,\"schema\":{\"type\":\"integer\"}},{\"description\":\"Limit of the response data array\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":50,\"type\":\"integer\"}},{\"description\":\"Offset of the response data array (SQL-like behavior)\",\"in\":\"query\",\"name\":\"offset\",\"required\":false,\"schema\":{\"default\":0,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"allOf\":[{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"length\":{\"description\":\"Length of the song\",\"type\":\"string\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"},\"video_url\":{\"description\":\"Video URL\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"},\"error\":{\"description\":\"First error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"},\"warning\":{\"description\":\"Warning messages separated by newline\",\"type\":\"string\"}},\"required\":[\"status\"],\"type\":\"object\"},{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}]}}},\"description\":\"Successful response with episode data\"},\"400\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Some arguments are not valid\",\"status\":400},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Bad Request - Some arguments are not valid\"},\"405\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Method not allowed\",\"status\":405},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Method Not Allowed - Invalid method\"},\"500\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Internal server error\",\"status\":500},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Internal Server Error - Server-side error in database query\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/episode/by-season/{season}",
+                  "q": {
+                    "exist": [
+                      "limit",
+                      "offset",
+                      "season"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/episode/by-season/{season}",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "episode"
                     },
@@ -922,14 +993,7 @@
                       "var": "season"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "limit",
-                      "offset",
-                      "season"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -938,11 +1002,7 @@
             }
           },
           "relations": {
-            "ancestors": [
-              [
-                "by_season"
-              ]
-            ]
+            "ancestors": []
           }
         },
         "image": {
@@ -950,7 +1010,7 @@
           "alias": {
             "field": {}
           },
-          "fields": [],
+          "fields": {},
           "name": "image",
           "op": {
             "list": {
@@ -958,39 +1018,46 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /image/all",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "example": 50,
-                        "kind": "query",
-                        "name": "limit",
-                        "orig": "limit",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 50,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "example": 0,
-                        "kind": "query",
-                        "name": "offset",
-                        "orig": "offset",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "offset",
+                        "or": "offset",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /image/all",
-                    "json": "{\"operationId\":\"getAllImages\",\"parameters\":[{\"description\":\"Limit of the response data array\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":50,\"type\":\"integer\"}},{\"description\":\"Offset of the response data array (SQL-like behavior)\",\"in\":\"query\",\"name\":\"offset\",\"required\":false,\"schema\":{\"default\":0,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"allOf\":[{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"length\":{\"description\":\"Length of the song\",\"type\":\"string\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"},\"video_url\":{\"description\":\"Video URL\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"},\"error\":{\"description\":\"First error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"},\"warning\":{\"description\":\"Warning messages separated by newline\",\"type\":\"string\"}},\"required\":[\"status\"],\"type\":\"object\"},{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"length\":{\"description\":\"Length of the song\",\"type\":\"string\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"},\"video_url\":{\"description\":\"Video URL\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}]}}},\"description\":\"Successful response with image data\"},\"400\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Some arguments are not valid\",\"status\":400},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Bad Request - Some arguments are not valid\"},\"405\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Method not allowed\",\"status\":405},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Method Not Allowed - Invalid method\"},\"500\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Internal server error\",\"status\":500},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Internal Server Error - Server-side error in database query\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/image/all",
+                  "q": {
+                    "$action": "all",
+                    "exist": [
+                      "limit",
+                      "offset"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/image/all",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "image"
                     },
@@ -998,14 +1065,7 @@
                       "lit": "all"
                     }
                   ],
-                  "select": {
-                    "$action": "all",
-                    "exist": [
-                      "limit",
-                      "offset"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -1022,47 +1082,52 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "data",
-              "req": false,
-              "short": "Array of found objects.",
-              "type": "`$ARRAY`",
+          "fields": {
+            "data": {
+              "a": true,
+              "h": "Data",
+              "n": "data",
+              "r": false,
+              "sh": "Array of found objects.",
+              "t": "`$ARRAY`",
               "union": {
                 "branches": 3,
                 "count": 4,
                 "depth": 4
               }
             },
-            {
-              "active": true,
-              "name": "error",
-              "req": false,
-              "short": "First error message",
-              "type": "`$STRING`"
+            "error": {
+              "a": true,
+              "h": "Error",
+              "n": "error",
+              "r": false,
+              "sh": "First error message",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": false,
-              "type": "`$STRING`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "status",
-              "req": true,
-              "short": "HTTP status code",
-              "type": "`$INTEGER`"
+            "status": {
+              "a": true,
+              "h": "Status",
+              "n": "status",
+              "r": true,
+              "sh": "HTTP status code",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "warning",
-              "req": false,
-              "short": "Warning messages separated by newline",
-              "type": "`$STRING`"
+            "warning": {
+              "a": true,
+              "h": "Warning",
+              "n": "warning",
+              "r": false,
+              "sh": "Warning messages separated by newline",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -1074,39 +1139,46 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /kind/all",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "example": 50,
-                        "kind": "query",
-                        "name": "limit",
-                        "orig": "limit",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 50,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "example": 0,
-                        "kind": "query",
-                        "name": "offset",
-                        "orig": "offset",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "offset",
+                        "or": "offset",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /kind/all",
-                    "json": "{\"operationId\":\"getAllKinds\",\"parameters\":[{\"description\":\"Limit of the response data array\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":50,\"type\":\"integer\"}},{\"description\":\"Offset of the response data array (SQL-like behavior)\",\"in\":\"query\",\"name\":\"offset\",\"required\":false,\"schema\":{\"default\":0,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"allOf\":[{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"length\":{\"description\":\"Length of the song\",\"type\":\"string\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"},\"video_url\":{\"description\":\"Video URL\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"},\"error\":{\"description\":\"First error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"},\"warning\":{\"description\":\"Warning messages separated by newline\",\"type\":\"string\"}},\"required\":[\"status\"],\"type\":\"object\"},{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"length\":{\"description\":\"Length of the song\",\"type\":\"string\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"},\"video_url\":{\"description\":\"Video URL\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}]}}},\"description\":\"Successful response with kind data\"},\"400\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Some arguments are not valid\",\"status\":400},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Bad Request - Some arguments are not valid\"},\"405\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Method not allowed\",\"status\":405},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Method Not Allowed - Invalid method\"},\"500\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Internal server error\",\"status\":500},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Internal Server Error - Server-side error in database query\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/kind/all",
+                  "q": {
+                    "$action": "all",
+                    "exist": [
+                      "limit",
+                      "offset"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/kind/all",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "kind"
                     },
@@ -1114,14 +1186,7 @@
                       "lit": "all"
                     }
                   ],
-                  "select": {
-                    "$action": "all",
-                    "exist": [
-                      "limit",
-                      "offset"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -1133,34 +1198,38 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /kind/{kind}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "params": [
                       {
-                        "active": true,
-                        "kind": "param",
-                        "name": "id",
-                        "orig": "kind",
-                        "reqd": true,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "kind",
+                        "r": true,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /kind/{kind}",
-                    "json": "{\"operationId\":\"getKind\",\"parameters\":[{\"description\":\"Kind ID (integer) or name (string)\",\"in\":\"path\",\"name\":\"kind\",\"required\":true,\"schema\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"}]}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"allOf\":[{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"length\":{\"description\":\"Length of the song\",\"type\":\"string\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"},\"video_url\":{\"description\":\"Video URL\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"},\"error\":{\"description\":\"First error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"},\"warning\":{\"description\":\"Warning messages separated by newline\",\"type\":\"string\"}},\"required\":[\"status\"],\"type\":\"object\"},{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"length\":{\"description\":\"Length of the song\",\"type\":\"string\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"},\"video_url\":{\"description\":\"Video URL\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}]}}},\"description\":\"Successful response with kind data\"},\"400\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Some arguments are not valid\",\"status\":400},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Bad Request - Some arguments are not valid\"},\"405\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Method not allowed\",\"status\":405},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Method Not Allowed - Invalid method\"},\"500\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Internal server error\",\"status\":500},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Internal Server Error - Server-side error in database query\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/kind/{kind}",
+                  "q": {
+                    "exist": [
+                      "id"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/kind/{kind}",
-                  "rename": {
+                  "r": {
                     "param": {
                       "kind": "id"
                     }
                   },
-                  "segments": [
+                  "s": [
                     {
                       "lit": "kind"
                     },
@@ -1168,12 +1237,7 @@
                       "var": "id"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "id"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -1190,47 +1254,52 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "data",
-              "req": false,
-              "short": "Array of found objects.",
-              "type": "`$ARRAY`",
+          "fields": {
+            "data": {
+              "a": true,
+              "h": "Data",
+              "n": "data",
+              "r": false,
+              "sh": "Array of found objects.",
+              "t": "`$ARRAY`",
               "union": {
                 "branches": 3,
                 "count": 4,
                 "depth": 4
               }
             },
-            {
-              "active": true,
-              "name": "error",
-              "req": false,
-              "short": "First error message",
-              "type": "`$STRING`"
+            "error": {
+              "a": true,
+              "h": "Error",
+              "n": "error",
+              "r": false,
+              "sh": "First error message",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": false,
-              "type": "`$STRING`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": false,
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "status",
-              "req": true,
-              "short": "HTTP status code",
-              "type": "`$INTEGER`"
+            "status": {
+              "a": true,
+              "h": "Status",
+              "n": "status",
+              "r": true,
+              "sh": "HTTP status code",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "warning",
-              "req": false,
-              "short": "Warning messages separated by newline",
-              "type": "`$STRING`"
+            "warning": {
+              "a": true,
+              "h": "Warning",
+              "n": "warning",
+              "r": false,
+              "sh": "Warning messages separated by newline",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -1242,39 +1311,46 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /song/all",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "example": 50,
-                        "kind": "query",
-                        "name": "limit",
-                        "orig": "limit",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 50,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "example": 0,
-                        "kind": "query",
-                        "name": "offset",
-                        "orig": "offset",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "offset",
+                        "or": "offset",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /song/all",
-                    "json": "{\"operationId\":\"getAllSongs\",\"parameters\":[{\"description\":\"Limit of the response data array\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":50,\"type\":\"integer\"}},{\"description\":\"Offset of the response data array (SQL-like behavior)\",\"in\":\"query\",\"name\":\"offset\",\"required\":false,\"schema\":{\"default\":0,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"allOf\":[{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"length\":{\"description\":\"Length of the song\",\"type\":\"string\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"},\"video_url\":{\"description\":\"Video URL\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"},\"error\":{\"description\":\"First error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"},\"warning\":{\"description\":\"Warning messages separated by newline\",\"type\":\"string\"}},\"required\":[\"status\"],\"type\":\"object\"},{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"length\":{\"description\":\"Length of the song\",\"type\":\"string\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"},\"video_url\":{\"description\":\"Video URL\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}]}}},\"description\":\"Successful response with song data\"},\"400\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Some arguments are not valid\",\"status\":400},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Bad Request - Some arguments are not valid\"},\"405\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Method not allowed\",\"status\":405},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Method Not Allowed - Invalid method\"},\"500\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Internal server error\",\"status\":500},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Internal Server Error - Server-side error in database query\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/song/all",
+                  "q": {
+                    "$action": "all",
+                    "exist": [
+                      "limit",
+                      "offset"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/song/all",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "song"
                     },
@@ -1282,14 +1358,7 @@
                       "lit": "all"
                     }
                   ],
-                  "select": {
-                    "$action": "all",
-                    "exist": [
-                      "limit",
-                      "offset"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -1301,49 +1370,56 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /song/by-episode/{episode}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "params": [
                       {
-                        "active": true,
-                        "kind": "param",
-                        "name": "episode",
-                        "orig": "episode",
-                        "reqd": true,
-                        "type": "`$ANY`"
+                        "a": true,
+                        "k": "param",
+                        "n": "episode",
+                        "or": "episode",
+                        "r": true,
+                        "t": "`$ANY`"
                       }
                     ],
                     "query": [
                       {
-                        "active": true,
-                        "example": 50,
-                        "kind": "query",
-                        "name": "limit",
-                        "orig": "limit",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 50,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "example": 0,
-                        "kind": "query",
-                        "name": "offset",
-                        "orig": "offset",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "offset",
+                        "or": "offset",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /song/by-episode/{episode}",
-                    "json": "{\"operationId\":\"getSongsByEpisode\",\"parameters\":[{\"description\":\"Episode identifier\",\"in\":\"path\",\"name\":\"episode\",\"required\":true,\"schema\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"}]}},{\"description\":\"Limit of the response data array\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":50,\"type\":\"integer\"}},{\"description\":\"Offset of the response data array (SQL-like behavior)\",\"in\":\"query\",\"name\":\"offset\",\"required\":false,\"schema\":{\"default\":0,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"allOf\":[{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"length\":{\"description\":\"Length of the song\",\"type\":\"string\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"},\"video_url\":{\"description\":\"Video URL\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"},\"error\":{\"description\":\"First error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"},\"warning\":{\"description\":\"Warning messages separated by newline\",\"type\":\"string\"}},\"required\":[\"status\"],\"type\":\"object\"},{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"length\":{\"description\":\"Length of the song\",\"type\":\"string\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"},\"video_url\":{\"description\":\"Video URL\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}]}}},\"description\":\"Successful response with song data\"},\"400\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Some arguments are not valid\",\"status\":400},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Bad Request - Some arguments are not valid\"},\"405\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Method not allowed\",\"status\":405},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Method Not Allowed - Invalid method\"},\"500\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Internal server error\",\"status\":500},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Internal Server Error - Server-side error in database query\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/song/by-episode/{episode}",
+                  "q": {
+                    "exist": [
+                      "episode",
+                      "limit",
+                      "offset"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/song/by-episode/{episode}",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "song"
                     },
@@ -1354,67 +1430,66 @@
                       "var": "episode"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "episode",
-                      "limit",
-                      "offset"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /song/{song}",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "params": [
                       {
-                        "active": true,
-                        "kind": "param",
-                        "name": "id",
-                        "orig": "song",
-                        "reqd": true,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "param",
+                        "n": "id",
+                        "or": "song",
+                        "r": true,
+                        "t": "`$STRING`"
                       }
                     ],
                     "query": [
                       {
-                        "active": true,
-                        "example": 50,
-                        "kind": "query",
-                        "name": "limit",
-                        "orig": "limit",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 50,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "example": 0,
-                        "kind": "query",
-                        "name": "offset",
-                        "orig": "offset",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "offset",
+                        "or": "offset",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /song/{song}",
-                    "json": "{\"operationId\":\"getSong\",\"parameters\":[{\"description\":\"Song ID (integer) or name (string)\",\"in\":\"path\",\"name\":\"song\",\"required\":true,\"schema\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"}]}},{\"description\":\"Limit of the response data array\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":50,\"type\":\"integer\"}},{\"description\":\"Offset of the response data array (SQL-like behavior)\",\"in\":\"query\",\"name\":\"offset\",\"required\":false,\"schema\":{\"default\":0,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"allOf\":[{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"length\":{\"description\":\"Length of the song\",\"type\":\"string\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"},\"video_url\":{\"description\":\"Video URL\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"},\"error\":{\"description\":\"First error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"},\"warning\":{\"description\":\"Warning messages separated by newline\",\"type\":\"string\"}},\"required\":[\"status\"],\"type\":\"object\"},{\"properties\":{\"data\":{\"description\":\"Array of found objects. Empty array if no objects found.\",\"items\":{\"properties\":{\"airdate\":{\"description\":\"Air date of the episode\",\"format\":\"date\",\"type\":\"string\"},\"alias\":{\"description\":\"Possible alias of this character\",\"type\":\"string\"},\"comment\":{\"description\":\"Comment about the kind\",\"type\":\"string\"},\"cover_image\":{\"description\":\"Cover image URL\",\"format\":\"uri\",\"type\":\"string\"},\"description\":{\"description\":\"Image description\",\"type\":\"string\"},\"episode\":{\"description\":\"Episode number within the season\",\"type\":\"integer\"},\"id\":{\"description\":\"Unique character identifier\",\"type\":\"integer\"},\"image\":{\"description\":\"All images of possible kinds and transformations of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"format\":\"uri\",\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"issues\":{\"description\":\"Issues contained in this story\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"kind\":{\"description\":\"All possible kinds of this character\",\"items\":{\"oneOf\":[{\"type\":\"integer\"},{\"type\":\"string\"},{\"items\":{},\"type\":\"array\"}]},\"type\":\"array\"},\"length\":{\"description\":\"Length of the song\",\"type\":\"string\"},\"name\":{\"description\":\"The name of this character\",\"type\":\"string\"},\"occupation\":{\"description\":\"Occupation of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"overall\":{\"description\":\"Overall episode number\",\"type\":\"integer\"},\"residence\":{\"description\":\"Residence of this character\",\"oneOf\":[{\"type\":\"string\"},{\"items\":{\"type\":\"string\"},\"type\":\"array\"}]},\"season\":{\"description\":\"Season number\",\"type\":\"integer\"},\"series\":{\"description\":\"Series name\",\"type\":\"string\"},\"sex\":{\"description\":\"Sex of this character\",\"type\":\"string\"},\"thumbnail\":{\"description\":\"Thumbnail image URL\",\"format\":\"uri\",\"type\":\"string\"},\"url\":{\"description\":\"URL to the MLP fandom wiki about this character\",\"format\":\"uri\",\"type\":\"string\"},\"video_url\":{\"description\":\"Video URL\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"url\"],\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}]}}},\"description\":\"Successful response with song data\"},\"400\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Some arguments are not valid\",\"status\":400},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Bad Request - Some arguments are not valid\"},\"405\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Method not allowed\",\"status\":405},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Method Not Allowed - Invalid method\"},\"500\":{\"content\":{\"application/json\":{\"example\":{\"error\":\"Internal server error\",\"status\":500},\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"HTTP status code\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Internal Server Error - Server-side error in database query\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/song/{song}",
+                  "q": {
+                    "exist": [
+                      "id",
+                      "limit",
+                      "offset"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/song/{song}",
-                  "rename": {
+                  "r": {
                     "param": {
                       "song": "id"
                     }
                   },
-                  "segments": [
+                  "s": [
                     {
                       "lit": "song"
                     },
@@ -1422,14 +1497,7 @@
                       "var": "id"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "id",
-                      "limit",
-                      "offset"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -1438,11 +1506,7 @@
             }
           },
           "relations": {
-            "ancestors": [
-              [
-                "by_episode"
-              ]
-            ]
+            "ancestors": []
           }
         }
       },
@@ -1862,13 +1926,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -1878,19 +1942,19 @@
               ]
             },
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "character_ref01",
                 "srcdatavar": "character_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {
+              "m": {
                 "id": "character01"
               },
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -1910,13 +1974,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -1926,19 +1990,19 @@
               ]
             },
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "comic_ref01",
                 "srcdatavar": "comic_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {
+              "m": {
                 "id": "comic01"
               },
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -1958,13 +2022,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -1974,19 +2038,19 @@
               ]
             },
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "episode_ref01",
                 "srcdatavar": "episode_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {
+              "m": {
                 "id": "episode01"
               },
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -2006,13 +2070,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -2032,13 +2096,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -2048,19 +2112,19 @@
               ]
             },
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "kind_ref01",
                 "srcdatavar": "kind_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {
+              "m": {
                 "id": "kind01"
               },
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {
@@ -2080,13 +2144,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -2096,19 +2160,19 @@
               ]
             },
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "song_ref01",
                 "srcdatavar": "song_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {
+              "m": {
                 "id": "song01"
               },
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {

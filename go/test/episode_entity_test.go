@@ -164,7 +164,7 @@ func episodeBasicSetup(extra map[string]any) *entityTestSetup {
 
 	// Generate idmap via transform, matching TS pattern.
 	idmap, _ := vs.Transform(
-		[]any{"episode01", "episode02", "episode03", "by_season01", "by_season02", "by_season03"},
+		[]any{"episode01", "episode02", "episode03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
 				"`$KEY`": "`$COPY`",

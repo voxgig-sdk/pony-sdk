@@ -19,7 +19,6 @@ import type {
   ImageListMatch,
 } from '../PonyTypes'
 
-// TODO: needs Entity superclass
 class ImageEntity extends PonyEntityBase<Image> {
 
   constructor(client: PonySDK, entopts: any) {

@@ -119,7 +119,7 @@ function song_basic_setup($extra)
 
     // Generate idmap.
     $idmap = [];
-    foreach (["song01", "song02", "song03", "by_episode01", "by_episode02", "by_episode03"] as $k) {
+    foreach (["song01", "song02", "song03"] as $k) {
         $idmap[$k] = strtoupper($k);
     }
 
